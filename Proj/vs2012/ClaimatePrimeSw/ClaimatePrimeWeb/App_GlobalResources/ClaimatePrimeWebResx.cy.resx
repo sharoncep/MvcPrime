@@ -1,0 +1,1726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accepted" xml:space="preserve">
+    <value>Dderbynnir</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Camau gweithredu</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ychwanegu</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Ychwanegu Un Newydd</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Cyfeiriad</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Gweinyddu</value>
+  </data>
+  <data name="AdmitteddateMoreCurrDate" xml:space="preserve">
+    <value>Derbyniadau eraill ar gyfer y claf hwn eisoes yn bodoli yn y dyddiadau penodedig</value>
+  </data>
+  <data name="AdmittedFrom" xml:space="preserve">
+    <value>Dderbyniwyd O</value>
+  </data>
+  <data name="AdmittedOn" xml:space="preserve">
+    <value>Dderbyniwyd Ar</value>
+  </data>
+  <data name="Admittedto" xml:space="preserve">
+    <value>Derbyn i</value>
+  </data>
+  <data name="AdmsnDatelessCurntDate" xml:space="preserve">
+    <value>Os dyddiad derbyn fod yn llai na dyddiad cyfredol</value>
+  </data>
+  <data name="AdmsnDateSame" xml:space="preserve">
+    <value>Claf discharged.Please cyfredol eto nodwch y dyddiad rhyddhau cyn mynd i mewn i'r dyddiad derbyn newydd.</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>Asiant</value>
+  </data>
+  <data name="AgentReport" xml:space="preserve">
+    <value>Adroddiad Asiant</value>
+  </data>
+  <data name="AgentWise" xml:space="preserve">
+    <value>Asiant Wise</value>
+  </data>
+  <data name="AgentWiseRpt" xml:space="preserve">
+    <value>Adroddiad Asiant Wise</value>
+  </data>
+  <data name="AllClinic" xml:space="preserve">
+    <value>Mae pob Clinig</value>
+  </data>
+  <data name="AllClinicRpt" xml:space="preserve">
+    <value>Mae pob Adroddiad Clinig</value>
+  </data>
+  <data name="AnyDesc" xml:space="preserve">
+    <value>Unrhyw un math o ddisgrifiad Dylid ei llenwi</value>
+  </data>
+  <data name="ApplnReceiverCode" xml:space="preserve">
+    <value>GS03</value>
+  </data>
+  <data name="AppSenderCode" xml:space="preserve">
+    <value>GS02</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>Ebrill</value>
+  </data>
+  <data name="AsgnClaims" xml:space="preserve">
+    <value>Hawliadau Neilltuir</value>
+  </data>
+  <data name="AsgnClaimsNIT" xml:space="preserve">
+    <value>Hawliadau Neilltuir [Heb fod mewn Track]</value>
+  </data>
+  <data name="AssgnClaims" xml:space="preserve">
+    <value>Hawliadau Neilltuir</value>
+  </data>
+  <data name="AssignedProviderName" xml:space="preserve">
+    <value>Enw'r Darparwr Neilltuol</value>
+  </data>
+  <data name="AssignManager" xml:space="preserve">
+    <value>Rheolwr Neilltuo</value>
+  </data>
+  <data name="AssignToMe" xml:space="preserve">
+    <value>Neilltuo i mi</value>
+  </data>
+  <data name="AssignUserClinic" xml:space="preserve">
+    <value>Asiant a Chlinig</value>
+  </data>
+  <data name="AssignUserRole" xml:space="preserve">
+    <value>Neilltuo Rôl Asiant</value>
+  </data>
+  <data name="AttemptsFail" xml:space="preserve">
+    <value>Ymdrechion diweddar Mae'r methiant mewngofnodi</value>
+  </data>
+  <data name="AttemptsLock" xml:space="preserve">
+    <value>Ymdrechion diweddar Mae'r clo-datglo</value>
+  </data>
+  <data name="AttemptsLogin" xml:space="preserve">
+    <value>Ymdrechion mewngofnodi</value>
+  </data>
+  <data name="AttemptsSucc" xml:space="preserve">
+    <value>Mewngofnodi llwyddiannus diweddar</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>Awst</value>
+  </data>
+  <data name="AuthorInfoQualifier" xml:space="preserve">
+    <value>Autho Gwybodaeth (ISA02)</value>
+  </data>
+  <data name="AuthorizationQualifier" xml:space="preserve">
+    <value>Awdur Info Qualifier (ISA01)</value>
+  </data>
+  <data name="AutoSync" xml:space="preserve">
+    <value>Auto Sync</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>Asiant bilio</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Yn ôl</value>
+  </data>
+  <data name="BackAgent" xml:space="preserve">
+    <value>Back i asiantau</value>
+  </data>
+  <data name="BackClinic" xml:space="preserve">
+    <value>Back i glinigau</value>
+  </data>
+  <data name="BackHome" xml:space="preserve">
+    <value>Back i Dangosfwrdd</value>
+  </data>
+  <data name="BackPat" xml:space="preserve">
+    <value>Back i demograffeg cleifion</value>
+  </data>
+  <data name="BackProv" xml:space="preserve">
+    <value>Back i ddarparwr</value>
+  </data>
+  <data name="BillingInfo" xml:space="preserve">
+    <value>Gwybodaeth Bilio</value>
+  </data>
+  <data name="BillingProviderEntityIdentifierCode" xml:space="preserve">
+    <value>Darparwr bilio Cod Dynodydd Endid</value>
+  </data>
+  <data name="Block" xml:space="preserve">
+    <value>Bloc</value>
+  </data>
+  <data name="Blocked" xml:space="preserve">
+    <value>Wedi'u blocio</value>
+  </data>
+  <data name="BlockTemp" xml:space="preserve">
+    <value>Dros dro Bloc</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Diddymu</value>
+  </data>
+  <data name="Capitated" xml:space="preserve">
+    <value>Capitated</value>
+  </data>
+  <data name="CapsOn" xml:space="preserve">
+    <value>Roedd y Caps Lock ymlaen am y charecter teipio ddiwethaf</value>
+  </data>
+  <data name="Case" xml:space="preserve">
+    <value>Achos</value>
+  </data>
+  <data name="CaseAgent" xml:space="preserve">
+    <value>Asiant achos</value>
+  </data>
+  <data name="CaseComplexity" xml:space="preserve">
+    <value>Cymhlethdod achos</value>
+  </data>
+  <data name="CaseDescription" xml:space="preserve">
+    <value>Disgrifiad achos</value>
+  </data>
+  <data name="CaseNo" xml:space="preserve">
+    <value>Achos #</value>
+  </data>
+  <data name="CaseReClose" xml:space="preserve">
+    <value>Achos Ail-Close</value>
+  </data>
+  <data name="CaseReOpen" xml:space="preserve">
+    <value>Achos Ail-agor</value>
+  </data>
+  <data name="CaseTimeSpent" xml:space="preserve">
+    <value>Amser a Dreuliwyd achos</value>
+  </data>
+  <data name="CatName" xml:space="preserve">
+    <value>Categori Enw</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Newid Cyfrinair</value>
+  </data>
+  <data name="ChangePwdAlert" xml:space="preserve">
+    <value>Diogelwch Alert! Newid cyfrinair i osgoi colli data / darnia</value>
+  </data>
+  <data name="ChangePwdSucc" xml:space="preserve">
+    <value>Yr ydych wedi newid eich cyfrinair yn llwyddiannus. Mewngofnodwch eto i barhau</value>
+  </data>
+  <data name="ChargePerUnit" xml:space="preserve">
+    <value>Tâl Fesul Uned</value>
+  </data>
+  <data name="ChartNo" xml:space="preserve">
+    <value>Siart #</value>
+  </data>
+  <data name="ChkErr" xml:space="preserve">
+    <value>Cod Dylid ei ystyried yn y fformat cywir</value>
+  </data>
+  <data name="Chrome" xml:space="preserve">
+    <value>Google Chrome 28 +</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Claim" xml:space="preserve">
+    <value>Hawlio</value>
+  </data>
+  <data name="ClaimAssigned" xml:space="preserve">
+    <value>Hawliadau Neilltuir</value>
+  </data>
+  <data name="ClaimAssignedNIT" xml:space="preserve">
+    <value>Hawliadau Neilltuir - Heb fod mewn Trac</value>
+  </data>
+  <data name="Claimate" xml:space="preserve">
+    <value>Claimate</value>
+  </data>
+  <data name="ClaimateReports" xml:space="preserve">
+    <value>Adroddiadau Claimate</value>
+  </data>
+  <data name="ClaimCreated" xml:space="preserve">
+    <value>Hawliadau a grëwyd</value>
+  </data>
+  <data name="ClaimDetails" xml:space="preserve">
+    <value>Manylion yr Hawliad</value>
+  </data>
+  <data name="ClaimMedia" xml:space="preserve">
+    <value>Hawlio Cyfryngau</value>
+  </data>
+  <data name="ClaimMediaName" xml:space="preserve">
+    <value>ClaimMedia Enw</value>
+  </data>
+  <data name="ClaimProcess" xml:space="preserve">
+    <value>Proses Hawlio</value>
+  </data>
+  <data name="Claims" xml:space="preserve">
+    <value>Hawliadau</value>
+  </data>
+  <data name="ClaimStatus" xml:space="preserve">
+    <value>Statws Hawlio</value>
+  </data>
+  <data name="ClaimUnassigned" xml:space="preserve">
+    <value>Hawliadau ddadneilltuo</value>
+  </data>
+  <data name="ClaimUnassignedNIT" xml:space="preserve">
+    <value>Hawliadau ddadneilltuo - Ddim mewn Trac</value>
+  </data>
+  <data name="Cliano" xml:space="preserve">
+    <value>Asesu'r Effaith ar Iaith #</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Cliciwch Yma</value>
+  </data>
+  <data name="Clinic" xml:space="preserve">
+    <value>Clinig</value>
+  </data>
+  <data name="ClinicCode" xml:space="preserve">
+    <value>Cod Clinig</value>
+  </data>
+  <data name="ClinicLogo" xml:space="preserve">
+    <value>Clinig Logo</value>
+  </data>
+  <data name="ClinicName" xml:space="preserve">
+    <value>Enw Clinig</value>
+  </data>
+  <data name="ClinicSetup" xml:space="preserve">
+    <value>Clinig Setup</value>
+  </data>
+  <data name="ClinicWise" xml:space="preserve">
+    <value>Clinig Wise</value>
+  </data>
+  <data name="ClinicWiseRpt" xml:space="preserve">
+    <value>Adroddiad Clinig Wise</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Cod</value>
+  </data>
+  <data name="Coding" xml:space="preserve">
+    <value>Codio a bilio</value>
+  </data>
+  <data name="Collapse" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="CollapseAll" xml:space="preserve">
+    <value>Collapse Pob</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Sylwadau</value>
+  </data>
+  <data name="CommunicationNumberQualifier" xml:space="preserve">
+    <value>Rhif Cyfathrebu Cymhwyso</value>
+  </data>
+  <data name="ComparisonReport" xml:space="preserve">
+    <value>Adroddiad Perfformiad</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Cwblhawyd</value>
+  </data>
+  <data name="Complexity" xml:space="preserve">
+    <value>Cymhlethdod</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Configurations" xml:space="preserve">
+    <value>Gyfluniadau</value>
+  </data>
+  <data name="ConfirmNewPass" xml:space="preserve">
+    <value>Cadarnhau Cyfrinair Newydd</value>
+  </data>
+  <data name="ContactDetails" xml:space="preserve">
+    <value>Manylion Cyswllt</value>
+  </data>
+  <data name="ContactPersonDetails" xml:space="preserve">
+    <value>Manylion Cyswllt</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Cysylltwch â Ni</value>
+  </data>
+  <data name="ContWebAdmin" xml:space="preserve">
+    <value>Mae'r clinig wedi mwy nag un rheolwr. Cysylltwch â webadmin ar gyfer Addasiadau pellach</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Gwlad</value>
+  </data>
+  <data name="County" xml:space="preserve">
+    <value>Sir</value>
+  </data>
+  <data name="CPT" xml:space="preserve">
+    <value>Gweithdrefn</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Creu</value>
+  </data>
+  <data name="Create837" xml:space="preserve">
+    <value>Creu 837</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Crëwyd</value>
+  </data>
+  <data name="CreatedClaims" xml:space="preserve">
+    <value>Hawliadau a grëwyd</value>
+  </data>
+  <data name="CreatedFrom" xml:space="preserve">
+    <value>Crëwyd O</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Crëwyd Ar</value>
+  </data>
+  <data name="CreatedTo" xml:space="preserve">
+    <value>Crëwyd I</value>
+  </data>
+  <data name="CreateEDINote" xml:space="preserve">
+    <value> Gyd yn barod i anfon honiadau o clinig hwn yn cael eu rhestru yma.</value>
+  </data>
+  <data name="Credentials" xml:space="preserve">
+    <value>Credential</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Cod Arian cyfred</value>
+  </data>
+  <data name="CurrInvPass" xml:space="preserve">
+    <value>Cyfrinair Entered ar hyn o bryd yn annilys</value>
+  </data>
+  <data name="CurrntPass" xml:space="preserve">
+    <value>Cyfrinair cyfredol</value>
+  </data>
+  <data name="CustomDesc" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dangosfwrdd</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>Dyddiad Ystod</value>
+  </data>
+  <data name="DateTo" xml:space="preserve">
+    <value>Er mwyn</value>
+  </data>
+  <data name="DateWiseReport" xml:space="preserve">
+    <value>Dyddiad yr Adroddiad Wise</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Diwrnodau</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>Rhagfyr</value>
+  </data>
+  <data name="DEFAULT_EMAIL" xml:space="preserve">
+    <value>email@domain.com</value>
+  </data>
+  <data name="DEFAULT_PHONE" xml:space="preserve">
+    <value>(000) 000-0000</value>
+  </data>
+  <data name="DEFAULT_SSN" xml:space="preserve">
+    <value>000-00-0000</value>
+  </data>
+  <data name="DEFAULT_WEB" xml:space="preserve">
+    <value>http://www.domain.com</value>
+  </data>
+  <data name="DEFAULT_ZIP" xml:space="preserve">
+    <value>00000-0000</value>
+  </data>
+  <data name="DepromotetoBA" xml:space="preserve">
+    <value>Depromote i Asiant bilio</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Disgrifiad</value>
+  </data>
+  <data name="DescriptionCode" xml:space="preserve">
+    <value>Disgrifiad / Cod</value>
+  </data>
+  <data name="DescType" xml:space="preserve">
+    <value>Disgrifiad Math</value>
+  </data>
+  <data name="DetailedView" xml:space="preserve">
+    <value>Gweld Manylion</value>
+  </data>
+  <data name="dg" xml:space="preserve">
+    <value>Dg</value>
+  </data>
+  <data name="Diagnosis" xml:space="preserve">
+    <value>Diagnosis</value>
+  </data>
+  <data name="Dischargedon" xml:space="preserve">
+    <value>Rhyddhau ar</value>
+  </data>
+  <data name="DischDatelessCurntDate" xml:space="preserve">
+    <value>Os dyddiad rhyddhau fod yn llai na dyddiad cyfredol</value>
+  </data>
+  <data name="DOB" xml:space="preserve">
+    <value>Dyddiad Geni</value>
+  </data>
+  <data name="DocCategory" xml:space="preserve">
+    <value>Categori Document</value>
+  </data>
+  <data name="DocNote" xml:space="preserve">
+    <value>Doctor Nodyn</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Wedi'i wneud</value>
+  </data>
+  <data name="DontUseID" xml:space="preserve">
+    <value>Peidiwch â defnyddio'r id</value>
+  </data>
+  <data name="DontUseName" xml:space="preserve">
+    <value>Peidiwch â defnyddio'r enw</value>
+  </data>
+  <data name="DOS" xml:space="preserve">
+    <value>DOS</value>
+  </data>
+  <data name="DOSAsOn" xml:space="preserve">
+    <value>DOS fel ar:</value>
+  </data>
+  <data name="DOSFrom" xml:space="preserve">
+    <value>O DOS</value>
+  </data>
+  <data name="DOSTo" xml:space="preserve">
+    <value>DAU I</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Lawrlwytho</value>
+  </data>
+  <data name="DupErr" xml:space="preserve">
+    <value>Data Same eisoes yn bodoli. Nodwch data arall.</value>
+  </data>
+  <data name="DX" xml:space="preserve">
+    <value>Dx</value>
+  </data>
+  <data name="DxCPT" xml:space="preserve">
+    <value>Dx / CPT</value>
+  </data>
+  <data name="DxPri" xml:space="preserve">
+    <value>Dx Cynradd</value>
+  </data>
+  <data name="EA" xml:space="preserve">
+    <value>EDI Asiant</value>
+  </data>
+  <data name="EDI" xml:space="preserve">
+    <value>EDI</value>
+  </data>
+  <data name="EDICode" xml:space="preserve">
+    <value>Cod EDI</value>
+  </data>
+  <data name="EDIFiles" xml:space="preserve">
+    <value>Ffeiliau EDI</value>
+  </data>
+  <data name="EDIHistory" xml:space="preserve">
+    <value>Crëwyd EDIS</value>
+  </data>
+  <data name="EDIHistoryFieldVisits" xml:space="preserve">
+    <value>Crëwyd EDIS-Ffeiliwyd Ymweliadau</value>
+  </data>
+  <data name="EDIReceiver" xml:space="preserve">
+    <value>Derbynnydd EDI</value>
+  </data>
+  <data name="EDIReciever" xml:space="preserve">
+    <value>Derbynnydd EDI</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Golygu</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-bost</value>
+  </data>
+  <data name="EmailCommunicationNumberQualifier" xml:space="preserve">
+    <value>E-bost Rhif Cyfathrebu Cymhwyso</value>
+  </data>
+  <data name="EmailError" xml:space="preserve">
+    <value>Mae'n ddrwg gennym! E-bost ag anfon oherwydd i [X] Os gwelwch yn dda ceisiwch eto</value>
+  </data>
+  <data name="EnlargeClick" xml:space="preserve">
+    <value>Cliciwch yma i wneud yn fwy</value>
+  </data>
+  <data name="EntityIdentifierCode" xml:space="preserve">
+    <value>Cod Dynodydd Endid</value>
+  </data>
+  <data name="EntityType" xml:space="preserve">
+    <value>Math o endid</value>
+  </data>
+  <data name="EntityTypeQualifier" xml:space="preserve">
+    <value>Math o endid Qualifier</value>
+  </data>
+  <data name="EOB_ERA_835" xml:space="preserve">
+    <value>EOB / ERA 835</value>
+  </data>
+  <data name="ErrHistory" xml:space="preserve">
+    <value>Mae'r cyfrinair wedi cael ei ddefnyddio ddiwethaf [X] amseroedd</value>
+  </data>
+  <data name="ErrInvalidCase" xml:space="preserve">
+    <value>Nodau annilys</value>
+  </data>
+  <data name="ErrNumberCase" xml:space="preserve">
+    <value>Os Rhif cyfrif fod yn [X] gymeriad (au)</value>
+  </data>
+  <data name="ErrSplChar" xml:space="preserve">
+    <value>Pe cyfrif gymeriad arbennig fod [X] gymeriad (au)</value>
+  </data>
+  <data name="ErrUpperCase" xml:space="preserve">
+    <value>Os priflythyren cyfrif fod yn [X] gymeriad (au)</value>
+  </data>
+  <data name="ExcelImpExp" xml:space="preserve">
+    <value>Excel Mewnforio / Allforio</value>
+  </data>
+  <data name="Expand" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="ExpandAll" xml:space="preserve">
+    <value>Ehangu pob</value>
+  </data>
+  <data name="ExpDayMaxCount" xml:space="preserve">
+    <value>Uchafswm Diwrnod Dod i Ben Cyfrif</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Allforio</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>Allforio I Excel</value>
+  </data>
+  <data name="ExportToPDF" xml:space="preserve">
+    <value>Allforio i PDF</value>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>Estyniad</value>
+  </data>
+  <data name="FacilityDone" xml:space="preserve">
+    <value>Cyfleuster Done</value>
+  </data>
+  <data name="FacilityType" xml:space="preserve">
+    <value>Math o gyfleuster</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>Cwestiynau Cyffredin</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Ffacs</value>
+  </data>
+  <data name="FaxCommunicationNumberQualifier" xml:space="preserve">
+    <value>Ffacs Rhif Cyfathrebu Cymhwyso</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>Chwefror</value>
+  </data>
+  <data name="FeMale" xml:space="preserve">
+    <value>Benyw</value>
+  </data>
+  <data name="FiledVisits" xml:space="preserve">
+    <value>Ymweliadau Ffeiliwyd</value>
+  </data>
+  <data name="Fileno" xml:space="preserve">
+    <value>Ffeil #</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Enw Cyntaf</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot Password</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>O Dyddiad</value>
+  </data>
+  <data name="FullReport" xml:space="preserve">
+    <value>Adroddiad Llawn</value>
+  </data>
+  <data name="FunctionalIdentifierCode" xml:space="preserve">
+    <value>Cod Dynodwr swyddogaethol</value>
+  </data>
+  <data name="GenConfig" xml:space="preserve">
+    <value>Ffurfweddu Cyffredinol</value>
+  </data>
+  <data name="GenConfigNoteForDate" xml:space="preserve">
+    <value>O'r dyddiad yn cael eu heithrio wrth gyfrif y dyddiau rhybudd</value>
+  </data>
+  <data name="GenConfigNoteForHosp" xml:space="preserve">
+    <value>Ar gyfer yr achosion ysbyty dydd rhyddhau i'w Hystyried bron fel dyddiad y gwasanaeth ar gyfer dim ond effro</value>
+  </data>
+  <data name="GenConfigNoteForVal" xml:space="preserve">
+    <value>Gwerth 0 yn golygu dim terfyn / heb ddod i ben</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>Ewch</value>
+  </data>
+  <data name="GroupNumber" xml:space="preserve">
+    <value>Grŵp #</value>
+  </data>
+  <data name="GroupPractice" xml:space="preserve">
+    <value>Ymarfer Grŵp</value>
+  </data>
+  <data name="HasSignedFile" xml:space="preserve">
+    <value>Wedi'ch Llofnod File</value>
+  </data>
+  <data name="HCPCS" xml:space="preserve">
+    <value>HCPCS Cod</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Prime Claimate</value>
+  </data>
+  <data name="Hedis" xml:space="preserve">
+    <value>HEDIS</value>
+  </data>
+  <data name="HistoryReuseStatus" xml:space="preserve">
+    <value>Hanes Ailddefnyddio Statws</value>
+  </data>
+  <data name="Hold" xml:space="preserve">
+    <value>Cynnal</value>
+  </data>
+  <data name="Hospitalization" xml:space="preserve">
+    <value>Ysbyty</value>
+  </data>
+  <data name="Hospitalized" xml:space="preserve">
+    <value>Ysbyty</value>
+  </data>
+  <data name="HospitalName" xml:space="preserve">
+    <value>Enw Ysbyty</value>
+  </data>
+  <data name="ICDFormat" xml:space="preserve">
+    <value>ICD Fformat</value>
+  </data>
+  <data name="IE" xml:space="preserve">
+    <value>IE 10 +</value>
+  </data>
+  <data name="IllnessIndi" xml:space="preserve">
+    <value>Dangosydd Salwch</value>
+  </data>
+  <data name="IllnessIndicator" xml:space="preserve">
+    <value>Dangosydd Salwch</value>
+  </data>
+  <data name="IllnessIndicatordate" xml:space="preserve">
+    <value>Dangosydd Salwch Dyddiad</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Fewnforir</value>
+  </data>
+  <data name="ImportedOn" xml:space="preserve">
+    <value>Ar Fewnforir</value>
+  </data>
+  <data name="ImportReports" xml:space="preserve">
+    <value>Adroddiadau mewnforio</value>
+  </data>
+  <data name="InPatientRelated" xml:space="preserve">
+    <value>Related In-Cleifion</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>Ar y Gweill</value>
+  </data>
+  <data name="Insurance" xml:space="preserve">
+    <value>Yswiriant</value>
+  </data>
+  <data name="InsuranceBenefitsAccepted" xml:space="preserve">
+    <value>Derbyniwyd Yswiriant Budd-daliadau</value>
+  </data>
+  <data name="InsuranceEffectiveFrom" xml:space="preserve">
+    <value>Yswiriant Effeithiol O</value>
+  </data>
+  <data name="InsuranceEffectiveTo" xml:space="preserve">
+    <value>I Yswiriant Effeithiol</value>
+  </data>
+  <data name="InsuranceEntityTypeQualifier" xml:space="preserve">
+    <value>Yswiriant Endid Math Qualifier</value>
+  </data>
+  <data name="InsuranceName" xml:space="preserve">
+    <value>Enw Yswiriant</value>
+  </data>
+  <data name="InsuranceType" xml:space="preserve">
+    <value>Math o Yswiriant</value>
+  </data>
+  <data name="InterchangeIdQualifier" xml:space="preserve">
+    <value>Cyfnewidfa ID Qualifier</value>
+  </data>
+  <data name="InvalidLogIn" xml:space="preserve">
+    <value>Annilys Mewngofnodi</value>
+  </data>
+  <data name="IPA" xml:space="preserve">
+    <value>Bilio / IPA</value>
+  </data>
+  <data name="ISA01" xml:space="preserve">
+    <value>ISA01</value>
+  </data>
+  <data name="ISA02" xml:space="preserve">
+    <value>Awdur Info Qualifier (ISA02)</value>
+  </data>
+  <data name="ISA03" xml:space="preserve">
+    <value>Diogelwch Gwybodaeth Qualifier (ISA03)</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Ionawr</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>Gorffennaf</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>Mehefin</value>
+  </data>
+  <data name="LastInterchangecntrlno" xml:space="preserve">
+    <value>Rheoli Cyfnewidfa Olaf #</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Cyfenw</value>
+  </data>
+  <data name="LastSyncOn" xml:space="preserve">
+    <value>Cydamseru diwethaf ar [X] erbyn [Y]</value>
+  </data>
+  <data name="LeadingAgents" xml:space="preserve">
+    <value>Asiantau Arwain</value>
+  </data>
+  <data name="LicenseNo" xml:space="preserve">
+    <value>Trwydded #</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>Cloi</value>
+  </data>
+  <data name="LockOn" xml:space="preserve">
+    <value>Locked Ar</value>
+  </data>
+  <data name="LoggedInAs" xml:space="preserve">
+    <value>Logio i mewn fel</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Mewngofnodi</value>
+  </data>
+  <data name="Login_On" xml:space="preserve">
+    <value>Logio i mewn ar</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Allgofnodi</value>
+  </data>
+  <data name="Logout_On" xml:space="preserve">
+    <value>Logio allan ar</value>
+  </data>
+  <data name="LongDesc" xml:space="preserve">
+    <value>Hir</value>
+  </data>
+  <data name="MachIP" xml:space="preserve">
+    <value>Cyfeiriad IP</value>
+  </data>
+  <data name="MachName" xml:space="preserve">
+    <value>Peiriant Enw</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Gwryw</value>
+  </data>
+  <data name="ManageClinic" xml:space="preserve">
+    <value>Rheoli Clinig</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>Rheolwr</value>
+  </data>
+  <data name="ManagerName" xml:space="preserve">
+    <value>Enw'r Rheolwr</value>
+  </data>
+  <data name="ManagersNoClinic" xml:space="preserve">
+    <value>Heb Rheolwyr Clinig</value>
+  </data>
+  <data name="Managing" xml:space="preserve">
+    <value>Rheoli</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>Mawrth</value>
+  </data>
+  <data name="MaxAge" xml:space="preserve">
+    <value>Uchafswm Oedran Cyfrinair (diwrnodau)</value>
+  </data>
+  <data name="MaxDaysBAComplete" xml:space="preserve">
+    <value>Uchafswm ddyddiau i gwblhau gwaith BA o DOS</value>
+  </data>
+  <data name="MaxDaysClaimDone" xml:space="preserve">
+    <value>Diwrnod mwyaf i gwblhau'r broses hawlio o DOS</value>
+  </data>
+  <data name="MaxDaysEDIFileSent" xml:space="preserve">
+    <value>Uchafswm diwrnod i ffeil EDI Anfonir y rhain gan DOS</value>
+  </data>
+  <data name="MaxDaysQAComplete" xml:space="preserve">
+    <value>Diwrnod mwyaf posibl i gwblhau gwaith Sicrwydd Ansawdd o DOS</value>
+  </data>
+  <data name="MaxLen" xml:space="preserve">
+    <value>Uchafswm Hyd</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>Uchafswm hyd Dylai fod [X] cymeriadau</value>
+  </data>
+  <data name="MaxPageSize" xml:space="preserve">
+    <value>Uchafswm terfyn maint y dudalen rhagori Ddyrannwyd</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>Mai</value>
+  </data>
+  <data name="MedicalDocuments" xml:space="preserve">
+    <value>Dogfennau meddygol</value>
+  </data>
+  <data name="MedicareID" xml:space="preserve">
+    <value>Medicare ID</value>
+  </data>
+  <data name="MediumDesc" xml:space="preserve">
+    <value>Canolig</value>
+  </data>
+  <data name="MiddleName" xml:space="preserve">
+    <value>Enw canol</value>
+  </data>
+  <data name="MinLen" xml:space="preserve">
+    <value>Isafswm Hyd</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>Dylai fod yn Isafswm hyd [X] cymeriadau</value>
+  </data>
+  <data name="Modifier" xml:space="preserve">
+    <value>Addasydd</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Addasu</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Misol</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Mwy</value>
+  </data>
+  <data name="MoreManager" xml:space="preserve">
+    <value>Mae'r clinig wedi mwy nag un rheolwr. Mae'r rheolwyr yn:</value>
+  </data>
+  <data name="Mozilla" xml:space="preserve">
+    <value>Mozilla Firefox 23 +</value>
+  </data>
+  <data name="MRA" xml:space="preserve">
+    <value>MRA</value>
+  </data>
+  <data name="MRARpt" xml:space="preserve">
+    <value>Adroddwyd Statws MRA</value>
+  </data>
+  <data name="MulitpleForms" xml:space="preserve">
+    <value>Ffurflenni Lluosog</value>
+  </data>
+  <data name="MVC" xml:space="preserve">
+    <value>Rheolwyr MVC</value>
+  </data>
+  <data name="MyAgent" xml:space="preserve">
+    <value>Fy Asiant</value>
+  </data>
+  <data name="MyClinic" xml:space="preserve">
+    <value>Fy Clinig</value>
+  </data>
+  <data name="MyPatient" xml:space="preserve">
+    <value>Fy Cleifion</value>
+  </data>
+  <data name="MyProvider" xml:space="preserve">
+    <value>Fy Darparwr</value>
+  </data>
+  <data name="MyRole" xml:space="preserve">
+    <value>Fy Rôl</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Enw</value>
+  </data>
+  <data name="NameChart" xml:space="preserve">
+    <value>Enw / Siart #</value>
+  </data>
+  <data name="NameChartCase" xml:space="preserve">
+    <value>Enw / Siart # / Achosion #</value>
+  </data>
+  <data name="NameCode" xml:space="preserve">
+    <value>Enw / Cod</value>
+  </data>
+  <data name="NameEmail" xml:space="preserve">
+    <value>Enw / E-bost</value>
+  </data>
+  <data name="NameZipCode" xml:space="preserve">
+    <value>Enw / Cod Zip</value>
+  </data>
+  <data name="Navigation" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Newydd</value>
+  </data>
+  <data name="Newpwd" xml:space="preserve">
+    <value>Cyfrinair Newydd</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Nesaf</value>
+  </data>
+  <data name="NIT" xml:space="preserve">
+    <value>Heb fod mewn Track</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>Ddim yn</value>
+  </data>
+  <data name="NoAgentSession" xml:space="preserve">
+    <value>Dim asiant set sesiwn</value>
+  </data>
+  <data name="NoClinic" xml:space="preserve">
+    <value>Nid oes gennych unrhyw sesiynau clinig gweithredol</value>
+  </data>
+  <data name="NoClinicErr" xml:space="preserve">
+    <value>Heb ei Neilltuo i'r clinig defnyddwyr hwn. Cysylltwch â gweinyddwr</value>
+  </data>
+  <data name="NoDoc" xml:space="preserve">
+    <value>Os gwelwch yn dda lwytho dogfen</value>
+  </data>
+  <data name="NoFormAriva" xml:space="preserve">
+    <value>Tag ffurflen anawdurdodedig</value>
+  </data>
+  <data name="NoPatient" xml:space="preserve">
+    <value>Dont gennych unrhyw sesiynau cleifion gweithredol</value>
+  </data>
+  <data name="NoProviderSession" xml:space="preserve">
+    <value>Dim darparwr set sesiwn</value>
+  </data>
+  <data name="NoRec" xml:space="preserve">
+    <value>Dim Cofnodion i Arddangos</value>
+  </data>
+  <data name="NoRole" xml:space="preserve">
+    <value>Dont gennych unrhyw sesiynau rôl weithredol</value>
+  </data>
+  <data name="NoSession" xml:space="preserve">
+    <value>Dont gennych unrhyw sesiynau gweithredol</value>
+  </data>
+  <data name="NoSessionUnExp" xml:space="preserve">
+    <value>Yr ydych yn ceisio cael mynediad i rai sesiynau annisgwyl</value>
+  </data>
+  <data name="NotDischargeError" xml:space="preserve">
+    <value>Ni allwch greu ymweliad ar gyfer y claf hwn. Nid yw'r claf yn cael ei ryddhau eto.</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Nodyn</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Nodiadau</value>
+  </data>
+  <data name="NoteUser" xml:space="preserve">
+    <value>Cadwch y cynnwys haddasu cyn newid i wyddor arall fydd data addaswyd arall yn cael ei golli</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Hysbysu</value>
+  </data>
+  <data name="NotInTrack" xml:space="preserve">
+    <value>Heb fod mewn Track</value>
+  </data>
+  <data name="NoTrialBal" xml:space="preserve">
+    <value>Mae eich cyfrinair wedi dod i ben o ganlyniad i dreialon annilys. Defnyddiwch ddolen anghofio cyfrinair i gael cyfrinair newydd</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>Tachwedd</value>
+  </data>
+  <data name="NPI" xml:space="preserve">
+    <value>PIN</value>
+  </data>
+  <data name="NumCount" xml:space="preserve">
+    <value>Rhifau Isafswm Cyfrif</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>Hydref</value>
+  </data>
+  <data name="OfficeAddress" xml:space="preserve">
+    <value>Cyfeiriad y Swyddfa</value>
+  </data>
+  <data name="Opera" xml:space="preserve">
+    <value>Opera 12 +</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Arall</value>
+  </data>
+  <data name="OtherVisits" xml:space="preserve">
+    <value>Ymweliadau eraill</value>
+  </data>
+  <data name="PageLockTime" xml:space="preserve">
+    <value>Page clo auto amser segur (Mewn munud)</value>
+  </data>
+  <data name="PageNoAccess" xml:space="preserve">
+    <value>Nid oes gennych ganiatâd i gael mynediad i'r dudalen rydych</value>
+  </data>
+  <data name="PassComplexityWarning" xml:space="preserve">
+    <value>Os Cyfrinair Cynnwys atleast &lt;b&gt; [X] &lt;/ b&gt; priflythyren (au), &lt;b&gt; [Y] &lt;/ b&gt; rhif (au), &lt;b&gt; [Z] &lt;/ b&gt; gymeriad arbennig (au) a Dylai fod Rhwng &lt;b&gt; hyd [C] &lt;/ b&gt; a &lt;b&gt; [V] &lt;/ b&gt;.</value>
+  </data>
+  <data name="PassMatch" xml:space="preserve">
+    <value>Os Cyfrineiriau yn cyd-fynd</value>
+  </data>
+  <data name="PassMaxCount" xml:space="preserve">
+    <value>Cyfrinair Llwybr Uchafswm Cyfrif</value>
+  </data>
+  <data name="PassNoMatch" xml:space="preserve">
+    <value>Ni ddylai cyfrineiriau yn cyd-fynd</value>
+  </data>
+  <data name="PassReuse" xml:space="preserve">
+    <value>Cyfrinair Ail-Defnyddio statws Hanes</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Cyfrinair</value>
+  </data>
+  <data name="Patalrexists" xml:space="preserve">
+    <value>Claf eisoes yn bodoli yn yr ysbyty ar gyfer yr un dyddiad derbyn.</value>
+  </data>
+  <data name="PatDocuments" xml:space="preserve">
+    <value>Dogfennau Claf</value>
+  </data>
+  <data name="Patient" xml:space="preserve">
+    <value>Cleifion</value>
+  </data>
+  <data name="PatientDash" xml:space="preserve">
+    <value>Dashboard Cleifion</value>
+  </data>
+  <data name="PatientDemography" xml:space="preserve">
+    <value>Demograffeg Cleifion</value>
+  </data>
+  <data name="PatientDemographyEdit" xml:space="preserve">
+    <value>Golygu Demograffeg Cleifion</value>
+  </data>
+  <data name="PatientDemoPull" xml:space="preserve">
+    <value>Demograffeg Cleifion Tynnwch</value>
+  </data>
+  <data name="PatientDocument" xml:space="preserve">
+    <value>Dogfen Cleifion</value>
+  </data>
+  <data name="PatientEntityTypeQualifier" xml:space="preserve">
+    <value>Endid Math Qualifier Cleifion</value>
+  </data>
+  <data name="PatientHosp" xml:space="preserve">
+    <value>Ysbyty cleifion</value>
+  </data>
+  <data name="PatientMenu" xml:space="preserve">
+    <value>Dewislen Cleifion</value>
+  </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>Enw Cleifion</value>
+  </data>
+  <data name="PatientVisit" xml:space="preserve">
+    <value>Ymweliad Cleifion</value>
+  </data>
+  <data name="PatientWiseReport" xml:space="preserve">
+    <value>Adroddiad Cleifion Wise</value>
+  </data>
+  <data name="PatVisitComplexity" xml:space="preserve">
+    <value>Ewch i Cymhlethdod Cleifion</value>
+  </data>
+  <data name="PatVisitDocMand" xml:space="preserve">
+    <value>Gorfodol Ymweliad Cleifion Document</value>
+  </data>
+  <data name="PayerEntityIdentifierCode" xml:space="preserve">
+    <value>Talwr Cod Dynodydd Endid</value>
+  </data>
+  <data name="PayerID" xml:space="preserve">
+    <value>Talwr ID</value>
+  </data>
+  <data name="PayerResponsibilitySequenceNumberCode" xml:space="preserve">
+    <value>Talwr Cyfrifoldeb Sequence Cod Rhif</value>
+  </data>
+  <data name="PhoneCommunicationNumberQualifier" xml:space="preserve">
+    <value>Ffôn Rhif Cyfathrebu Cymhwyso</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Ffôn #</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="PolicyHolderChartNo" xml:space="preserve">
+    <value>Siart Holder Polisi #</value>
+  </data>
+  <data name="PolicyHolderRelationship" xml:space="preserve">
+    <value>Deiliad Polisi Perthynas</value>
+  </data>
+  <data name="PolicyNumber" xml:space="preserve">
+    <value>Polisi #</value>
+  </data>
+  <data name="Practice" xml:space="preserve">
+    <value>Ymarfer / Clinig</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Blaenorol</value>
+  </data>
+  <data name="PrimaryDx" xml:space="preserve">
+    <value>Dx Cynradd</value>
+  </data>
+  <data name="PrimaryOption" xml:space="preserve">
+    <value>Cynradd Opsiwn bilio</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Argraffu</value>
+  </data>
+  <data name="PrintClick" xml:space="preserve">
+    <value>Cliciwch yma i argraffu'r</value>
+  </data>
+  <data name="PrintPin" xml:space="preserve">
+    <value>Argraffu Pin</value>
+  </data>
+  <data name="PrintPinonFile" xml:space="preserve">
+    <value>PrintPin ar File</value>
+  </data>
+  <data name="PrintSign" xml:space="preserve">
+    <value>Argraffu Cofrestrwch</value>
+  </data>
+  <data name="PrintSignonFileInsured" xml:space="preserve">
+    <value>Cofrestrwch ar Print Ffeil - Yswiriedig</value>
+  </data>
+  <data name="PrintSignonFilePatient" xml:space="preserve">
+    <value>Cofrestrwch ar Print Ffeil - Cleifion</value>
+  </data>
+  <data name="PrintSignonFilePhysicianorProvider" xml:space="preserve">
+    <value>Cofrestrwch ar Print Ffeil - Meddyg / Darparwr</value>
+  </data>
+  <data name="Procedure" xml:space="preserve">
+    <value>Gweithdrefn</value>
+  </data>
+  <data name="ProcedureList" xml:space="preserve">
+    <value>Rhestr Gweithdrefn</value>
+  </data>
+  <data name="ProcedureModifier" xml:space="preserve">
+    <value>Addasydd Gweithdrefn</value>
+  </data>
+  <data name="ProcedurePOS" xml:space="preserve">
+    <value>Gweithdrefn - Place Of Gwasanaeth</value>
+  </data>
+  <data name="PROCEDURE_DETAIL" xml:space="preserve">
+    <value>Gweithdrefn Rhestr Manylion</value>
+  </data>
+  <data name="PromotetoManager" xml:space="preserve">
+    <value>Hyrwyddo at y Rheolwr</value>
+  </data>
+  <data name="Provider" xml:space="preserve">
+    <value>Darparwr</value>
+  </data>
+  <data name="ProviderEntityTypeQualifier" xml:space="preserve">
+    <value>Darparwr Endid Math Qualifier</value>
+  </data>
+  <data name="ProviderWiseReport" xml:space="preserve">
+    <value>Adroddiad Darparwr Wise</value>
+  </data>
+  <data name="PwdComplexity" xml:space="preserve">
+    <value>Cymhlethdod cyfrinair</value>
+  </data>
+  <data name="QA" xml:space="preserve">
+    <value>Dadansoddi Ansawdd Asiant</value>
+  </data>
+  <data name="Rank" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+  <data name="ReadyToSend" xml:space="preserve">
+    <value>Ready I Anfon</value>
+  </data>
+  <data name="Reassign" xml:space="preserve">
+    <value>Ail-neilltuo</value>
+  </data>
+  <data name="ReceiverEntityIdentifierCode" xml:space="preserve">
+    <value>Derbynnydd Cod Dynodydd Endid</value>
+  </data>
+  <data name="ReceiverID" xml:space="preserve">
+    <value>Derbynnydd ID</value>
+  </data>
+  <data name="ReceiverInterchangeID" xml:space="preserve">
+    <value>Cyfnewidfa Derbynnydd ID</value>
+  </data>
+  <data name="ReceiverInterchangeQualifier" xml:space="preserve">
+    <value>Cyfnewidfa Derbynnydd Qualifier</value>
+  </data>
+  <data name="RecentLogin" xml:space="preserve">
+    <value>Mewngofnodi diweddar Llwyddiannus</value>
+  </data>
+  <data name="RecsFound" xml:space="preserve">
+    <value>Cofnodion Wedi dod o hyd: [X]</value>
+  </data>
+  <data name="ReferringProvider" xml:space="preserve">
+    <value>Rendro / cyfeirio Darparwr</value>
+  </data>
+  <data name="RefFile" xml:space="preserve">
+    <value>Cyf Ffeil</value>
+  </data>
+  <data name="regEmail" xml:space="preserve">
+    <value>Rhowch gyfeiriad e-bost cofrestredig yn cael cyfrinair</value>
+  </data>
+  <data name="RegisteredEmail" xml:space="preserve">
+    <value>E-bost Cofrestredig</value>
+  </data>
+  <data name="ReImport" xml:space="preserve">
+    <value>Ail-Mewnforio</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>Gwrthodwyd</value>
+  </data>
+  <data name="Relationship" xml:space="preserve">
+    <value>Perthynas</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Adroddiadau</value>
+  </data>
+  <data name="Respond" xml:space="preserve">
+    <value>EOB / ERA 835</value>
+  </data>
+  <data name="Respond4010" xml:space="preserve">
+    <value>Ymateb - 4010 ANSI Fformat</value>
+  </data>
+  <data name="Respond5010" xml:space="preserve">
+    <value>Ymateb - 5010 ANSI Fformat</value>
+  </data>
+  <data name="RespondPaper" xml:space="preserve">
+    <value>Ymateb - Fformat Papur</value>
+  </data>
+  <data name="ReSubmitted" xml:space="preserve">
+    <value>Ail-Cyflwynwyd</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rôl</value>
+  </data>
+  <data name="Safari" xml:space="preserve">
+    <value>Safari 5 +</value>
+  </data>
+  <data name="SamePwdAsCurrnt" xml:space="preserve">
+    <value>Os na fydd y cyfrinair newydd yn un peth â chyfrinair presennol.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Achub</value>
+  </data>
+  <data name="SaveContinue" xml:space="preserve">
+    <value>Cadw a Parhau</value>
+  </data>
+  <data name="SaveError" xml:space="preserve">
+    <value>Mae'n ddrwg gennym! [X]. Os gwelwch yn dda ceisiwch eto</value>
+  </data>
+  <data name="SaveErrorAsgnToMe" xml:space="preserve">
+    <value>Hawlio a neilltuwyd eisoes i eraill</value>
+  </data>
+  <data name="SaveErrorNoDxProc" xml:space="preserve">
+    <value>Os gwelwch yn dda ychwanegu weithdrefn ar gyfer Dx Cynradd</value>
+  </data>
+  <data name="SaveErrorNoVisitDoc" xml:space="preserve">
+    <value>Os gwelwch yn dda ewch i lwytho dogfen</value>
+  </data>
+  <data name="SaveErrorSucc" xml:space="preserve">
+    <value>Wps! Colli datblygwr meddalwedd bloc hwn Gofynnwch iddynt wneud</value>
+  </data>
+  <data name="SaveSucc" xml:space="preserve">
+    <value>Cofnod (ion) a gynilwyd yn llwyddiannus</value>
+  </data>
+  <data name="SaveSuccChangePwd" xml:space="preserve">
+    <value>Yr ydych wedi newid eich cyfrinair yn llwyddiannus Mewngofnodwch eto i barhau</value>
+  </data>
+  <data name="SaveSuccForgotPwd" xml:space="preserve">
+    <value>Mewngofnodi Credential wedi cael ei anfon at eich post os gwelwch yn dda edrych ar eich post i gael manylion</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Chwilio</value>
+  </data>
+  <data name="SearchCity" xml:space="preserve">
+    <value>City / Zip cod</value>
+  </data>
+  <data name="SearchCounty" xml:space="preserve">
+    <value>Sir / Cod</value>
+  </data>
+  <data name="SearchRecordPerPage" xml:space="preserve">
+    <value>Canlyniadau Chwilio Fesul Tudalen</value>
+  </data>
+  <data name="SearchState" xml:space="preserve">
+    <value>Chwilio Wladwriaeth Enw / Cod</value>
+  </data>
+  <data name="SearchVisit" xml:space="preserve">
+    <value>Chwilio yn ôl Siart # neu Enw</value>
+  </data>
+  <data name="SecondaryEmail" xml:space="preserve">
+    <value>E-bost Uwchradd</value>
+  </data>
+  <data name="SecondaryPhoneNumber" xml:space="preserve">
+    <value>Ffôn uwchradd #</value>
+  </data>
+  <data name="SecurityInfoQualifier" xml:space="preserve">
+    <value>Diogelwch Gwybodaeth (ISA04)</value>
+  </data>
+  <data name="SecurityInfoQualifierPwd" xml:space="preserve">
+    <value>Cyfrinair Diogelwch Qualifier Gwybodaeth</value>
+  </data>
+  <data name="SecurityInfoQualifierUname" xml:space="preserve">
+    <value>Diogelwch Gwybodaeth Qualifier Enw Defnyddiwr</value>
+  </data>
+  <data name="SecurityQualifier" xml:space="preserve">
+    <value>Diogelwch Gwybodaeth Qualifier</value>
+  </data>
+  <data name="SelDxList" xml:space="preserve">
+    <value>Rhestr Dethol Dx</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Dewiswch yr holl</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Dewis Ffeil</value>
+  </data>
+  <data name="SelectLogo" xml:space="preserve">
+    <value>Dewiswch Logo</value>
+  </data>
+  <data name="SenderInterchangeID" xml:space="preserve">
+    <value>Cyfnewidfa Anfonwr ID</value>
+  </data>
+  <data name="SenderInterchangeQualifier" xml:space="preserve">
+    <value>Cyfnewidfa Anfonwr Qualifier</value>
+  </data>
+  <data name="Sent" xml:space="preserve">
+    <value>Anfonwyd</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>Medi</value>
+  </data>
+  <data name="ServiceDate" xml:space="preserve">
+    <value>Gwasanaeth Dyddiad</value>
+  </data>
+  <data name="SessionExpDueToImproperCache" xml:space="preserve">
+    <value>Sesiwn wedi bod yn dod i ben o ganlyniad i cache amhriodol</value>
+  </data>
+  <data name="SessionTimeout" xml:space="preserve">
+    <value>Helo, [X]! Datglo y sgrin mewn '[Y]' i gadw'n brysur</value>
+  </data>
+  <data name="SessionTimeoutMin" xml:space="preserve">
+    <value>Goramser Sesiwn (Mewn munud)
+Nodyn: Dylai fod o leiaf 3 gwaith y auto dudalen cloi amser segur</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>Rhyw</value>
+  </data>
+  <data name="ShortDesc" xml:space="preserve">
+    <value>Byr</value>
+  </data>
+  <data name="ShowMore" xml:space="preserve">
+    <value>Dangos mwy o</value>
+  </data>
+  <data name="SignedDate" xml:space="preserve">
+    <value>Llofnod Dyddiad</value>
+  </data>
+  <data name="SN" xml:space="preserve">
+    <value>Sl #</value>
+  </data>
+  <data name="SpecialCount" xml:space="preserve">
+    <value>Cyfrif Cymeriadau Arbennig Isafswm</value>
+  </data>
+  <data name="Specialty" xml:space="preserve">
+    <value>Arbenigol</value>
+  </data>
+  <data name="SpecialtyName" xml:space="preserve">
+    <value>Enw Arbenigol</value>
+  </data>
+  <data name="SplChars" xml:space="preserve">
+    <value>Nodau arbennig a ganiateir:</value>
+  </data>
+  <data name="SSN" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Y Wladwriaeth</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Stryd 1</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Pwnc</value>
+  </data>
+  <data name="SubmitterEntityIdentifierCode" xml:space="preserve">
+    <value>Cyflwynydd Cod Dynodydd Endid</value>
+  </data>
+  <data name="SubscriberEntityIdentifierCode" xml:space="preserve">
+    <value>Subscriber Cod Dynodydd Endid</value>
+  </data>
+  <data name="SuiteNo" xml:space="preserve">
+    <value>Street 2</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Crynodeb</value>
+  </data>
+  <data name="SummaryReport" xml:space="preserve">
+    <value>Adroddiad Cryno</value>
+  </data>
+  <data name="SummarySplitUp" xml:space="preserve">
+    <value>Crynodeb Hollti Up</value>
+  </data>
+  <data name="SuperBill" xml:space="preserve">
+    <value>Bill Super</value>
+  </data>
+  <data name="SupportedBrowsers" xml:space="preserve">
+    <value>Porwyr â Chymorth</value>
+  </data>
+  <data name="Sync" xml:space="preserve">
+    <value>Sync</value>
+  </data>
+  <data name="SyncRefresh" xml:space="preserve">
+    <value>Ail-lwytho / Adnewyddu y dudalen i gael y statws diweddaraf</value>
+  </data>
+  <data name="SyncStartOn" xml:space="preserve">
+    <value>Dechreuwyd ar [X] erbyn [Y]</value>
+  </data>
+  <data name="TaxID" xml:space="preserve">
+    <value>ID Treth</value>
+  </data>
+  <data name="TeamMember" xml:space="preserve">
+    <value>Aelodau Tîm</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>Hyd yma</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Heddiw</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Cyfanswm</value>
+  </data>
+  <data name="TotalCharge" xml:space="preserve">
+    <value>Cyfanswm y Tâl</value>
+  </data>
+  <data name="TotCharge" xml:space="preserve">
+    <value>TotalCharge</value>
+  </data>
+  <data name="TrailingAgents" xml:space="preserve">
+    <value>Asiantau llusgo</value>
+  </data>
+  <data name="Transaction" xml:space="preserve">
+    <value>Trafodion</value>
+  </data>
+  <data name="TransactionPurposeCode" xml:space="preserve">
+    <value>Medi Trafodiad Cod Pwrpas</value>
+  </data>
+  <data name="TransactionTypeCode" xml:space="preserve">
+    <value>Trafodiad Cod Math</value>
+  </data>
+  <data name="TransPurpose" xml:space="preserve">
+    <value>Cod Pwrpas Trans</value>
+  </data>
+  <data name="TransType" xml:space="preserve">
+    <value>Cod Math Trans</value>
+  </data>
+  <data name="TrialMaxCount" xml:space="preserve">
+    <value>Cyfrif Uchafswm Treial</value>
+  </data>
+  <data name="TrialOn" xml:space="preserve">
+    <value>Ar Brawf</value>
+  </data>
+  <data name="UC" xml:space="preserve">
+    <value>O dan Adeiladu</value>
+  </data>
+  <data name="UnasgnClaims" xml:space="preserve">
+    <value>Hawliadau ddadneilltuo</value>
+  </data>
+  <data name="UnasgnClaimsNIT" xml:space="preserve">
+    <value>Hawliadau wedi'i ddadneilltuo [Heb fod mewn Track]</value>
+  </data>
+  <data name="UnassgnClaims" xml:space="preserve">
+    <value>Hawliadau ddadneilltuo</value>
+  </data>
+  <data name="Unblock" xml:space="preserve">
+    <value>Dadflocio</value>
+  </data>
+  <data name="Unhold" xml:space="preserve">
+    <value>Unhold</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Uned</value>
+  </data>
+  <data name="UnLock" xml:space="preserve">
+    <value>Datglo</value>
+  </data>
+  <data name="UnLockOn" xml:space="preserve">
+    <value>Datgloi Ar</value>
+  </data>
+  <data name="UploadMaxSizeInMB" xml:space="preserve">
+    <value>Uchafswm maint ar gyfer dogfen (Yn MB)</value>
+  </data>
+  <data name="UploadSize" xml:space="preserve">
+    <value>Max maint a ganiateir: [X] MB</value>
+  </data>
+  <data name="UpperCount" xml:space="preserve">
+    <value>Achosion Isafswm Cyfrif Uchaf</value>
+  </data>
+  <data name="UsageIndi" xml:space="preserve">
+    <value>Dangosydd Defnydd</value>
+  </data>
+  <data name="UsageIndicator" xml:space="preserve">
+    <value>Dangosydd Defnydd Cyfnewidfa</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Defnyddiwr</value>
+  </data>
+  <data name="UserBlocked" xml:space="preserve">
+    <value>Mae eich cyfrif wedi cael ei flocio. Cysylltwch â'r gweinyddwr am fanylion pellach</value>
+  </data>
+  <data name="UserClinic" xml:space="preserve">
+    <value>Asiant A Clinig</value>
+  </data>
+  <data name="UserCredSub" xml:space="preserve">
+    <value>Defnyddiwr Credential Pwnc</value>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>Gwybodaeth Defnyddiwr</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>E-bost neu Enw Defnyddiwr</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Defnyddiwr heb ei ganfod</value>
+  </data>
+  <data name="UserOnLeave" xml:space="preserve">
+    <value>Rydych wedi cael eich blocio dros dro</value>
+  </data>
+  <data name="UserRole" xml:space="preserve">
+    <value>A Rôl Asiant</value>
+  </data>
+  <data name="UsersNoClinic" xml:space="preserve">
+    <value>Defnyddwyr Heb Clinig</value>
+  </data>
+  <data name="UsersNoRole" xml:space="preserve">
+    <value>Heb Rôl Defnyddwyr</value>
+  </data>
+  <data name="ValidChars" xml:space="preserve">
+    <value>Chars dilys</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Gweld</value>
+  </data>
+  <data name="ViewInWebBrowser" xml:space="preserve">
+    <value>Gweld mewn Porwr Gwe</value>
+  </data>
+  <data name="Visit" xml:space="preserve">
+    <value>Ewch i</value>
+  </data>
+  <data name="VisitDocument" xml:space="preserve">
+    <value>Ewch Document</value>
+  </data>
+  <data name="VisitExists" xml:space="preserve">
+    <value>Ymweliad eisoes yn bodoli ar y dyddiad hwn</value>
+  </data>
+  <data name="VisitExistsHosp" xml:space="preserve">
+    <value>Dyddiad ymweliad yn gorgyffwrdd</value>
+  </data>
+  <data name="Visits" xml:space="preserve">
+    <value>Ymweliadau</value>
+  </data>
+  <data name="WebBrowsers" xml:space="preserve">
+    <value>Porwyr gwe</value>
+  </data>
+  <data name="WebCulture" xml:space="preserve">
+    <value>Diwylliant ar y we</value>
+  </data>
+  <data name="X12File" xml:space="preserve">
+    <value>X12 File</value>
+  </data>
+  <data name="Yearly" xml:space="preserve">
+    <value>Blynyddol</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Ydw</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Cod Zip</value>
+  </data>
+</root>

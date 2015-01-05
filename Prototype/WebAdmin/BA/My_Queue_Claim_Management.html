@@ -1,0 +1,2348 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Claimate Prime</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="../../Images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../../Images/favicon.png" type="image/png" />
+    <link href="../../Stylesheets/main.css" rel="stylesheet" type="text/css" />
+    <link href="../../Stylesheets/DatePicker/jquery-ui-1.9.1.css" rel="stylesheet" type="text/css" />
+    <link href="../../Stylesheets/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="dv-top-bar">
+        <div>
+            <ul class="ul-nav" onmouseover="javascript:$('#divUserDetails').slideDown();">
+                <li>Logged in as, </li>
+                <li style="margin: 8px"><em>Web Administrator</em></li>
+                <li><span class="d-arrow"></span></li>
+            </ul>
+            <div id="divUserDetails" class="dv_userdetails">
+                <ul class="userdetails">
+                    <li><span class="s-user-role"><a href="../Role_Selection.html">Billing Agent</a></span></li>
+                    <li><span class="s-email">softtest@in.arivameddata.com</span></li>
+                    <li><span class="s-phone">(944)643-2544</span></li>
+                    <li><a href="#" class="change-pwd">Change Password</a></li>
+                    <li><a href="../../index.html" class="logout">LogOut</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dv-clock-wrap">
+            <div class="dv-clock">
+                <label id="liHour">
+                </label>
+                <label>
+                    :</label>
+                <label id="liMinute">
+                </label>
+                <label>
+                    :</label>
+                <label id="liSecond">
+                </label>
+            </div>
+            <div class="dv-date">
+                <label id="liDayName">
+                </label>
+                <label>
+                    -</label>
+                <label id="liDay">
+                </label>
+                <label id="liMonthName">
+                </label>
+                <label id="liYear">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="dv-main_wrapper" onmouseover="javascript:$('#divUserDetails').slideUp();">
+        <a href="../Dashboard.html" style="display: inline-block">
+            <div class="dv-sitelogo">
+            </div>
+        </a>
+        <div id="divMainMenu">
+        </div>
+        <div class="dv-page-header">
+            <ul class="ul-header">
+                <li><a href="My_Queue.html" title="Back" class="back-button"></a></li>
+                <li>Claim</li>
+            </ul>
+            <ul class="ul-sub-header">
+                <li class="li-clinic"><a href="Clinic_Selection.html" class="aClinic"></a>Carraway Methodist
+                    Medical Center</li>
+            </ul>
+        </div>
+        <div class="dv-shadowline">
+        </div>
+        <div class="dv-block">
+            <div class="dv-timer"><span>Time Spent :</span>00:20</div>
+        </div>
+        <div class="dv-block">
+            <div id="visit" class="dv-full-claim-mgmnt">
+                <div id="visitE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('visit');" class="aExpand">Visit</a>
+                </div>
+                <div id="visitC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="visitA" href="#" onclick="javascript:return collapsePnlDiv('visit');" class="aCollapse">Visit</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Case No
+                                </td>
+                                <td style="width: 30%">12345
+                                </td>
+                                <td style="width: 20%">Clinic Code
+                                </td>
+                                <td style="width: 30%">YUVIENCO
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chart No
+                                </td>
+                                <td>GREME001
+                                </td>
+                                <td>Date Of Service
+                                </td>
+                                <td>02/03/2013
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last name
+                                </td>
+                                <td>Grey
+                                </td>
+                                <td>First name
+                                </td>
+                                <td>Meredth
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Middle Name
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text26" />
+                                </td>
+                                <td>Is Hospitalized
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="checkbox" id="checkbox5" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Illness Indicator Date <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="Text32" name="from" readonly="true" class="txt_cal txt-to-date" />
+                                </td>
+                                <td>Illness Indicator <span class="star">*</span>
+                                </td>
+                                <td class="td-ac">
+                                    <input type="text" name="textfield" id="text29" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Facility Done Name:
+                                </td>
+                                <td class="td-ac">
+                                    <input type="text" name="textfield" id="text30" />
+                                </td>
+                                <td>Facility Done <span class="star">*</span>
+                                </td>
+                                <td class="td-ac">
+                                    <input type="text" name="textfield" id="text25" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Block
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="checkbox" id="checkbox4" />
+                                    </label>
+                                </td>
+                                <td>Refering Provider
+                                </td>
+                                <td>Mr.Foster James
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="dx" class="dv-full-claim-mgmnt">
+                <div id="dxE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('dx');" class="aExpand">Dx</a>
+                </div>
+                <div id="dxC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="dxA" href="#" onclick="javascript:return collapsePnlDiv('dx');" class="aCollapse">Dx</a>
+                    </div>
+                    <div>
+                        <table class="table-entry">
+                            <tr>
+                                <td>Dx
+                                </td>
+                                <td class="td-ac">
+                                    <input type="text" name="textfield" id="text36" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="button" value="Add" id="new1" class="button-save" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Dx List
+                                </td>
+                                <td style="vertical-align: top">
+                                    <ul class="ul-table">
+                                        <li>Dx 1001 | <a href="#">Delete</a></li>
+                                        <li>Dx 1002 | <a href="#">Delete</a></li>
+                                        <li>Dx 1003 | <a href="#">Delete</a></li>
+                                        <li>Dx 1004 | <a href="#">Delete</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="dxprimary" class="dv-full-claim-mgmnt">
+                <div id="dxprimaryE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('dxprimary');" class="aExpand">Primary
+                        Dx </a>
+                </div>
+                <div id="dxprimaryC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="dxprimaryA" href="#" onclick="javascript:return collapsePnlDiv('dxprimary');"
+                            class="aCollapse">Primary Dx </a>
+                    </div>
+                    <div>
+                        <table class="table-entry">
+                            <tr>
+                                <td colspan="4" class="td-mandatory">Note: Only one Primary Dx allowed 
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>Primary Dx
+                                </td>
+                                <td class="td-ac" colspan="2">
+                                    <input type="text" name="textfield" id="text34" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dx 1001 | <a href="#">Delete</a></> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="cpt" class="dv-full-claim-mgmnt">
+                <div id="cptE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('cpt');" class="aExpand">Procedure</a>
+                </div>
+                <div id="cptC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="cptA" href="#" onclick="javascript:return collapsePnlDiv('cpt');" class="aCollapse">Procedure</a>
+                    </div>
+                    <div>
+                        <table class="table-entry">
+                            <tr>
+                                <td style="width: 20%">Dx <span class="star">*</span>
+                                </td>
+                                <td class="td-ac" style="width: 30%">
+                                    <input type="text" name="textfield" id="text38" />
+                                </td>
+                                <td style="width: 20%">DOS
+                                </td>
+                                <td style="width: 30%">
+                                    <input type="text" name="textfield2" id="text42" size="20" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Procedure <span class="star">*</span>
+                                </td>
+                                <td class="td-ac" style="width: 30%">
+                                    <input type="text" name="textfield1" id="text39" size="20" />
+                                </td>
+                                <td style="width: 20%">Place of Service
+                                </td>
+                                <td class="td-ac" style="width: 30%">
+                                    <input type="text" name="textfield4" id="text43" size="20" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Modifier 1
+                                </td>
+                                <td class="td-ac" style="width: 30%">
+                                    <input type="text" name="textfield" id="text27" />
+                                </td>
+                                <td style="width: 20%">Modifier 2
+                                </td>
+                                <td class="td-ac" style="width: 30%">
+                                    <input type="text" name="textfield" id="text28" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Units <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield3" id="text40" size="20" />
+                                </td>
+                                <td style="width: 20%">Amount
+                                </td>
+                                <td>50
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total Charge <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield5" id="text41" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;
+                                </td>
+                                <td>
+                                    <input type="button" value="Add" name="add" class="button-save" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="dv-bdr">
+                            <table class="table-grid-view">
+                                <tr>
+                                    <td>CLAIM #</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:10%" class="td-gridhead-claim">Dx
+                                    </td>
+                                    <td style="width:10%" class="td-gridhead-claim">DOS
+                                    </td>
+                                    <td style="width:10%" class="td-gridhead-claim">Procedure
+                                    </td>
+                                    <td style="width:15%" class="td-gridhead-claim">POS
+                                    </td>
+                                    <td style="width:5%" class="td-gridhead-claim">M1
+                                    </td>
+                                    <td style="width:5%" class="td-gridhead-claim">M2
+                                    </td>
+                                    <td style="width:15%" class="td-gridhead-claim">Charge / Units
+                                    </td>
+                                    <td style="width:8%" class="td-gridhead-claim">Amount
+                                    </td>
+                                    <td style="width:7%" class="td-gridhead-claim">Charge
+                                    </td>
+                                    <td style="width:15%" class="td-gridhead-claim"></td>
+                                </tr>
+                                <tr class="tr-primary">
+                                    <td>Dx01
+                                    </td>
+                                    <td>02/07/2013
+                                    </td>
+                                    <td>Dx1004
+                                    </td>
+                                    <td>Clinic
+                                    </td>
+                                    <td>105</td>
+                                    <td>106</td>
+                                    <td>5
+                                    </td>
+                                    <td>50
+                                    </td>
+                                    <td>100
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0);">Details</a> | <a href="javascript:void(0);">Delete</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Dx02
+                                    </td>
+                                    <td>02/08/2013
+                                    </td>
+                                    <td>Dx1005
+                                    </td>
+                                    <td>Clinic
+                                    </td>
+                                    <td>105</td>
+                                    <td>106</td>
+                                    <td>5
+                                    </td>
+                                    <td>50
+                                    </td>
+                                    <td>100
+                                    </td>
+                                    <td>
+                                       <a href="javascript:void(0);">Details</a> | <a href="javascript:void(0);">Delete</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Dx03
+                                    </td>
+                                    <td>02/09/2013
+                                    </td>
+                                    <td>Dx1006
+                                    </td>
+                                    <td>Clinic
+                                    </td>
+                                    <td>105</td>
+                                    <td>106</td>
+                                    <td>5
+                                    </td>
+                                    <td>50
+                                    </td>
+                                    <td>100
+                                    </td>
+                                    <td>
+                                       <a href="javascript:void(0);">Details</a> | <a href="javascript:void(0);">Delete</a>
+                                    </td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>
+            <div id="visitdoc" class="dv-full-claim-mgmnt">
+                <div id="documentsE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('documents');" class="aExpand">Visit
+                        Documents</a>
+                </div>
+                <div id="documentsC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="documentsA" href="#" onclick="javascript:return collapsePnlDiv('documents');"
+                            class="aCollapse">Visit Documents</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td colspan="2" class="td-mandatory">Note: Only one document allowed in each group
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%" rowspan="2">Doctor Note
+                                </td>
+                                <td style="width: 80%">
+                                    <div class="FileUpload">
+                                        <input id="File1" type="file" name="DocNote" size="24" class="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+                                        <div id="Div1" class="BrowserVisible">
+                                            <input id="Text24" type="text" class="FileField" style="width: 180px" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background: #fff;">
+                                    <ul class="ul-uploads">
+                                        <li><span>Doctor Note 1</span> <a href="javascript:void(0);">View</a> | <a href="#">Delete </a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Super bill
+                                </td>
+                                <td style="background: #fff;">
+                                    <div class="FileUpload">
+                                        <input id="File2" type="file" name="SupBill" size="24" class="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+                                        <div id="Div2" class="BrowserVisible">
+                                            <input id="Text33" type="text" class="FileField" style="width: 180px" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background: #fff;">
+                                    <ul class="ul-uploads">
+                                        <li><span>Super Bill 1</span> <a href="javascript:void(0);">View</a> | <a href="#">Delete
+                                        </a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Notes" class="dv-full-claim-mgmnt">
+                <div id="NotesE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('Notes');" class="aExpand">Notes</a>
+                </div>
+                <div id="NotesC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="A1" href="#" onclick="javascript:return collapsePnlDiv('Notes');" class="aCollapse">Notes</a>
+                    </div>
+                    <div>
+                        <table class="table-entry">
+                            <tr>
+                                <td style="width: 20%">
+                                Notes
+                                <td style="width: 80%">
+                                    <textarea name="comments" cols="25" rows="5"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="patientdoc" class="dv-full-claim-mgmnt">
+                <div id="patDocumentE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('patDocument');" class="aExpand">Patient Medical Records / History</a>
+                </div>
+                <div id="patDocumentC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="patDocumentA" href="#" onclick="javascript:return collapsePnlDiv('patDocument');"
+                            class="aCollapse">Patient Medical Records / History</a>
+                    </div>
+                    <div>
+                        <div class="dv-block">
+                            <div>
+                                <table class="table-reports">
+                                    <tr>
+                                        <td class="td-heading1">DOS - 03/14/2012
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">EDI File - <a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">View </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>DX1
+                                                    <ul>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>DX2
+                                                    <ul>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading1">DOS - 03/14/2012
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">EDI File - <a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">View </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>DX1
+                                                    <ul>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>DX2
+                                                    <ul>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading1">DOS - 03/14/2012
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">EDI File - <a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">View </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>DX1
+                                                    <ul>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>DX2
+                                                    <ul>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                        <li>Procedure1</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <table class="table-view">
+                                    <tr>
+                                        <td class="td-heading" colspan="4">
+                                            <div class="dv-subheading1">
+                                                Insurance History
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 20%">Insurance Name1
+                                        </td>
+                                        <td style="width: 30%">#Insurance name1
+                                        </td>
+                                        <td style="width: 20%">Policy No1
+                                        </td>
+                                        <td style="width: 30%">P1001
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Effective From
+                                        </td>
+                                        <td>02/05/2012
+                                        </td>
+                                        <td>Effective To
+                                        </td>
+                                        <td>03/05/2014
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Insurance Name2
+                                        </td>
+                                        <td>#Insurance name2
+                                        </td>
+                                        <td>Policy No2
+                                        </td>
+                                        <td>P1002
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Effective From
+                                        </td>
+                                        <td>02/05/2012
+                                        </td>
+                                        <td>Effective To
+                                        </td>
+                                        <td>03/05/2014
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Insurance Name3
+                                        </td>
+                                        <td>#Insurance name3
+                                        </td>
+                                        <td>Policy No3
+                                        </td>
+                                        <td>P1003
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Effective From
+                                        </td>
+                                        <td>02/05/2012
+                                        </td>
+                                        <td>Effective To
+                                        </td>
+                                        <td>03/05/2014
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <table class="table-reports">
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Lab Reports
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Specialist Reports
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Radiology Reports
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Medication List
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Hospital Discharge Summary
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Referal Notes
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Insurance Forms
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Authorizations
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-heading">
+                                            <div class="dv-subheading1">
+                                                Patient Information Sheet
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul class="ul-table">
+                                                <li>Document 1<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc1.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no');">
+                                                    View </a></li>
+                                                <li>Document 2<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc2.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                                <li>Document 3<a href="javascript:void(0);" onclick="window.open('../../Images/Docs/doc3.jpg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+                                                    View</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="patient" class="dv-full-claim-mgmnt">
+                <div id="patientE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('patient');" class="aExpand">Patient</a>
+                </div>
+                <div id="patientC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="patientA" href="#" onclick="javascript:return collapsePnlDiv('patient');"
+                            class="aCollapse">Patient</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Clinic Code <span class="star">*</span>
+                                </td>
+                                <td style="width: 30%" class="td-ac">
+                                    <input type="text" name="textfield" id="textfield" />
+                                </td>
+                                <td style="width: 20%">Chart No <span class="star">*</span>
+                                </td>
+                                <td style="width: 30%">
+                                    <input type="text" name="textfield" id="text1" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Medicare Id
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text23" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last Name <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text2" />
+                                </td>
+                                <td>First Name <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text3" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Middle Name
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text4" />
+                                </td>
+                                <td>Sex <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="radio" name="sex" value="male" />Male
+                                    <input type="radio" name="sex" value="female" />Female
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="dob" name="from" readonly="true" class="txt_cal txt-to-date" />
+                                </td>
+                                <td>SSN <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text5" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Assigned Provider Name <span class="star">*</span>
+                                </td>
+                                <td class="td-ac">
+                                    <input type="text" name="textfield" id="text6" />
+                                </td>
+                                <td>Insurance Name <span class="star">*</span>
+                                </td>
+                                <td class="td-ac">
+                                    <input type="text" name="textfield" id="text7" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Policy Number <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text8" />
+                                </td>
+                                <td>Group Number <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text9" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Policy Holder Chart No <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text10" />
+                                </td>
+                                <td>Policy Holder Relationship <span class="star">*</span>
+                                </td>
+                                <td class="td-ac">
+                                    <input type="text" name="textfield" id="text11" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Insurance Benefits Accepted
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="checkbox" id="checkbox" />
+                                    </label>
+                                </td>
+                                <td>Capitated
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="checkbox" id="checkbox1" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Insurance Effect From <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="from" name="from" readonly="true" class="txt-to-date" />
+                                </td>
+                                <td>Insurance Effect To <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="to" name="to" readonly="true" class="txt-to-date" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Has Signed File
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="checkbox" id="checkbox2" />
+                                    </label>
+                                </td>
+                                <td>Signed Date
+                                </td>
+                                <td>
+                                    <input type="text" id="signed" name="to" readonly="true" class="txt_cal txt-to-date" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Photo
+                                </td>
+                                <td>
+                                    <div class="FileUpload">
+                                        <input id="BrowserHidden" type="file" size="24" class="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+                                        <div id="BrowserHidden" class="BrowserVisible">
+                                            <input id="FileField" type="text" class="FileField" style="width: 180px" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Block
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="checkbox" id="checkbox3" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Personal Address
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Street <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text12">
+                                </td>
+                                <td>Suite #
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text13">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>City <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text14">
+                                </td>
+                                <td>State <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text15">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>County
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text16">
+                                </td>
+                                <td>Country <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text17">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zip Code <span class="star">*</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text18">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text19">
+                                </td>
+                                <td>Secondary Phone Number
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text21">
+                                </td>
+                                <td>Secondary Email
+                                </td>
+                                <td>
+                                    <input type="text" name="textfield" id="text22">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="claim" class="dv-full-claim-mgmnt">
+                <div id="claimStatusE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('claimStatus');" class="aExpand">Claim Status</a>
+                </div>
+                <div id="claimStatusC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="claimStatusA" href="#" onclick="javascript:return collapsePnlDiv('claimStatus');"
+                            class="aCollapse">Claim Status</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Current Status
+                                </td>
+                                <td style="width: 30%">Awaiting for documents
+                                </td>
+                                <td style="width: 20%">Date of Service
+                                </td>
+                                <td style="width: 30%">02/01/2013
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BA work started on 01/01/2013
+                                </td>
+                                <td>Completed on 02/01/2013
+                                </td>
+                                <td>QA work started on 02/01/2013
+                                </td>
+                                <td>Completed on 03/01/2013
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EDI File
+                                </td>
+                                <td>
+                                    <a href="Downloads/doc1.jpg">EDI_5010.txt</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EDI work started on 03/01/2013
+                                </td>
+                                <td>Completed on 04/01/2013
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="agents" class="dv-full-claim-mgmnt">
+                <div id="agentsE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('agents');" class="aExpand">Agents</a>
+                </div>
+                <div id="agentsC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="agentsA" href="#" onclick="javascript:return collapsePnlDiv('agents');" class="aCollapse">Agents</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Billing Agent
+                                </td>
+                                <td style="width: 30%">Allen,Alex
+                                </td>
+                                <td style="width: 20%">Quality Analyst Agent
+                                </td>
+                                <td style="width: 30%">Albert,Jason
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EDI Agent
+                                </td>
+                                <td>Anderson,Jake
+                                </td>
+                                <td>Manager
+                                </td>
+                                <td>Albert,James
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="rank" class="dv-full-claim-mgmnt">
+                <div id="rankE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('rank');" class="aExpand">Rank /
+                        Time</a>
+                </div>
+                <div id="rankC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="rankA" href="#" onclick="javascript:return collapsePnlDiv('rank');" class="aCollapse">Rank / Time</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Case complexity
+                                </td>
+                                <td style="width: 30%">Normal
+                                </td>
+                                <td style="width: 20%">Rank for this claim
+                                </td>
+                                <td style="width: 30%">3 / 10
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total Minutes spent
+                                </td>
+                                <td>05 days/ 0 Minutes
+                                </td>
+                                <td>Allocated minutes for billing agent
+                                </td>
+                                <td>01 Days /0 Minutes
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Actual minutes taken by billing agent
+                                </td>
+                                <td>01 Days / 10 Minutes
+                                </td>
+                                <td>Allocated minutes for Quality Analyst Agent
+                                </td>
+                                <td>01 Days / 05 Minutes
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Actual minutes taken by Quality Analyst Agent
+                                </td>
+                                <td>01 Days / Minutes
+                                </td>
+                                <td>Allocated minutes for EDI Agent
+                                </td>
+                                <td>01 Days / 01 Minutes
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Actual minutes taken by EDI Agent
+                                </td>
+                                <td>01 Days / Minutes
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="settings" class="dv-full-claim-mgmnt">
+                <div id="settingsE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('settings');" class="aExpand">EDI
+                        Settings</a>
+                </div>
+                <div id="settingsC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="settingsA" href="#" onclick="javascript:return collapsePnlDiv('settings');"
+                            class="aCollapse">EDI Settings</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Code / Short Name (ISA01):
+                                </td>
+                                <td style="width: 30%">I1
+                                </td>
+                                <td style="width: 20%">Author Info Qualifier (ISA02) :
+                                </td>
+                                <td style="width: 30%">A1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Author Info :
+                                </td>
+                                <td>AInfo 1
+                                </td>
+                                <td>Security Info Qualifier (ISA03) :
+                                </td>
+                                <td>SQualifier 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Security Info (ISA04):
+                                </td>
+                                <td>SInfo 1
+                                </td>
+                                <td>Inter Sender ID (ISA06) :
+                                </td>
+                                <td>SID 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Inter Receiver ID (ISA07):
+                                </td>
+                                <td>RID 1
+                                </td>
+                                <td>Application Sender Code (GS02):
+                                </td>
+                                <td>SCode 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Application Receiver Code (GS03):
+                                </td>
+                                <td>RCode1
+                                </td>
+                                <td>Password :
+                                </td>
+                                <td>Pwd123
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Receiver Carrier:
+                                </td>
+                                <td>Carrier 1
+                                </td>
+                                <td>Receiver ID:
+                                </td>
+                                <td>RID1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Trans Purpose Code:
+                                </td>
+                                <td>PCode 1
+                                </td>
+                                <td>Trans Type Code :
+                                </td>
+                                <td>TCode1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Usage Indicator:
+                                </td>
+                                <td>Indicator 1
+                                </td>
+                                <td>Is Group Practice? :
+                                </td>
+                                <td>Yes
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last File ID :
+                                </td>
+                                <td>1234
+                                </td>
+                                <td>Block Status :
+                                </td>
+                                <td>False
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="ipa" class="dv-full-claim-mgmnt">
+                <div id="ipaE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('ipa');" class="aExpand">Billing
+                        / IPA</a>
+                </div>
+                <div id="ipaC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="ipaA" href="#" onclick="javascript:return collapsePnlDiv('ipa');" class="aCollapse">Billing / IPA</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Code:
+                                </td>
+                                <td style="width: 30%">TRIN01
+                                </td>
+                                <td style="width: 20%">Name:
+                                </td>
+                                <td style="width: 30%">Mercywest Medical Center
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>NPI:
+                                </td>
+                                <td>8765432109
+                                </td>
+                                <td>Tax ID:
+                                </td>
+                                <td>987654321
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Logo:
+                                </td>
+                                <td>#Logo.jpg
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Office Address
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Street Name:
+                                </td>
+                                <td>Sname
+                                </td>
+                                <td>Suite#:
+                                </td>
+                                <td>1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>City Name:
+                                </td>
+                                <td>Cleveland
+                                </td>
+                                <td>State Name:
+                                </td>
+                                <td>Colorado
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>County Name:
+                                </td>
+                                <td>Colusa
+                                </td>
+                                <td>Country Name:
+                                </td>
+                                <td>USA
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zip Code:
+                                </td>
+                                <td>22468
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>1234567891
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>010
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>mail@web.com
+                                </td>
+                                <td>Fax Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Contact Person Details
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:
+                                </td>
+                                <td>Alex
+                                </td>
+                                <td>First Name:
+                                </td>
+                                <td>Joseph
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Middle Name:
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>12323201312
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>alex1@web.com
+                                </td>
+                                <td>Secondary Email:
+                                </td>
+                                <td>alex2@web.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fax Number:
+                                </td>
+                                <td>212556545
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="clinic" class="dv-full-claim-mgmnt">
+                <div id="clinicE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('clinic');" class="aExpand">Practice
+                        / Clinic</a>
+                </div>
+                <div id="clinicC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="clinicA" href="#" onclick="javascript:return collapsePnlDiv('clinic');" class="aCollapse">Practice / Clinic</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">IPA:
+                                </td>
+                                <td style="width: 30%">Mercy West
+                                </td>
+                                <td style="width: 20%">Code:
+                                </td>
+                                <td style="width: 30%">MWIPA
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Name:
+                                </td>
+                                <td>Mercy West Medical Clinic
+                                </td>
+                                <td>NPI:
+                                </td>
+                                <td>9876543210
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tax ID:
+                                </td>
+                                <td>987654321
+                                </td>
+                                <td>Entity Type:
+                                </td>
+                                <td>Person
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Specialty:
+                                </td>
+                                <td>Orthopaedics
+                                </td>
+                                <td>Manager Name:
+                                </td>
+                                <td>Owen,Wilsen
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Logo:
+                                </td>
+                                <td>Logo.jpg
+                                </td>
+                                <td>Is Patient Demographics Pull? :
+                                </td>
+                                <td>No
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Is Attachment mandatory to create claim for Billing Agent? :
+                                </td>
+                                <td>Yes
+                                </td>
+                                <td>Block Status:
+                                </td>
+                                <td>False
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Office Address
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Street Name:
+                                </td>
+                                <td>SName1
+                                </td>
+                                <td>Suite#
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>City Name:
+                                </td>
+                                <td>Cleveland
+                                </td>
+                                <td>State Name:
+                                </td>
+                                <td>California
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>County Name
+                                </td>
+                                <td>Colusa
+                                </td>
+                                <td>Country Name
+                                </td>
+                                <td>USA
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zip Code:
+                                </td>
+                                <td>12524695
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>212312134
+                                </td>
+                                <td>Extension
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>user@web.com
+                                </td>
+                                <td>Fax Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Contact Person Details
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:
+                                </td>
+                                <td>West
+                                </td>
+                                <td>First Name:
+                                </td>
+                                <td>Joseph
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Middle Name:
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>123232656
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>jacob@web.com
+                                </td>
+                                <td>Secondary Email
+                                </td>
+                                <td>jacob2@web.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fax Number:
+                                </td>
+                                <td>212556545
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="hospital" class="dv-full-claim-mgmnt">
+                <div id="hospitalE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('hospital');" class="aExpand">POS
+                        - Hospital</a>
+                </div>
+                <div id="hospitalC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="hospitalA" href="#" onclick="javascript:return collapsePnlDiv('hospital');"
+                            class="aCollapse">POS - Hospital</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td colspan="4" class="td-mandatory">Note: Situational-Only if the patient admitted in the hospital.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Case No
+                                </td>
+                                <td style="width: 30%">006
+                                </td>
+                                <td style="width: 20%">Clinic Code
+                                </td>
+                                <td style="width: 30%">Clinic 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chart No
+                                </td>
+                                <td>CLINIC1234
+                                </td>
+                                <td>Hospital Name
+                                </td>
+                                <td>Carraway Methodist Medical Center
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Admitted On
+                                </td>
+                                <td>02/14/2013
+                                </td>
+                                <td>Discharged On
+                                </td>
+                                <td>03/14/2013
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Block Status
+                                </td>
+                                <td>False
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="nursing" class="dv-full-claim-mgmnt">
+                <div id="nursingE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('nursing');" class="aExpand">POS
+                        - Nursing Home</a>
+                </div>
+                <div id="nursingC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="nursingA" href="#" onclick="javascript:return collapsePnlDiv('nursing');"
+                            class="aCollapse">Nursing Home</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td class="td-mandatory" colspan="4">Note: Situational-Only if the patient visited in the nursing home.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Code:
+                                </td>
+                                <td style="width: 30%">MWIPA
+                                </td>
+                                <td style="width: 20%">Name:
+                                </td>
+                                <td style="width: 30%">Mary Jesus Nursing Home
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>NPI:
+                                </td>
+                                <td>9876453210
+                                </td>
+                                <td>Logo:
+                                </td>
+                                <td>logo.jpg
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Block Status:
+                                </td>
+                                <td>False
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Office Address
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Street Name:
+                                </td>
+                                <td>sname
+                                </td>
+                                <td>Suite#:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>City Name:
+                                </td>
+                                <td>Charlotte
+                                </td>
+                                <td>State Name:
+                                </td>
+                                <td>California
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>County Name:
+                                </td>
+                                <td>Colusa
+                                </td>
+                                <td>Country Name:
+                                </td>
+                                <td>USA
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zip Code:
+                                </td>
+                                <td>22468
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>9879765432
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>user@web.com
+                                </td>
+                                <td>Fax Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Contact Person Details
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:
+                                </td>
+                                <td>Tate
+                                </td>
+                                <td>First Name:
+                                </td>
+                                <td>Miranda
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Middle Name:
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>7825123652
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>45874121365
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>miranda1@web.com
+                                </td>
+                                <td>Secondary Email:
+                                </td>
+                                <td>miranda2@web.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fax Number:
+                                </td>
+                                <td>212556545
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="provider" class="dv-full-claim-mgmnt">
+                <div id="providerE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('provider');" class="aExpand">Rendering
+                        / Refering Provider</a>
+                </div>
+                <div id="providerC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="providerA" href="#" onclick="javascript:return collapsePnlDiv('provider');"
+                            class="aCollapse">Rendering / Refering Provider</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td style="width: 20%">Clinic Code:
+                                </td>
+                                <td style="width: 30%">Carraway Methodist Medical Clinic
+                                </td>
+                                <td style="width: 20%">Code:
+                                </td>
+                                <td style="width: 30%">CLINIC24005
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:
+                                </td>
+                                <td>Foster
+                                </td>
+                                <td>First Name:
+                                </td>
+                                <td>James
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Middle Name:
+                                </td>
+                                <td></td>
+                                <td>Credential:
+                                </td>
+                                <td>MD,FRCS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sex :
+                                </td>
+                                <td>Male
+                                </td>
+                                <td>NPI:
+                                </td>
+                                <td>9876453210
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tax ID:
+                                </td>
+                                <td>987645321
+                                </td>
+                                <td>SSN:
+                                </td>
+                                <td>45741202
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Primary Option :
+                                </td>
+                                <td>SSN
+                                </td>
+                                <td>Specialty:
+                                </td>
+                                <td>Orthopaedics
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Photo:
+                                </td>
+                                <td>pic.jpg
+                                </td>
+                                <td>Has Signed File:
+                                </td>
+                                <td>Yes
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Signed Date:
+                                </td>
+                                <td>02/15/2013
+                                </td>
+                                <td>License Number:
+                                </td>
+                                <td>L59874
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CLIA Number:
+                                </td>
+                                <td>35414411
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Contact Details
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>5498454654
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>user1@web.com
+                                </td>
+                                <td>Secondary Email:
+                                </td>
+                                <td>user2@web.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fax Number:
+                                </td>
+                                <td>212556545
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="insurance" class="dv-full-claim-mgmnt">
+                <div id="insuranceE" class="dv-expand">
+                    <a href="#" onclick="javascript:return expandPnlDiv('insurance');" class="aExpand">Insurance</a>
+                </div>
+                <div id="insuranceC" style="display: none;">
+                    <div class="dv-collapse">
+                        <a id="insuranceA" href="#" onclick="javascript:return collapsePnlDiv('insurance');"
+                            class="aCollapse">Insurance</a>
+                    </div>
+                    <div>
+                        <table class="table-view">
+                            <tr>
+                                <td class="td-mandatory" colspan="4"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Code:
+                                </td>
+                                <td style="width: 30%">I2
+                                </td>
+                                <td style="width: 20%">Name:
+                                </td>
+                                <td style="width: 30%">HMO
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Payer ID:
+                                </td>
+                                <td>PI021400
+                                </td>
+                                <td>Insurance Type:
+                                </td>
+                                <td>HMO Medicare
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EDI Receiver:
+                                </td>
+                                <td>recevier 1
+                                </td>
+                                <td>Print PIN on File:
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Print Sign On File - Patient:
+                                </td>
+                                <td></td>
+                                <td>Print Sign On File - Insured:
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Print Sign On File – Physician / Provider:
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="td-heading" colspan="4">
+                                    <div class="dv-subheading1">
+                                        Office Address
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Street:
+                                </td>
+                                <td>street1
+                                </td>
+                                <td>Suite#:
+                                </td>
+                                <td>1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>City:
+                                </td>
+                                <td>Cleveland
+                                </td>
+                                <td>State:
+                                </td>
+                                <td>Colorado
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>County:
+                                </td>
+                                <td>Colusa
+                                </td>
+                                <td>Country:
+                                </td>
+                                <td>USA
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zip Code:
+                                </td>
+                                <td>22468
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number:
+                                </td>
+                                <td>5498454654
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Phone Number:
+                                </td>
+                                <td>-NA-
+                                </td>
+                                <td>Extension:
+                                </td>
+                                <td>-NA-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:
+                                </td>
+                                <td>user1@web.com
+                                </td>
+                                <td>Secondary Email:
+                                </td>
+                                <td>user2@web.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fax Number:
+                                </td>
+                                <td>212556545
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dv-submit-controls">
+            <label>
+                <input type="submit" name="button" id="button" value="Save" class="button-save" />
+            </label>
+            <input type="submit" name="button2" id="button2" value="Cancel" class="button-cancel" />
+            <label>
+                <input type="submit" name="button" id="Submit3" value="Delete" class="button-delete" />
+            </label>
+        </div>
+    </div>
+    <div class="dv-footer">
+        <ul class="ul-browser">
+            <li>Supported Browsers</li>
+            <li class="mozilla" title="Mozilla Firefox 19+"></li>
+            <li class="safari" title="Safari 5+"></li>
+            <li class="chrome" title="Google Chrome 23+"></li>
+            <li class="iexplorer" title="IE 10+"></li>
+            <li class="opera" title="Opera 12+"></li>
+        </ul>
+        <ul class="ul-flink">
+            <li><a href="#" target="_blank" onclick="javascript:return false;">Login Attempts</a></li>
+            <li class="seperator">|</li>
+            <li><a href="#" target="_blank" onclick="javascript:return false;">FAQ</a></li>
+            <li class="seperator">|</li>
+            <li><a href="https://www.arivameddata.com/claimate-capitated/LoginPage.aspx" target="_blank">Claimate</a></li>
+            <li>&nbsp;</li>
+            <li>&copy; Claimate 2008- 2013</li>
+        </ul>
+    </div>
+    <div>
+        <div id="divGoToE">
+            <a href="#" onclick="javascript:return expandMnuDiv();" class="aSideMenu"></a>
+        </div>
+        <div id="divGoToC">
+            <ul>
+                <li><a href="#" onclick="javascript:return gotoDiv('visit');">Visit</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('dx');">Dx</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('dxprimary');">Primary Dx </a>
+                </li>
+                <li><a href="#" onclick="javascript:return gotoDiv('cpt');">Procedure</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('documents');">Visit Document</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('Notes');">Notes</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('patDocument');">Patient Medical
+                    Records / History</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('patient');">Patient</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('claimStatus');">Claim Status</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('agents');">Agents</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('rank');">Rank / Time</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('settings');">EDI Settings</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('ipa');">Billing IPA</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('clinic');">Practice / Clinic</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('hospital');">POS - Hospital</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('nursing');">POS - Nursing Home</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('provider');">Rendering / Refering
+                    Provider</a></li>
+                <li><a href="#" onclick="javascript:return gotoDiv('insurance');">Insurance</a></li>
+                <li><a href="#" onclick="javascript:return expandAllPnlDiv();">Expand All</a></li>
+                <li><a href="#" onclick="javascript:return collapseAllPnlDiv();">Collapse All</a></li>
+                <li><a href="#" onclick="javascript:return expandMenuGoTo();">Close</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div id="divDoctorNoteE" class="divDoctorNote">
+            <a href="#" onclick="javascript:return expandDrNote();" class="aSideMenu_drNote"></a>
+        </div>
+        <div id="divDoctorNoteC" class="divDoctorNoteImg">
+            <div>
+                <a href="#" onclick="javascript:return expandMenuDoctorNote();" class="aDrNote"></a>
+            </div>
+            <div style="position: relative; overflow-x: auto; border: none; left: 0px; text-align: center; margin: 0 auto; min-width: 95%;">
+                <iframe src="../../Images/Docs/doc1.JPG" width="995" height="200" style="border: none"></iframe>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="divSuperBillE" class="divSuperBill">
+            <a href="#" onclick="javascript:return expandSuperBill();" class="aSideMenu_sBill"></a>
+        </div>
+        <div id="divSuperBillC" class="divSuperBillImg">
+            <div>
+                <a href="#" onclick="javascript:return expandMenuSuperBill();" class="aSbill"></a>
+            </div>
+            <div style="position: relative; overflow-x: auto; border: none; left: 0px; text-align: center; margin: 0 auto; min-width: 95%;">
+                <iframe src="../../Images/Docs/doc2.JPG" width="995" height="200" style="border: none"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../JavaScripts/jquery-1.9.0.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/Base.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/Clock.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/DatePicker/jquery-ui-1.9.1.js" type="text/javascript"
+    defer="defer"></script>
+<script src="../../JavaScripts/DatePicker/DatePicker.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/DatePicker/DatePicker1.js" type="text/javascript"
+    defer="defer"></script>
+<script src="../../JavaScripts/WebAdmin/BA/My_Queue_Claim_Management.js" type="text/javascript"
+    defer="defer"></script>
+<script src="../../JavaScripts/WebAdmin/QA/QAMenu.js" type="text/javascript" defer="defer"></script>

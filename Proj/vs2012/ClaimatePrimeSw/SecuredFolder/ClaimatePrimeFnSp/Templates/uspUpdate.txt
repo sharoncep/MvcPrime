@@ -1,0 +1,113 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Description:This Stored Procedure is used to UPDATE the [xTABLE_NAMEx] in the database.
+	 
+CREATE PROCEDURE [[xTABLE_SCHEMAx]].[usp_Update_[xTABLE_NAMEx]]
+	[xINPUT_PARAMSx]
+	, @IsActive BIT
+	, @LastModifiedBy BIGINT
+	, @LastModifiedOn DATETIME
+	, @CurrentModificationBy BIGINT
+	, @[xTABLE_NAMEx]ID BIGINT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	BEGIN TRY
+		DECLARE @CurrentModificationOn DATETIME;
+		SELECT @CurrentModificationOn = GETDATE();
+
+		DECLARE @[xTABLE_NAMEx]ID_PREV BIGINT;
+		SELECT @[xTABLE_NAMEx]ID_PREV = [[xTABLE_SCHEMAx]].[ufn_IsExists_[xTABLE_NAMEx]] ([xFN_ARGSx], 1);
+
+		DECLARE @IS_ACTIVE_PREV BIT;
+		
+		IF EXISTS(SELECT [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID] FROM [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]] WHERE [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID] = @[xTABLE_NAMEx]ID AND [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[IsActive] = @IsActive)
+		BEGIN
+			SELECT @IS_ACTIVE_PREV = 1;
+		END
+		ELSE
+		BEGIN
+			SELECT @IS_ACTIVE_PREV = 0;
+		END		
+
+		IF ((@[xTABLE_NAMEx]ID_PREV = 0) OR (@IS_ACTIVE_PREV = 0))
+		BEGIN
+			DECLARE @LAST_MODIFIED_BY BIGINT;
+			DECLARE @LAST_MODIFIED_ON DATETIME;
+		
+			SELECT 
+				@LAST_MODIFIED_BY = [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[LastModifiedBy]
+				, @LAST_MODIFIED_ON =  [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[LastModifiedOn]
+			FROM 
+				[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]] WITH (NOLOCK)
+			WHERE
+				[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID] = @[xTABLE_NAMEx]ID;
+			
+			IF (@LAST_MODIFIED_BY = @LastModifiedBy) AND (DATEDIFF(MILLISECOND, @LAST_MODIFIED_ON, @LastModifiedOn) = 0)
+			BEGIN
+				INSERT INTO 
+					[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]History]
+					(
+						[[xTABLE_NAMEx]ID]
+						[xINSERT_FIELDSx]
+						, [CreatedBy]
+						, [CreatedOn]
+						, [LastModifiedBy]
+						, [LastModifiedOn]
+						, [IsActive]
+					)
+				SELECT
+					[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID]
+					[xSELECT_FIELDSx]
+					, @CurrentModificationBy
+					, @CurrentModificationOn
+					, @LastModifiedBy
+					, @LastModifiedOn
+					, [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[IsActive]
+				FROM 
+					[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]]
+				WHERE
+					[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID] = @[xTABLE_NAMEx]ID;
+				
+				UPDATE 
+					[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]]
+				SET
+					[xUPDATE_FIELDSx]
+					, [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[LastModifiedBy] = @CurrentModificationBy
+					, [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[LastModifiedOn] = @CurrentModificationOn
+					, [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[IsActive] = @IsActive
+				WHERE
+					[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID] = @[xTABLE_NAMEx]ID;				
+			END
+			ELSE
+			BEGIN
+				SELECT @[xTABLE_NAMEx]ID = -2;
+			END
+		END
+		ELSE IF @[xTABLE_NAMEx]ID_PREV <> @[xTABLE_NAMEx]ID
+		BEGIN			
+			SELECT @[xTABLE_NAMEx]ID = -1;			
+		END
+		-- ELSE
+		-- BEGIN
+		--	 SELECT @CurrentModificationOn = @LastModifiedOn;
+		-- END
+	END TRY
+	BEGIN CATCH
+		-- ERROR CATCHING - STARTS
+		BEGIN TRY			
+			EXEC [Audit].[usp_Insert_ErrorLog];			
+			SELECT @[xTABLE_NAMEx]ID = (MAX([Audit].[ErrorLog].[ErrorLogID]) * -1) FROM [Audit].[ErrorLog];
+		END TRY
+		BEGIN CATCH
+			RAISERROR('Error in [Audit].[usp_Insert_ErrorLog]', -1, -1);
+		END CATCH
+		-- ERROR CATCHING - ENDS
+	END CATCH
+END
+GO

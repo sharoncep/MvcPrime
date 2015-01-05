@@ -1,0 +1,4 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ANSI5010\bin\Release\ANSI5010.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ANSI5010\bin\Release\ANSI5010.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ANSI5010\obj\Release\ANSI5010.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ANSI5010\obj\Release\ANSI5010.pdb

@@ -1,0 +1,10 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Release\ClaimatePrimeEFWork.dll.config
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Release\ClaimatePrimeEFWork.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Release\ClaimatePrimeEFWork.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Release\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Release\EntityFramework.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Release\ClaimatePrimeConstants.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Release\EntityFramework.xml
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Release\ClaimatePrimeEFWork.csprojResolveAssemblyReference.cache
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Release\ClaimatePrimeEFWork.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Release\ClaimatePrimeEFWork.pdb

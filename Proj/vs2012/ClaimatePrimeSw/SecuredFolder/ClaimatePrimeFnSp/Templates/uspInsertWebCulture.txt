@@ -1,0 +1,17 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Description:This Stored Procedure is used to INSERT the WebCulture details into the table before rollback.
+ 
+CREATE PROCEDURE [Audit].[usp_Insert_WebCulture]
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+    SELECT 1;
+END
+
+GO

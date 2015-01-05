@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Pre.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+<link href="@Url.Content("~/Stylesheets/pre.css")" rel="stylesheet" type="text/css" />
+<div class="dv-top-bar">
+</div>
+<div class="dv-main_wrapper">
+    <div class="@StaticClass.SiteLogo"  title="@StaticClass.SiteVersion">
+    </div>
+    <div class="dv-s"></div>
+    <div class="dv-block-err">
+        <div class="dv-error404">
+            <h1>Unexpected Error!</h1>
+            <ul>
+                <li>Something went wrong. Please try again</li>
+                <li><a href="@Url.Content("~/Home/")" class="link">Login again</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+@Html.Partial("UserControls/PageFooterPre")

@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DashBoard"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Reports</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")

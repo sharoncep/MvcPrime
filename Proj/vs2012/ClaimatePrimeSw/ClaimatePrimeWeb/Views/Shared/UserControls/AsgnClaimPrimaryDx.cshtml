@@ -1,0 +1,51 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.PatientVisitSaveModel
+
+<div id="divDxprimary" class="dv-full-claim-mgmnt">
+    <div>
+        <a href="#" id="aDxprimaryE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Dxprimary');" class="aExpand">@Resources.ClaimatePrimeWebResx.PrimaryDx</a>
+        <a href="#" id="aDxprimaryC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Dxprimary');" class="aCollapse">@Resources.ClaimatePrimeWebResx.PrimaryDx</a>
+    </div>
+    <div id="divDxprimaryC" style="display: none;" title="" class="dv-bdr">
+        <table class="table-entry">
+            <tr>
+                <td style="width: 20%">
+                    @Resources.ClaimatePrimeWebResx.DescType
+                </td>
+                <td style="width: 80%">
+                    <ul class="ul-ra">
+                        <li>
+                            <input id="sdPdx" type="radio" name="rdoDescTypeDxPri" value="ShortDesc" onclick="javascript: return descTypeClickDxPri(this);" checked="checked" />
+                            <label for="sdPdx"><span></span>@Resources.ClaimatePrimeWebResx.ShortDesc </label>
+                        </li>
+                        <li>
+                            <input id="mdPdx" type="radio" name="rdoDescTypeDxPri" value="MediumDesc" onclick="javascript: return descTypeClickDxPri(this);" />
+                            <label for="mdPdx"><span></span>@Resources.ClaimatePrimeWebResx.MediumDesc</label></li>
+                        <li>
+                            <input id="ldPdx" type="radio" name="rdoDescTypeDxPri" value="LongDesc" onclick="javascript: return descTypeClickDxPri(this);" />
+                            <label for="ldPdx"><span></span>@Resources.ClaimatePrimeWebResx.LongDesc</label></li>
+                        <li>
+                            <input id="cdPdx" type="radio" name="rdoDescTypeDxPri" value="CustomDesc" onclick="javascript: return descTypeClickDxPri(this);" />
+                            <label for="cdPdx"><span></span>@Resources.ClaimatePrimeWebResx.CustomDesc</label></li>
+                        <li>
+                            <input type="text" id="txtDescTypeDxPri" value="ShortDesc" style="display: none" /></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.DxPri <span class="star">*</span>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.PatientVisitResult_PrimaryClaimDiagnosis)
+
+                    @Html.TextBoxFor(m => m.PatientVisitResult.PrimaryClaimDiagnosisID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") } 
+                                    }))
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

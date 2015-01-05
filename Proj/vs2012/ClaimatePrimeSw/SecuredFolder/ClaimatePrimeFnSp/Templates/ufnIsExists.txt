@@ -1,0 +1,45 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- Returns 0, if the record not exists, otherwise returns that primary key id value
+
+CREATE FUNCTION [[xTABLE_SCHEMAx]].[ufn_IsExists_[xTABLE_NAMEx]]
+(
+	[xINPUT_PARAMSx]
+	, @ForUpdate BIT
+)
+RETURNS [xPK_DATA_TYPEx]
+AS
+BEGIN
+	DECLARE @[xTABLE_NAMEx]ID [xPK_DATA_TYPEx];
+
+	IF @ForUpdate = 0
+	BEGIN
+		SELECT 
+			@[xTABLE_NAMEx]ID = [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID]
+		FROM 
+			[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]]
+		WHERE
+			[xWHERE_CONDITIONSx];
+	END
+	ELSE
+	BEGIN
+		SELECT 
+			@[xTABLE_NAMEx]ID = [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID]
+		FROM 
+			[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]]
+		WHERE
+			[xWHERE_CONDITIONS_CASEx];
+	END
+		
+	IF @[xTABLE_NAMEx]ID IS NULL
+	BEGIN
+		SELECT @[xTABLE_NAMEx]ID = 0
+	END
+
+	RETURN @[xTABLE_NAMEx]ID;
+END
+GO

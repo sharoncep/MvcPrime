@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.CPTSaveModel
+
+@using (Html.ArivaForm("CPTM", "Save"))
+{
+    @Html.TextBoxFor(m => m.AntiForgTokn
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                    }))
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CPTM"))"  title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.CPT </li>
+            @if (ArivaSession.Sessions().IsNewRec)
+            {
+                <li>-<span>@Resources.ClaimatePrimeWebResx.New</span></li>
+            }
+            else
+            {
+                <li>-<span>@Resources.ClaimatePrimeWebResx.Edit</span></li>
+            }
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+        <table class="table-entry">
+            <tr>
+                <td colspan="4" class="td-heading">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Code <span class="star">*</span></td>
+                <td>
+                @Html.TextBoxFor(m => m.CPT.CPTCode, 
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "9") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }    
+                                    }))               
+            </tr>
+            <tr>
+                <td>Charge Per Unit <span class="star">*</span></td>
+                <td>
+                @Html.TextBoxFor(m => m.CPT.ChargePerUnit 
+                    ,StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("placeholder", "0") } 
+                                    ,{ new KeyValueModel<string, string>("onkeyup", "keyUpUIntNumericLen(this, 16)") } 
+                                   ,{ new KeyValueModel<string, string>("onblur", "blurValidateUIntNumberLen(this, 16)") }                                       
+                                    }))
+
+                <td>@Resources.ClaimatePrimeWebResx.HCPCS  </td>
+                <td>
+                  @Html.CheckBoxFor(m => m.CPT.IsHCPCSCode)</td>
+            </tr>
+
+            
+            <tr>
+                <td colspan="4" class="td-heading">
+                    <div class="dv-subheading-view">Description Type
+                        <label class="lbl-note">Any one type of description should be filled</label>
+                        <span class="star1">***</span></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:20%">@Resources.ClaimatePrimeWebResx.ShortDesc <span class="star1">***</span></td>
+                <td style="width:30%">
+                @Html.TextBoxFor(m => m.CPT.ShortDesc, 
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "150") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }    
+                                    }))
+
+                <td style="width:20%">@Resources.ClaimatePrimeWebResx.MediumDesc <span class="star1">***</span></td>
+                <td style="width:30%">
+                    @Html.TextBoxFor(m => m.CPT.MediumDesc, 
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "150") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }    
+                                    }))</td>
+            </tr>
+
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.LongDesc <span class="star1">***</span></td>
+                <td>
+                @Html.TextBoxFor(m => m.CPT.LongDesc, 
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "255") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }    
+                                    }))
+
+                <td>@Resources.ClaimatePrimeWebResx.CustomDesc <span class="star1">***</span></td>
+                <td>
+                    @Html.TextBoxFor(m => m.CPT.CustomDesc, 
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "150") }
+                                         , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }    
+                                    }))</td>
+            </tr>
+            
+
+            <tr @Html.Raw((ArivaSession.Sessions().IsNewRec) ? "style=display:none;" : "")>
+                <td>@Resources.ClaimatePrimeWebResx.Active
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.CPT.IsActive)
+                </td>
+            </tr>
+            <tr @Html.Raw((ArivaSession.Sessions().IsNewRec) ? "style=display:none;" : "")>
+                <td>Comments
+                </td>
+                <td colspan="3">
+                    @Html.TextAreaFor(m => m.CPT.Comment, 
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "4000") }    
+                                    }))
+                </td>
+            </tr>
+        </table>
+        <div class="dv-submit-controls">
+            <ul>
+                <li>
+                    <input type="submit" name="btnSave" id="btnSave" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" onclick="javascript: return validateSave();">
+                </li>
+                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CPTM"))" class="aButton-cancel" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Cancel</a></li>
+            </ul>
+        </div>
+    </div>
+}
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveError.Replace("[X]", Model.ErrorMsg)" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtErrMsg" value="sai" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

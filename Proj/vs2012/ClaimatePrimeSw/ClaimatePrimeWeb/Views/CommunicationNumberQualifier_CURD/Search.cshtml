@@ -1,0 +1,121 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.CommunicationNumberQualifierSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuTransaction"))"  title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.CommunicationNumberQualifier</li>
+    </ul>
+</div>
+
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    @using (Html.ArivaForm("CommunicationNumberQualifier"))
+    {
+        <div style="display: none;">
+            @Html.TextBoxFor(m => m.StartBy)
+            @Html.TextBoxFor(m => m.CurrNumber)
+            @Html.TextBoxFor(m => m.OrderByField)
+            @Html.TextBoxFor(m => m.OrderByDirection)
+            @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+            <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+            <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+        </div>
+    }
+</div>
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    <table class="table-grid">
+        <tr>
+          
+                
+                <td style="width: 20%" class="td-gridhead">
+                    @Resources.ClaimatePrimeWebResx.Name
+                </td>
+                
+                <td style="width: 20%" class="td-gridhead">
+                    @Resources.ClaimatePrimeWebResx.Code
+
+                </td>
+            
+
+            <td style="width: 40%" class="td-gridhead">
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("CommunicationNumberQualifier", "Save"))" class="aAdd-td"  rel="control_tile">@Resources.ClaimatePrimeWebResx.AddNew</a>
+            </td>
+        </tr>
+
+
+        @foreach (usp_GetBySearch_CommunicationNumberQualifier_Result item in Model.CommunicationNumberQualifierResults)
+        {
+            if (@item.IsActive)
+            {
+            <tr>
+                <td>
+                    @item.CommunicationNumberQualifierName
+                </td>
+                <td>
+                    @item.CommunicationNumberQualifierCode
+                </td>
+                <td>
+                    <a href="#" onclick="@string.Concat("javascript:return setEdit('", item.CommunicationNumberQualifierID, "');")"  class="aEdit"  rel="control_tile">@Resources.ClaimatePrimeWebResx.Edit </a>
+                </td>
+            </tr>
+                
+            }
+            else
+            {
+            <tr rel="rel-block">
+                <td>
+                    @item.CommunicationNumberQualifierName
+                </td>
+                <td>
+                    @item.CommunicationNumberQualifierCode
+                </td>
+                <td>
+                    <a href="#" onclick="@string.Concat("javascript:return setEdit('", item.CommunicationNumberQualifierID, "');")"  class="aEdit"  rel="control_tile">@Resources.ClaimatePrimeWebResx.Edit  </a>
+                </td>
+            </tr>
+            }
+        }
+    </table>
+</div>
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

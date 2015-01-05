@@ -1,0 +1,18 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Description:The ufn_GetDayLastSecond Function is used to Get the First Date of the month which we give as INPUT.
+
+CREATE FUNCTION [[xTABLE_SCHEMAx]].[ufn_GetDayLastSecond] 
+(
+	@DT		DATETIME
+)
+RETURNS DATETIME
+AS
+BEGIN
+	RETURN CAST(CAST(CAST(@DT AS DATE) AS NVARCHAR) + ' 23:59:59.997' AS DATETIME);
+END
+GO

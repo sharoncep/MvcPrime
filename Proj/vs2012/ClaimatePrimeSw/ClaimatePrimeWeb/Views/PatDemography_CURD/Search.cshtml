@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatientDemography"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Patient</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatDemography", "Save"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-edit-ba">@Resources.ClaimatePrimeWebResx.Edit</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatDocument"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-document-ba">Document</a> </li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatHospitalization"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-hospitalization-ba">Hospitalization</a> </li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatVisit"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-visit-ba">Visit</a> </li>
+    </ul>
+</div>
+

@@ -1,0 +1,20 @@
+﻿<div class="dv-footer">
+    <ul class="ul-browser">
+        <li>@Resources.ClaimatePrimeWebResx.SupportedBrowsers</li>
+        <li class="mozilla" title="@Resources.ClaimatePrimeWebResx.Mozilla"></li>
+        <li class="safari" title="@Resources.ClaimatePrimeWebResx.Safari"></li>
+        <li class="chrome" title="@Resources.ClaimatePrimeWebResx.Chrome"></li>
+        <li class="iexplorer" title="@Resources.ClaimatePrimeWebResx.IE"></li>
+        <li class="opera" title="@Resources.ClaimatePrimeWebResx.Opera"></li>
+    </ul>
+    <ul class="ul-flink">
+        <li><a href="@Url.RouteUrl(ClaimatePrimeControllers.SecuredFolder.StaticClasses.StaticClass.RouteValues("LogInAttempt"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AttemptsLogin</a></li>
+        <li class="seperator">|</li>
+        <li><a href="@Url.RouteUrl(ClaimatePrimeControllers.SecuredFolder.StaticClasses.StaticClass.RouteValues("PreLogIn", "FAQ"))" target="_blank">@Resources.ClaimatePrimeWebResx.FAQ</a></li>
+        <li class="seperator">|</li>
+        <li><a href="http://claimatereportshmo.arivameddata.com/" target="_blank">@Resources.ClaimatePrimeWebResx.ClaimateReports</a></li>
+        <li>&nbsp;</li>
+        <li>&copy; @string.Concat("2008 - ", System.DateTime.Now.Year)
+        </li>
+    </ul>
+</div>

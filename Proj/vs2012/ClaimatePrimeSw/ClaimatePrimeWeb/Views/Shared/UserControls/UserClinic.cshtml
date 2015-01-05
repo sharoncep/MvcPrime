@@ -1,0 +1,84 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.UserClinicSearchModel
+
+<table class="table-entry">
+    <tr>
+        <td class="td-note" colspan="5">@Resources.ClaimatePrimeWebResx.Note : 
+                        <ul>
+                            <li>@Resources.ClaimatePrimeWebResx.NoteUser</li>
+                        </ul>
+        </td>
+    </tr>
+    @for (int i = 0; i < Model.UserClinicSearchs.Count; i++)
+    {
+        <tr>
+            @*<td style="width:20%">
+                @Resources.ClaimatePrimeWebResx.Name
+            </td>*@
+            <td colspan="2" class="td-name">
+                @Model.UserClinicSearchs[i].USER_DISP_NAME
+
+                @Html.TextBoxFor(m => Model.UserClinicSearchs[i].USER_ID,
+                         StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("style", "display:none;") }                                       
+                                    }))
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; width: 20%">
+                @Resources.ClaimatePrimeWebResx.Clinic
+            </td>
+            <td style="width: 80%">
+                <ul class="ul-clinic">
+                    @for (int j = 0; j < Model.UserClinicSearchs[i].UserClinicSearchSubs.Count; j++)
+                    {
+                        <li>
+                            @Model.UserClinicSearchs[i].UserClinicSearchSubs[j].IsActive
+                            <input type="submit" name="btnSave" id="@string.Concat("btnSave", @Model.UserClinicSearchs[i].UserClinicSearchSubs[j].UserClinicID.ToString())" value="@Resources.ClaimatePrimeWebResx.Save" @Html.Raw(( Model.UserClinicSearchs[i].UserClinicSearchSubs[j].IsActive) ? "class='button-checked'" : "class='button-unchecked'")  onclick="@string.Concat(( Model.UserClinicSearchs[i].UserClinicSearchSubs[j].IsActive) ?"javascript:return valBlockUnBlock('"+Model.UserClinicSearchs[i].UserClinicSearchSubs[j].UserClinicID+"','B','"+Model.UserClinicSearchs[i].UserClinicSearchSubs[j].ClinicID+"','"+Model.UserClinicSearchs[i].USER_ID+"');":"javascript:return valBlockUnBlock('"+Model.UserClinicSearchs[i].UserClinicSearchSubs[j].UserClinicID+"','U','"+Model.UserClinicSearchs[i].UserClinicSearchSubs[j].ClinicID+"','"+Model.UserClinicSearchs[i].USER_ID+"');")">
+
+                            @Html.TextBoxFor(m => Model.UserClinicSearchs[i].UserClinicSearchSubs[j].UserClinicID,
+                         StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("style", "display:none;") }                                       
+                                    }))
+                            @Model.UserClinicSearchs[i].UserClinicSearchSubs[j].ClinicName
+
+                            @Html.TextBoxFor(m => Model.UserClinicSearchs[i].UserClinicSearchSubs[j].ClinicID,
+                         StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("style", "display:none;") }                                       
+                                    }))
+                        </li>
+                    }
+
+                </ul>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div class="dv-submit-controls-claim">
+    <ul>
+        <li>
+            
+
+        <li>
+            @if (ArivaSession.Sessions().SelRoleID == 2)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserM"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>
+            }
+            @if (ArivaSession.Sessions().SelRoleID == 1)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserA"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>
+            }
+
+        </li>
+    </ul>
+</div>

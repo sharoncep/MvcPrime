@@ -1,0 +1,45 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeConstants;
+
+@if (ArivaSession.Sessions().SelPatientID > 0)
+{
+    <div class="dv-page-sub-header1">
+        <ul class="ul-sub-header">
+            <li class="li-clinic"><a href="@Url.RouteUrl(StaticClass.RouteValues(Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("Rpt") ? "RptClinic" : ((ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.MANAGER_ROLE_ID)) ? "ClinicViewM" : "ClinicView")))" title="@Resources.ClaimatePrimeWebResx.BackClinic" class="aClinic" onclick="javascript:showDivPageLoading();"></a>@ArivaSession.Sessions().SelClinicDispName</li>
+            <li class="clr"></li>
+            <li class="li-patient"><a href="@Url.RouteUrl(Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("Rpt") ? StaticClass.RouteValues("RptClinicWise", "PatientNameList") : (StaticClass.RouteValues((ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.BA_ROLE_ID)) ? "PatientDemography" : "Home")))" title="@Resources.ClaimatePrimeWebResx.BackPat" class="aPatient" onclick="javascript:showDivPageLoading();"></a>@ArivaSession.Sessions().SelPatientDispName</li>
+        </ul>
+    </div>
+}
+else if (ArivaSession.Sessions().SelProviderID > 0)
+{
+    <div class="dv-page-sub-header1">
+        <ul class="ul-sub-header">
+            <li class="li-clinic"><a href="@Url.RouteUrl(StaticClass.RouteValues(Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("Rpt") ? "RptClinic" : ((ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.MANAGER_ROLE_ID)) ? "ClinicViewM" : "ClinicView")))" title="@Resources.ClaimatePrimeWebResx.BackClinic" class="aClinic" onclick="javascript:showDivPageLoading();"></a>@ArivaSession.Sessions().SelClinicDispName</li>
+            <li class="clr"></li>
+            <li class="li-provider"><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinicWise", "ProviderNameList"))" title="@Resources.ClaimatePrimeWebResx.BackProv" class="aProvider" onclick="javascript:showDivPageLoading();"></a>@ArivaSession.Sessions().SelProviderDispName</li>
+        </ul>
+    </div>
+}
+else if (ArivaSession.Sessions().SelClinicID > 0)
+{
+    <div class="dv-page-sub-header1">
+        <ul class="ul-sub-header">
+            <li style="width: 450px; height: 10px;">&nbsp;</li>
+            <li class="li-clinic"><a href="@Url.RouteUrl(StaticClass.RouteValues(Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("Rpt") ? "RptClinic" : ((ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.MANAGER_ROLE_ID)) ? "ClinicViewM" : "ClinicView")))" title="@Resources.ClaimatePrimeWebResx.BackClinic" class="aClinic" onclick="javascript:showDivPageLoading();"></a>@ArivaSession.Sessions().SelClinicDispName</li>
+        </ul>
+    </div>
+}
+else if (ArivaSession.Sessions().SelAgentID > 0)
+{
+    <div class="dv-page-sub-header1">
+        <ul class="ul-sub-header">
+            <li style="width: 450px; height: 10px;">&nbsp;</li>
+            <li class="li-agent"><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent", "AgentNameList"))" title="@Resources.ClaimatePrimeWebResx.BackAgent" class="aAgent" onclick="javascript:showDivPageLoading();"></a>@ArivaSession.Sessions().SelAgentDispName</li>
+        </ul>
+    </div>
+}
+else
+{
+}

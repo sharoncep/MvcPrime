@@ -1,0 +1,119 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+
+<div id="divCpt" class="dv-full-claim-mgmnt">
+    <div>
+        <a href="#" id="aCptE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Cpt');" class="aExpand">@Resources.ClaimatePrimeWebResx.CPT</a>
+        <a href="#" id="aCptC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Cpt');" class="aCollapse">@Resources.ClaimatePrimeWebResx.CPT</a>
+    </div>
+    <div id="divCptC" style="display: none;" title="" class="dv-bdr">
+        <table class="table-entry">
+            <tr>
+                <td>
+                    @Resources.ClaimatePrimeWebResx.DescType
+                </td>
+                <td colspan="3">
+                    <ul class="ul-ra">
+                        <li>
+                            <input id="sdProc" type="radio" name="rdoDescTypeDxPro" value="ShortDesc" onclick="javascript: return descTypeClickDxPro(this);" checked="checked" />
+                            <label for="sdProc"><span></span>@Resources.ClaimatePrimeWebResx.ShortDesc </label>
+                        </li>
+                        <li>
+                            <input id="mdProc" type="radio" name="rdoDescTypeDxPro" value="MediumDesc" onclick="javascript: return descTypeClickDxPro(this);" />
+                            <label for="mdProc"><span></span>@Resources.ClaimatePrimeWebResx.MediumDesc </label>
+                        </li>
+                        <li>
+                            <input id="ldProc" type="radio" name="rdoDescTypeDxPro" value="LongDesc" onclick="javascript: return descTypeClickDxPro(this);" />
+                            <label for="ldProc"><span></span>@Resources.ClaimatePrimeWebResx.LongDesc </label>
+                        </li>
+                        <li>
+                            <input id="cdProc" type="radio" name="rdoDescTypeDxPro" value="CustomDesc" onclick="javascript: return descTypeClickDxPro(this);" />
+                            <label for="cdProc"><span></span>@Resources.ClaimatePrimeWebResx.CustomDesc </label>
+                        </li>
+                        <li>
+                            <input type="text" id="txtDescTypeDxPro" value="ShortDesc" style="display: none" /></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%">@Resources.ClaimatePrimeWebResx.DX <span class="star">*</span>
+                </td>
+                <td style="width: 30%">
+                    <input type="text" id="DiagNamePro" />
+                    <input type="text" id="DiagNameProID" style="display: none;" />
+                </td>
+                 <td style="width: 20%">@Resources.ClaimatePrimeWebResx.Procedure <span class="star">*</span>
+                </td>
+                 <td style="width: 30%">
+                    <input type="text" id="ProcCptName" />
+                    <input type="text" id="ProcCptNameID" style="display: none;" />
+                </td>
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.FacilityType <span class="star">*</span>
+                </td>
+                <td>
+
+                    <input type="text" id="FacilityTypeName" />
+                    <input type="text" id="FacilityTypeNameID" style="display: none;" />
+                </td>
+                <td>Modifier 1
+                </td>
+                <td>
+                    <input type="text" id="ModifierName1" />
+                    <input type="text" id="ModifierName1ID" style="display: none;" />
+                </td>                
+            </tr>
+            <tr>
+                <td>Modifier 2
+                </td>
+                <td>
+
+                    <input type="text" id="ModifierName2" />
+                    <input type="text" id="ModifierName2ID" style="display: none;" />
+                </td>
+                <td>Modifier 3
+                </td>
+                <td>
+                    <input type="text" id="ModifierName3" />
+                    <input type="text" id="ModifierName3ID" style="display: none;" />
+                </td>                
+            </tr>
+            <tr>
+                <td>Modifier 4
+                </td>
+                <td>
+                    <input type="text" id="ModifierName4" />
+                    <input type="text" id="ModifierName4ID" style="display: none;" />
+                </td>
+                <td>
+                    @Resources.ClaimatePrimeWebResx.ChargePerUnit 
+                </td>
+                <td id="tdcPerUnit">
+                    <input type="text" id="txtChargePerUnit" placeholder="0" onfocus="javascript:return registerBlurFn();" onkeyup="javascript:return keyUpNumericLen(this, 9)" onblur="javascript:return blurCalcTotCharge(this);" />
+                </td>                
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.Unit<span class="star">*</span>
+                </td>
+                <td>
+                    <input type="text" id="txtUnits"  placeholder="0" value="1" onfocus="javascript:return registerBlurFn();" onkeyup="javascript:return keyUpNumericLen(this, 9)" onblur="javascript:return blurCalcTotCharge(this);" />
+                </td>
+                <td>@Resources.ClaimatePrimeWebResx.TotalCharge
+                </td>
+                <td id="tdTotAmount">0</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="td-controls1">     
+                        <div class="dv-submit-controls">          
+                    <input type="button" name="btnSaveProc" class="button-add" onclick="javascript: return validateSavePro();" value="@Resources.ClaimatePrimeWebResx.Add"></div> 
+                </td>
+            </tr>
+        </table>
+        <div id="divProcListSum"></div>
+        <div>
+            <a href="#" id="aProcListDetE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandDiv('ProcListDet');" class="aExpand-sub">@Resources.ClaimatePrimeWebResx.PROCEDURE_DETAIL</a>
+            <a href="#" id="aProcListDetC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapseDiv('ProcListDet');" class="aCollapse-sub">@Resources.ClaimatePrimeWebResx.PROCEDURE_DETAIL</a>
+        </div>
+        <div id="divProcListDetC" style="display: none;"></div>
+    </div>  
+</div>

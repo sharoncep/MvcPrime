@@ -1,0 +1,128 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.VisitChartModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatVisit"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Visit </li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    @using (Html.ArivaForm("PatVisit", "Save"))
+    {
+        <table class="table-grid-view">
+            <tr>
+                <td class="td-gridhead" style="width: 10%">@Resources.ClaimatePrimeWebResx.SN</td>
+                <td class="td-gridhead" style="width: 30%">@Resources.ClaimatePrimeWebResx.ChartNo</td>
+                <td class="td-gridhead" style="width: 60%">@Resources.ClaimatePrimeWebResx.DOS</td>
+            </tr>
+            @for (int i = 0; i < 5; i++)
+            {
+                <tr>
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td style="width: 30%">
+                        @Model.Patient
+                        @Html.TextBoxFor(m => m.PatientID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                         { new KeyValueModel<string, string>("style", "display:none;") }  
+                                      
+                                    }))
+                    </td>
+
+                    <td style="width: 30%">
+                        <ul class="ul-search-criteria">
+                            <li>
+                                @Html.TextBoxFor(m => Model.DOSs[i]
+                                 , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }    
+                                      , { new KeyValueModel<string, string>("rel", "txtsearch") }                                       
+                                    }))
+                                <a href="#" class="aDelete"  onclick="javascript:return clearDatePicker('@string.Concat("DOSs_", i, "_")');"></a></li>
+
+                        </ul>
+                    </td>
+                </tr>
+            }
+
+            @for (int i = 5; i < 50; i++)
+            {
+                <tr id="@string.Concat("trVisitChart", i)" style="display:none;">
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td>
+                        @Model.Patient
+                        @Html.TextBoxFor(m => m.PatientID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                         { new KeyValueModel<string, string>("style", "display:none;") }  
+                                      
+                                    }))
+                    </td>
+                    <td style="width: 30%">
+                        <ul class="ul-search-criteria">
+                            <li>
+                                @Html.TextBoxFor(m => Model.DOSs[i]
+                                 , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }    
+                                      , { new KeyValueModel<string, string>("rel", "txtsearch") }                                       
+                                    }))
+                                <a href="#" class="aDelete"  onclick="javascript:return clearDatePicker('@string.Concat("DOSs_", i, "_")');"></a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </table>   
+            
+        <div class="dv-submit-controls">
+            <ul>
+                <li>
+                    <input type="submit" name="btnPatNext" id="btnPatNext" onclick="javascript: return validateSave();" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" /></li>
+                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatVisit"))" class="aButton-cancel" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Cancel</a></li>
+            </ul>
+            <a id="aShowMore" href="#" onclick="javascript:return showMore();" class="aShow-more">@Resources.ClaimatePrimeWebResx.More</a>
+            <input type="text" id="txtShowMore" value="4" style="display: none;" />
+        </div>     
+    }
+</div>
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveError.Replace("[X]", Model.ErrorMsg)" />
+            }
+            else
+            {
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+            }
+            else
+            {
+            }
+        }
+    }
+</div>

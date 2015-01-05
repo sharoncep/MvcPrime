@@ -1,0 +1,13 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+
+
+<div id="divPatient" class="dv-full-claim-mgmnt">
+    <div>
+        <a href="#" id="aPatientE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Patient');" class="aExpand">@Resources.ClaimatePrimeWebResx.Patient</a>
+        <a href="#" id="aPatientC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Patient');" class="aCollapse">@Resources.ClaimatePrimeWebResx.Patient</a>
+    </div>
+    <div id="divPatientC" style="display: none;" title="" class="dv-bdr">
+        
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.UserReportSearchModel
+
+<div class="dv-page-header">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgent"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading('');"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Agent</li>
+        <li><span>-</span></li>
+        <li><span>@Resources.ClaimatePrimeWebResx.ComparisonReport</span></li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div id="divSearch" class="dv-block">
+    @using (Html.ArivaForm("RptSumFCAgent", "SearchAjaxCallComp"))
+    {
+        <ul class="ul-date">
+            <li>
+                @Html.TextBoxFor(m => m.DateFrom
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                       , { new KeyValueModel<string, string>("rel", "calendar") }
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                      
+                                    }))
+            </li>
+            <li>
+                @Html.TextBoxFor(m => m.DateTo
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-to-date") }
+                                       , { new KeyValueModel<string, string>("rel", "calendar") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                        
+                                    }))
+            </li>
+            <li>
+                <input type="button" name="btnSearch" id="btnSearch" title="@Resources.ClaimatePrimeWebResx.Search" value="." class="btn-search1" onclick="javascript: showChartAgent('Agent');" /></li>
+            <li class="dv-date-range">
+                <div id="divDatePicked">
+                </div>
+            </li>
+        </ul>
+    }
+</div>
+@Html.Partial("UserControls/AgentCompFCReport")

@@ -1,0 +1,10 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\bin\Debug\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\bin\Debug\ClaimatePrimeConstants.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Debug\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Debug\ClaimatePrimeConstants.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Debug\ClaimatePrimeConstants.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\bin\Debug\ClaimatePrimeConstants.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\bin\Debug\ClaimatePrimeConstants.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Debug\ClaimatePrimeConstants.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Debug\ClaimatePrimeConstants.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Debug\ClaimatePrimeConstants.pdb

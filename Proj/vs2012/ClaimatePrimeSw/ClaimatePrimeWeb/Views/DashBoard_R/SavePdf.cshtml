@@ -1,0 +1,64 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.DashBoardModel
+
+<div>
+    <table border="0" cellpadding="2" cellspacing="2" border="0">
+        <tr bgcolor="#270a38" color="#ffffff" style="font-size:10px">
+            <td width="8%">@Resources.ClaimatePrimeWebResx.SN
+            </td>
+            <td width="33%">@Resources.ClaimatePrimeWebResx.ClinicName
+            </td>
+            <td width="25%">@Resources.ClaimatePrimeWebResx.PatientName
+            </td>
+            <td width="15%">@Resources.ClaimatePrimeWebResx.ChartNo
+            </td>
+            <td width="15%">@Resources.ClaimatePrimeWebResx.DOS
+            </td>
+            <td width="10%">@Resources.ClaimatePrimeWebResx.CaseNo
+            </td>
+        </tr>
+
+        @{
+            bool isOdd = false;
+
+            foreach (usp_GetDashboardVisitPdf_PatientVisit_Result item in Model.DashboardPdfVisit)
+            {
+                isOdd = !isOdd;
+
+                if (isOdd)
+                {
+            <tr style="font-size:8px">
+                <td>@item.SL_NO</td>
+                <td>@item.ClinicName</td>
+                <td>@item.Name
+                </td>
+                <td>@item.ChartNumber
+                </td>
+                <td>@StaticClass.GetDateStr(item.DOS)
+                </td>
+                <td>@item.PatientVisitID
+                </td>
+            </tr>
+                }
+                else
+                {
+                    
+            <tr bgcolor="#e6e6e6" style="font-size:8px">
+                <td>@item.SL_NO</td>
+                <td>@item.ClinicName</td>
+                <td>@item.Name
+                </td>
+                <td>@item.ChartNumber
+                </td>
+                <td>@StaticClass.GetDateStr(item.DOS)
+                </td>
+                <td>@item.PatientVisitID
+                </td>
+            </tr>
+                }
+            }
+        }
+    </table>
+</div>

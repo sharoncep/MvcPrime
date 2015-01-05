@@ -1,0 +1,16 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+
+
+
+<div id="divVisit" class="dv-full-claim-mgmnt">
+    <div>
+        <a href="#" id="aVisitE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Visit');" class="aExpand">@Resources.ClaimatePrimeWebResx.Visit</a>
+        <a href="#" id="aVisitC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Visit');" class="aCollapse">@Resources.ClaimatePrimeWebResx.Visit</a>
+    </div>
+    <div id="divVisitC" style="display: none;" title="" class="dv-bdr">
+    </div>
+</div>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{964ECB33-CCF8-4F5A-A5AA-64EF0A6C83B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClaimatePrimeFnSp</RootNamespace>
+    <AssemblyName>ClaimatePrimeFnSp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\FieldObject.cs" />
+    <Compile Include="Classes\FnSpCreator.cs" />
+    <Compile Include="Classes\TableObject.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\DropFn.txt" />
+    <Resource Include="Templates\DropSp.txt" />
+    <Resource Include="Templates\GetTableNames.txt" />
+    <Resource Include="Templates\ScalarFnUsageKeys.txt" />
+    <Resource Include="Templates\SpUsageKeys.txt" />
+    <Resource Include="Templates\ufnGetDayFirstSecond.txt" />
+    <Resource Include="Templates\ufnGetDayLastSecond.txt" />
+    <Resource Include="Templates\ufnGetMonthFirstDate.txt" />
+    <Resource Include="Templates\ufnGetMonthLastDate.txt" />
+    <Resource Include="Templates\ufnGetPassword.txt" />
+    <Resource Include="Templates\ufnGetRandNumber.txt" />
+    <Resource Include="Templates\ufnIsExists.txt" />
+    <Resource Include="Templates\ufnIsExistsErrorLog.txt" />
+    <Resource Include="Templates\ufnIsExistsLockUnLock.txt" />
+    <Resource Include="Templates\ufnIsExistsLogInLogOut.txt" />
+    <Resource Include="Templates\ufnIsExistsLogInTrial.txt" />
+    <Resource Include="Templates\ufnIsExistsUserClinicSelect.txt" />
+    <Resource Include="Templates\ufnIsExistsUserPassword.txt" />
+    <Resource Include="Templates\ufnIsExistsUserRoleSelect.txt" />
+    <Resource Include="Templates\ufnIsExistsWebCulture.txt" />
+    <Resource Include="Templates\ufnStringEndsWith.txt" />
+    <Resource Include="Templates\ufnStringSplit.txt" />
+    <Resource Include="Templates\ufnStringStartsWith.txt" />
+    <Resource Include="Templates\uspGetByPkId.txt" />
+    <Resource Include="Templates\uspGetByPkIdErrorLog.txt" />
+    <Resource Include="Templates\uspGetByPkIdLockUnLock.txt" />
+    <Resource Include="Templates\uspGetByPkIdLogInLogOut.txt" />
+    <Resource Include="Templates\uspGetByPkIdLogInTrial.txt" />
+    <Resource Include="Templates\uspGetByPkIdUserClinicSelect.txt" />
+    <Resource Include="Templates\uspGetByPkIdUserPassword.txt" />
+    <Resource Include="Templates\uspGetByPkIdUserRoleSelect.txt" />
+    <Resource Include="Templates\uspGetByPkIdWebCulture.txt" />
+    <Resource Include="Templates\uspGetNextIdentity.txt" />
+    <Resource Include="Templates\uspGetStatusScreen.txt" />
+    <Resource Include="Templates\uspGetTimeServer.txt" />
+    <Resource Include="Templates\uspInsert.txt" />
+    <Resource Include="Templates\uspInsertErrorLog.txt" />
+    <Resource Include="Templates\uspInsertLockUnLock.txt" />
+    <Resource Include="Templates\uspInsertLogInLogOut.txt" />
+    <Resource Include="Templates\uspInsertLogInTrial.txt" />
+    <Resource Include="Templates\uspInsertUserClinicSelect.txt" />
+    <Resource Include="Templates\uspInsertUserPassword.txt" />
+    <Resource Include="Templates\uspInsertUserRoleSelect.txt" />
+    <Resource Include="Templates\uspInsertWebCulture.txt" />
+    <Resource Include="Templates\uspIsExists.txt" />
+    <Resource Include="Templates\uspIsExistsErrorLog.txt" />
+    <Resource Include="Templates\uspIsExistsLockUnLock.txt" />
+    <Resource Include="Templates\uspIsExistsLogInLogOut.txt" />
+    <Resource Include="Templates\uspIsExistsLogInTrial.txt" />
+    <Resource Include="Templates\uspIsExistsUserClinicSelect.txt" />
+    <Resource Include="Templates\uspIsExistsUserPassword.txt" />
+    <Resource Include="Templates\uspIsExistsUserRoleSelect.txt" />
+    <Resource Include="Templates\uspIsExistsWebCulture.txt" />
+    <Resource Include="Templates\uspUpdate.txt" />
+    <Resource Include="Templates\uspUpdateErrorLog.txt" />
+    <Resource Include="Templates\uspUpdateLockUnLock.txt" />
+    <Resource Include="Templates\uspUpdateLogInLogOut.txt" />
+    <Resource Include="Templates\uspUpdateLogInTrial.txt" />
+    <Resource Include="Templates\uspUpdateUserClinicSelect.txt" />
+    <Resource Include="Templates\uspUpdateUserPassword.txt" />
+    <Resource Include="Templates\uspUpdateUserRoleSelect.txt" />
+    <Resource Include="Templates\uspUpdateWebCulture.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\uspGetAllMvcInit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\CreatedScripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\uspGetAllWebCulture.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\uspInsertUserReport.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\uspInsertSyncStatus.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\uspUpdateSyncStatus.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

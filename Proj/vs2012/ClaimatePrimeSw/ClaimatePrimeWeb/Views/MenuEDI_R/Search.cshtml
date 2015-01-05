@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuM", "Search"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.EDI</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        
+        @*<li><a href="@Url.RouteUrl(StaticClass.RouteValues("IllIndicatorM"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-illnessindicator-mgr">
+                    Illness Indicator</a></li>*@
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClaimStatusM"))" rel="menu_tile"  onclick="javascript:showDivPageLoading();" class="menu-claim-status-mgr">@Resources.ClaimatePrimeWebResx.ClaimStatus</a></li>
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("EDIM"))" rel="menu_tile"  onclick="javascript:showDivPageLoading();" class="menu-edireceiver-mgr">@Resources.ClaimatePrimeWebResx.EDIReciever</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PrintPin"))" rel="menu_tile"  onclick="javascript:showDivPageLoading();" class="menu-pin-mgr">@Resources.ClaimatePrimeWebResx.PrintPin</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PrintSign"))" rel="menu_tile"  onclick="javascript:showDivPageLoading();"  class="menu-sign-mgr">@Resources.ClaimatePrimeWebResx.PrintSign</a></li>
+        
+    </ul>
+</div>

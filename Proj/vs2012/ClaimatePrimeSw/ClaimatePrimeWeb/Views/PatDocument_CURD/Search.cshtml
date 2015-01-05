@@ -1,0 +1,170 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeModels.Models;
+
+@model ClaimatePrimeModels.Models.PatientDocumentSearchModel
+
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatDemography"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Document </li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    @using (Html.ArivaForm("PatDocument", "Search"))
+    {       
+        <div style="display: none;">
+            @Html.TextBoxFor(m => m.StartBy)
+            @Html.TextBoxFor(m => m.CurrNumber)
+            @Html.TextBoxFor(m => m.OrderByField)
+            @Html.TextBoxFor(m => m.OrderByDirection)
+            @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+            <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+            <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+
+
+
+            @Html.TextBoxFor(m => m.PatientID,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+
+
+            @Html.TextBoxFor(m => m.SearchName,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }       
+                                    }))
+        </div>
+    }
+</div>
+
+<div class="dv-block1">
+    <div class="dv-doc-main-wrap">
+        @foreach (PatientDocumentSearchSubModel item in Model.PatientDocumentSearchSubModels)
+        {    
+            <div class="dv-doc-head">@item.CategoryName</div>
+
+            foreach (usp_GetByPkId_PatientDocument_Result itemSub in item.PatientDocumentResults)
+            {
+            <ul class="ul-menu">
+                <li>
+                    <div class="@((itemSub.IsActive) ? "dv-doc-inner" : "dv-doc-inner-disabled")">
+                        <span class="sp-date">@StaticClass.GetDateStr(itemSub.ServiceOrFromDate)
+                        </span>
+
+
+                        @if (itemSub.ToDate.HasValue)
+                        {
+                            <span class="sp-date">-</span>
+                            <span class="sp-date">@StaticClass.GetDateStr(itemSub.ToDate)</span>
+                        }
+                        @if (StaticClass.CanImg(Path.GetExtension(itemSub.DocumentRelPath)))
+                        {
+                            if (@itemSub.IsActive)
+                            {
+                            <img src="@string.Concat(Url.RouteUrl(StaticClass.RouteValues("Document", "SearchFile")), "?ky=", itemSub.PatientDocumentID)" alt="" onclick="javascript:return enlargePhoto(this);" style="width: 55px; height: 55px; float:left; cursor:pointer; margin: 5px 2px;" title="@Resources.ClaimatePrimeWebResx.EnlargeClick" />
+                            }
+                            else
+                            {
+                            <img src="@string.Concat(Url.RouteUrl(StaticClass.RouteValues("Document", "SearchFile")), "?ky=", itemSub.PatientDocumentID)"  style="width: 55px; height: 55px; float:left; cursor:default; opacity:0.2; margin: 5px 2px;"  />
+                            }
+                        }
+                        else
+                        {
+                            if (@itemSub.IsActive)
+                            {
+                            <img src="@string.Concat(Url.RouteUrl(StaticClass.RouteValues("Document", "SearchFilePreview")), "?ky=", itemSub.PatientDocumentID)" alt="" onclick="javascript:return printFile('@string.Concat(Url.RouteUrl(StaticClass.RouteValues("Document", "SearchFile")), "?ky=", itemSub.PatientDocumentID)');" style="width: 55px; height: 55px; float:left; cursor:pointer; margin: 5px 2px;" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+                            }
+                            else
+                            {
+                            <img src="@string.Concat(Url.RouteUrl(StaticClass.RouteValues("Document", "SearchFilePreview")), "?ky=", itemSub.PatientDocumentID)" alt=""  style="width: 55px; height: 55px; float:left; cursor:default; margin: 5px 2px; opacity:0.2;"  />
+                            }
+                        }
+                        <a href="#" onclick="@string.Concat("javascript:return setEdit('", itemSub.PatientDocumentID, "');")"  class="aEdit1"  rel="control_tile">@Resources.ClaimatePrimeWebResx.Edit </a>
+                    </div>
+
+
+
+                </li>
+            </ul>
+            }
+            <div class="dv-clear"></div>
+            
+        }
+
+        <div class="dv-add-new1">
+            @if (Model.PatientResult.IsActive)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("PatDocument", "Save"))" class="aAdd" rel="control_tile" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AddNew</a>
+            }
+        </div>
+
+
+    </div>
+    @if (Model.PatientDocumentSearchSubModels.Count == 0)
+    {
+
+        @Html.Partial("UserControls/NoRec")
+    }
+
+</div>
+
+
+
+
+
+
+<div id="divEnlargePhoto" class="div_transparent">
+    <div class="dvImage">
+        <img id="imgEnlargePhoto" src="@Url.RouteUrl(StaticClass.RouteValues("Home", "NoFile"))" alt="#" style="cursor:pointer" onclick="return printImage();" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+    </div>
+    <div class="dvControls_pop">
+        <a href="#" onclick="javascript:return resizePhoto();" class="close-button">@Resources.ClaimatePrimeWebResx.Close</a>
+    </div>
+</div>
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

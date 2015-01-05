@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@model ClaimatePrimeModels.Models.ExcelReportSearchModel
+
+<div class="dv-page-header">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptDashboard"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading('');"></a></li>
+         <li>@Resources.ClaimatePrimeWebResx.AgentWiseRpt</li>
+    </ul>
+</div>
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent", "EARpt"))" class="role-edi-agent" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.EA</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent", "QARpt"))" class="role-quality-agent" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.QA</a></li>        
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent", "BillingAgentRpt"))" class="role-billing-agent" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.BA</a></li>
+    </ul>
+</div>

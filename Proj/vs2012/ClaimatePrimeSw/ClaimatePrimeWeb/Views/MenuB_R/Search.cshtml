@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicView", "Search", 1, 0))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Coding</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatientDemography"))" rel="menu_tile" class="menu-patient-ba" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientDemography</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Document"))" rel="menu_tile" class="menu-document-ba" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Document</a>
+        </li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Hospitalization"))" rel="menu_tile" class="menu-hospitalization-ba" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Hospitalization</a>
+        </li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Visit"))" rel="menu_tile" class="menu-visit-ba" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Visit</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaim"))" rel="menu_tile" class="menu-claim-ba" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimProcess</a></li>
+        <li><a class="menu-team-members-ba" href="@Url.RouteUrl(StaticClass.RouteValues("TeamMembers"))" rel="menu_tile" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.TeamMember</a>
+        </li>
+    </ul>
+</div>

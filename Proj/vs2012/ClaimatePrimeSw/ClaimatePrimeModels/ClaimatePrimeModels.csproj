@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A38A74E-9973-473C-A70A-B62E47D9A5E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClaimatePrimeModels</RootNamespace>
+    <AssemblyName>ClaimatePrimeModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\AccessPrivilege_RoleModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Audit_LockUnLockModel.cs" />
+    <Compile Include="Models\Audit_LogInLogOutModel.cs" />
+    <Compile Include="Models\Audit_LogInTrialModel.cs" />
+    <Compile Include="Models\Audit_UserClinicSelectModel.cs" />
+    <Compile Include="Models\Audit_UserPasswordModel.cs" />
+    <Compile Include="Models\Audit_UserReportModel.cs" />
+    <Compile Include="Models\Audit_UserRoleSelectModel.cs" />
+    <Compile Include="Models\Audit_WebCultureModel.cs" />
+    <Compile Include="Models\Billing_ClinicModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Billing_IPAModel.cs" />
+    <Compile Include="Models\Billing_ProviderModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Claim_ClaimDiagnosisCPTModel.cs" />
+    <Compile Include="Models\Claim_ClaimDiagnosisModel.cs" />
+    <Compile Include="Models\Claim_ClaimProcessModel.cs" />
+    <Compile Include="Models\Configuration_GeneralModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Configuration_PasswordModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Billing_SpecialtyModel.cs" />
+    <Compile Include="Models\Billing_FacilityTypeModel.cs" />
+    <Compile Include="Models\Billing_FacilityDoneModel.cs" />
+    <Compile Include="Models\Claim_ClaimProcessEDIFileModel.cs" />
+    <Compile Include="Models\Billing_CredentialModel.cs" />
+    <Compile Include="Models\EDI_EDIFileModel.cs" />
+    <Compile Include="Models\Transaction_CommunicationNumberQualifierModel.cs" />
+    <Compile Include="Models\Transaction_PayerResponsibilitySequenceNumberCodeModel.cs" />
+    <Compile Include="Models\Transaction_CurrencyCodeModel.cs" />
+    <Compile Include="Models\Transaction_EntityIdentifierCodeModel.cs" />
+    <Compile Include="Models\Diagnosis_DiagnosisGroupModel.cs" />
+    <Compile Include="Models\Diagnosis_DiagnosisModel.cs" />
+    <Compile Include="Models\EDI_EDIReceiverModel.cs" />
+    <Compile Include="Models\MasterData_ClaimStatusModel.cs" />
+    <Compile Include="Models\Diagnosis_CPTModel.cs" />
+    <Compile Include="Models\EDI_PrintSignModel.cs" />
+    <Compile Include="Models\EDI_PrintPinModel.cs" />
+    <Compile Include="Models\Diagnosis_IllnessIndicatorModel.cs" />
+    <Compile Include="Models\Diagnosis_ModifierModel.cs" />
+    <Compile Include="Models\Insurance_InsuranceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Insurance_InsuranceTypeModel.cs" />
+    <Compile Include="Models\Insurance_RelationshipModel.cs" />
+    <Compile Include="Models\MasterData_CityModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\MasterData_CountryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\MasterData_CountyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\MasterData_DocumentCategoryModel.cs" />
+    <Compile Include="Models\MasterData_StateModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Patient_PatientDocumentModel.cs" />
+    <Compile Include="Models\Patient_PatientHospitalizationModel.cs" />
+    <Compile Include="Models\Patient_PatientModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Patient_PatientVisitModel.cs" />
+    <Compile Include="Models\Transaction_AuthorizationInformationQualifierModel.cs" />
+    <Compile Include="Models\Transaction_ClaimMediaModel.cs" />
+    <Compile Include="Models\Transaction_EntityTypeQualifierModel.cs" />
+    <Compile Include="Models\Transaction_InterchangeIDQualifierModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Transaction_InterchangeUsageIndicatorModel.cs" />
+    <Compile Include="Models\Transaction_SecurityInformationQualifierModel.cs" />
+    <Compile Include="Models\Transaction_TransactionSetPurposeCodeModel.cs" />
+    <Compile Include="Models\Transaction_TransactionTypeCodeModel.cs" />
+    <Compile Include="Models\User_UserClinicModel.cs" />
+    <Compile Include="Models\User_UserModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\_PreLoginModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecuredFolder\BaseModels\BaseModel.cs" />
+    <Compile Include="SecuredFolder\BaseModels\BaseSaveModel.cs" />
+    <Compile Include="SecuredFolder\BaseModels\BaseSearchModel.cs" />
+    <Compile Include="SecuredFolder\Commons\AZModel.cs" />
+    <Compile Include="SecuredFolder\Commons\RolePageModel.cs" />
+    <Compile Include="SecuredFolder\Extensions\EncodePassword.cs" />
+    <Compile Include="SecuredFolder\Extensions\KeyValueModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ANSI5010\ANSI5010.csproj">
+      <Project>{193952d2-dd89-419b-95ca-4bb59ef498a4}</Project>
+      <Name>ANSI5010</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClaimatePrimeEFWork\ClaimatePrimeEFWork.csproj">
+      <Project>{3505e24a-553f-4c46-8af3-77fb8bd9a507}</Project>
+      <Name>ClaimatePrimeEFWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecuredFolder\ArivaCryptorEngine\ArivaCryptorEngine.csproj">
+      <Project>{b617c482-0e0a-4790-839f-7eb68342bd81}</Project>
+      <Name>ArivaCryptorEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecuredFolder\ArivaEmail\ArivaEmail.csproj">
+      <Project>{065DD9D9-8060-47AB-AEEB-9101B46E9A18}</Project>
+      <Name>ArivaEmail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecuredFolder\ClaimatePrimeConstants\ClaimatePrimeConstants.csproj">
+      <Project>{E9339F50-C822-42C5-9E15-4F0F2C5FAE0C}</Project>
+      <Name>ClaimatePrimeConstants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecuredFolder\OfficeOpenXml\OfficeOpenXml.csproj">
+      <Project>{85bd0489-84ce-4f99-9b71-b2c07c7cf5fc}</Project>
+      <Name>OfficeOpenXml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

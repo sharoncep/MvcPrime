@@ -1,0 +1,17 @@
+﻿@*Chart*@
+<div style="overflow: hidden; width: 1000px; height: 450px;">
+    <div id="divChart" class="dv-block" style="position: relative;">
+    </div>
+</div>
+@*Chart Paging*@
+<div id="divChartPg" class="dv-block">
+    <a id="aChartPgN" href="#" onclick="javascript:return fusionChartPg('N');" class="next">@Resources.ClaimatePrimeWebResx.Next</a>
+    <span id="spnChartPgN" class="next-disabled">@Resources.ClaimatePrimeWebResx.Next</span>
+    <a id="aChartPgP" href="#" onclick="javascript:return fusionChartPg('P');" class="previous">@Resources.ClaimatePrimeWebResx.Previous</a>
+    <span id="spnChartPgP" class="previous-disabled">@Resources.ClaimatePrimeWebResx.Previous</span>
+</div>
+@*Chart Supports (Hidden)*@
+<div style="display: none;">
+    <input type="text" id="hdnFusChrtWid" value="0" />
+    <input type="text" id="hdnFusChrtTyp" value="0" />
+</div>

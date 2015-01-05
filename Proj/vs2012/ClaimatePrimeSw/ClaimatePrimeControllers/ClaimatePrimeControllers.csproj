@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{462C5E76-DB1B-432D-94EC-91DEC7888EC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClaimatePrimeControllers</RootNamespace>
+    <AssemblyName>ClaimatePrimeControllers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\itextsharp.5.4.0\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxCalls\AsgnClaims\ClinicResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\EDISettingsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AjaxCalls\AsgnClaims\DxResultView.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\PrevVisitResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\PatDocResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\FacilityDoneResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\StatusResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\NoteResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\CPTResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\ICDFormatResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\ProcedureResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\IpaResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\ProviderResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\InsuranceResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\DxResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\PatientResult.cs" />
+    <Compile Include="AjaxCalls\AsgnClaims\VisitResult.cs" />
+    <Compile Include="AjaxCalls\Dashboard\SyncResult.cs" />
+    <Compile Include="AjaxCalls\FusionChart.cs" />
+    <Compile Include="AjaxCalls\Dashboard\AgentWiseResult.cs" />
+    <Compile Include="AjaxCalls\Dashboard\DashTableResult.cs" />
+    <Compile Include="AjaxCalls\Reports\ReportResult.cs" />
+    <Compile Include="AjaxCalls\SearchResult.cs" />
+    <Compile Include="AjaxCalls\CurrDtTm.cs" />
+    <Compile Include="Controllers\AssgnClaimsE_URController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AssgnClaimsQ_URController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AssgnClaims_URController.cs" />
+    <Compile Include="Controllers\AuthQualifierM_CURDController.cs" />
+    <Compile Include="Controllers\AutoCompleteController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AutoCompleteController_SAI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AutoCompleteController_SHARON.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\CaseAgentM_URController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\CaseComplex_URController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ChangePwd_UController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\CityBlock_URController.cs" />
+    <Compile Include="Controllers\CityM_CURController.cs" />
+    <Compile Include="Controllers\ClaimMediaM_CURDController.cs" />
+    <Compile Include="Controllers\ClaimStatusM_RController.cs" />
+    <Compile Include="Controllers\ClinicAllRpt_RController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ClinicA_CURDController.cs" />
+    <Compile Include="Controllers\ClinicSetUpM_RController.cs" />
+    <Compile Include="Controllers\ClinicViewM_RController.cs" />
+    <Compile Include="Controllers\ClinicView_RController.cs" />
+    <Compile Include="Controllers\AssgnClaimsNITB_URController.cs" />
+    <Compile Include="Controllers\AssgnClaimsNITQ_URController.cs" />
+    <Compile Include="Controllers\AssgnClaimsNITE_URController.cs" />
+    <Compile Include="Controllers\CommunicationNumberQualifier_CURDController.cs" />
+    <Compile Include="Controllers\CaseReopen_URController.cs" />
+    <Compile Include="Controllers\CaseReclose_URController.cs" />
+    <Compile Include="Controllers\Case_RController.cs" />
+    <Compile Include="Controllers\EntityIdentifierCode_CURDController.cs" />
+    <Compile Include="Controllers\InterchangeIDQualifier_CURDController.cs" />
+    <Compile Include="Controllers\CurrencyCode_CURDController.cs" />
+    <Compile Include="Controllers\PayerResSeq_CURDController.cs" />
+    <Compile Include="Controllers\EDICreateSuccess_RController.cs" />
+    <Compile Include="Controllers\EDICreate_CRController.cs" />
+    <Compile Include="Controllers\EDIM_CURDController.cs" />
+    <Compile Include="Controllers\EDIRcverM_CURDController.cs" />
+    <Compile Include="Controllers\EDIRcvrView_RController.cs" />
+    <Compile Include="Controllers\Dashboard_RController.cs" />
+    <Compile Include="Controllers\EDIRespond_URController.cs" />
+    <Compile Include="Controllers\RptAgentWise_RController.cs" />
+    <Compile Include="Controllers\RptAgent_RController.cs" />
+    <Compile Include="Controllers\RptClinicWise_RController.cs" />
+    <Compile Include="Controllers\RptClinic_RController.cs" />
+    <Compile Include="Controllers\RptDashboard_RController.cs" />
+    <Compile Include="Controllers\RptPatientWise_RController.cs" />
+    <Compile Include="Controllers\RptProviderWise_RController.cs" />
+    <Compile Include="Controllers\RptSumFCAgentWise_RController.cs" />
+    <Compile Include="Controllers\RptSumFCAgent_RController.cs" />
+    <Compile Include="Controllers\RptSumFCClinicWise_RController.cs" />
+    <Compile Include="Controllers\RptSumFCClinic_RController.cs" />
+    <Compile Include="Controllers\RptSumFCPatientWise_RController.cs" />
+    <Compile Include="Controllers\RptSumFCProviderWise_RController.cs" />
+    <Compile Include="Controllers\SecurityQuali_CURDController.cs" />
+    <Compile Include="Controllers\SummaryAgentView_RController.cs" />
+    <Compile Include="Controllers\SummaryClinicView_RController.cs" />
+    <Compile Include="Controllers\DiagnosisGroup_CURDController.cs" />
+    <Compile Include="Controllers\Credentials_RController.cs" />
+    <Compile Include="Controllers\SummaryDashboardView_RController.cs" />
+    <Compile Include="Controllers\TransPurpsCodeM_CURDController.cs" />
+    <Compile Include="Controllers\TransTypeCodeM_CURDController.cs" />
+    <Compile Include="Controllers\UnassgnClaimsNITQ_URController.cs" />
+    <Compile Include="Controllers\UnassgnClaimsNITE_URController.cs" />
+    <Compile Include="Controllers\UnassgnClaimsNITB_URController.cs" />
+    <Compile Include="Controllers\EDIHistory_RController.cs" />
+    <Compile Include="Controllers\MenuEDIE_RController.cs" />
+    <Compile Include="Controllers\CreatedClaimsE_RController.cs" />
+    <Compile Include="Controllers\CreatedClaimsQ_RController.cs" />
+    <Compile Include="Controllers\MenuClaimE_RController.cs" />
+    <Compile Include="Controllers\MenuClaimQ_RController.cs" />
+    <Compile Include="Controllers\CountryM_CURController.cs" />
+    <Compile Include="Controllers\Country_URController.cs" />
+    <Compile Include="Controllers\CountyM_CURController.cs" />
+    <Compile Include="Controllers\County_URController.cs" />
+    <Compile Include="Controllers\CPTM_CURDController.cs" />
+    <Compile Include="Controllers\CreatedClaimsB_RController.cs" />
+    <Compile Include="Controllers\DocCategory_RController.cs" />
+    <Compile Include="Controllers\DocumentCategory_RController.cs" />
+    <Compile Include="Controllers\Document_RController.cs" />
+    <Compile Include="Controllers\DxM_CURDController.cs" />
+    <Compile Include="Controllers\EnterChartNo_RController.cs" />
+    <Compile Include="Controllers\EntityTypeBlock_URController.cs" />
+    <Compile Include="Controllers\EntityTypeM_CURDController.cs" />
+    <Compile Include="Controllers\ExcelImpExp_RController.cs" />
+    <Compile Include="Controllers\FacilityDoneM_CURDController.cs" />
+    <Compile Include="Controllers\FacilityTypeM_CURDController.cs" />
+    <Compile Include="Controllers\GenConfig_UController.cs" />
+    <Compile Include="Controllers\HomeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\Hospitalization_CURDController.cs" />
+    <Compile Include="Controllers\IllIndicatorM_CURDController.cs" />
+    <Compile Include="Controllers\InsuranceBlock_URController.cs" />
+    <Compile Include="Controllers\InsuranceM_CURDController.cs" />
+    <Compile Include="Controllers\InsuranceType_CURDController.cs" />
+    <Compile Include="Controllers\IPAM_RController.cs" />
+    <Compile Include="Controllers\IPA_URController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\LogInAttempt_RController.cs" />
+    <Compile Include="Controllers\MenuAddress_RController.cs" />
+    <Compile Include="Controllers\MenuAddrM_RController.cs" />
+    <Compile Include="Controllers\MenuA_RController.cs" />
+    <Compile Include="Controllers\MenuBillInfoA_RController.cs" />
+    <Compile Include="Controllers\MenuBillingInfo_RController.cs" />
+    <Compile Include="Controllers\MenuB_RController.cs" />
+    <Compile Include="Controllers\MenuClaim_RController.cs" />
+    <Compile Include="Controllers\MenuConfig_RController.cs" />
+    <Compile Include="Controllers\MenuDx_RController.cs" />
+    <Compile Include="Controllers\MenuEDI_RController.cs" />
+    <Compile Include="Controllers\MenuInsurance_RController.cs" />
+    <Compile Include="Controllers\MenuM_RController.cs" />
+    <Compile Include="Controllers\MenuTransaction_RController.cs" />
+    <Compile Include="Controllers\MenuUserA_RController.cs" />
+    <Compile Include="Controllers\MenuUserM_RController.cs" />
+    <Compile Include="Controllers\ModifierM_CURDController.cs" />
+    <Compile Include="Controllers\MvcControllers_RController.cs" />
+    <Compile Include="Controllers\PatDemography_URDController.cs" />
+    <Compile Include="Controllers\PatDocument_CURDController.cs" />
+    <Compile Include="Controllers\PatHospitalization_CURDController.cs" />
+    <Compile Include="Controllers\PatientDemography_CRController.cs" />
+    <Compile Include="Controllers\PatVisit_CURDController.cs" />
+    <Compile Include="Controllers\PreLoginController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\PrintPin_CURDController.cs" />
+    <Compile Include="Controllers\PrintSign_CURDController.cs" />
+    <Compile Include="Controllers\ProviderBlock_URController.cs" />
+    <Compile Include="Controllers\ProviderM_CURDController.cs" />
+    <Compile Include="Controllers\PwdComplexity_UController.cs" />
+    <Compile Include="Controllers\RelationshipM_CURDController.cs" />
+    <Compile Include="Controllers\RoleA_URController.cs" />
+    <Compile Include="Controllers\RoleM_RController.cs" />
+    <Compile Include="Controllers\RoleSelection_RController.cs" />
+    <Compile Include="Controllers\SpecialtyBlock_URController.cs" />
+    <Compile Include="Controllers\SpecialtyM_CURDController.cs" />
+    <Compile Include="Controllers\StateM_CURController.cs" />
+    <Compile Include="Controllers\State_URController.cs" />
+    <Compile Include="Controllers\SummaryAgent_RController.cs" />
+    <Compile Include="Controllers\SummaryClinic_RController.cs" />
+    <Compile Include="Controllers\TeamMembers_RController.cs" />
+    <Compile Include="Controllers\UnassgnClaimsE_URController.cs" />
+    <Compile Include="Controllers\UnassgnClaimsQ_URController.cs" />
+    <Compile Include="Controllers\UnassgnClaims_URController.cs" />
+    <Compile Include="Controllers\UsageIndicatorM_CURDController.cs" />
+    <Compile Include="Controllers\UserA_CURDController.cs" />
+    <Compile Include="Controllers\UserClinicA_URController.cs" />
+    <Compile Include="Controllers\UserClinicM_URController.cs" />
+    <Compile Include="Controllers\UserManager_CURDController.cs" />
+    <Compile Include="Controllers\UserM_CURDController.cs" />
+    <Compile Include="Controllers\UserRoleA_URController.cs" />
+    <Compile Include="Controllers\UserRoleM_URController.cs" />
+    <Compile Include="Controllers\Visit_CRController.cs" />
+    <Compile Include="Controllers\WebCulture_URController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecuredFolder\BaseControllers\BaseController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SecuredFolder\BaseControllers\BaseHighRoleController.cs" />
+    <Compile Include="SecuredFolder\BinaryFiles\BinaryContentResult.cs" />
+    <Compile Include="SecuredFolder\BinaryFiles\BinaryFilesConstants.cs" />
+    <Compile Include="SecuredFolder\BinaryFiles\FakeView.cs" />
+    <Compile Include="SecuredFolder\BinaryFiles\HtmlViewRenderer.cs" />
+    <Compile Include="SecuredFolder\BinaryFiles\PrintHeaderFooter.cs" />
+    <Compile Include="SecuredFolder\BinaryFiles\StandardPdfRenderer.cs" />
+    <Compile Include="SecuredFolder\CustomErrors\ArivaErrors.cs" />
+    <Compile Include="SecuredFolder\Extensions\AcceptParameterAttribute.cs" />
+    <Compile Include="SecuredFolder\Extensions\ArivaAuthorizeAttribute.cs" />
+    <Compile Include="SecuredFolder\Extensions\JsonResultExtension.cs" />
+    <Compile Include="SecuredFolder\Extensions\MvcHtmlExtension.cs" />
+    <Compile Include="SecuredFolder\RouteConfigs\RouteConfig.cs" />
+    <Compile Include="SecuredFolder\SessionClasses\ArivaSession.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SecuredFolder\StaticClasses\StaticClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClaimatePrimeEFWork\ClaimatePrimeEFWork.csproj">
+      <Project>{3505e24a-553f-4c46-8af3-77fb8bd9a507}</Project>
+      <Name>ClaimatePrimeEFWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClaimatePrimeModels\ClaimatePrimeModels.csproj">
+      <Project>{6a38a74e-9973-473c-a70a-b62e47d9a5e8}</Project>
+      <Name>ClaimatePrimeModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecuredFolder\ArivaEmail\ArivaEmail.csproj">
+      <Project>{065DD9D9-8060-47AB-AEEB-9101B46E9A18}</Project>
+      <Name>ArivaEmail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecuredFolder\ClaimatePrimeConstants\ClaimatePrimeConstants.csproj">
+      <Project>{E9339F50-C822-42C5-9E15-4F0F2C5FAE0C}</Project>
+      <Name>ClaimatePrimeConstants</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

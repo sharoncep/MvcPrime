@@ -1,0 +1,124 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.VisitsChartModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Visit"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Visit </li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    @using (Html.ArivaForm("Visit", "Save"))
+    {
+        <table class="table-grid-view">
+            <tr>
+                <td class="td-gridhead" style="width: 10%">@Resources.ClaimatePrimeWebResx.SN</td>
+                <td class="td-gridhead" style="width: 30%">@Resources.ClaimatePrimeWebResx.ChartNo</td>
+                <td class="td-gridhead" style="width: 60%">@Resources.ClaimatePrimeWebResx.DOS</td>
+            </tr>
+
+            @for (int i = 0; i < 5; i++)
+            {
+                <tr>
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => Model.VisitCharts[i].Patient)
+                        @Html.TextBoxFor(m => Model.VisitCharts[i].PatientID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                         { new KeyValueModel<string, string>("style", "display:none;") }  
+                                      
+                                    }))
+                    </td>
+                    <td>
+                        <ul class="ul-search-criteria">
+                            <li>
+                                @Html.TextBoxFor(m => Model.VisitCharts[i].DateOfService
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                      
+                                    }))
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            }
+            @for (int i = 5; i < 50; i++)
+            {
+                <tr id="@string.Concat("trVisitChart", i)" style="display:none;">
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => Model.VisitCharts[i].Patient)
+                        @Html.TextBoxFor(m => Model.VisitCharts[i].PatientID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                         { new KeyValueModel<string, string>("style", "display:none;") }  
+                                      
+                                    }))
+                    </td>
+                    <td>
+                        <ul class="ul-search-criteria">
+                            <li>
+                                @Html.TextBoxFor(m => Model.VisitCharts[i].DateOfService
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                     
+                                    }))
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </table>
+        
+        <div class="dv-submit-controls">
+            <input type="submit" name="btnSave" id="btnSave" onclick="return validateSave();" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" />
+            <a href="@Url.RouteUrl(StaticClass.RouteValues("Visit"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>
+            <a id="aShowMore" href="#" onclick="javascript:return showMore();" class="aShow-more">@Resources.ClaimatePrimeWebResx.More</a>
+            <input type="text" id="txtShowMore" value="4" style="display: none;" />
+        </div>        
+    }
+</div>
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveError.Replace("[X]", Model.ErrorMsg)" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

@@ -1,0 +1,30 @@
+﻿@{
+   
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuM"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.BillingInfo</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("IPAM"))" onclick="javascript:showDivPageLoading();"  rel="menu_tile"  class="menu-billing-mgr">@Resources.ClaimatePrimeWebResx.IPA</a></li>
+        @*<li><a href="@Url.RouteUrl(StaticClass.RouteValues("EntityTypeM"))" onclick="javascript:showDivPageLoading();"  rel="menu_tile" class="menu-entity">Entity Type</a></li>*@
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("FacilityDoneM"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-hospital-mgr">@Resources.ClaimatePrimeWebResx.FacilityDone</a></li>
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("FacilityTypeM"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-facility-mgr">@Resources.ClaimatePrimeWebResx.FacilityType</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicViewM"))" onclick="javascript:showDivPageLoading();" rel="menu_tile"  class="menu-practice-mgr">@Resources.ClaimatePrimeWebResx.ManageClinic</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("SpecialtyM"))" onclick="javascript:showDivPageLoading();" rel="menu_tile"  class="menu-specialty-mgr">@Resources.ClaimatePrimeWebResx.Specialty</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DocCategory"))"  rel="menu_tile" class="menu-doc-mgr" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.DocCategory</a> </li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("IllIndicatorM"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-illnessindicator-mgr">Illness Indicator</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Credentials"))" rel="menu_tile" class="menu-credentials-mgr" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Credentials</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Case"))" rel="menu_tile" class="menu-case" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Case</a></li>
+    </ul>
+</div>
+

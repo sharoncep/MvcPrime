@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeConstants;
+@using ClaimatePrimeEFWork.EFContexts;
+@model ClaimatePrimeModels.Models.LoginAttemptsModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li>
+            <a href="@Url.RouteUrl(ClaimatePrimeControllers.SecuredFolder.StaticClasses.StaticClass.RouteValues("Home"))" onclick="javascript:showDivPageLoading();" title="@Resources.ClaimatePrimeWebResx.BackHome" class="back-button"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.AttemptsLogin</li>
+    </ul>
+</div>
+<div class="dv-block">
+    <div class="dv-lg-left">
+        <table class="table-grid-view-su">
+            <tr>
+                <td colspan="3">
+                    @Resources.ClaimatePrimeWebResx.AttemptsSucc
+                </td>
+            </tr>
+            <tr>
+                <td class="td-gridhead">@Resources.ClaimatePrimeWebResx.Login_On</td>
+                <td class="td-gridhead">@Resources.ClaimatePrimeWebResx.Logout_On</td>
+                <td class="td-gridhead">@Resources.ClaimatePrimeWebResx.MachIP</td>
+            </tr>
+            @foreach (usp_GetRecent_LogInLogOut_Result item in Model.RecentLogin)
+            {
+                <tr>
+                    <td>@StaticClass.GetDateTimeStr(item.LogInOn)</td>
+                    <td>@StaticClass.GetDateTimeStr(item.LogOutOn)</td>
+                    <td>@item.ClientHostIPAddress</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="dv-lg-right-fa">
+        <table class="table-grid-view-fa">
+            <tr>
+                <td colspan="2">
+                    @Resources.ClaimatePrimeWebResx.AttemptsFail
+                </td>
+            </tr>
+            <tr>
+                <td class="td-gridhead">@Resources.ClaimatePrimeWebResx.TrialOn</td>
+                <td class="td-gridhead">@Resources.ClaimatePrimeWebResx.MachIP</td>
+            </tr>
+            @foreach (usp_GetRecent_LogInTrial_Result item in Model.RecentTrials)
+            {
+                <tr>
+                    <td>@StaticClass.GetDateTimeStr(item.TrialOn)</td>
+                    <td>@item.ClientHostIPAddress</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="dv-lg-right-lk">
+        <table class="table-grid-view-su">
+            <tr>
+                <td colspan="2">
+                    @Resources.ClaimatePrimeWebResx.AttemptsLock
+                </td>
+            </tr>
+            <tr>
+                <td class="td-gridhead">@Resources.ClaimatePrimeWebResx.LockOn</td>
+                <td class="td-gridhead">@Resources.ClaimatePrimeWebResx.UnLockOn</td>
+            </tr>
+            @foreach (usp_GetRecent_LockUnLock_Result item in Model.RecentLockUnLock)
+            {
+                <tr>
+                    <td>@StaticClass.GetDateTimeStr(item.LockOn)</td>
+                    <td>@StaticClass.GetDateTimeStr(item.UnLockOn)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

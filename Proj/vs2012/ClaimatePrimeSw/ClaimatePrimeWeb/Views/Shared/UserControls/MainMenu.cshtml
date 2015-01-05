@@ -1,0 +1,411 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeConstants;
+
+<div>
+    <a href="#" id="aMainMenuE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandDiv('MainMenu');" class="aMenuExpand"></a>
+    <a href="#" id="aMainMenuC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapseDiv('MainMenu');" class="aMenuCollapse"></a>
+</div>
+<div id="divMainMenuC">
+    <div class="dv-menu-wrap">
+        <ul class="ul-vertical-menu">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DashBoard"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Dashboard</a>
+                <ul>
+                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptDashboard"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Reports</a></li>
+                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RoleSelection"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.MyRole</a></li>
+                    @if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.WEB_ADMIN_ROLE_ID))
+                    {
+                        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Administration</a></li>
+                    }
+                    else if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.MANAGER_ROLE_ID))
+                    {
+                        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Managing</a></li>
+                    }
+                    else if ((ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.EA_ROLE_ID)) || (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.QA_ROLE_ID)) || (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.BA_ROLE_ID)))
+                    {
+                        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicView"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.MyClinic</a></li>
+                    }
+                    else
+                    {
+                    }
+                </ul>
+            </li>
+        </ul>
+    </div>
+    @if (Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("Rpt"))
+    {
+        <div class="dv-menu-admin">
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("RptDashboard"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Reports</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinic","SearchAll"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AllClinicRpt</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinic","DateWiseAll"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AllClinic - @Resources.ClaimatePrimeWebResx.DateWiseReport</a></li>
+                             <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCClinic"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AllClinic - @Resources.ClaimatePrimeWebResx.SummaryReport</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinic"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Clinic</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AgentReport</a></li>
+                             <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent","AgentNameList"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Agent</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgent"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Agent-@Resources.ClaimatePrimeWebResx.SummaryReport</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgent","CompReport"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Agent-@Resources.ClaimatePrimeWebResx.ComparisonReport</a></li>
+                             <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgent","FullReport"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Agent-@Resources.ClaimatePrimeWebResx.FullReport</a></li>
+                           @if (ArivaSession.Sessions().SelAgentID > 0)
+                                  {
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgentWise","AgentWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AgentWiseRpt </a></li> 
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgentWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AgentWise-@Resources.ClaimatePrimeWebResx.SummaryReport </a></li>
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgentWise","DateWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AgentWise-@Resources.ClaimatePrimeWebResx.DateWiseReport </a></li>          
+                                  }
+                             @if (ArivaSession.Sessions().SelClinicID > 0)
+                             {
+                                 <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinicWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClinicWiseRpt</a></li>
+                                 <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCClinicWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClinicWise-@Resources.ClaimatePrimeWebResx.SummaryReport </a></li>
+                                 <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinicWise","DateWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClinicWise-@Resources.ClaimatePrimeWebResx.DateWiseReport </a></li>
+                                 <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinicWise","PatientNameList"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Patient </a></li>
+                                 <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinicWise","ProviderNameList"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Provider </a></li>
+                                 
+                                  if (ArivaSession.Sessions().SelPatientID > 0)
+                                  {
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise","PatientDash"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientDash </a></li>
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise","HedisRpt"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Hedis </a></li>    
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise","MraRpt"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.MRA </a></li> 
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientWiseReport </a></li> 
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCPatientWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Patient-@Resources.ClaimatePrimeWebResx.SummaryReport </a></li>
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise","DateWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Patient-@Resources.ClaimatePrimeWebResx.DateWiseReport </a></li>          
+                                  }
+                                 if (ArivaSession.Sessions().SelProviderID > 0)
+                                  {
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptProviderWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ProviderWiseReport </a></li> 
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCProviderWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Provider-@Resources.ClaimatePrimeWebResx.SummaryReport </a></li>
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptProviderWise","DateWise"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Provider-@Resources.ClaimatePrimeWebResx.DateWiseReport </a></li>          
+                                  }
+                                  
+                             }
+                             
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+    else
+    {
+        if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.WEB_ADMIN_ROLE_ID))
+        {
+        <div class="dv-menu-admin">
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuAddress"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Address</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CityBlock"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.City</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Country"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Country</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("County"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.County</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("State"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.State</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuBillInfoA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.BillingInfo</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("IPA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.IPA</a></li>
+                           
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("InsuranceBlock"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Insurance</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Practice</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ProviderBlock"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Provider</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("SpecialtyBlock"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Specialty</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Case"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Case</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuConfig"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Configurations</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ExcelImpExp"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ExcelImpExp</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("GenConfig"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.GenConfig</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PwdComplexity"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PwdComplexity</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MvcControllers"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.MVC</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("WebCulture"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.WebCulture</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UserInfo</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UserA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Agent</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UserRoleA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UserRole</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UserClinicA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UserClinic</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RoleA"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Role</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UserManager"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AssignManager</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        }
+        else if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.MANAGER_ROLE_ID))
+        {
+        <div class="dv-menu-manager">
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuAddrM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Address</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CityM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.City</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CountryM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Country</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CountyM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.County</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("StateM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.State</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuBillingInfo"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.BillingInfo</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("IPAM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.IPA</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EntityTypeM"))"onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EntityTypeQualifier</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("FacilityTypeM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.FacilityType</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("FacilityDoneM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.FacilityDone</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicViewM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ManageClinic</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("SpecialtyM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Specialty</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DocCategory"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.DocCategory</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("IllIndicatorM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.IllnessIndi</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Credentials"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Credentials</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Case"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Case</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            @if (ArivaSession.Sessions().SelClinicID > 0)
+            {
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicSetUpM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClinicSetup</a>
+                            <ul>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ProviderM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Provider</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CaseComplex"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.CaseComplexity</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CaseAgentM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.CaseAgent</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CaseReopen"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.CaseReOpen</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CaseReclose"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.CaseReClose</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            }
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuDx"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.DxCPT</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DxM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Diagnosis</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CPTM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Procedure</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ModifierM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Modifier</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DiagnosisGroup"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.dg</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserM"))"onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UserInfo</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UserM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Agent</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UserRoleM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UserRole</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UserClinicM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UserClinic</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RoleM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Role</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuInsurance"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Insurance</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("InsuranceM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Insurance</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("InsuranceType"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.InsuranceType</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RelationshipM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Relationship</a></li>
+                            <li style="background: none; border-bottom: none; height: 20px;">&nbsp;</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuTransaction"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Transaction</a>
+                        <ul>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AuthQualifierM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AuthorizationQualifier</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("SecurityQuali"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.SecurityQualifier</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("TransPurpsCodeM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.TransactionPurposeCode</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("TransTypeCodeM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.TransactionTypeCode</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClaimMediaM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimMedia</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CommunicationNumberQualifier"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.CommunicationNumberQualifier</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CurrencyCode"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.CurrencyCode</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EntityTypeM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EntityTypeQualifier</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EntityIdentifierCode"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EntityIdentifierCode</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("InterchangeIDQualifier"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.InterchangeIdQualifier</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UsageIndicatorM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UsageIndicator</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PayerResSeq"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PayerResponsibilitySequenceNumberCode</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="dv-menu-wrap">
+                <ul class="ul-vertical-menu">
+                    <li>
+                        <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDI"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EDI</a>
+                        <ul>
+
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClaimStatusM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimStatus</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EDIReceiver</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PrintPin"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PrintPin</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PrintSign"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PrintSign</a></li>
+                            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UsageIndicatorM"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UsageIndi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        }
+        else if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.EA_ROLE_ID))
+        {
+        <div class="dv-menu-edi">
+            @if (ArivaSession.Sessions().SelClinicID > 0)
+            {
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaimE"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimProcess</a>
+                            <ul>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaimsNITE"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimUnassignedNIT</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaimsE"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimUnassigned</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CreatedClaimsE"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimCreated</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsNITE"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimAssignedNIT</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsE"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimAssigned</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDIE"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EDIFiles</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDIE"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EDIFiles</a>
+                            <ul>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIRcvrView"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Create837</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIRespond"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Respond</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIHistory"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EDIHistory</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("TeamMembers"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.TeamMember</a>
+                        </li>
+                    </ul>
+                </div>
+            }
+        </div>
+        }
+        else if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.QA_ROLE_ID))
+        {
+        <div class="dv-menu-qa">
+            @if (ArivaSession.Sessions().SelClinicID > 0)
+            {
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaimQ"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimProcess</a>
+                            <ul>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaimsNITQ"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimUnassignedNIT</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaimsQ"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimUnassigned</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CreatedClaimsQ"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimCreated</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsNITQ"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimAssignedNIT</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsQ"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimAssigned</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("TeamMembers"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.TeamMember</a>
+                        </li>
+                    </ul>
+                </div>
+            }
+        </div>
+        }
+        else if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(Role.BA_ROLE_ID))
+        { 
+        <div class="dv-menu-ba">
+            @if (ArivaSession.Sessions().SelClinicID > 0)
+            {
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuB"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Coding</a>
+                            <ul>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatientDemography"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientDemography</a></li>
+                                @if (ArivaSession.Sessions().SelPatientID > 0)
+                                {
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatDemography"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientMenu</a></li>
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatDocument"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientDocument</a></li>
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatHospitalization"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientHosp</a></li>
+                                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatVisit"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.PatientVisit</a></li>
+                                }
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Document"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Document</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Hospitalization"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Hospitalization</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Visit"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Visit</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaim"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimProcess</a>
+                            <ul>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaimsNITB"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimUnassignedNIT</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaims"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimUnassigned</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CreatedClaimsB"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimCreated</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsNITB"))"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimAssignedNIT</a></li>
+                                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaims"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimAssigned</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dv-menu-wrap">
+                    <ul class="ul-vertical-menu">
+                        <li>
+                            <a href="@Url.RouteUrl(StaticClass.RouteValues("TeamMembers"))" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.TeamMember</a>
+                        </li>
+                    </ul>
+                </div>
+            }
+        </div>
+        }
+        else
+        {
+        }
+    }
+</div>

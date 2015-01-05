@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeEFWork.EFContexts;
+@model ClaimatePrimeModels.Models.ProviderReportSearchModel
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinicWise", "Search"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.MyProvider</li>
+    </ul>
+</div>
+
+@Html.Partial("UserControls/PageHeaderSub")
+
+<div class="dv-az">
+    @{                 
+        foreach (AZModel item in Model.AZModels())
+        {
+            if (item.AZ_COUNT == 0)
+            {
+        <span class="clinic_az_deactive">@item.AZ</span>
+            }
+            else if (string.Compare(Model.StartBy, item.AZ, true) == 0)
+            {               
+        <span class="clinic_az_active" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())'>@item.AZ</span>
+            }
+            else
+            {               
+        <a href="@string.Concat(Url.RouteUrl(StaticClass.RouteValues("RptClinic")), "/?qsby=", item.AZ)" class="clinic_az" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())' onclick="javascript:showDivPageLoading();">@item.AZ</a>
+            }
+        }
+    }
+</div>
+<div class="dv-block">
+    <ul class="ul-menu">
+        @{
+            bool isOdd = false;
+            foreach (usp_GetBySearchClinic_Provider_Result item in Model.Clinic_Provider_Result)
+            {
+                isOdd = isOdd ? false : true;
+            <li>
+                <a href="@string.Concat(Url.RouteUrl(StaticClass.RouteValues("Home", "SetRptProviderSession")), "/?qsky=", item.ProviderID)" onclick="javascript:showDivPageLoading();" class="@string.Concat("provider", isOdd ? "1" : "2")" rel="menu_tile">@item.PROVIDER_NAME</a>
+            </li>
+            }
+               
+        }
+    </ul>
+</div>

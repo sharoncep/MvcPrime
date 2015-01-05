@@ -1,0 +1,26 @@
+﻿@{
+   
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuA"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.BillingInfo</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("IPA"))" rel="menu_tile" class="menu-billing-mgr" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.IPA</a></li>       
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("InsuranceBlock"))"  rel="menu_tile" class="menu-insurance-wa" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Insurance</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicA"))"  rel="menu_tile" class="menu-practice-clinic" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Practice</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ProviderBlock"))"  rel="menu_tile" class="menu-provider" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Provider</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("SpecialtyBlock"))"  rel="menu_tile" class="menu-specialty-mgr" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Specialty</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("Case"))" rel="menu_tile" class="menu-case" onclick="javascript:showDivPageLoading();" >@Resources.ClaimatePrimeWebResx.Case</a></li>
+     </ul>
+</div>
+

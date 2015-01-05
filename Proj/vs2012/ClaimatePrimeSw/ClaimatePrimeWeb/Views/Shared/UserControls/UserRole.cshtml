@@ -1,0 +1,86 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@model ClaimatePrimeModels.Models.UserRoleSearchModel
+
+<table class="table-grid">
+    <tr>
+        <td class="td-note" colspan="5">@Resources.ClaimatePrimeWebResx.Note : 
+                        <ol>
+                            <li>@Resources.ClaimatePrimeWebResx.NoteUser</li>
+                        </ol>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 30%;" class="td-gridhead">@Resources.ClaimatePrimeWebResx.Name
+        </td>
+        <td style="width: 25%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.Email
+        </td>
+        <td style="width: 15%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.EA
+        </td>
+        <td style="width: 15%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.QA
+        </td>
+        <td style="width: 15%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.BA
+        </td>
+    </tr>
+    @for (int i = 0; i < Model.UserRoles.Count; i++)
+    {
+        <tr>
+            <td>
+                @Model.UserRoles[i].USER_DISP_NAME
+
+                @Html.TextBoxFor(m => Model.UserRoles[i].USER_ID,
+                         StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("style", "display:none;") }                                       
+                                    }))
+            </td>
+            <td>
+                @Model.UserRoles[i].USER_EMAIL
+            </td>
+
+            <td>
+                @Html.CheckBoxFor(m => Model.UserRoles[i].USER_ROLE_IS_ACTIVE_EA)
+                @Html.TextBoxFor(m => Model.UserRoles[i].USER_ROLE_ID_EA,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => Model.UserRoles[i].USER_ROLE_IS_ACTIVE_QA)
+                @Html.TextBoxFor(m => Model.UserRoles[i].USER_ROLE_ID_QA,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => Model.UserRoles[i].USER_ROLE_IS_ACTIVE_BA)
+                @Html.TextBoxFor(m => Model.UserRoles[i].USER_ROLE_ID_BA,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="dv-submit-controls">
+    <ul>
+        <li>
+            <input type="submit" name="btnSave" id="btnSave" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save"></li>
+        <li>
+            @if (ArivaSession.Sessions().SelRoleID == 2)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserM"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>
+            }
+            @if (ArivaSession.Sessions().SelRoleID == 1)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserA"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>
+            }
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,44 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+
+<div id="divVisit" class="dv-full-claim-mgmnt">
+    <div>
+        <a href="#" id="aDxE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Dx');" class="aExpand">@Resources.ClaimatePrimeWebResx.DX</a>
+        <a href="#" id="aDxC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Dx');" class="aCollapse">@Resources.ClaimatePrimeWebResx.DX</a>
+    </div>
+    <div id="divDxC" style="display: none;" title="" class="dv-bdr">
+        <table class="table-entry" title="@Resources.ClaimatePrimeWebResx.DX">
+            <tr>
+                <td>
+                    @Resources.ClaimatePrimeWebResx.DescType
+                </td>
+                <td>
+                    <ul class="ul-ra">
+                        <li>
+                            <input id="sd" type="radio" name="rdoDescTypeDx" value="ShortDesc" onclick="javascript: return descTypeClickDx(this);" checked="checked" />
+                            <label for="sd"><span></span>@Resources.ClaimatePrimeWebResx.ShortDesc </label>
+                        </li>
+                        <li>
+                            <input id="md" type="radio" name="rdoDescTypeDx" value="MediumDesc" onclick="javascript: return descTypeClickDx(this);" />
+                            <label for="md"><span></span>@Resources.ClaimatePrimeWebResx.MediumDesc </label>
+                        </li>
+                        <li>
+                            <input id="ld" type="radio" name="rdoDescTypeDx" value="LongDesc" onclick="javascript: return descTypeClickDx(this);" />
+                            <label for="ld"><span></span>@Resources.ClaimatePrimeWebResx.LongDesc </label>
+                        </li>
+                        <li>
+                            <input id="cd" type="radio" name="rdoDescTypeDx" value="CustomDesc" onclick="javascript: return descTypeClickDx(this);" />
+                            <label for="cd"><span></span>@Resources.ClaimatePrimeWebResx.CustomDesc</label></li>
+                        <li>
+                            <input type="text" id="txtDescTypeDx" value="ShortDesc" style="display: none" />
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+         <div id="divSelDxList"></div>
+    </div>
+</div>

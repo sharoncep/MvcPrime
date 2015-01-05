@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Pre.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+<link href="@Url.Content("~/Stylesheets/pre.css")" rel="stylesheet" type="text/css" />
+<div class="dv-top-bar">
+</div>
+<div class="dv-main_wrapper" onmouseover="javascript:$('#divUserDetails').slideUp();">
+    <div class="@StaticClass.SiteLogo"  title="@StaticClass.SiteVersion">
+    </div>
+    <div class="dv-s"></div>
+    <div class="dv-block-err">
+        <div class="dv-error404">
+            <h1>Error 404!</h1>
+            <ul>
+                <li>Sorry..! The requested URL was not found on this server</li>
+                <li><a href="@Url.Content("~/Home/")" class="link">Login again</a></li>
+            </ul>
+        </div>
+    </div>
+    @* <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li>Error404</li>
+        </ul>
+    </div>*@
+</div>
+@Html.Partial("UserControls/PageFooterPre")

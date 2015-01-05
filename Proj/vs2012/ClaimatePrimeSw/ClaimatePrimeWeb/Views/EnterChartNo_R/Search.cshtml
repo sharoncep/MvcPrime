@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+<div>
+   
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="Role_Selection.html" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>Visit</li>
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub")
+    @Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+        <table>
+            <tr>
+                <td>Chart No</td>
+                <td>  <input type="text" id="MinimumLength"  /> </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\bin\Release\ArivaEmail.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\bin\Release\ArivaEmail.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Release\ArivaEmail.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Release\ArivaEmail.pdb

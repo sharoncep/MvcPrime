@@ -1,0 +1,84 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- 
+
+CREATE PROCEDURE [dbo].[usp_GetStatus_Screen]
+	@SessTimeOutMaxMin TINYINT
+	, @LogInLogOutID BIGINT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	DECLARE @TBL_ANS TABLE
+	(
+		[SessTimeOutUsedSecs] BIGINT NOT NULL
+		, [CurrDtTm] DATETIME NOT NULL
+	);
+	
+	DECLARE @SessTimeOutMaxSecs BIGINT;
+	DECLARE @SessTimeOutUsedMin TINYINT;
+	DECLARE @SessTimeOutUsedSecs BIGINT;
+	DECLARE @UserID INT;
+	
+	SELECT @SessTimeOutMaxSecs = @SessTimeOutMaxMin * 60;	
+	
+	SELECT 
+		@UserID = [Audit].[LogInLogOut].[UserID] 
+	FROM 
+		[Audit].[LogInLogOut] 
+	WHERE 
+		[Audit].[LogInLogOut].[LogInLogOutID] = @LogInLogOutID
+	AND
+		[Audit].[LogInLogOut].[LogOutOn] IS NULL;
+		
+	IF @UserID IS NULL OR @UserID = 0
+	BEGIN
+		SELECT @SessTimeOutUsedSecs = @SessTimeOutMaxSecs;
+	END
+	ELSE
+	BEGIN
+		SELECT @SessTimeOutUsedSecs = 0;
+	END
+	
+	IF @SessTimeOutUsedSecs <> @SessTimeOutMaxSecs
+	BEGIN
+		SELECT 
+			@SessTimeOutUsedMin = DATEDIFF(MINUTE, [Audit].[LockUnLock].[LockOn], GETDATE()) 
+		FROM 
+			[Audit].[LockUnLock] 
+		WHERE 
+			[Audit].[LockUnLock].[UserID] = @UserID
+		AND
+			[Audit].[LockUnLock].[UnLockOn] IS NULL;
+			
+		IF @SessTimeOutUsedMin IS NULL
+		BEGIN
+			SELECT @SessTimeOutUsedMin = 0;
+		END
+		
+		IF @SessTimeOutUsedMin <= @SessTimeOutMaxMin
+		BEGIN
+			SELECT 
+				@SessTimeOutUsedSecs = DATEDIFF(SECOND, [Audit].[LockUnLock].[LockOn], GETDATE()) 
+			FROM 
+				[Audit].[LockUnLock] 
+			WHERE 
+				[Audit].[LockUnLock].[UserID] = @UserID
+			AND
+				[Audit].[LockUnLock].[UnLockOn] IS NULL;
+		END
+	END
+	
+	INSERT INTO @TBL_ANS VALUES (@SessTimeOutUsedSecs, GETDATE());
+    
+    SELECT * FROM @TBL_ANS;
+    
+    -- EXEC [dbo].[usp_GetStatus_Screen] @SessTimeOutMaxMin = 255, @LogInLogOutID = 1
+    -- EXEC [dbo].[usp_GetStatus_Screen] @SessTimeOutMaxMin = 255, @LogInLogOutID = 124
+END
+
+GO

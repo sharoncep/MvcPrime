@@ -1,0 +1,34 @@
+﻿/****** Object:  StoredProcedure [dbo].[usp_GetNext_Identity]    Script Date: 08/20/2013 14:24:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_GetNext_Identity]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_GetNext_Identity]
+GO
+
+/****** Object:  StoredProcedure [dbo].[usp_GetNext_Identity]    Script Date: 08/20/2013 14:24:42 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+--  Get Next Identity Value
+CREATE PROCEDURE [dbo].[usp_GetNext_Identity]
+	@SchemaName	NVARCHAR(150)
+	, @TableName NVARCHAR(150)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	SELECT
+		[A].[column_id] AS [ID]
+		, ISNULL(CAST(CASE WHEN [A].[last_value] IS NULL THEN [A].[seed_value] ELSE (CAST([A].[last_value] AS BIGINT) + CAST([A].[increment_value] AS INT)) END AS BIGINT), '0') AS [NEXT_INDENTITY]
+	FROM 
+		[sys].[identity_columns] A
+	WHERE
+		[A].[object_id] = OBJECT_ID(QUOTENAME(@SchemaName) + '.' + QUOTENAME(@TableName));
+    
+    -- EXEC [dbo].[usp_GetNext_Identity] @SchemaName = 'Audit', @TableName = 'UserReport'
+END
+
+GO

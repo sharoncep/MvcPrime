@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.InsuranceSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuBillInfoA"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Insurance</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    @using (Html.ArivaForm("InsuranceBlock"))
+    {
+        <div style="display: none;">
+            @Html.TextBoxFor(m => m.StartBy)
+            @Html.TextBoxFor(m => m.CurrNumber)
+            @Html.TextBoxFor(m => m.OrderByField)
+            @Html.TextBoxFor(m => m.OrderByDirection)
+            @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+            <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+            <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+        </div>
+        @Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+            <a href="#" class="aButton-search" onclick="javascript:$('#divSearch').slideToggle(); return false;">@Resources.ClaimatePrimeWebResx.Search</a>
+        </div>
+        <div id="divSearch" class="dv-block-search">
+            <ul class="ul-search-criteria">
+                <li><span> @Resources.ClaimatePrimeWebResx.NameCode</span> @Html.TextBoxFor(m => m.SearchName,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("rel", "txtsearch") }    
+                                    }))</li>
+                <li><a href="#" onclick="javascript:return setSearch('', '', '');" class="aSearch1" title="@Resources.ClaimatePrimeWebResx.Search"></a></li>
+            </ul>
+        </div>
+    }
+</div>
+<div class="dv-az1">
+    @{                 
+        foreach (AZModel item in Model.AZModels())
+        {
+            if (item.AZ_COUNT == 0)
+            {
+        <span class="clinic_az_deactive">@item.AZ</span>
+            }
+            else if (string.Compare(Model.StartBy, item.AZ, true) == 0)
+            {               
+        <span class="clinic_az_active" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())'>@item.AZ</span>
+            }
+            else
+            {               
+        <a href="#" class="clinic_az" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())' onclick="@string.Concat("javascript:return setSearch('", item.AZ, "', '', '');")">@item.AZ</a>
+            }
+        }
+    }
+</div>
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    @if (Model.HasRec)
+    {
+         @Html.Partial("UserControls/SearchResult")
+    }
+    else
+    {
+        @Html.Partial("UserControls/NoRec")
+    }
+</div>

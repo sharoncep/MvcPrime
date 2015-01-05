@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@model ClaimatePrimeModels.Models.ExcelReportSearchModel
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("AgentRpt"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.EA</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li>
+            <a href="@Url.RouteUrl(StaticClass.RouteValues("AgentRpt", "ReImportExcelEA"))" title="ClickHere" class="reimport" onclick="javascript:showDivPageLoading('');">Re-Import</a>
+        </li>
+        <li>
+            <div class="dv-details">
+                <ul class="ul-fleft">
+                    <li>
+                        @Resources.ClaimatePrimeWebResx.ImportedOn
+                        <span>@Model.ExlDesc.ImportedOn</span>
+                    </li>
+                </ul>
+                <div style="clear: both">
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#" title="ClickHere" class="excel" onclick="javascript:return downloadExcelClinicAll();">Export</a></li>
+        <li><a href="@Url.Content("~/ClinicAllSumRpt/")" title="ClickHere" class="summary-report" rel="menu_tile" onclick="javascript:showDivPageLoading('');">Summary Report</a></li>
+    </ul>
+</div>

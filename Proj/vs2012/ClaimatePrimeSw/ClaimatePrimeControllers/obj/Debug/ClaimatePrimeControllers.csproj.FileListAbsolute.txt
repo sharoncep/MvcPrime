@@ -1,0 +1,40 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeControllers.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeControllers.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ArivaEmail.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeEFWork.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeModels.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\itextsharp.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\EntityFramework.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\OfficeOpenXml.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ANSI5010.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeEFWork.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeModels.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ArivaEmail.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeConstants.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\EntityFramework.xml
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\OfficeOpenXml.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ANSI5010.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\obj\Debug\ClaimatePrimeControllers.csprojResolveAssemblyReference.cache
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\obj\Debug\ClaimatePrimeControllers.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\obj\Debug\ClaimatePrimeControllers.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeControllers.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeControllers.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ArivaEmail.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeConstants.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeEFWork.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeModels.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\itextsharp.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\EntityFramework.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\OfficeOpenXml.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ANSI5010.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeEFWork.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeModels.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ArivaEmail.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ClaimatePrimeConstants.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\EntityFramework.xml
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\OfficeOpenXml.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\bin\Debug\ANSI5010.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\obj\Debug\ClaimatePrimeControllers.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\obj\Debug\ClaimatePrimeControllers.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeControllers\obj\Debug\ClaimatePrimeControllers.pdb

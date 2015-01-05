@@ -1,0 +1,48 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.DashBoardModel
+
+<div>
+    @ViewBag.Sharon
+
+    <table border="0" cellpadding="2" cellspacing="2" border="0">
+        <tr bgcolor="#270a38" color="#ffffff" style="font-size: 10px">
+            <td width="35%">@Resources.ClaimatePrimeWebResx.ClinicName
+            </td>
+            <td width="25%">@Resources.ClaimatePrimeWebResx.NPI <span>@ViewBag.Sharon </span><span>33333 </span>
+            </td>
+            <td width="15%">@Resources.ClaimatePrimeWebResx.ICDFormat
+            </td>
+        </tr>
+
+        @{
+            bool isOdd = false;
+
+            foreach (usp_GetNotificationAgentClinicPdf_UserClinic_Result item in Model.AgentClinicPdf)
+            {
+                isOdd = !isOdd;
+
+                if (isOdd)
+                {
+            <tr style="font-size: 8px">
+                <td>@item.ClinicName</td>
+                <td>@item.NPI</td>
+                <td>@item.ICDFormat
+                </td>
+            </tr>
+                }
+                else
+                {
+                    
+            <tr bgcolor="#e6e6e6" style="font-size: 8px">
+                <td>@item.ClinicName</td>
+                <td>@item.NPI</td>
+                <td>@item.ICDFormat
+                </td>
+            </tr>
+                }
+            }
+        }
+    </table>
+</div>

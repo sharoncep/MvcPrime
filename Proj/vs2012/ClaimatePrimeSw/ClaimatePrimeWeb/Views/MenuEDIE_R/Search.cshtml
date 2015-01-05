@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.MenuClaimSearchModel
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaimE"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.EDIFiles</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIRcvrView"))" rel="menu_tile" class="menu-create-edi-ea" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Create837 (@Model.ClaimCount837)</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIRespond"))" rel="menu_tile" class="menu-respond-edi-ea" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EOB_ERA_835 (@Model.ClaimCount835)</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIHistory"))" rel="menu_tile" class="menu-history-edi-ea" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EDIHistory (@Model.ClaimCountHistory)</a></li>
+
+    </ul>
+</div>
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

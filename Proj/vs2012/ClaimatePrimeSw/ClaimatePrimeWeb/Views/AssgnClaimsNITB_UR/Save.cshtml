@@ -1,0 +1,112 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.AssignedClaimSaveModel
+
+<div>
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsNITB"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.ClaimAssigned</li>
+            <li><span>- @Resources.ClaimatePrimeWebResx.NIT</span></li>
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub")
+    @using (Html.ArivaForm("AssgnClaimsNITB", "Save"))
+    {
+        <div class="dv-block">
+            @Html.PartialFor("UserControls/AsgnClaimVisit", m => m.PatientVisit)
+            @Html.Partial("UserControls/AsgnClaimDx")
+            @Html.PartialFor("UserControls/AsgnClaimPrimaryDx", m => m.PatientVisit)
+            @Html.Partial("UserControls/AsgnClaimProcedure")
+            @Html.Partial("UserControls/AsgnClaimVisitDocument")
+            @Html.PartialFor("UserControls/AsgnClaimNotes", m => m.PatientVisit)
+            @Html.Partial("UserControls/AsgnClaimPatDocuments")
+            @Html.Partial("UserControls/AsgnClaimPatient")
+            @Html.Partial("UserControls/AsgnClaimStatus")
+            @Html.Partial("UserControls/AsgnClaimEDISettings")
+            @Html.Partial("UserControls/AsgnClaimIPA")
+            @Html.Partial("UserControls/AsgnClaimPractice")
+            @Html.Partial("UserControls/AsgnClaimFacilityDone")
+            @Html.Partial("UserControls/AsgnClaimProvider")
+            @Html.Partial("UserControls/AsgnClaimInsurance")
+            @Html.Partial("UserControls/AsgnClaimPrevVisit")
+        </div>
+        <div class="dv-submit-controls-claim">
+
+
+            @if ((Model.PatientVisit.PatientVisitResult.ClaimStatusID == Convert.ToByte(ClaimatePrimeConstants.ClaimStatus.HOLD_CLAIM)) || (Model.PatientVisit.PatientVisitResult.ClaimStatusID == Convert.ToByte(ClaimatePrimeConstants.ClaimStatus.HOLD_CLAIM_NOT_IN_TRACK)))
+            {
+                <input type="submit" name="btnUnhold" id="btnUnhold" value="@Resources.ClaimatePrimeWebResx.Unhold" class="button-unhold" onclick="javascript: return validateHoldUnHoldSave();" />
+            }
+            else
+            {
+                <input type="submit" name="btnSave" id="btnSave" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" onclick="javascript: return validateSave();" />
+                <input type="submit" name="btnHold" id="btnHold" value="@Resources.ClaimatePrimeWebResx.Hold" class="button-hold" onclick="javascript: return validateHoldUnHoldSave();" />
+                <input type="submit" name="btnBlock" id="btnBlock" value="@Resources.ClaimatePrimeWebResx.Block" class="button-block" onclick="javascript: return validateHoldUnHoldSave();" />
+            }
+
+            <a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaims"))" class="aButton-cancel" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Cancel</a>
+
+        </div>
+    }
+
+    @Html.Partial("UserControls/AsgnClaimMenu")
+</div>
+
+<div id="divEnlargePhoto" class="div_transparent">
+    <div class="dvImage">
+        <img id="imgEnlargePhoto" src="@Url.RouteUrl(StaticClass.RouteValues("Home", "NoPhoto"))" alt="#" style="cursor:pointer" onclick="return printImage();" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+    </div>
+    <div class="dvControls_pop">
+        <a href="#" onclick="javascript:return resizePhoto();" class="close-button">@Resources.ClaimatePrimeWebResx.Close</a>
+    </div>
+</div>
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            if (ViewBag.ErrMsg == 2)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.UploadSize.Replace("[X]", Convert.ToString(StaticClass.ConfigurationGeneral.mUploadMaxSizeInMBID))" />
+            }
+            if (ViewBag.ErrMsg == 3)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorNoVisitDoc" />
+            }
+            if (ViewBag.ErrMsg == 4)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorNoDxProc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

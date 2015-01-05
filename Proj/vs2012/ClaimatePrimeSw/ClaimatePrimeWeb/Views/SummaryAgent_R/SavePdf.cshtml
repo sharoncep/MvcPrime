@@ -1,0 +1,64 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.AgentWiseSummaryViewModel
+
+<div>
+    <table>
+        <tr>
+            <td>@Resources.ClaimatePrimeWebResx.SN
+            </td>
+            <td>@Resources.ClaimatePrimeWebResx.Clinic
+            </td>
+            <td>@Resources.ClaimatePrimeWebResx.Name
+            </td>
+            <td>@Resources.ClaimatePrimeWebResx.ChartNo
+            </td>
+            <td>@Resources.ClaimatePrimeWebResx.DOS
+            </td>
+            <td>@Resources.ClaimatePrimeWebResx.CaseNo
+            </td>
+        </tr>
+
+        @{
+            bool isOdd = false;
+
+            foreach (usp_GetAgentWiseVisitPdf_PatientVisit_Result item in Model.PdfVisit)
+            {
+                isOdd = !isOdd;
+
+                if (isOdd)
+                {
+            <tr style="font-size: 8px">
+                <td>@item.SL_NO</td>
+                <td>@item.ClinicName</td>
+                <td>@item.Name
+                </td>
+                <td>@item.ChartNumber
+                </td>
+                <td>@StaticClass.GetDateStr(item.DOS)
+                </td>
+                <td>@item.PatientVisitID
+                </td>
+            </tr>
+                }
+                else
+                {
+                    
+            <tr bgcolor="#e6e6e6" style="font-size: 8px">
+                <td>@item.SL_NO</td>
+                <td>@item.ClinicName</td>
+                <td>@item.Name
+                </td>
+                <td>@item.ChartNumber
+                </td>
+                <td>@StaticClass.GetDateStr(item.DOS)
+                </td>
+                <td>@item.PatientVisitID
+                </td>
+            </tr>
+                }
+            }
+        }
+    </table>
+</div>

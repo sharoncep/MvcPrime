@@ -1,0 +1,1726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accepted" xml:space="preserve">
+    <value>स्वीकृत</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>क्रियाएँ</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>सक्रिय</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>जोड़ना</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>नई जोड़ें</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>पता</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>प्रशासन</value>
+  </data>
+  <data name="AdmitteddateMoreCurrDate" xml:space="preserve">
+    <value>अन्य दाखिले पहले ही निर्दिष्ट तारीखों में इस मरीज के लिए मौजूद है</value>
+  </data>
+  <data name="AdmittedFrom" xml:space="preserve">
+    <value>से भर्ती कराया</value>
+  </data>
+  <data name="AdmittedOn" xml:space="preserve">
+    <value>पर भर्ती</value>
+  </data>
+  <data name="Admittedto" xml:space="preserve">
+    <value>में भर्ती</value>
+  </data>
+  <data name="AdmsnDatelessCurntDate" xml:space="preserve">
+    <value>प्रवेश तिथि आज की तारीख से कम होना चाहिए</value>
+  </data>
+  <data name="AdmsnDateSame" xml:space="preserve">
+    <value>वर्तमान रोगी अभी तक discharged.Please नए प्रवेश की तारीख में प्रवेश करने से पहले छुट्टी दे दी तिथि दर्ज नहीं.</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>एजेंट</value>
+  </data>
+  <data name="AgentReport" xml:space="preserve">
+    <value>एजेंट की रिपोर्ट</value>
+  </data>
+  <data name="AgentWise" xml:space="preserve">
+    <value>एजेंट वार</value>
+  </data>
+  <data name="AgentWiseRpt" xml:space="preserve">
+    <value>एजेंट समझदार रिपोर्ट</value>
+  </data>
+  <data name="AllClinic" xml:space="preserve">
+    <value>सभी क्लिनिक</value>
+  </data>
+  <data name="AllClinicRpt" xml:space="preserve">
+    <value>सभी क्लिनिक की रिपोर्ट</value>
+  </data>
+  <data name="AnyDesc" xml:space="preserve">
+    <value>विवरण के किसी भी एक प्रकार से भरा जाना चाहिए</value>
+  </data>
+  <data name="ApplnReceiverCode" xml:space="preserve">
+    <value>GS03</value>
+  </data>
+  <data name="AppSenderCode" xml:space="preserve">
+    <value>GS02</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>अप्रैल</value>
+  </data>
+  <data name="AsgnClaims" xml:space="preserve">
+    <value>निरुपित दावा</value>
+  </data>
+  <data name="AsgnClaimsNIT" xml:space="preserve">
+    <value>निरुपित दावा [नहीं ट्रैक]</value>
+  </data>
+  <data name="AssgnClaims" xml:space="preserve">
+    <value>निरुपित दावा</value>
+  </data>
+  <data name="AssignedProviderName" xml:space="preserve">
+    <value>निरुपित प्रदाता नाम</value>
+  </data>
+  <data name="AssignManager" xml:space="preserve">
+    <value>प्रबंधक निरुपित</value>
+  </data>
+  <data name="AssignToMe" xml:space="preserve">
+    <value>मेरे लिए निरुपित</value>
+  </data>
+  <data name="AssignUserClinic" xml:space="preserve">
+    <value>एजेंट और क्लिनिक</value>
+  </data>
+  <data name="AssignUserRole" xml:space="preserve">
+    <value>एजेंट भूमिका असाइन करें</value>
+  </data>
+  <data name="AttemptsFail" xml:space="preserve">
+    <value>हाल की विफलता लॉगिन प्रयास</value>
+  </data>
+  <data name="AttemptsLock" xml:space="preserve">
+    <value>हाल के लॉक अनलॉक प्रयास</value>
+  </data>
+  <data name="AttemptsLogin" xml:space="preserve">
+    <value>लॉगइन प्रयास</value>
+  </data>
+  <data name="AttemptsSucc" xml:space="preserve">
+    <value>हाल के सफल लॉगिन</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>अगस्त</value>
+  </data>
+  <data name="AuthorInfoQualifier" xml:space="preserve">
+    <value>Autho जानकारी (ISA02)</value>
+  </data>
+  <data name="AuthorizationQualifier" xml:space="preserve">
+    <value>लेखक जानकारी क्वालीफायर (ISA01)</value>
+  </data>
+  <data name="AutoSync" xml:space="preserve">
+    <value>ऑटो सिंक</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>बिलिंग एजेंट</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>वापस</value>
+  </data>
+  <data name="BackAgent" xml:space="preserve">
+    <value>एजेंटों के लिए वापस</value>
+  </data>
+  <data name="BackClinic" xml:space="preserve">
+    <value>क्लीनिकों के लिए वापस</value>
+  </data>
+  <data name="BackHome" xml:space="preserve">
+    <value>डैशबोर्ड पर वापस</value>
+  </data>
+  <data name="BackPat" xml:space="preserve">
+    <value>रोगी जनसांख्यिकी को वापस</value>
+  </data>
+  <data name="BackProv" xml:space="preserve">
+    <value>प्रदाता के लिए वापस</value>
+  </data>
+  <data name="BillingInfo" xml:space="preserve">
+    <value>बिलिंग जानकारी</value>
+  </data>
+  <data name="BillingProviderEntityIdentifierCode" xml:space="preserve">
+    <value>बिलिंग प्रदाता इकाई पहचानकर्ता कोड</value>
+  </data>
+  <data name="Block" xml:space="preserve">
+    <value>खंड</value>
+  </data>
+  <data name="Blocked" xml:space="preserve">
+    <value>अवरोधित</value>
+  </data>
+  <data name="BlockTemp" xml:space="preserve">
+    <value>अस्थायी रूप से ब्लॉक</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="Capitated" xml:space="preserve">
+    <value>Capitated</value>
+  </data>
+  <data name="CapsOn" xml:space="preserve">
+    <value>कैप्स लॉक पिछले टाइप charecter के लिए किया गया था पर</value>
+  </data>
+  <data name="Case" xml:space="preserve">
+    <value>मामला</value>
+  </data>
+  <data name="CaseAgent" xml:space="preserve">
+    <value>प्रकरण एजेंट</value>
+  </data>
+  <data name="CaseComplexity" xml:space="preserve">
+    <value>मामले की जटिलता</value>
+  </data>
+  <data name="CaseDescription" xml:space="preserve">
+    <value>मामले का विवरण</value>
+  </data>
+  <data name="CaseNo" xml:space="preserve">
+    <value>प्रकरण #</value>
+  </data>
+  <data name="CaseReClose" xml:space="preserve">
+    <value>मामला पुन: बंद</value>
+  </data>
+  <data name="CaseReOpen" xml:space="preserve">
+    <value>मामला फिर से खुला</value>
+  </data>
+  <data name="CaseTimeSpent" xml:space="preserve">
+    <value>प्रकरण समय बिताया</value>
+  </data>
+  <data name="CatName" xml:space="preserve">
+    <value>श्रेणी नाम</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>पासवर्ड बदलें</value>
+  </data>
+  <data name="ChangePwdAlert" xml:space="preserve">
+    <value>सुरक्षा चेतावनी! डेटा से बचने के लिए पासवर्ड बदलें नुकसान / हैक</value>
+  </data>
+  <data name="ChangePwdSucc" xml:space="preserve">
+    <value>आपने सफलतापूर्वक अपना पासवर्ड बदल दिया है. जारी रखने के लिए फिर से लॉगिन करें</value>
+  </data>
+  <data name="ChargePerUnit" xml:space="preserve">
+    <value>यूनिट प्रति प्रभार</value>
+  </data>
+  <data name="ChartNo" xml:space="preserve">
+    <value># चार्ट</value>
+  </data>
+  <data name="ChkErr" xml:space="preserve">
+    <value>कोड सही प्रारूप में दिया जाना चाहिए</value>
+  </data>
+  <data name="Chrome" xml:space="preserve">
+    <value>गूगल क्रोम 28 +</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>शहर</value>
+  </data>
+  <data name="Claim" xml:space="preserve">
+    <value>दावा</value>
+  </data>
+  <data name="ClaimAssigned" xml:space="preserve">
+    <value>निरुपित दावा</value>
+  </data>
+  <data name="ClaimAssignedNIT" xml:space="preserve">
+    <value>निरुपित दावा - न ट्रैक में</value>
+  </data>
+  <data name="Claimate" xml:space="preserve">
+    <value>Claimate</value>
+  </data>
+  <data name="ClaimateReports" xml:space="preserve">
+    <value>Claimate रिपोर्टें</value>
+  </data>
+  <data name="ClaimCreated" xml:space="preserve">
+    <value>बनाया दावा</value>
+  </data>
+  <data name="ClaimDetails" xml:space="preserve">
+    <value>दावा विवरण</value>
+  </data>
+  <data name="ClaimMedia" xml:space="preserve">
+    <value>दावा मीडिया</value>
+  </data>
+  <data name="ClaimMediaName" xml:space="preserve">
+    <value>ClaimMedia नाम</value>
+  </data>
+  <data name="ClaimProcess" xml:space="preserve">
+    <value>क्लेम प्रक्रिया</value>
+  </data>
+  <data name="Claims" xml:space="preserve">
+    <value>दावा</value>
+  </data>
+  <data name="ClaimStatus" xml:space="preserve">
+    <value>दावा स्थिति</value>
+  </data>
+  <data name="ClaimUnassigned" xml:space="preserve">
+    <value>Unassigned दावा</value>
+  </data>
+  <data name="ClaimUnassignedNIT" xml:space="preserve">
+    <value>Unassigned दावा - नहीं, ट्रैक में</value>
+  </data>
+  <data name="Cliano" xml:space="preserve">
+    <value>CLIA #</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>यहां क्लिक करें</value>
+  </data>
+  <data name="Clinic" xml:space="preserve">
+    <value>क्लिनिक</value>
+  </data>
+  <data name="ClinicCode" xml:space="preserve">
+    <value>क्लिनिक कोड</value>
+  </data>
+  <data name="ClinicLogo" xml:space="preserve">
+    <value>क्लिनिक लोगो</value>
+  </data>
+  <data name="ClinicName" xml:space="preserve">
+    <value>क्लिनिक नाम</value>
+  </data>
+  <data name="ClinicSetup" xml:space="preserve">
+    <value>क्लिनिक सेटअप</value>
+  </data>
+  <data name="ClinicWise" xml:space="preserve">
+    <value>क्लिनिक वार</value>
+  </data>
+  <data name="ClinicWiseRpt" xml:space="preserve">
+    <value>क्लिनिक समझदार रिपोर्ट</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>कोड</value>
+  </data>
+  <data name="Coding" xml:space="preserve">
+    <value>कोडन और बिलिंग</value>
+  </data>
+  <data name="Collapse" xml:space="preserve">
+    <value>गिरावट</value>
+  </data>
+  <data name="CollapseAll" xml:space="preserve">
+    <value>सभी को संकुचित करें</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>टिप्पणियां</value>
+  </data>
+  <data name="CommunicationNumberQualifier" xml:space="preserve">
+    <value>संचार संख्या क्वालीफायर</value>
+  </data>
+  <data name="ComparisonReport" xml:space="preserve">
+    <value>काम का विवरण</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>पूरा</value>
+  </data>
+  <data name="Complexity" xml:space="preserve">
+    <value>जटिलता</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>विन्यास</value>
+  </data>
+  <data name="Configurations" xml:space="preserve">
+    <value>विन्यास</value>
+  </data>
+  <data name="ConfirmNewPass" xml:space="preserve">
+    <value>नए पासवर्ड की पुष्टि</value>
+  </data>
+  <data name="ContactDetails" xml:space="preserve">
+    <value>विवरण संपर्क करें</value>
+  </data>
+  <data name="ContactPersonDetails" xml:space="preserve">
+    <value>विवरण संपर्क करें</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>हमसे संपर्क करें</value>
+  </data>
+  <data name="ContWebAdmin" xml:space="preserve">
+    <value>क्लिनिक एक से अधिक प्रबंधक है. आगे संशोधन के लिए webadmin संपर्क करें</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>देश</value>
+  </data>
+  <data name="County" xml:space="preserve">
+    <value>काउंटी</value>
+  </data>
+  <data name="CPT" xml:space="preserve">
+    <value>प्रक्रिया</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>बनाना</value>
+  </data>
+  <data name="Create837" xml:space="preserve">
+    <value>837 बनाएँ</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>बनाया गया</value>
+  </data>
+  <data name="CreatedClaims" xml:space="preserve">
+    <value>बनाया दावा</value>
+  </data>
+  <data name="CreatedFrom" xml:space="preserve">
+    <value>से बनाया गया</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>पर बनाया गया</value>
+  </data>
+  <data name="CreatedTo" xml:space="preserve">
+    <value>करने के लिए बनाया गया</value>
+  </data>
+  <data name="CreateEDINote" xml:space="preserve">
+    <value> इस क्लिनिक के दावों को भेजने के लिए सभी तैयार यहाँ सूचीबद्ध हैं.</value>
+  </data>
+  <data name="Credentials" xml:space="preserve">
+    <value>प्रत्यक्ष पत्र</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>मुद्रा कोड</value>
+  </data>
+  <data name="CurrInvPass" xml:space="preserve">
+    <value>दर्ज किए गए वर्तमान पासवर्ड अमान्य है</value>
+  </data>
+  <data name="CurrntPass" xml:space="preserve">
+    <value>वर्तमान पासवर्ड</value>
+  </data>
+  <data name="CustomDesc" xml:space="preserve">
+    <value>रिवाज</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>दैनिक</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>डैशबोर्ड</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>से</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>तिथि सीमा</value>
+  </data>
+  <data name="DateTo" xml:space="preserve">
+    <value>से</value>
+  </data>
+  <data name="DateWiseReport" xml:space="preserve">
+    <value>समझदार रिपोर्ट दिनांक</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>दिसंबर</value>
+  </data>
+  <data name="DEFAULT_EMAIL" xml:space="preserve">
+    <value>email@domain.com</value>
+  </data>
+  <data name="DEFAULT_PHONE" xml:space="preserve">
+    <value>(000) 000-0000</value>
+  </data>
+  <data name="DEFAULT_SSN" xml:space="preserve">
+    <value>000-00-0000</value>
+  </data>
+  <data name="DEFAULT_WEB" xml:space="preserve">
+    <value>http://www.domain.com</value>
+  </data>
+  <data name="DEFAULT_ZIP" xml:space="preserve">
+    <value>00000-0000</value>
+  </data>
+  <data name="DepromotetoBA" xml:space="preserve">
+    <value>बिलिंग एजेंट को Depromote</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>विवरण</value>
+  </data>
+  <data name="DescriptionCode" xml:space="preserve">
+    <value>विवरण / कोड</value>
+  </data>
+  <data name="DescType" xml:space="preserve">
+    <value>विवरण प्रकार</value>
+  </data>
+  <data name="DetailedView" xml:space="preserve">
+    <value>विस्तृत विवरण</value>
+  </data>
+  <data name="dg" xml:space="preserve">
+    <value>डीजी</value>
+  </data>
+  <data name="Diagnosis" xml:space="preserve">
+    <value>निदान</value>
+  </data>
+  <data name="Dischargedon" xml:space="preserve">
+    <value>पर छुट्टी दे दी</value>
+  </data>
+  <data name="DischDatelessCurntDate" xml:space="preserve">
+    <value>छुट्टी दे तिथि आज की तारीख से कम होना चाहिए</value>
+  </data>
+  <data name="DOB" xml:space="preserve">
+    <value>जन्म तिथि</value>
+  </data>
+  <data name="DocCategory" xml:space="preserve">
+    <value>दस्तावेज की श्रेणी</value>
+  </data>
+  <data name="DocNote" xml:space="preserve">
+    <value>डॉक्टर नोट</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>दस्तावेज़</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>डन</value>
+  </data>
+  <data name="DontUseID" xml:space="preserve">
+    <value>आईडी का उपयोग न करें</value>
+  </data>
+  <data name="DontUseName" xml:space="preserve">
+    <value>नाम का उपयोग न करें</value>
+  </data>
+  <data name="DOS" xml:space="preserve">
+    <value>डॉस</value>
+  </data>
+  <data name="DOSAsOn" xml:space="preserve">
+    <value>पर के रूप में डॉस:</value>
+  </data>
+  <data name="DOSFrom" xml:space="preserve">
+    <value>डॉस से</value>
+  </data>
+  <data name="DOSTo" xml:space="preserve">
+    <value>करने के लिए डॉस</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>डाउनलोड</value>
+  </data>
+  <data name="DupErr" xml:space="preserve">
+    <value>एक ही डेटा पहले से ही मौजूद है. एक और डेटा दर्ज करें.</value>
+  </data>
+  <data name="DX" xml:space="preserve">
+    <value>Dx</value>
+  </data>
+  <data name="DxCPT" xml:space="preserve">
+    <value>Dx / सीपीटी</value>
+  </data>
+  <data name="DxPri" xml:space="preserve">
+    <value>प्राथमिक Dx</value>
+  </data>
+  <data name="EA" xml:space="preserve">
+    <value>ईडीआई एजेंट</value>
+  </data>
+  <data name="EDI" xml:space="preserve">
+    <value>ईडीआई</value>
+  </data>
+  <data name="EDICode" xml:space="preserve">
+    <value>ईडीआई कोड</value>
+  </data>
+  <data name="EDIFiles" xml:space="preserve">
+    <value>ईडीआई फ़ाइलें</value>
+  </data>
+  <data name="EDIHistory" xml:space="preserve">
+    <value>बनाया गया ईडीआई</value>
+  </data>
+  <data name="EDIHistoryFieldVisits" xml:space="preserve">
+    <value>ईडीआई-दायर दौरा बनाया</value>
+  </data>
+  <data name="EDIReceiver" xml:space="preserve">
+    <value>ईडीआई रिसीवर</value>
+  </data>
+  <data name="EDIReciever" xml:space="preserve">
+    <value>ईडीआई रिसीवर</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ईमेल</value>
+  </data>
+  <data name="EmailCommunicationNumberQualifier" xml:space="preserve">
+    <value>ईमेल संचार संख्या क्वालीफायर</value>
+  </data>
+  <data name="EmailError" xml:space="preserve">
+    <value>क्षमा करें! ईमेल कारण [एक्स] कृपया फिर से कोशिश करने के लिए नहीं भेज</value>
+  </data>
+  <data name="EnlargeClick" xml:space="preserve">
+    <value>विस्तार करने के लिए यहां क्लिक करें</value>
+  </data>
+  <data name="EntityIdentifierCode" xml:space="preserve">
+    <value>इकाई पहचानकर्ता कोड</value>
+  </data>
+  <data name="EntityType" xml:space="preserve">
+    <value>इकाई प्रकार</value>
+  </data>
+  <data name="EntityTypeQualifier" xml:space="preserve">
+    <value>इकाई प्रकार क्वालीफायर</value>
+  </data>
+  <data name="EOB_ERA_835" xml:space="preserve">
+    <value>EOB / काल 835</value>
+  </data>
+  <data name="ErrHistory" xml:space="preserve">
+    <value>पासवर्ड पिछले [एक्स] बार इस्तेमाल किया गया है</value>
+  </data>
+  <data name="ErrInvalidCase" xml:space="preserve">
+    <value>अमान्य वर्ण</value>
+  </data>
+  <data name="ErrNumberCase" xml:space="preserve">
+    <value>संख्या गिनती [एक्स] चरित्र होना चाहिए (ओं)</value>
+  </data>
+  <data name="ErrSplChar" xml:space="preserve">
+    <value>विशेष चरित्र गिनती [एक्स] चरित्र होना चाहिए (ओं)</value>
+  </data>
+  <data name="ErrUpperCase" xml:space="preserve">
+    <value>अपरकेस गिनती होना चाहिए [एक्स] चरित्र (ओं)</value>
+  </data>
+  <data name="ExcelImpExp" xml:space="preserve">
+    <value>Excel आयात / निर्यात</value>
+  </data>
+  <data name="Expand" xml:space="preserve">
+    <value>विस्तृत करें</value>
+  </data>
+  <data name="ExpandAll" xml:space="preserve">
+    <value>सभी का विस्तार करें</value>
+  </data>
+  <data name="ExpDayMaxCount" xml:space="preserve">
+    <value>समाप्ति दिन अधिकतम गणना</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>निर्यात</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>एक्सेल निर्यात</value>
+  </data>
+  <data name="ExportToPDF" xml:space="preserve">
+    <value>पीडीएफ के लिए निर्यात</value>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>विस्तार</value>
+  </data>
+  <data name="FacilityDone" xml:space="preserve">
+    <value>सुविधा सम्पन्न</value>
+  </data>
+  <data name="FacilityType" xml:space="preserve">
+    <value>सुविधा के प्रकार</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>हमारे बारे में</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>फैक्स</value>
+  </data>
+  <data name="FaxCommunicationNumberQualifier" xml:space="preserve">
+    <value>फैक्स संचार संख्या क्वालीफायर</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>फरवरी</value>
+  </data>
+  <data name="FeMale" xml:space="preserve">
+    <value>महिला</value>
+  </data>
+  <data name="FiledVisits" xml:space="preserve">
+    <value>दायर दौरा</value>
+  </data>
+  <data name="Fileno" xml:space="preserve">
+    <value># फाइल</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>प्रथम नाम</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>पासवर्ड भूल गए</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>दिनांक से</value>
+  </data>
+  <data name="FullReport" xml:space="preserve">
+    <value>पूर्ण रिपोर्ट</value>
+  </data>
+  <data name="FunctionalIdentifierCode" xml:space="preserve">
+    <value>कार्यात्मक पहचानकर्ता कोड</value>
+  </data>
+  <data name="GenConfig" xml:space="preserve">
+    <value>सामान्य विन्यास</value>
+  </data>
+  <data name="GenConfigNoteForDate" xml:space="preserve">
+    <value>चेतावनी दिनों की गिनती करते समय तारीख से बाहर रखा जाएगा</value>
+  </data>
+  <data name="GenConfigNoteForHosp" xml:space="preserve">
+    <value>अस्पताल में भर्ती के मामलों के लिए छुट्टी के दिन लगभग केवल चेतावनी के लिए सेवा की तिथि के रूप में विचार किया जाएगा</value>
+  </data>
+  <data name="GenConfigNoteForVal" xml:space="preserve">
+    <value>मूल्य 0 कोई सीमा नहीं / नहीं समाप्ति का मतलब</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>जाना</value>
+  </data>
+  <data name="GroupNumber" xml:space="preserve">
+    <value>समूह #</value>
+  </data>
+  <data name="GroupPractice" xml:space="preserve">
+    <value>समूह अभ्यास</value>
+  </data>
+  <data name="HasSignedFile" xml:space="preserve">
+    <value>फाइल पर हस्ताक्षर किए</value>
+  </data>
+  <data name="HCPCS" xml:space="preserve">
+    <value>HCPCS कोड</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Claimate प्रधान</value>
+  </data>
+  <data name="Hedis" xml:space="preserve">
+    <value>HEDIS</value>
+  </data>
+  <data name="HistoryReuseStatus" xml:space="preserve">
+    <value>इतिहास पुनः उपयोग स्थिति</value>
+  </data>
+  <data name="Hold" xml:space="preserve">
+    <value>पकड़</value>
+  </data>
+  <data name="Hospitalization" xml:space="preserve">
+    <value>अस्पताल में भर्ती होना</value>
+  </data>
+  <data name="Hospitalized" xml:space="preserve">
+    <value>अस्पताल में भर्ती</value>
+  </data>
+  <data name="HospitalName" xml:space="preserve">
+    <value>अस्पताल का नाम</value>
+  </data>
+  <data name="ICDFormat" xml:space="preserve">
+    <value>आईसीडी स्वरूप</value>
+  </data>
+  <data name="IE" xml:space="preserve">
+    <value>आईई 10 +</value>
+  </data>
+  <data name="IllnessIndi" xml:space="preserve">
+    <value>बीमारी संकेतक</value>
+  </data>
+  <data name="IllnessIndicator" xml:space="preserve">
+    <value>बीमारी संकेतक</value>
+  </data>
+  <data name="IllnessIndicatordate" xml:space="preserve">
+    <value>बीमारी संकेतक तिथि</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>आयातित</value>
+  </data>
+  <data name="ImportedOn" xml:space="preserve">
+    <value>पर आयातित</value>
+  </data>
+  <data name="ImportReports" xml:space="preserve">
+    <value>आयात रिपोर्टें</value>
+  </data>
+  <data name="InPatientRelated" xml:space="preserve">
+    <value>संबंधित में रोगी</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>प्रगति</value>
+  </data>
+  <data name="Insurance" xml:space="preserve">
+    <value>बीमा</value>
+  </data>
+  <data name="InsuranceBenefitsAccepted" xml:space="preserve">
+    <value>बीमा लाभ स्वीकृत</value>
+  </data>
+  <data name="InsuranceEffectiveFrom" xml:space="preserve">
+    <value>इंश्योरेंस से प्रभावी</value>
+  </data>
+  <data name="InsuranceEffectiveTo" xml:space="preserve">
+    <value>बीमा करने के लिए प्रभावी</value>
+  </data>
+  <data name="InsuranceEntityTypeQualifier" xml:space="preserve">
+    <value>बीमा इकाई प्रकार क्वालीफायर</value>
+  </data>
+  <data name="InsuranceName" xml:space="preserve">
+    <value>बीमा नाम</value>
+  </data>
+  <data name="InsuranceType" xml:space="preserve">
+    <value>बीमा के प्रकार</value>
+  </data>
+  <data name="InterchangeIdQualifier" xml:space="preserve">
+    <value>इंटरचेंज आईडी क्वालीफायर</value>
+  </data>
+  <data name="InvalidLogIn" xml:space="preserve">
+    <value>लॉगइन अमान्य</value>
+  </data>
+  <data name="IPA" xml:space="preserve">
+    <value>बिलिंग / आईपीए</value>
+  </data>
+  <data name="ISA01" xml:space="preserve">
+    <value>ISA01</value>
+  </data>
+  <data name="ISA02" xml:space="preserve">
+    <value>लेखक जानकारी क्वालीफायर (ISA02)</value>
+  </data>
+  <data name="ISA03" xml:space="preserve">
+    <value>सुरक्षा जानकारी क्वालीफायर (ISA03)</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>जनवरी</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>जुलाई</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>जून</value>
+  </data>
+  <data name="LastInterchangecntrlno" xml:space="preserve">
+    <value>अंतिम इंटरचेंज नियंत्रण #</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>अंतिम नाम</value>
+  </data>
+  <data name="LastSyncOn" xml:space="preserve">
+    <value>[वाई] द्वारा [एक्स] पर अंतिम सिंक</value>
+  </data>
+  <data name="LeadingAgents" xml:space="preserve">
+    <value>अग्रणी एजेंटों</value>
+  </data>
+  <data name="LicenseNo" xml:space="preserve">
+    <value>लाइसेंस #</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>ताला</value>
+  </data>
+  <data name="LockOn" xml:space="preserve">
+    <value>पर बंद</value>
+  </data>
+  <data name="LoggedInAs" xml:space="preserve">
+    <value>के रूप में लॉग</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>लॉगिन</value>
+  </data>
+  <data name="Login_On" xml:space="preserve">
+    <value>पर में लॉग</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>लोगो</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>लॉगआउट</value>
+  </data>
+  <data name="Logout_On" xml:space="preserve">
+    <value>पर लॉग आउट</value>
+  </data>
+  <data name="LongDesc" xml:space="preserve">
+    <value>लंबे समय तक</value>
+  </data>
+  <data name="MachIP" xml:space="preserve">
+    <value>आईपी ​​पता</value>
+  </data>
+  <data name="MachName" xml:space="preserve">
+    <value>मशीन नाम</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>नर</value>
+  </data>
+  <data name="ManageClinic" xml:space="preserve">
+    <value>क्लिनिक प्रबंधन</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>मैनेजर</value>
+  </data>
+  <data name="ManagerName" xml:space="preserve">
+    <value>प्रबंधक का नाम</value>
+  </data>
+  <data name="ManagersNoClinic" xml:space="preserve">
+    <value>क्लिनिक बिना प्रबंधक</value>
+  </data>
+  <data name="Managing" xml:space="preserve">
+    <value>प्रबंध</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>मार्च</value>
+  </data>
+  <data name="MaxAge" xml:space="preserve">
+    <value>अधिकतम पासवर्ड आयु (दिन)</value>
+  </data>
+  <data name="MaxDaysBAComplete" xml:space="preserve">
+    <value>डॉस से बीए काम को पूरा करने के लिए अधिकतम दिन</value>
+  </data>
+  <data name="MaxDaysClaimDone" xml:space="preserve">
+    <value>अधिकतम दिनों डॉस से दावे की प्रक्रिया को पूरा करने के लिए</value>
+  </data>
+  <data name="MaxDaysEDIFileSent" xml:space="preserve">
+    <value>डॉस से भेजा ईडीआई फ़ाइल को अधिकतम दिन</value>
+  </data>
+  <data name="MaxDaysQAComplete" xml:space="preserve">
+    <value>अधिकतम दिनों डॉस से क्यूए काम को पूरा करने के लिए</value>
+  </data>
+  <data name="MaxLen" xml:space="preserve">
+    <value>अधिकतम लंबाई</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>अधिकतम लंबाई [एक्स] अक्षरों का होना चाहिए</value>
+  </data>
+  <data name="MaxPageSize" xml:space="preserve">
+    <value>अधिकतम आवंटित पृष्ठ आकार की सीमा पार हो गई</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>मई</value>
+  </data>
+  <data name="MedicalDocuments" xml:space="preserve">
+    <value>मेडिकल दस्तावेज</value>
+  </data>
+  <data name="MedicareID" xml:space="preserve">
+    <value>चिकित्सा आईडी</value>
+  </data>
+  <data name="MediumDesc" xml:space="preserve">
+    <value>मध्यम</value>
+  </data>
+  <data name="MiddleName" xml:space="preserve">
+    <value>मध्य नाम</value>
+  </data>
+  <data name="MinLen" xml:space="preserve">
+    <value>न्यूनतम लंबाई</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>न्यूनतम लंबाई [एक्स] अक्षरों का होना चाहिए</value>
+  </data>
+  <data name="Modifier" xml:space="preserve">
+    <value>आपरिवर्तक</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>संशोधित</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>मासिक</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>अधिक</value>
+  </data>
+  <data name="MoreManager" xml:space="preserve">
+    <value>इस क्लिनिक के एक से अधिक प्रबंधक है. प्रबंधकों रहे हैं:</value>
+  </data>
+  <data name="Mozilla" xml:space="preserve">
+    <value>मोज़िला फ़ायरफ़ॉक्स 23 +</value>
+  </data>
+  <data name="MRA" xml:space="preserve">
+    <value>एमआरए</value>
+  </data>
+  <data name="MRARpt" xml:space="preserve">
+    <value>एमआरए स्थिति रिपोर्ट</value>
+  </data>
+  <data name="MulitpleForms" xml:space="preserve">
+    <value>Mulitple फॉर्म्स</value>
+  </data>
+  <data name="MVC" xml:space="preserve">
+    <value>MVC नियंत्रकों</value>
+  </data>
+  <data name="MyAgent" xml:space="preserve">
+    <value>मेरा एजेंट</value>
+  </data>
+  <data name="MyClinic" xml:space="preserve">
+    <value>मेरा क्लिनिक</value>
+  </data>
+  <data name="MyPatient" xml:space="preserve">
+    <value>मेरा रोगी</value>
+  </data>
+  <data name="MyProvider" xml:space="preserve">
+    <value>मेरा प्रदाता</value>
+  </data>
+  <data name="MyRole" xml:space="preserve">
+    <value>मेरा रोल</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="NameChart" xml:space="preserve">
+    <value>नाम / चार्ट #</value>
+  </data>
+  <data name="NameChartCase" xml:space="preserve">
+    <value>नाम / चार्ट # / प्रकरण #</value>
+  </data>
+  <data name="NameCode" xml:space="preserve">
+    <value>नाम / कोड</value>
+  </data>
+  <data name="NameEmail" xml:space="preserve">
+    <value>नाम / ईमेल</value>
+  </data>
+  <data name="NameZipCode" xml:space="preserve">
+    <value>नाम / पिन कोड</value>
+  </data>
+  <data name="Navigation" xml:space="preserve">
+    <value>नेविगेशन</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>नया</value>
+  </data>
+  <data name="Newpwd" xml:space="preserve">
+    <value>नया पासवर्ड</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>अगला</value>
+  </data>
+  <data name="NIT" xml:space="preserve">
+    <value>नहीं ट्रैक में</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>नहीं</value>
+  </data>
+  <data name="NoAgentSession" xml:space="preserve">
+    <value>कोई एजेंट सत्र सेट</value>
+  </data>
+  <data name="NoClinic" xml:space="preserve">
+    <value>आप किसी भी सक्रिय क्लिनिक सत्र नहीं है</value>
+  </data>
+  <data name="NoClinicErr" xml:space="preserve">
+    <value>इस उपयोगकर्ता को सौंपा नहीं क्लिनिक. व्यवस्थापक से संपर्क करें</value>
+  </data>
+  <data name="NoDoc" xml:space="preserve">
+    <value>एक दस्तावेज़ अपलोड करें</value>
+  </data>
+  <data name="NoFormAriva" xml:space="preserve">
+    <value>अनधिकृत फार्म टैग</value>
+  </data>
+  <data name="NoPatient" xml:space="preserve">
+    <value>आप किसी भी सक्रिय रोगी सत्र है न</value>
+  </data>
+  <data name="NoProviderSession" xml:space="preserve">
+    <value>कोई प्रदाता सत्र सेट</value>
+  </data>
+  <data name="NoRec" xml:space="preserve">
+    <value>दिखाने के लिये कोई अभिलेख</value>
+  </data>
+  <data name="NoRole" xml:space="preserve">
+    <value>आप किसी भी सक्रिय भूमिका सत्र है न</value>
+  </data>
+  <data name="NoSession" xml:space="preserve">
+    <value>आप किसी भी सक्रिय सत्र है न</value>
+  </data>
+  <data name="NoSessionUnExp" xml:space="preserve">
+    <value>आप कुछ अप्रत्याशित सत्र का उपयोग करने की कोशिश कर रहे हैं</value>
+  </data>
+  <data name="NotDischargeError" xml:space="preserve">
+    <value>आप इस मरीज के लिए यात्रा नहीं बना सकते. इस मरीज अभी अस्पताल से छुट्टी नहीं है.</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>नोट</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>नोट्स</value>
+  </data>
+  <data name="NoteUser" xml:space="preserve">
+    <value>बाकी संशोधित डेटा खो जाएगा एक और वर्णमाला को स्विच करने से पहले संशोधित सामग्री को बचा लो</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>अधिसूचना</value>
+  </data>
+  <data name="NotInTrack" xml:space="preserve">
+    <value>नहीं ट्रैक में</value>
+  </data>
+  <data name="NoTrialBal" xml:space="preserve">
+    <value>आपका पासवर्ड अमान्य परीक्षणों के कारण समाप्त हो गई है. नया पासवर्ड प्राप्त करने के लिए भूल गया पासवर्ड लिंक का उपयोग करें</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>नवंबर</value>
+  </data>
+  <data name="NPI" xml:space="preserve">
+    <value>NPI</value>
+  </data>
+  <data name="NumCount" xml:space="preserve">
+    <value>नंबर न्यूनतम गणना</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>अक्टूबर</value>
+  </data>
+  <data name="OfficeAddress" xml:space="preserve">
+    <value>ऑफिस का पता</value>
+  </data>
+  <data name="Opera" xml:space="preserve">
+    <value>ओपेरा 12 +</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>अन्य</value>
+  </data>
+  <data name="OtherVisits" xml:space="preserve">
+    <value>अन्य दौरा</value>
+  </data>
+  <data name="PageLockTime" xml:space="preserve">
+    <value>पृष्ठ स्वत: बंद निष्क्रिय समय (मिनट में)</value>
+  </data>
+  <data name="PageNoAccess" xml:space="preserve">
+    <value>आप पृष्ठ का उपयोग करने की अनुमति नहीं है</value>
+  </data>
+  <data name="PassComplexityWarning" xml:space="preserve">
+    <value>पासवर्ड शामिल करना चाहिए कम से कम &lt;b&gt; [एक्स] &lt;/ b&gt; अपरकेस (एस), &lt;b&gt; [वाई] &lt;/ b&gt; संख्या (एस), &lt;b&gt; [z] &lt;/ b&gt; पर विशेष चरित्र (एस) और लंबाई के बीच होना चाहिए &lt;b&gt; [पश्चिम] &lt;/ b&gt; और &lt;b&gt; [वी] &lt;/ b&gt;.</value>
+  </data>
+  <data name="PassMatch" xml:space="preserve">
+    <value>पासवर्डों मैच चाहिए</value>
+  </data>
+  <data name="PassMaxCount" xml:space="preserve">
+    <value>पासवर्ड ट्रेल अधिकतम गणना</value>
+  </data>
+  <data name="PassNoMatch" xml:space="preserve">
+    <value>पासवर्ड एक जैसे नहीं चाहिए</value>
+  </data>
+  <data name="PassReuse" xml:space="preserve">
+    <value>इतिहास पासवर्ड दुबारा उपयोग करना स्थिति</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>पासवर्ड</value>
+  </data>
+  <data name="Patalrexists" xml:space="preserve">
+    <value>रोगी एक ही प्रवेश तिथि के लिए अस्पताल में पहले से ही मौजूद है.</value>
+  </data>
+  <data name="PatDocuments" xml:space="preserve">
+    <value>रोगी दस्तावेज</value>
+  </data>
+  <data name="Patient" xml:space="preserve">
+    <value>रोगी</value>
+  </data>
+  <data name="PatientDash" xml:space="preserve">
+    <value>रोगी डैशबोर्ड</value>
+  </data>
+  <data name="PatientDemography" xml:space="preserve">
+    <value>रोगी जनसांख्यिकी</value>
+  </data>
+  <data name="PatientDemographyEdit" xml:space="preserve">
+    <value>रोगी जनसांख्यिकी संपादित करें</value>
+  </data>
+  <data name="PatientDemoPull" xml:space="preserve">
+    <value>रोगी जनसांख्यिकी खींचो</value>
+  </data>
+  <data name="PatientDocument" xml:space="preserve">
+    <value>रोगी दस्तावेज़</value>
+  </data>
+  <data name="PatientEntityTypeQualifier" xml:space="preserve">
+    <value>रोगी इकाई प्रकार क्वालीफायर</value>
+  </data>
+  <data name="PatientHosp" xml:space="preserve">
+    <value>रोगी अस्पताल में भर्ती</value>
+  </data>
+  <data name="PatientMenu" xml:space="preserve">
+    <value>रोगी मेनू</value>
+  </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>रोगी का नाम</value>
+  </data>
+  <data name="PatientVisit" xml:space="preserve">
+    <value>रोगी भेंट</value>
+  </data>
+  <data name="PatientWiseReport" xml:space="preserve">
+    <value>रोगी समझदार रिपोर्ट</value>
+  </data>
+  <data name="PatVisitComplexity" xml:space="preserve">
+    <value>रोगी भेंट जटिलता</value>
+  </data>
+  <data name="PatVisitDocMand" xml:space="preserve">
+    <value>अनिवार्य रोगी भेंट दस्तावेज़</value>
+  </data>
+  <data name="PayerEntityIdentifierCode" xml:space="preserve">
+    <value>भुगतानकर्ता इकाई पहचानकर्ता कोड</value>
+  </data>
+  <data name="PayerID" xml:space="preserve">
+    <value>भुगतानकर्ता आईडी</value>
+  </data>
+  <data name="PayerResponsibilitySequenceNumberCode" xml:space="preserve">
+    <value>भुगतानकर्ता जिम्मेदारी अनुक्रम संख्या कोड</value>
+  </data>
+  <data name="PhoneCommunicationNumberQualifier" xml:space="preserve">
+    <value>टेलीफोन संचार संख्या क्वालीफायर</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>फोन #</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>फ़ोटो</value>
+  </data>
+  <data name="PolicyHolderChartNo" xml:space="preserve">
+    <value>पॉलिसी धारक चार्ट #</value>
+  </data>
+  <data name="PolicyHolderRelationship" xml:space="preserve">
+    <value>पॉलिसी धारक रिश्ता</value>
+  </data>
+  <data name="PolicyNumber" xml:space="preserve">
+    <value>नीति #</value>
+  </data>
+  <data name="Practice" xml:space="preserve">
+    <value>प्रैक्टिस / क्लिनिक</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>पिछला</value>
+  </data>
+  <data name="PrimaryDx" xml:space="preserve">
+    <value>प्राथमिक Dx</value>
+  </data>
+  <data name="PrimaryOption" xml:space="preserve">
+    <value>प्राथमिक बिलिंग विकल्प</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>प्रिंट</value>
+  </data>
+  <data name="PrintClick" xml:space="preserve">
+    <value>मुद्रित करने के लिए यहां क्लिक करें</value>
+  </data>
+  <data name="PrintPin" xml:space="preserve">
+    <value>पिन प्रिंट</value>
+  </data>
+  <data name="PrintPinonFile" xml:space="preserve">
+    <value>फ़ाइल पर PrintPin</value>
+  </data>
+  <data name="PrintSign" xml:space="preserve">
+    <value>साइन प्रिंट</value>
+  </data>
+  <data name="PrintSignonFileInsured" xml:space="preserve">
+    <value>फाइल पर साइन प्रिंट - बीमित</value>
+  </data>
+  <data name="PrintSignonFilePatient" xml:space="preserve">
+    <value>रोगी - फाइल पर साइन प्रिंट</value>
+  </data>
+  <data name="PrintSignonFilePhysicianorProvider" xml:space="preserve">
+    <value>चिकित्सक / प्रदाता - फाइल पर साइन प्रिंट</value>
+  </data>
+  <data name="Procedure" xml:space="preserve">
+    <value>प्रक्रिया</value>
+  </data>
+  <data name="ProcedureList" xml:space="preserve">
+    <value>प्रक्रिया सूची</value>
+  </data>
+  <data name="ProcedureModifier" xml:space="preserve">
+    <value>प्रक्रिया संशोधक</value>
+  </data>
+  <data name="ProcedurePOS" xml:space="preserve">
+    <value>प्रक्रिया - सेवा की जगह</value>
+  </data>
+  <data name="PROCEDURE_DETAIL" xml:space="preserve">
+    <value>प्रक्रिया सूची विस्तार</value>
+  </data>
+  <data name="PromotetoManager" xml:space="preserve">
+    <value>प्रबंधक को बढ़ावा देना</value>
+  </data>
+  <data name="Provider" xml:space="preserve">
+    <value>प्रदाता</value>
+  </data>
+  <data name="ProviderEntityTypeQualifier" xml:space="preserve">
+    <value>प्रदाता इकाई प्रकार क्वालीफायर</value>
+  </data>
+  <data name="ProviderWiseReport" xml:space="preserve">
+    <value>प्रदाता समझदार रिपोर्ट</value>
+  </data>
+  <data name="PwdComplexity" xml:space="preserve">
+    <value>पासवर्ड जटिलता</value>
+  </data>
+  <data name="QA" xml:space="preserve">
+    <value>गुणवत्ता विश्लेषण एजेंट</value>
+  </data>
+  <data name="Rank" xml:space="preserve">
+    <value>रैंक</value>
+  </data>
+  <data name="ReadyToSend" xml:space="preserve">
+    <value>भेजने के लिए तैयार</value>
+  </data>
+  <data name="Reassign" xml:space="preserve">
+    <value>फिर दे देना</value>
+  </data>
+  <data name="ReceiverEntityIdentifierCode" xml:space="preserve">
+    <value>पानेवाला इकाई पहचानकर्ता कोड</value>
+  </data>
+  <data name="ReceiverID" xml:space="preserve">
+    <value>पानेवाला आईडी</value>
+  </data>
+  <data name="ReceiverInterchangeID" xml:space="preserve">
+    <value>पानेवाला इंटरचेंज आईडी</value>
+  </data>
+  <data name="ReceiverInterchangeQualifier" xml:space="preserve">
+    <value>पानेवाला इंटरचेंज क्वालीफायर</value>
+  </data>
+  <data name="RecentLogin" xml:space="preserve">
+    <value>हाल के सफल लॉगिन</value>
+  </data>
+  <data name="RecsFound" xml:space="preserve">
+    <value>रिकॉर्ड्स मिला: [एक्स]</value>
+  </data>
+  <data name="ReferringProvider" xml:space="preserve">
+    <value>प्रदाता प्रतिपादन / जिक्र करते हुए</value>
+  </data>
+  <data name="RefFile" xml:space="preserve">
+    <value>रेफरी फ़ाइल</value>
+  </data>
+  <data name="regEmail" xml:space="preserve">
+    <value>पासवर्ड प्राप्त करने के लिए पंजीकृत ईमेल पते दर्ज करें</value>
+  </data>
+  <data name="RegisteredEmail" xml:space="preserve">
+    <value>पंजीकृत ईमेल</value>
+  </data>
+  <data name="ReImport" xml:space="preserve">
+    <value>पुन: आयात</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>अस्वीकृत</value>
+  </data>
+  <data name="Relationship" xml:space="preserve">
+    <value>रिश्ता</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>रिपोर्टें</value>
+  </data>
+  <data name="Respond" xml:space="preserve">
+    <value>EOB / काल 835</value>
+  </data>
+  <data name="Respond4010" xml:space="preserve">
+    <value>जवाब - एएनएसआई 4010 स्वरूप</value>
+  </data>
+  <data name="Respond5010" xml:space="preserve">
+    <value>जवाब - एएनएसआई 5010 स्वरूप</value>
+  </data>
+  <data name="RespondPaper" xml:space="preserve">
+    <value>जवाब - पेपर प्रारूप</value>
+  </data>
+  <data name="ReSubmitted" xml:space="preserve">
+    <value>पुन: प्रेषित</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>भूमिका</value>
+  </data>
+  <data name="Safari" xml:space="preserve">
+    <value>सफारी 5 +</value>
+  </data>
+  <data name="SamePwdAsCurrnt" xml:space="preserve">
+    <value>नया पासवर्ड वर्तमान पासवर्ड के रूप में ही नहीं होना चाहिए.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>बचाना</value>
+  </data>
+  <data name="SaveContinue" xml:space="preserve">
+    <value>सहेजें और जारी</value>
+  </data>
+  <data name="SaveError" xml:space="preserve">
+    <value>क्षमा करें! [एक्स]. पुन: प्रयास करें</value>
+  </data>
+  <data name="SaveErrorAsgnToMe" xml:space="preserve">
+    <value>पहले से ही दूसरों को सौंपा दावा</value>
+  </data>
+  <data name="SaveErrorNoDxProc" xml:space="preserve">
+    <value>प्राथमिक Dx के लिए एक प्रक्रिया जोड़ें</value>
+  </data>
+  <data name="SaveErrorNoVisitDoc" xml:space="preserve">
+    <value>यात्रा दस्तावेज़ अपलोड करें</value>
+  </data>
+  <data name="SaveErrorSucc" xml:space="preserve">
+    <value>उफ़! सॉफ्टवेयर डेवलपर इस ब्लॉक करने के लिए उन्हें पूछना कृपया याद किया</value>
+  </data>
+  <data name="SaveSucc" xml:space="preserve">
+    <value>रिकॉर्ड (ओं) को सफलतापूर्वक बचाया</value>
+  </data>
+  <data name="SaveSuccChangePwd" xml:space="preserve">
+    <value>आपने सफलतापूर्वक अपना पासवर्ड बदल दिया है जारी रखने के लिए फिर से लॉगिन करें</value>
+  </data>
+  <data name="SaveSuccForgotPwd" xml:space="preserve">
+    <value>लॉगिन क्रेडेंशियल जानकारी के लिए अपने मेल की जांच करें आपके मेल करने के लिए भेज दिया गया है</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>खोज</value>
+  </data>
+  <data name="SearchCity" xml:space="preserve">
+    <value>सिटी / पिन कोड</value>
+  </data>
+  <data name="SearchCounty" xml:space="preserve">
+    <value>काउंटी / कोड</value>
+  </data>
+  <data name="SearchRecordPerPage" xml:space="preserve">
+    <value>प्रति पृष्ठ खोज परिणाम</value>
+  </data>
+  <data name="SearchState" xml:space="preserve">
+    <value>खोज राज्य का नाम / कोड</value>
+  </data>
+  <data name="SearchVisit" xml:space="preserve">
+    <value>चार्ट # या नाम से खोजें</value>
+  </data>
+  <data name="SecondaryEmail" xml:space="preserve">
+    <value>माध्यमिक ईमेल</value>
+  </data>
+  <data name="SecondaryPhoneNumber" xml:space="preserve">
+    <value>माध्यमिक फोन #</value>
+  </data>
+  <data name="SecurityInfoQualifier" xml:space="preserve">
+    <value>सुरक्षा जानकारी (ISA04)</value>
+  </data>
+  <data name="SecurityInfoQualifierPwd" xml:space="preserve">
+    <value>सुरक्षा जानकारी क्वालीफायर पासवर्ड</value>
+  </data>
+  <data name="SecurityInfoQualifierUname" xml:space="preserve">
+    <value>सुरक्षा जानकारी क्वालीफायर यूजर का नाम</value>
+  </data>
+  <data name="SecurityQualifier" xml:space="preserve">
+    <value>सुरक्षा जानकारी क्वालीफायर</value>
+  </data>
+  <data name="SelDxList" xml:space="preserve">
+    <value>चयनित Dx सूची</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>सभी का चयन करें</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>फ़ाइल का चयन करें</value>
+  </data>
+  <data name="SelectLogo" xml:space="preserve">
+    <value>एक लोगो का चयन करें</value>
+  </data>
+  <data name="SenderInterchangeID" xml:space="preserve">
+    <value>प्रेषक इंटरचेंज आईडी</value>
+  </data>
+  <data name="SenderInterchangeQualifier" xml:space="preserve">
+    <value>प्रेषक इंटरचेंज क्वालीफायर</value>
+  </data>
+  <data name="Sent" xml:space="preserve">
+    <value>भेजे गए</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>सितंबर</value>
+  </data>
+  <data name="ServiceDate" xml:space="preserve">
+    <value>सेवा दिनांक</value>
+  </data>
+  <data name="SessionExpDueToImproperCache" xml:space="preserve">
+    <value>सत्र के कारण अनुचित कैश करने के लिए समय सीमा समाप्त हो की गई है</value>
+  </data>
+  <data name="SessionTimeout" xml:space="preserve">
+    <value>नमस्कार, [एक्स]! सक्रिय रहने के लिए '[वाई]' के भीतर स्क्रीन अनलॉक</value>
+  </data>
+  <data name="SessionTimeoutMin" xml:space="preserve">
+    <value>सत्र मध्यांतर (मिनट में)
+नोट: पेज ऑटो की 3 बार की कम से कम होना चाहिए निष्क्रिय समय लॉक</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>लिंग</value>
+  </data>
+  <data name="ShortDesc" xml:space="preserve">
+    <value>कम</value>
+  </data>
+  <data name="ShowMore" xml:space="preserve">
+    <value>अधिक दिखाएँ</value>
+  </data>
+  <data name="SignedDate" xml:space="preserve">
+    <value>पर हस्ताक्षर किए तिथि</value>
+  </data>
+  <data name="SN" xml:space="preserve">
+    <value>क्र #</value>
+  </data>
+  <data name="SpecialCount" xml:space="preserve">
+    <value>विशेष वर्ण न्यूनतम गणना</value>
+  </data>
+  <data name="Specialty" xml:space="preserve">
+    <value>विशेषता</value>
+  </data>
+  <data name="SpecialtyName" xml:space="preserve">
+    <value>विशेषता नाम</value>
+  </data>
+  <data name="SplChars" xml:space="preserve">
+    <value>विशेष वर्ण की अनुमति दी:</value>
+  </data>
+  <data name="SSN" xml:space="preserve">
+    <value>एसएसएन</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>राज्य</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>स्ट्रीट 1</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>विषय</value>
+  </data>
+  <data name="SubmitterEntityIdentifierCode" xml:space="preserve">
+    <value>Submitter इकाई पहचानकर्ता कोड</value>
+  </data>
+  <data name="SubscriberEntityIdentifierCode" xml:space="preserve">
+    <value>सब्सक्राइबर इकाई पहचानकर्ता कोड</value>
+  </data>
+  <data name="SuiteNo" xml:space="preserve">
+    <value>स्ट्रीट 2</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>सारांश</value>
+  </data>
+  <data name="SummaryReport" xml:space="preserve">
+    <value>संक्षिप्त रिपोर्टॅ</value>
+  </data>
+  <data name="SummarySplitUp" xml:space="preserve">
+    <value>सारांश अलग हो जाते हैं</value>
+  </data>
+  <data name="SuperBill" xml:space="preserve">
+    <value>सुपर विधेयक</value>
+  </data>
+  <data name="SupportedBrowsers" xml:space="preserve">
+    <value>समर्थित ब्राउज़र्स</value>
+  </data>
+  <data name="Sync" xml:space="preserve">
+    <value>सिंक करें</value>
+  </data>
+  <data name="SyncRefresh" xml:space="preserve">
+    <value>नवीनतम स्थिति पाने के लिए पृष्ठ पुनः लोड / ताज़ा</value>
+  </data>
+  <data name="SyncStartOn" xml:space="preserve">
+    <value>[वाई] द्वारा [एक्स] पर शुरू किया</value>
+  </data>
+  <data name="TaxID" xml:space="preserve">
+    <value>टैक्स आईडी</value>
+  </data>
+  <data name="TeamMember" xml:space="preserve">
+    <value>टीम के सदस्य</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>तिथि करने के लिए</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>आज</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>संपूर्ण</value>
+  </data>
+  <data name="TotalCharge" xml:space="preserve">
+    <value>कुल प्रभार</value>
+  </data>
+  <data name="TotCharge" xml:space="preserve">
+    <value>TotalCharge</value>
+  </data>
+  <data name="TrailingAgents" xml:space="preserve">
+    <value>पीछे चल एजेंटों</value>
+  </data>
+  <data name="Transaction" xml:space="preserve">
+    <value>लेन - देन</value>
+  </data>
+  <data name="TransactionPurposeCode" xml:space="preserve">
+    <value>लेन - देन सेट प्रयोजन कोड</value>
+  </data>
+  <data name="TransactionTypeCode" xml:space="preserve">
+    <value>लेन - देन के प्रकार कोड</value>
+  </data>
+  <data name="TransPurpose" xml:space="preserve">
+    <value>ट्रांस प्रयोजन कोड</value>
+  </data>
+  <data name="TransType" xml:space="preserve">
+    <value>ट्रांस प्रकार कोड</value>
+  </data>
+  <data name="TrialMaxCount" xml:space="preserve">
+    <value>ट्रायल अधिकतम गणना</value>
+  </data>
+  <data name="TrialOn" xml:space="preserve">
+    <value>पर ट्रायल</value>
+  </data>
+  <data name="UC" xml:space="preserve">
+    <value>निर्माण के तहत</value>
+  </data>
+  <data name="UnasgnClaims" xml:space="preserve">
+    <value>Unassigned दावा</value>
+  </data>
+  <data name="UnasgnClaimsNIT" xml:space="preserve">
+    <value>Unassigned दावा [नहीं ट्रैक]</value>
+  </data>
+  <data name="UnassgnClaims" xml:space="preserve">
+    <value>Unassigned दावा</value>
+  </data>
+  <data name="Unblock" xml:space="preserve">
+    <value>खुलना</value>
+  </data>
+  <data name="Unhold" xml:space="preserve">
+    <value>अनहोल्ड</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>इकाई</value>
+  </data>
+  <data name="UnLock" xml:space="preserve">
+    <value>खोलना</value>
+  </data>
+  <data name="UnLockOn" xml:space="preserve">
+    <value>पर खुला</value>
+  </data>
+  <data name="UploadMaxSizeInMB" xml:space="preserve">
+    <value>दस्तावेज़ के लिए अधिकतम आकार (MB में)</value>
+  </data>
+  <data name="UploadSize" xml:space="preserve">
+    <value>अधिकतम आकार की अनुमति दी: [एक्स] एमबी</value>
+  </data>
+  <data name="UpperCount" xml:space="preserve">
+    <value>ऊपरी मामले न्यूनतम गणना</value>
+  </data>
+  <data name="UsageIndi" xml:space="preserve">
+    <value>उपयोग संकेतक</value>
+  </data>
+  <data name="UsageIndicator" xml:space="preserve">
+    <value>इंटरचेंज उपयोग संकेतक</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>उपयोगकर्ता</value>
+  </data>
+  <data name="UserBlocked" xml:space="preserve">
+    <value>आपका खाता अवरुद्ध कर दिया गया. अधिक जानकारी के लिए व्यवस्थापक से संपर्क करें</value>
+  </data>
+  <data name="UserClinic" xml:space="preserve">
+    <value>एजेंट और क्लिनिक</value>
+  </data>
+  <data name="UserCredSub" xml:space="preserve">
+    <value>उपयोगकर्ता क्रेडेंशियल विषय</value>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>उपयोगकर्ता जानकारी</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>ईमेल या उपयोगकर्ता नाम</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>प्रयोक्ता नहीं मिला</value>
+  </data>
+  <data name="UserOnLeave" xml:space="preserve">
+    <value>आप अस्थायी रूप से अवरुद्ध कर दिया गया है</value>
+  </data>
+  <data name="UserRole" xml:space="preserve">
+    <value>एजेंट और रोल</value>
+  </data>
+  <data name="UsersNoClinic" xml:space="preserve">
+    <value>क्लिनिक के बिना उपयोगकर्ता</value>
+  </data>
+  <data name="UsersNoRole" xml:space="preserve">
+    <value>रोल के बिना उपयोगकर्ता</value>
+  </data>
+  <data name="ValidChars" xml:space="preserve">
+    <value>मान्य वर्ण</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>देखना</value>
+  </data>
+  <data name="ViewInWebBrowser" xml:space="preserve">
+    <value>वेब ब्राउज़र में देखें</value>
+  </data>
+  <data name="Visit" xml:space="preserve">
+    <value>भेंट</value>
+  </data>
+  <data name="VisitDocument" xml:space="preserve">
+    <value>दस्तावेज़ जाएँ</value>
+  </data>
+  <data name="VisitExists" xml:space="preserve">
+    <value>यात्रा पहले से ही इस तिथि पर मौजूद</value>
+  </data>
+  <data name="VisitExistsHosp" xml:space="preserve">
+    <value>यात्रा की तारीख अतिव्यापी है</value>
+  </data>
+  <data name="Visits" xml:space="preserve">
+    <value>दौरा</value>
+  </data>
+  <data name="WebBrowsers" xml:space="preserve">
+    <value>वेब ब्राउज़र</value>
+  </data>
+  <data name="WebCulture" xml:space="preserve">
+    <value>वेब संस्कृति</value>
+  </data>
+  <data name="X12File" xml:space="preserve">
+    <value>X 12 फ़ाइल</value>
+  </data>
+  <data name="Yearly" xml:space="preserve">
+    <value>वार्षिक</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>हां</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>पिन कोड</value>
+  </data>
+</root>

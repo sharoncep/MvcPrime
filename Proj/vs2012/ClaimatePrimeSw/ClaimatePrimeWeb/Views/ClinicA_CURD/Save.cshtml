@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.ClinicSaveModel
+
+@using (Html.ArivaForm("ClinicA", "Save"))
+{
+    @Html.TextBoxFor(m => m.AntiForgTokn
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                    }))
+   
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicA"))"  title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.Practice</li>
+             @{
+    bool isNew = (ArivaSession.Sessions().PageEditID<long>() == 0) ? true : false;
+
+    if (ArivaSession.Sessions().IsNewRec)
+    {
+                <li>-</li>
+                <li><span>@Resources.ClaimatePrimeWebResx.New</span></li>
+    }
+    else
+    {
+                <li>-</li>
+                <li><span>@Resources.ClaimatePrimeWebResx.Edit</span></li>
+    }
+            }
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub") 
+
+    @Html.Partial("UserControls/Clinic")    
+}
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveError.Replace("[X]", Model.ErrorMsg)" />
+            }
+             else if (ViewBag.ErrMsg == 2)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.UploadSize.Replace("[X]", Convert.ToString(StaticClass.ConfigurationGeneral.mUploadMaxSizeInMBID))" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtErrMsg" value="sai" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

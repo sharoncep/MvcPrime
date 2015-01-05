@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuM"))"  title="@Resources.ClaimatePrimeWebResx.BackClinic" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Address</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CityM"))" rel="menu_tile" class="menu-city" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.City</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CountryM"))" rel="menu_tile" class="menu-country" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Country</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CountyM"))" rel="menu_tile" class="menu-county" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.County</a></li>
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("StateM"))" rel="menu_tile" class="menu-state" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.State</a></li>
+    </ul>
+</div>

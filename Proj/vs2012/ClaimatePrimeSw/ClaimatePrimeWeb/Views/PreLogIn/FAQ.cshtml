@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Pre.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+<link href="@Url.Content("~/Stylesheets/pre.css")" rel="stylesheet" type="text/css" />
+<div class="dv-top-bar">
+</div>
+<div class="dv-main_wrapper" onmouseover="javascript:$('#divUserDetails').slideUp();">
+    <div class="@StaticClass.SiteLogo"  title="@StaticClass.SiteVersion">
+    </div>
+    <div class="dv-page-header">
+        <ul class="ul-header">
+            <li>FAQ</li>
+        </ul>
+    </div>
+</div>
+@Html.Partial("UserControls/PageFooterFAQ")

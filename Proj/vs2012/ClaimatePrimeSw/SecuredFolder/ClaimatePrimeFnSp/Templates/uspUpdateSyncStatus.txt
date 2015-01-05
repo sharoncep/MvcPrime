@@ -1,0 +1,29 @@
+﻿/****** Object:  StoredProcedure [Audit].[usp_Update_SyncStatus]    Script Date: 07/26/2013 18:24:36 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Audit].[usp_Update_SyncStatus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [Audit].[usp_Update_SyncStatus]
+GO
+
+/****** Object:  StoredProcedure [Audit].[usp_Update_SyncStatus]    Script Date: 07/26/2013 18:24:36 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [Audit].[usp_Update_SyncStatus] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+		
+	UPDATE 
+		[Audit].[SyncStatus] 
+	SET 
+		[EndOn] = GETDATE()
+		, [IsSuccess] = 1 
+	WHERE 
+		[EndOn] IS NULL;
+			
+	-- EXEC [Audit].[usp_Update_SyncStatus] 
+END
+
+GO

@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.AssignedClaimEASaveModel
+
+<div>
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsNITE"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.ClaimAssigned</li>
+            <li><span>- @Resources.ClaimatePrimeWebResx.NIT</span></li>
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub")
+    @using (Html.ArivaForm("AssgnClaimsNITE", "Save"))
+    {
+        <div class="dv-block">
+            @Html.Partial("UserControls/AsgnClaimVisitView")
+            @Html.Partial("UserControls/AsgnClaimDxView")
+            @Html.Partial("UserControls/AsgnClaimPrimaryDxView")
+            @Html.Partial("UserControls/AsgnClaimProcedureView")
+            @Html.Partial("UserControls/AsgnClaimVisitDocumentView")
+            @Html.Partial("UserControls/AsgnClaimNotesE")
+            @Html.Partial("UserControls/AsgnClaimPatDocuments")
+            @Html.Partial("UserControls/AsgnClaimPatient")
+            @Html.Partial("UserControls/AsgnClaimStatus")
+            @Html.Partial("UserControls/AsgnClaimEDISettings")
+            @Html.Partial("UserControls/AsgnClaimIPA")
+            @Html.Partial("UserControls/AsgnClaimPractice")
+            @Html.Partial("UserControls/AsgnClaimFacilityDone")
+            @Html.Partial("UserControls/AsgnClaimProvider")
+            @Html.Partial("UserControls/AsgnClaimInsurance")
+            @Html.Partial("UserControls/AsgnClaimPrevVisit")
+        </div>
+        
+        <input type="submit" name="btnReAsgn" id="btnReAsgn" value="@Resources.ClaimatePrimeWebResx.Reassign" class="button-reassign" onclick="javascript: return validateSave();" />
+        <a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsNITE"))" class="aButton-cancel" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Cancel</a>
+
+    }
+
+    @Html.Partial("UserControls/AsgnClaimMenu")
+</div>
+
+<div id="divEnlargePhoto" class="div_transparent">
+    <div class="dvImage">
+        <img id="imgEnlargePhoto" src="@Url.RouteUrl(StaticClass.RouteValues("Home", "NoPhoto"))" alt="#" style="cursor:pointer" onclick="return printImage();" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+    </div>
+    <div class="dvControls_pop">
+        <a href="#" onclick="javascript:return resizePhoto();" class="close-button">@Resources.ClaimatePrimeWebResx.Close</a>
+    </div>
+</div>
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

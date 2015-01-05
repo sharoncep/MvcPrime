@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeConstants;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+
+@model ClaimatePrimeModels.Models.ClinicWiseSummaryModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DashBoard"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.SummarySplitUp - <span>@Resources.ClaimatePrimeWebResx.ClinicWise</span></li>
+    </ul>
+</div>
+
+<div style="display: none;">
+    @using (Html.ArivaForm("SummaryClinic"))
+    {
+        @Html.TextBoxFor(m => m.StartBy)
+        @Html.TextBoxFor(m => m.CurrNumber)
+        @Html.TextBoxFor(m => m.OrderByField)
+        @Html.TextBoxFor(m => m.OrderByDirection)
+        @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+        <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+        <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+    }
+</div>
+
+<div class="dv-az">
+    @{                 
+        foreach (AZModel item in Model.AZModels())
+        {
+            if (item.AZ_COUNT == 0)
+            {
+        <span class="clinic_az_deactive">@item.AZ</span>
+            }
+            else if (string.Compare(Model.StartBy, item.AZ, true) == 0)
+            {               
+        <span class="clinic_az_active" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())'>@item.AZ</span>
+            }
+            else
+            {               
+        <a href="#" class="clinic_az" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())' onclick="@string.Concat("javascript:return setSearch('", item.AZ, "', '', '');")">@item.AZ</a>
+            }
+        }
+    }
+</div>
+
+<div class="dv-block">
+    <div style="margin-left: 5px;">@string.Concat(Resources.ClaimatePrimeWebResx.DOSAsOn, " ", StaticClass.GetDateTimeStr(DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)))</div>
+    <div id="divSearchResult">
+        <div class="div_loading_outer" style="margin-top: 20px; margin-bottom: 50px; border: none;">
+            <ul>
+                <li class="li-loading"></li>
+                <li style="margin-top: 15px;">Loading.. Please wait..</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div id="divDashPop" class="div_transparent">
+    <div id="divDashPopHdr">
+        @Resources.ClaimatePrimeWebResx.DetailedView
+    </div>
+    <div class="dv_close_confirm">
+        <a href="#" onclick="javascript:return hideDashPop();" class="close-button">@Resources.ClaimatePrimeWebResx.Close</a>
+    </div>
+    <div class="dv-pop-confirm">
+        <ul class="ul-menu">
+           <li><a href="#" id="aToExcel" rel="menu_tile" class="menu-export-excel" onclick="javascript:return false;">@Resources.ClaimatePrimeWebResx.ExportToExcel</a></li>
+            <li><a href="#" id="aToPdf" rel="menu_tile" class="menu-export-pdf" onclick="javascript:return false;">@Resources.ClaimatePrimeWebResx.ExportToPDF</a></li>
+            <li><a href="#" id="aToBrowser" rel="menu_tile" class="menu-view-browser" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ViewInWebBrowser</a></li>
+        </ul>
+    </div>
+</div>
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.ChangePwdAlert" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>
+

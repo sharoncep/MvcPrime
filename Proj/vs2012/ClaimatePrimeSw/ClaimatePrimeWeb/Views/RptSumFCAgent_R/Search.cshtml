@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@model ClaimatePrimeModels.Models.UserReportSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent"))" title="@Resources.ClaimatePrimeWebResx.Back"class="back-button" onclick="javascript:showDivPageLoading('');">
+        </a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Agent</li>
+        <li><span>-</span></li>
+        <li><span>@Resources.ClaimatePrimeWebResx.SummaryReport</span></li>
+    </ul>
+</div>
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgent", "CompReport")) title="@Resources.ClaimatePrimeWebResx.ClickHere" class="performance-report" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.ComparisonReport</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgent", "FullReport"))" title="@Resources.ClaimatePrimeWebResx.ClickHere" rel="menu_tile" class="agent-full-report" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.FullReport</a></li>
+    </ul>  
+</div>

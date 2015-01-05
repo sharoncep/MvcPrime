@@ -1,0 +1,25 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- Select all records from the table
+
+CREATE PROCEDURE [Audit].[usp_GetAll_WebCulture]
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+    SELECT
+		[Audit].[WebCulture].*
+	FROM
+		[Audit].[WebCulture]
+	WHERE
+		[Audit].[WebCulture].[IsActive] = 1
+	ORDER BY
+		[Audit].[WebCulture].[EnglishName]
+	ASC;
+END
+
+GO

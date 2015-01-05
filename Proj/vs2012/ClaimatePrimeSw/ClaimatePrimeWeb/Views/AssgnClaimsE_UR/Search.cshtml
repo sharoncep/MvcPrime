@@ -1,0 +1,149 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+
+@model ClaimatePrimeModels.Models.AssignedClaimEASearchModel
+
+
+<div>
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaimE"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.AssgnClaims</li>
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub")
+    <div class="dv-block">
+        @using (Html.ArivaForm("AssgnClaimsE"))
+        {
+            <div style="display: none;">
+                @Html.TextBoxFor(m => m.StartBy)
+                @Html.TextBoxFor(m => m.CurrNumber)
+                @Html.TextBoxFor(m => m.OrderByField)
+                @Html.TextBoxFor(m => m.OrderByDirection)
+                @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+                <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+                <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+            </div>
+            //Search div
+        
+            <div class="dv-block">
+                <div>
+                    <a href="#" class="aButton-search" onclick="javascript:$('#divSearch').slideToggle(); return false;">@Resources.ClaimatePrimeWebResx.Search</a>
+                </div>
+                <div id="divSearch" class="dv-block-search">
+                    <ul class="ul-search-criteria">
+                        <li><span>@Resources.ClaimatePrimeWebResx.NameChartCase</span> @Html.TextBoxFor(m => m.SearchName,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("rel", "txtsearch") }    
+                                    }))
+                        </li>
+                        <li><span>@Resources.ClaimatePrimeWebResx.DOSFrom</span>
+                            @Html.TextBoxFor(m => m.DateFrom
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                       , { new KeyValueModel<string, string>("rel", "txtsearch") }
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                      
+                                    }))
+                            <a href="#" class="aDelete" onclick="javascript:return clearDatePicker('DateFrom');"></a>
+                        </li>
+                        <li><span>@Resources.ClaimatePrimeWebResx.DOSTo</span>
+                            @Html.TextBoxFor(m => m.DateTo
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-to-date") }
+                                       , { new KeyValueModel<string, string>("rel", "txtsearch") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                        
+                                    }))
+                            <a href="#" class="aDelete" onclick="javascript:return clearDatePickerFromTo('DateTo', 'DateFrom', 'DateTo');"></a>
+                        </li>
+                        <li><a href="#" onclick="javascript:return setSearch('', '', '');" class="aSearch1" title="@Resources.ClaimatePrimeWebResx.Search"></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        
+            //end Search div
+        }
+    </div>
+
+    <div class="dv-az1">
+        @{                 
+            foreach (AZModel item in Model.AZModels())
+            {
+                if (item.AZ_COUNT == 0)
+                {
+            <span class="clinic_az_deactive">@item.AZ</span>
+                }
+                else if (string.Compare(Model.StartBy, item.AZ, true) == 0)
+                {               
+            <span class="clinic_az_active" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())'>@item.AZ</span>
+                }
+                else
+                {               
+            <a href="#" class="clinic_az" title='@Resources.ClaimatePrimeWebResx.RecsFound.Replace("[X]", item.AZ_COUNT.ToString())' onclick="@string.Concat("javascript:return setSearch('", item.AZ, "', '', '');")">@item.AZ</a>
+                }
+            }
+        }
+    </div>
+
+
+    <div class="dv-block">
+        @if (Model.HasRec)
+        {
+           @Html.Partial("UserControls/SearchResult")
+        }
+        else
+        {
+            @Html.Partial("UserControls/NoRec")
+        }
+
+    </div>
+
+</div>
+
+
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

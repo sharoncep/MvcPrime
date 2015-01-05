@@ -1,0 +1,12 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\bin\Release\ClaimatePrimeFnSp.exe.config
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\bin\Release\ClaimatePrimeFnSp.exe
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\bin\Release\ClaimatePrimeFnSp.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\MainWindow.baml
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\MainWindow.g.cs
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\App.g.cs
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\ClaimatePrimeFnSp_MarkupCompile.cache
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\ClaimatePrimeFnSp.g.resources
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\ClaimatePrimeFnSp.Properties.Resources.resources
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\ClaimatePrimeFnSp.csproj.GenerateResource.Cache
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\ClaimatePrimeFnSp.exe
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeFnSp\obj\x86\Release\ClaimatePrimeFnSp.pdb

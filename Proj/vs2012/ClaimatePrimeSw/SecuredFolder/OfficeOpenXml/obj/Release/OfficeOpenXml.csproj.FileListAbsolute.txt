@@ -1,0 +1,4 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\OfficeOpenXml\bin\Release\OfficeOpenXml.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\OfficeOpenXml\bin\Release\OfficeOpenXml.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\OfficeOpenXml\obj\Release\OfficeOpenXml.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\OfficeOpenXml\obj\Release\OfficeOpenXml.pdb

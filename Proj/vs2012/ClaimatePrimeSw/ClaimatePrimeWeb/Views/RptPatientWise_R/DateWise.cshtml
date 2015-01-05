@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.UserReportSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Patient</li>
+        <li><span>-</span></li>
+        <li><span>@Resources.ClaimatePrimeWebResx.DateWiseReport</span></li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div id="divSearch" class="dv-block">
+    @using (Html.ArivaForm("RptPatientWise", "DateWise"))
+    {
+        <ul class="ul-date">
+            <li>
+                @Html.TextBoxFor(m => m.DateFrom
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                       , { new KeyValueModel<string, string>("rel", "calendar") }
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                      
+                                    }))
+            </li>
+            <li>
+                @Html.TextBoxFor(m => m.DateTo
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-to-date") }
+                                       , { new KeyValueModel<string, string>("rel", "calendar") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                        
+                                    }))
+            </li>
+            <li>
+                <input type="submit" name="btnSearch" id="btnSearch" title="@Resources.ClaimatePrimeWebResx.Search" value="." class="btn-search1" /></li>
+        </ul>
+    }
+</div>
+<div class="dv-shadowline"></div>
+<div class="dv-block">
+
+    <table class="table-grid">
+        <tr>
+            <td class="td-gridhead" style="width: 30%">
+                @Resources.ClaimatePrimeWebResx.DateRange
+            </td>
+            <td class="td-gridhead" style="width: 60%">
+                @Resources.ClaimatePrimeWebResx.ImportedOn
+            </td>
+            <td class="td-gridhead" style="width: 10%" colspan="2">&nbsp;
+            </td>
+        </tr>
+        @foreach (usp_GetSearch_UserReport_Result item in Model.UserReportResults)
+        {          
+            <tr>
+                <td>@StaticClass.GetDateStr(item.DateFrom) - @StaticClass.GetDateStr(item.DateTo)</td>
+                <td>
+                    @StaticClass.GetDateTimeStr(item.ExcelImportedOn)
+                    </td>
+                <td>
+                    @{
+            string reImportStyle = "display:none;";
+            string reImportingStyle = "display:none;";
+
+            if (item.CurrImportEndOn.HasValue)
+            {
+                reImportStyle = string.Empty;
+                reImportingStyle = "display:none;";
+            }
+            else
+            {
+                if ((DateAndTime.GetDateDiff(DateIntervals.DAY, item.CurrImportStartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 1) && (DateAndTime.GetDateDiff(DateIntervals.HOUR, item.CurrImportStartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 5) && (DateAndTime.GetDateDiff(DateIntervals.MINUTE, item.CurrImportStartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 300))
+                {
+                    reImportStyle = "display:none;";
+                    reImportingStyle = string.Empty;
+                }
+                else
+                {
+                    reImportStyle = string.Empty;
+                    reImportingStyle = "display:none;";
+                }
+            }
+                    
+                         <a href="#" id="@string.Concat("aReImport", item.UserReportID)" class="aReimport-small" rel="control_tile" style="@reImportStyle" onclick="@string.Concat("javascript:return reImport('", item.UserReportID, "');")" title="@Resources.ClaimatePrimeWebResx.ClickHere">
+                            <div class="dv-lastreimport">
+                                @Resources.ClaimatePrimeWebResx.ReImport
+                            </div>
+                        </a>
+                
+                        <div id="@string.Concat("divReImport", item.UserReportID)" class="aReimporting-small-prog" style="@reImportingStyle" title ="@item.UserReportID">
+                            @Resources.ClaimatePrimeWebResx.ReImport
+                            <div id="@string.Concat("divReImportMsg", item.UserReportID)" class="dv-lastReImport">
+                                @Resources.ClaimatePrimeWebResx.ReImportStartOn.Replace("[X]", StaticClass.GetDateTimeStr(item.CurrImportStartOn))
+                            </div>
+                        </div>
+                    }
+                </td>
+                <td><a href="#" title="@Resources.ClaimatePrimeWebResx.ClickHere" class="aExcel-small" rel="control_tile" onclick="@string.Concat("javascript:return downloadExcelClinicDate('", item.UserReportID, "');")">@Resources.ClaimatePrimeWebResx.Export</a></td>
+            </tr>
+        }
+    </table>
+</div>

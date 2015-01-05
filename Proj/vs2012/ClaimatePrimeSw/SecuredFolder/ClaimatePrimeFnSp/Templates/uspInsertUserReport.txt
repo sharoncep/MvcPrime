@@ -1,0 +1,63 @@
+﻿/****** Object:  StoredProcedure [Audit].[usp_Insert_UserReport]    Script Date: 07/26/2013 18:22:09 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Audit].[usp_Insert_UserReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [Audit].[usp_Insert_UserReport]
+GO
+
+/****** Object:  StoredProcedure [Audit].[usp_Insert_UserReport]    Script Date: 07/26/2013 18:22:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [Audit].[usp_Insert_UserReport]
+	@ReportTypeID TINYINT
+	, @ReportObjectID BIGINT = NULL
+	, @DateFrom DATETIME = NULL
+	, @DateTo DATETIME = NULL
+	, @CurrentModificationBy INT
+	, @UserReportID BIGINT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	BEGIN TRY
+		DECLARE @CurrentModificationOn DATETIME;
+		SELECT @CurrentModificationOn = GETDATE();
+		
+		INSERT INTO [Audit].[UserReport]
+		(
+			[ReportTypeID]
+			, [ReportObjectID]
+			, [DateFrom]
+			, [DateTo]
+			, [CreatedBy]
+			, [CreatedOn]
+		)
+		VALUES
+		(
+			@ReportTypeID
+			, @ReportObjectID
+			, @DateFrom
+			, @DateTo
+			, @CurrentModificationBy
+			, @CurrentModificationOn
+		);
+		
+		SELECT @UserReportID = MAX([Audit].[UserReport].[UserReportID]) FROM [Audit].[UserReport];
+	END TRY
+	BEGIN CATCH
+		-- ERROR CATCHING - STARTS
+		BEGIN TRY
+			EXEC [Audit].[usp_Insert_ErrorLog];
+			SELECT @UserReportID = (MAX([Audit].[ErrorLog].[ErrorLogID]) * -1) FROM [Audit].[ErrorLog];
+		END TRY
+		BEGIN CATCH
+			RAISERROR('Error in [Audit].[usp_Insert_ErrorLog]', -1, -1);
+		END CATCH
+		-- ERROR CATCHING - ENDS
+	END CATCH	
+END
+
+GO

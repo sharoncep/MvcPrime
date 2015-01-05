@@ -1,0 +1,103 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.EDIRespondVisitSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIRespond"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.EOB_ERA_835</li>
+    </ul>
+</div>
+
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+
+    @using (Html.ArivaForm("EDIRespond", "Save"))
+    {
+        
+        <div style="display: none;">
+            @Html.TextBoxFor(m => m.StartBy)
+            @Html.TextBoxFor(m => m.CurrNumber)
+            @Html.TextBoxFor(m => m.OrderByField)
+            @Html.TextBoxFor(m => m.OrderByDirection)
+            @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+            <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+            <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+        </div>
+        
+
+        <table class="table-grid">
+            <tr>
+                <td style="width: 30%" class="td-gridhead">
+                    @Resources.ClaimatePrimeWebResx.Name
+                </td>
+                <td style="width: 20%" class="td-gridhead">
+                    @Resources.ClaimatePrimeWebResx.ChartNo
+                </td>
+                <td style="width: 20%" class="td-gridhead">
+                    @Resources.ClaimatePrimeWebResx.DOS
+                </td>
+                <td width="15%" class="td-gridhead">
+                    @Resources.ClaimatePrimeWebResx.CaseNo
+                </td>
+                <td width="15%" class="td-gridhead">
+                    <input type="checkbox" id="chkSelectAll" checked="checked" onclick="javascript: return checkBoxChkAll('chkSelectAll', 'EDIPatientVisit', 'AssignToMe');" />
+                    @Resources.ClaimatePrimeWebResx.SelectAll
+                </td>
+            </tr>
+
+            @for (int i = 0; i < Model.EDIPatientVisit.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(m => Model.EDIPatientVisit[i].PatientVisitID,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+
+                        @Model.EDIPatientVisit[i].PatName
+                    </td>
+                    <td>
+                        @Model.EDIPatientVisit[i].ChartNumber
+                    </td>
+                    <td>
+                        @StaticClass.GetDateStr(Model.EDIPatientVisit[i].DOS)
+                    </td>
+                    <td>
+                        @Model.EDIPatientVisit[i].PatientVisitID
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => Model.EDIPatientVisit[i].AssignToMe,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("onclick", "javascript:return checkBoxUnChkAll('chkSelectAll', 'EDIPatientVisit','AssignToMe');") }    
+                                    }))
+                        Accept                       
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="dv-submit-controls">
+            <ul>
+                <li>
+                    <input type="submit" name="btnSave" id="btnSave" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" onclick="javascript: showDivPageLoading();"></li>
+                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIRespond"))" class="aButton-cancel" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Cancel</a></li>
+            </ul>
+        </div>
+        
+    }
+
+
+</div>

@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeEFWork.EFContexts;
+@model ClaimatePrimeModels.Models.RoleModel
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DashBoard"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.MyRole</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        @{
+            foreach (usp_GetRoles_UserRole_Result item in Model.Roles)
+            {                
+            <li>
+                @if (item.RoleID == 1)
+                {
+                    <a class="role-web-admin" href="@Url.RouteUrl(StaticClass.RouteValues("Home", "SetRoleSession", 0, item.RoleID))" rel="menu_tile" onclick="javascript:showDivPageLoading();">@item.RoleName</a>
+                }
+                else if (item.RoleID == 2)
+                {
+                    <a class="role-manager" href="@Url.RouteUrl(StaticClass.RouteValues("Home", "SetRoleSession", 0, item.RoleID))" rel="menu_tile" onclick="javascript:showDivPageLoading();">@item.RoleName</a>
+                }
+                else if (item.RoleID == 5)
+                {
+                    <a class="role-billing-agent" href="@Url.RouteUrl(StaticClass.RouteValues("Home", "SetRoleSession", 0, item.RoleID))" rel="menu_tile" onclick="javascript:showDivPageLoading();">@item.RoleName</a>
+                }
+                else if (item.RoleID == 3)
+                {
+                    <a class="role-edi-agent"  href="@Url.RouteUrl(StaticClass.RouteValues("Home", "SetRoleSession", 0, item.RoleID))" rel="menu_tile" onclick="javascript:showDivPageLoading();">@item.RoleName</a>
+                }
+                else if (item.RoleID == 4)
+                {
+                    <a class="role-quality-agent"  href="@Url.RouteUrl(StaticClass.RouteValues("Home", "SetRoleSession", 0, item.RoleID))" rel="menu_tile" onclick="javascript:showDivPageLoading();">@item.RoleName</a>
+                }
+                else
+                {
+                    <a href="#" onclick="javascript:return false;" rel="menu_tile_disabled" class="role-edi-agent">@item.RoleName</a>
+                }
+            </li>
+            }
+        }
+    </ul>
+</div>

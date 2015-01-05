@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+
+@model ClaimatePrimeModels.Models.RoleSearchModel
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserA"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Role</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+@Html.Partial("UserControls/PageHeaderSub")
+
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    <table class="table-grid-view">
+        <tr>
+             <td style="width:20%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.Name</td>
+            <td style="width:80%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.Code</td>
+        </tr>
+        @{
+                  
+            foreach (usp_GetBySearch_Role_Result item in Model.Roles)
+            {
+                       
+            <tr>
+                <td>
+                    @item.RoleName
+                </td>
+                <td>
+                      @item.RoleCode 
+                </td>
+               
+            </tr>
+                 
+            }
+               
+        }
+    </table>
+</div>

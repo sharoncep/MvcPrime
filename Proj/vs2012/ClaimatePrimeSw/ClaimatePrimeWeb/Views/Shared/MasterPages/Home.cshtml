@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Base.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses
+
+<link href="@Url.Content("~/Stylesheets/main.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Stylesheets/jquery-ui-1.9.1.css")" rel="stylesheet" type="text/css" />
+
+<div class="dv-top-bar">
+    <div>
+         <ul class="ul-login-details1">
+                    <li class="logged-user" onmouseover="javascript:$('#divUserDetails').slideDown();">@Resources.ClaimatePrimeWebResx.LoggedInAs <span>@ArivaSession.Sessions().UserDispName</span></li>
+                    <li><a href="#" class="aLock" onclick="javascript:return lockScreen();">@Resources.ClaimatePrimeWebResx.Lock</a></li>
+                </ul>
+        <div id="divUserDetails" class="dv_userdetails">
+            <ul class="userdetails">
+                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RoleSelection"))" class="aUser-role" onclick="javascript:showDivPageLoading();">@ArivaSession.Sessions().SelRoleName</a></li>
+                <li><span class="s-email">@ArivaSession.Sessions().UserEmail</span></li>
+                <li><span class="s-phone">@ArivaSession.Sessions().UserPhone</span></li>
+                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ChangePwd", "Save"))" onclick="javascript:showDivPageLoading();" class="change-pwd">@Resources.ClaimatePrimeWebResx.ChangePassword</a></li>
+                <li class="logoff"><a href="@Url.RouteUrl(StaticClass.RouteValues("PreLogIn", "LogIn"))" class="logout" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.LogOut</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="dv-clock-wrap">
+        @Html.Partial("UserControls/Clock")
+    </div>
+</div>
+<div class="dv-main_wrapper" onmouseover="javascript:$('#divUserDetails').slideUp();">
+    <a href="@Url.RouteUrl(StaticClass.RouteValues("Home"))" onclick="javascript:showDivPageLoading();" class="aLogowrap" title="@StaticClass.SiteVersion">
+        <div class="@StaticClass.SiteLogo">
+        </div>
+    </a>
+    <div id="divMainMenu">
+        @Html.Partial("UserControls/MainMenu")
+    </div>
+    <div class="dv-clear"></div>
+    @RenderBody()
+</div>
+@Html.Partial("UserControls/PageFooter")
+<div id="divSessionTimeOut" class="div-blanket-white">
+    <div class="dv-sitelogo-lock">
+    </div>  
+    <div id="divSessionTimeOutInner" class="div_lock_outer">
+        <div>
+            <ul class="ul-lock">
+                <li>@Html.Raw(Resources.ClaimatePrimeWebResx.SessionTimeout.Replace("[X]", ArivaSession.Sessions().UserDispName).Replace("[Y]", "<span id='spnBalTime'>00:00:00</span>"))</li>
+                <li>
+                    <input id="txtPassword" type="password" placeholder="@Resources.ClaimatePrimeWebResx.Password" onfocus="javascript:return lockPwdFocus();" onblur="javascript:return blurTrimPwd(this);" />
+                    <input type="submit" id="btnLogIn" name="btnLogIn" class="btn-log" value="@Resources.ClaimatePrimeWebResx.UnLock" onclick="javascript: return unLockScreen();" />
+                    <div id="divCapsLockOn" class="caps-lock-on">
+                        @Resources.ClaimatePrimeWebResx.CapsOn
+                    </div>
+                    <div id="divErrorLock" class="dv-error-login"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="divPageLoading" class="div_transparent-loading">
+    <div class="div_loading_outer">
+        <ul>
+            <li class="li-loading"></li>
+            <li style="margin-top: 15px;">Loading.. Please wait..</li>
+        </ul>
+    </div>
+</div>
+<div id="divPageLoadingJs" style="display: none;" class="div_transparent-loading">
+    <div class="div_loading_outer">
+        <ul>
+            <li class="li-loading"></li>
+            <li style="margin-top: 15px;">Loading.. Please wait..</li>
+        </ul>
+    </div>
+</div>

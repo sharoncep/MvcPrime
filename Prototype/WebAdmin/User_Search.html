@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Claimate Prime</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="../Images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../Images/favicon.png" type="image/png" />
+    <link href="../Stylesheets/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="dv-top-bar">
+        <div>
+            <ul class="ul-nav" onmouseover="javascript:$('#divUserDetails').slideDown();">
+                <li>Logged in as, </li>
+                <li style="margin: 8px"><em>Web Administrator</em></li>
+                <li><span class="d-arrow"></span></li>
+            </ul>
+            <div id="divUserDetails" class="dv_userdetails">
+                <ul class="userdetails">
+                    <li><span class="s-user-role"><a href="Role_Selection.html">Administrator</a></span></li>
+                    <li><span class="s-email">softtest@in.arivameddata.com</span></li>
+                    <li><span class="s-phone">(944)643-2544</span></li>
+                    <li><a href="#" class="change-pwd">Change Password</a></li>
+                    <li><a href="../index.html" class="logout">LogOut</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dv-clock-wrap">
+            <div class="dv-clock">
+                <label id="liHour">
+                </label>
+                <label>
+                    :</label>
+                <label id="liMinute">
+                </label>
+                <label>
+                    :</label>
+                <label id="liSecond">
+                </label>
+            </div>
+            <div class="dv-date">
+                <label id="liDayName">
+                </label>
+                <label>
+                    -</label>
+                <label id="liDay">
+                </label>
+                <label id="liMonthName">
+                </label>
+                <label id="liYear">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="dv-main_wrapper" onmouseover="javascript:$('#divUserDetails').slideUp();">
+        <a href="Dashboard.html" style="display: inline-block">
+            <div class="dv-sitelogo">
+            </div>
+        </a>
+        <div class="dv-page-header">
+            <ul class="ul-header">
+                <li><a href="MenuUser.html" title="Back" class="back-button"></a></li>
+                <li>User</li>
+            </ul>
+        </div>
+        <div id="divMainMenu">
+        </div>
+        <div class="dv-shadowline">
+        </div>
+        <div class="dv-az">
+            <a class="clinic_az" href="#">A</a> <span class="clinic_az_deactive">B</span> <span
+                title="Records Found: 5" class="clinic_az_deactive">C</span> <a class="clinic_az"
+                    href="#">D</a> <span class="clinic_az_deactive">E</span> <span class="clinic_az_active">F</span> <a class="clinic_az_deactive" href="#">G</a> <span class="clinic_az_deactive">H</span> <a class="clinic_az" href="#">I</a> <span class="clinic_az_deactive">J</span>
+            <span class="clinic_az_deactive">K</span> <a class="clinic_az" href="#">L</a> <span
+                class="clinic_az_deactive">M</span> <span class="clinic_az_deactive">N</span>
+            <a class="clinic_az" href="#">O</a> <span class="clinic_az_deactive">P</span> <span
+                class="clinic_az_deactive">Q</span> <a class="clinic_az" href="#">R</a> <span class="clinic_az_deactive">S</span> <a class="clinic_az" href="#">T</a> <a class="clinic_az" href="#">U</a>
+            <a class="clinic_az" href="#">V</a> <a class="clinic_az" href="#">W</a> <span class="clinic_az_deactive">X</span> <span class="clinic_az_deactive">Y</span> <span class="clinic_az_deactive">Z</span>
+        </div>
+        <div class="dv-block">
+
+            <table class="table-grid">
+                <tr>
+                    <td width="20%" class="td-gridhead">Username
+                    </td>
+                    <td width="20%" class="td-gridhead">Management Name
+                    </td>
+                    <td width="20%" class="td-gridhead">Email
+                    </td>
+                    <td width="20%" class="td-gridhead">
+                        <div class="dv-new">
+                            <a href="User_Management.html" class="aAdd-td" rel="menu_tile">Add New</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>100
+                    </td>
+                    <td>Flynn,Jacob
+                    </td>
+                    <td>user1@mail.com
+                    </td>
+                    <td>
+                        <a href="#" class="aEdit">Edit </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>101
+                    </td>
+                    <td>Shane,Watson
+                    </td>
+                    <td>user2@mail.com
+                    </td>
+                    <td>
+                        <a href="#" class="aEdit">Edit </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>102
+                    </td>
+                    <td>Eden,Lambert
+                    </td>
+                    <td>user3@mail.com
+                    </td>
+                    <td>
+                        <a href="#" class="aEdit">Edit </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="dv-footer">
+        <ul class="ul-browser">
+            <li>Supported Browsers</li>
+            <li class="mozilla" title="Mozilla Firefox 19+"></li>
+            <li class="safari" title="Safari 5+"></li>
+            <li class="chrome" title="Google Chrome 23+"></li>
+            <li class="iexplorer" title="IE 10+"></li>
+            <li class="opera" title="Opera 12+"></li>
+        </ul>
+        <ul class="ul-flink">
+            <li><a href="#" target="_blank" onclick="javascript:return false;">Login Attempts</a></li>
+            <li class="seperator">|</li>
+            <li><a href="#" target="_blank" onclick="javascript:return false;">FAQ</a></li>
+            <li class="seperator">|</li>
+            <li><a href="https://www.arivameddata.com/claimate-capitated/LoginPage.aspx" target="_blank">Claimate</a></li>
+            <li>&nbsp;</li>
+            <li>&copy; Claimate 2008- 2013</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+<script src="../../JavaScripts/jquery-1.9.0.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/Base.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/Clock.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/WebAdmin/County_Management.js" type="text/javascript"
+    defer="defer"></script>
+<script src="../JavaScripts/WebAdmin/WebAdminMenu.js" type="text/javascript" defer="defer"></script>

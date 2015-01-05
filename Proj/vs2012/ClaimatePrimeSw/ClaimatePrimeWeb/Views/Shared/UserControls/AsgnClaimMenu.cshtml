@@ -1,0 +1,58 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+<div>
+    <div id="divGoToE">
+        <a href="#" onclick="javascript:return expandMnuDiv();" class="aSideMenu"></a>
+    </div>
+    <div id="divGoToC">
+        <ul>
+            <li><a href="#" onclick="javascript:return gotoDiv('Visit');">@Resources.ClaimatePrimeWebResx.Visit</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Dx');">@Resources.ClaimatePrimeWebResx.DX</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Dxprimary');">@Resources.ClaimatePrimeWebResx.PrimaryDx </a>
+            </li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Cpt');">@Resources.ClaimatePrimeWebResx.Procedure</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Visitdoc');">@Resources.ClaimatePrimeWebResx.VisitDocument</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Notes');">@Resources.ClaimatePrimeWebResx.Notes</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('PatientDoc');">@Resources.ClaimatePrimeWebResx.PatDocuments</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Patient');">@Resources.ClaimatePrimeWebResx.Patient</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Claim');">@Resources.ClaimatePrimeWebResx.ClaimStatus</a></li>
+
+            <li><a href="#" onclick="javascript:return gotoDiv('Settings');">@Resources.ClaimatePrimeWebResx.EDIReceiver</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Ipa');">@Resources.ClaimatePrimeWebResx.IPA</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Clinic');">@Resources.ClaimatePrimeWebResx.Practice</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('FacilityDone');">@Resources.ClaimatePrimeWebResx.FacilityDone</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Provider');">@Resources.ClaimatePrimeWebResx.ReferringProvider</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('Insurance');">@Resources.ClaimatePrimeWebResx.Insurance</a></li>
+            <li><a href="#" onclick="javascript:return gotoDiv('PrevVisits');">@Resources.ClaimatePrimeWebResx.OtherVisits</a></li>
+            <li><a href="#" onclick="javascript:return expandAllPnlDiv();">@Resources.ClaimatePrimeWebResx.ExpandAll</a></li>
+            <li><a href="#" onclick="javascript:return collapseAllPnlDiv();">@Resources.ClaimatePrimeWebResx.CollapseAll</a></li>
+            <li><a href="#" onclick="javascript:return expandMenuGoTo();">@Resources.ClaimatePrimeWebResx.Close</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+    <div id="divDrNoteE" class="divDrNote">
+        <a href="#" onclick="javascript:return expandDrNote();" class="aSideMenu_drNote"></a>
+    </div>
+    <div id="divDrNoteC" class="divDrNoteImg" title="">
+        <div>
+            <a href="#" onclick="javascript:return expandMenuDrNote();" class="aDrNote"></a>
+        </div>
+        <div style="position: relative; overflow-x: auto; border: none; left: 0px; text-align: center; margin: 0 auto; min-width: 95%;">
+            <embed id="embDrNote" src="@string.Concat(StaticClass.SiteURL, "Images/NoDoctorNote.pdf")" type="application/pdf" width="995" height="200" style="border: none" />
+        </div>
+    </div>
+</div>
+<div>
+    <div id="divSuperBillE" class="divSuperBill">
+        <a href="#" onclick="javascript:return expandSuperBill();" class="aSideMenu_sBill"></a>
+    </div>
+    <div id="divSuperBillC" class="divSuperBillImg" title="">
+        <div>
+            <a href="#" onclick="javascript:return expandMenuSuperBill();" class="aSbill"></a>
+        </div>
+        <div style="position: relative; overflow-x: auto; border: none; left: 0px; text-align: center; margin: 0 auto; min-width: 95%;">
+            <embed id="embSupBill" src="@string.Concat(StaticClass.SiteURL, "Images/NoSuperbill.pdf")" type="application/pdf" width="995" height="200" style="border: none" />
+        </div>
+    </div>
+</div>

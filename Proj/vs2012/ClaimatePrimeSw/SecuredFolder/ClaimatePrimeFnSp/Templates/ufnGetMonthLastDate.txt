@@ -1,0 +1,19 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Description:The ufn_GetMonthLastDate Function is used to Get the Last Date of the month which we give as INPUT.
+
+CREATE FUNCTION [[xTABLE_SCHEMAx]].[ufn_GetMonthLastDate] 
+(
+	@DT		DATETIME
+)
+RETURNS DATETIME
+AS
+BEGIN
+	SELECT @DT = CAST(CONVERT(NVARCHAR(10), @DT, 101) AS DATETIME);
+	RETURN (SELECT DATEADD(MILLISECOND, -3, (DATEADD(DAY, 1, (DATEADD(dd, -DAY(DATEADD(m,1,@DT)), DATEADD(m,1,@DT)))))));
+END
+GO

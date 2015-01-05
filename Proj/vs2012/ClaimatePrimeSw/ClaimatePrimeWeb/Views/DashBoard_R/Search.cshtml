@@ -1,0 +1,134 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeConstants;
+@model ClaimatePrimeModels.Models.DashBoardModel
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li>@Resources.ClaimatePrimeWebResx.Dashboard</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block-dashboard">
+    <div class="dv-summary-date">@string.Concat(Resources.ClaimatePrimeWebResx.DOSAsOn, " ", StaticClass.GetDateTimeStr(DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)))</div>
+    <div class="dv-left">
+        <div class="dv-block-wrap">
+            <div class="dv-subhead-dash">
+                @Resources.ClaimatePrimeWebResx.Summary
+            </div>
+            <div id="divDashSummary" class="dv-table-wrap-dash-loading"></div>
+        </div>
+    </div>
+    <div class="dv-right">
+        <ul class="ul-tiles-dash">
+            <li>
+                @if ((ArivaSession.Sessions().HighRoleID == Convert.ToByte(ClaimatePrimeConstants.Role.WEB_ADMIN_ROLE_ID)) || (ArivaSession.Sessions().HighRoleID == Convert.ToByte(ClaimatePrimeConstants.Role.MANAGER_ROLE_ID)))
+                {
+                    <a href="@Url.RouteUrl(StaticClass.RouteValues("SummaryAgent"))" onclick="javascript:showDivPageLoading();" class="a-user-split-ups" rel="menu_tile">@Resources.ClaimatePrimeWebResx.SummarySplitUp - @Resources.ClaimatePrimeWebResx.AgentWise</a>
+                }
+                else
+                {
+                    <span class="span-user-split-ups">@Resources.ClaimatePrimeWebResx.SummarySplitUp - @Resources.ClaimatePrimeWebResx.AgentWise</span>
+                }
+            </li>
+            <li>
+                <a  href="@Url.RouteUrl(StaticClass.RouteValues("SummaryClinic"))" onclick="javascript:showDivPageLoading();" class="a-clinic-split-ups" rel="menu_tile">@Resources.ClaimatePrimeWebResx.SummarySplitUp - @Resources.ClaimatePrimeWebResx.ClinicWise</a>
+            </li>
+            <li>
+                <a  href="@Url.RouteUrl(StaticClass.RouteValues("RptDashboard"))" class="a-reports" rel="menu_tile"  onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Reports</a>
+            </li>
+            <li>
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("RoleSelection"))" onclick="javascript:showDivPageLoading();" class="a-claim-process" rel="menu_tile" >@Resources.ClaimatePrimeWebResx.Claims</a>
+            </li>
+            <li>
+                @{
+                    string syncStyle = "display:none;";
+                    string syncingStyle = "display:none;";
+
+                    if (Model.LastSync.EndOn.HasValue)
+                    {
+                        syncStyle = string.Empty;
+                        syncingStyle = "display:none;";
+                    }
+                    else
+                    {
+                        if ((DateAndTime.GetDateDiff(DateIntervals.DAY, Model.LastSync.StartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 1) && (DateAndTime.GetDateDiff(DateIntervals.HOUR, Model.LastSync.StartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 5) && (DateAndTime.GetDateDiff(DateIntervals.MINUTE, Model.LastSync.StartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 300))
+                        {
+                            syncStyle = "display:none;";
+                            syncingStyle = string.Empty;
+                        }
+                        else
+                        {
+                            syncStyle = string.Empty;
+                            syncingStyle = "display:none;";
+                        }
+                    }
+                    
+                    <a href="#" id="aSync" class="sync" rel="menu_tile" style="@syncStyle" onclick="javascript:return Sync();" title="@Resources.ClaimatePrimeWebResx.ClickHere">@Resources.ClaimatePrimeWebResx.Sync
+                        <div class="dv-lastsync">
+                            @Resources.ClaimatePrimeWebResx.LastSyncOn.Replace("[X]", StaticClass.GetDateTimeStr(Model.LastSync.StartOn)).Replace("[Y]", (Model.LastSync.UserID.HasValue ? Model.LastSync.DISP_NAME : Resources.ClaimatePrimeWebResx.AutoSync))
+                        </div>
+                    </a>
+                
+                    <div id="divSync" class="sync-prog" style="@syncingStyle">
+                        @Resources.ClaimatePrimeWebResx.Sync
+                        <div id="divSyncMsg" class="dv-lastsync">
+                            @Resources.ClaimatePrimeWebResx.SyncStartOn.Replace("[X]", StaticClass.GetDateTimeStr(Model.LastSync.StartOn)).Replace("[Y]", (Model.LastSync.UserID.HasValue ? Model.LastSync.DISP_NAME : Resources.ClaimatePrimeWebResx.AutoSync))
+                        </div>
+                    </div>
+                }
+            </li>
+            <li>
+                <div class="dv-notifications-loading" id="divNotifications">@Resources.ClaimatePrimeWebResx.Notification</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="divDashPop" class="div_transparent">
+    <div id="divDashPopHdr">
+        @Resources.ClaimatePrimeWebResx.DetailedView
+    </div>
+    <div class="dv_close_confirm">
+        <a href="#" onclick="javascript:return hideDashPop();" class="close-button">@Resources.ClaimatePrimeWebResx.Close</a>
+    </div>
+    <div class="dv-pop-confirm">
+        <ul class="ul-menu">
+            <li><a href="#" id="aToExcel" rel="menu_tile" class="menu-export-excel" onclick="javascript:return false;">@Resources.ClaimatePrimeWebResx.ExportToExcel</a></li>
+            <li><a href="#" id="aToPdf" rel="menu_tile" class="menu-export-pdf" onclick="javascript:return false;">@Resources.ClaimatePrimeWebResx.ExportToPDF</a></li>
+            <li><a href="#" id="aToBrowser" rel="menu_tile" class="menu-view-browser" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ViewInWebBrowser</a></li>
+        </ul>
+    </div>
+</div>
+
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.ChangePwdAlert" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>
+
+

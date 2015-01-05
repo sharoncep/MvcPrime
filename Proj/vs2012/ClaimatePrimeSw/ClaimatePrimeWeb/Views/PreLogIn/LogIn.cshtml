@@ -1,0 +1,200 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Pre.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@model ClaimatePrimeModels.Models.LogInModel
+<link href="@Url.Content("~/Stylesheets/login.css")" rel="stylesheet" type="text/css" />
+<div class="main_wrapper">
+    <div class="dv-left">
+        <div class="dv-wrap-inner">
+        </div>
+    </div>
+    <div class="dv-right">
+        <a href="@Url.RouteUrl(StaticClass.RouteValues("Home"))" title="@StaticClass.SiteVersion">
+            <div class="@StaticClass.SiteLogo">
+            </div>
+        </a>
+
+        @using (Html.ArivaFormPre("LogIn"))
+        {
+            <div>
+                <ul class="ul-login">
+                    <li>
+                        <div class="dv-culture">
+                            <select onchange="javascript:validateCult(this);">
+                                @{
+            string usrCult = (from o in Model.WebCultures where (string.Compare(o.KeyName, Model.UserCulture, true) == 0) select o.KeyName).FirstOrDefault();
+            if (string.IsNullOrWhiteSpace(usrCult))
+            {
+                usrCult = "en";
+            }
+
+            foreach (usp_GetAll_WebCulture_Result item in Model.WebCultures)
+            {
+                bool isSelected = false;
+                if (string.Compare(item.KeyName, usrCult, true) == 0)
+                {
+                    isSelected = true;
+                }                
+                                    <option @((isSelected) ? "selected='selected'" : string.Empty) value="@item.KeyName">@string.Concat(item.EnglishName, " [", item.NativeName, "]")</option>
+            }
+                                }
+                            </select>
+                        </div>
+
+                    </li>
+                    <li>
+                        @Html.TextBoxFor(m => m.UserLogin.UserName
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("class", "textbox-login") } 
+                                        , { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.UserName) } 
+                                        , { new KeyValueModel<string, string>("onFocus", "javascript:return focusUname();") } 
+                                        , { new KeyValueModel<string, string>("onblur", "javascript:return blurTrimPwd(this);") } 
+                                    }))
+                    </li>
+                    <li>
+                        @Html.PasswordFor(m => m.UserLogin.Password
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("class", "textbox-login") } 
+                                        , { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.Password) }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript:return blurTrimPwd(this);") } 
+                                    }))
+                        <div id="divCapsLockOn" class="caps-lock-on">
+                            @Resources.ClaimatePrimeWebResx.CapsOn
+                        </div>
+                    </li>
+                    <li>
+                        <input type="submit" id="btnLogIn" name="btnLogIn" class="button" value="@Resources.ClaimatePrimeWebResx.Login" onclick="@string.Concat("javascript:return validateSave('", ArivaSession.Sessions().Seed, "');")" />
+                        <div style="display: none;">
+                            @Html.TextBoxFor(m => m.UserCulture)
+                            <input type="submit" id="btnUserCulture" name="btnUserCulture" />
+                        </div>
+                    </li>
+                    <li style="clear: both; height: 2px;"></li>
+                    <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PreLogIn", "ForgotPassword"))" style="color: #7d0bc0;">@Resources.ClaimatePrimeWebResx.ForgotPassword </a>| <a
+                        href="@Url.RouteUrl(StaticClass.RouteValues("PreLogIn", "ContactUs"))" style="color: #7d0bc0;">@Resources.ClaimatePrimeWebResx.ContactUs </a></li>
+                </ul>
+            </div>                
+        }
+    </div>
+</div>
+@Html.Partial("UserControls/PageFooterPre")
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg" value="@Resources.ClaimatePrimeWebResx.PageNoAccess" />
+            }
+            else if (ViewBag.ErrMsg == 2)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SessionExpDueToImproperCache" />
+            }
+            else if (ViewBag.ErrMsg == 3)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.MaxPageSize" />
+            }
+            else if (ViewBag.ErrMsg == 4)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoSession" />
+            }
+            else if (ViewBag.ErrMsg == 5)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoRole" />
+            }
+            else if (ViewBag.ErrMsg == 6)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoClinic" />
+            }
+            else if (ViewBag.ErrMsg == 7)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoPatient" />
+            }
+            else if (ViewBag.ErrMsg == 8)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoSessionUnExp" />
+            }
+            else if (ViewBag.ErrMsg == 9)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.MulitpleForms" />
+            }
+            else if (ViewBag.ErrMsg == 10)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoFormAriva" />
+            }
+            else if (ViewBag.ErrMsg == 11)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.DontUseID" />
+            }
+            else if (ViewBag.ErrMsg == 12)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.DontUseName" />
+            }
+            else if (ViewBag.ErrMsg == 13)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.InvalidLogIn" />
+            }
+            else if (ViewBag.ErrMsg == 14)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveError.Replace("[X]", Model.ErrorMsg)" />
+            }
+            else if (ViewBag.ErrMsg == 15)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.InvalidLogIn" />
+            }
+            else if (ViewBag.ErrMsg == 16)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.InvalidLogIn" />
+            }
+            else if (ViewBag.ErrMsg == 17)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoTrialBal" />
+            }
+            else if (ViewBag.ErrMsg == 18)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoRoleErr" />
+            }
+            else if (ViewBag.ErrMsg == 19)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoClinicErr" />
+            }
+            else if (ViewBag.ErrMsg == 20)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoProviderSession" />
+            }
+            else if (ViewBag.ErrMsg == 21)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.NoAgentSession" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSuccChangePwd" />
+            }
+            else if (ViewBag.SuccMsg == 2)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSuccForgotPwd" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

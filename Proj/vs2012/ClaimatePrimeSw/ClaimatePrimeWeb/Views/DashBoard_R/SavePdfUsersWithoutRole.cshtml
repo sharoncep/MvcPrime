@@ -1,0 +1,55 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.DashBoardModel
+
+<div>
+     <table border="0" cellpadding="2" cellspacing="2" border="0">
+        <tr bgcolor="#270a38" color="#ffffff" style="font-size: 10px
+            <td width="20%">@Resources.ClaimatePrimeWebResx.LastName
+            </td>
+            <td width="20%">@Resources.ClaimatePrimeWebResx.FirstName
+            </td>
+            <td width="20%">@Resources.ClaimatePrimeWebResx.MiddleName
+            </td>">
+            <td width="40%">@Resources.ClaimatePrimeWebResx.Email
+            </td>
+        </tr>
+
+        @{
+            bool isOdd = false;
+
+            foreach (usp_GetNotificationRolePdf_UserRole_Result item in Model.UsersWithoutRolePdf)
+            {
+                isOdd = !isOdd;
+
+                if (isOdd)
+                {
+            <tr style="font-size: 8px">
+                <td>@item.LastName
+                </td>
+                <td>@item.FirstName
+                </td>
+                <td>@item.MiddleName
+                </td>
+                <td>@item.Email</td>
+            </tr>
+                }
+                else
+                {                    
+            <tr bgcolor="#e6e6e6" style="font-size: 8px">
+                <td>@item.LastName
+                </td>
+                <td>@item.FirstName
+                </td>
+                <td>@item.MiddleName
+                </td>
+                <td>@item.Email</td>
+            </tr>
+                }
+            }
+            
+            
+        }
+    </table>
+</div>

@@ -1,0 +1,1305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5E4534E-0D85-4563-8EA8-9434EBE378A2}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClaimatePrimeWeb</RootNamespace>
+    <AssemblyName>ClaimatePrimeWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\ClaimatePrimeWebResx.ar.designer.cs">
+      <DependentUpon>ClaimatePrimeWebResx.ar.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_GlobalResources\ClaimatePrimeWebResx.cy.designer.cs">
+      <DependentUpon>ClaimatePrimeWebResx.cy.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_GlobalResources\ClaimatePrimeWebResx.Designer.cs">
+      <DependentUpon>ClaimatePrimeWebResx.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_GlobalResources\ClaimatePrimeWebResx.es.designer.cs">
+      <DependentUpon>ClaimatePrimeWebResx.es.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_GlobalResources\ClaimatePrimeWebResx.hi.designer.cs">
+      <DependentUpon>ClaimatePrimeWebResx.hi.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_ANSI5010\ANSI5010Xml.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_CsResources\ClaimatePrimeWebXml.es.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_CsResources\ClaimatePrimeWebXml.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_GlobalResources\ClaimatePrimeWebResx.ar.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ClaimatePrimeWebResx.ar.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ClaimatePrimeWebResx.cy.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ClaimatePrimeWebResx.cy.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ClaimatePrimeWebResx.es.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ClaimatePrimeWebResx.es.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ClaimatePrimeWebResx.hi.resx">
+      <SubType>Designer</SubType>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ClaimatePrimeWebResx.hi.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ClaimatePrimeWebResx.resx">
+      <SubType>Designer</SubType>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ClaimatePrimeWebResx.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_JsResources\ClaimatePrimeWebJs.js" />
+    <Content Include="Fonts\segoeui.eot" />
+    <Content Include="Fonts\segoeui.svg" />
+    <Content Include="Fonts\segoeui.ttf" />
+    <Content Include="Fonts\segoeui.woff" />
+    <Content Include="FusionChartSwf\Column2D.swf" />
+    <Content Include="FusionChartSwf\Doughnut2D.swf" />
+    <Content Include="FusionChartSwf\MSColumn2D.swf" />
+    <Content Include="FusionChartSwf\Pie2D.swf" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\A4010.png" />
+    <Content Include="Images\A5010.png" />
+    <Content Include="Images\active-az.png" />
+    <Content Include="Images\ac_img.png" />
+    <Content Include="Images\add-white.png" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\address.png" />
+    <Content Include="Images\agent-report.png" />
+    <Content Include="Images\all-clinic-reports.png" />
+    <Content Include="Images\anim.gif" />
+    <Content Include="Images\ar.png" />
+    <Content Include="Images\arrow-down.png" />
+    <Content Include="Images\arrow-up.png" />
+    <Content Include="Images\assigned-claims.png" />
+    <Content Include="Images\attachment.png" />
+    <Content Include="Images\authorization-info.png" />
+    <Content Include="Images\autocomplete.png" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\bg-diagonal.png" />
+    <Content Include="Images\bg-page.png" />
+    <Content Include="Images\bg-sidemenu.png" />
+    <Content Include="Images\bg-top-bar.png" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\bg_blanket.png" />
+    <Content Include="Images\billing-agent-grey.png" />
+    <Content Include="Images\billing-agent.png" />
+    <Content Include="Images\billing.png" />
+    <Content Include="Images\block-dark.png" />
+    <Content Include="Images\block.png" />
+    <Content Include="Images\browse.png" />
+    <Content Include="Images\browser-icons.png" />
+    <Content Include="Images\browser.png" />
+    <Content Include="Images\calendar-small-gray.png" />
+    <Content Include="Images\calendar-small.png" />
+    <Content Include="Images\calendar.png" />
+    <Content Include="Images\cancel-dark.png" />
+    <Content Include="Images\case.png" />
+    <Content Include="Images\case_agent.png" />
+    <Content Include="Images\case_time.png" />
+    <Content Include="Images\check_radio_sheet.png" />
+    <Content Include="Images\city.png" />
+    <Content Include="Images\claim-status.png" />
+    <Content Include="Images\claim.png" />
+    <Content Include="Images\claim1.png" />
+    <Content Include="Images\claims-notintrack.png" />
+    <Content Include="Images\clear.png" />
+    <Content Include="Images\clinic-grey-big.png" />
+    <Content Include="Images\clinic-grey-med.png" />
+    <Content Include="Images\clinic-grey.png" />
+    <Content Include="Images\clinic-reports.png" />
+    <Content Include="Images\clinic-split-ups.png" />
+    <Content Include="Images\clinic-summary.png" />
+    <Content Include="Images\clinic-user.png" />
+    <Content Include="Images\clinic-white.png" />
+    <Content Include="Images\clinic.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\collapse.png" />
+    <Content Include="Images\communication.png" />
+    <Content Include="Images\complexity.png" />
+    <Content Include="Images\config.png" />
+    <Content Include="Images\config1.png" />
+    <Content Include="Images\country-white.png" />
+    <Content Include="Images\country.png" />
+    <Content Include="Images\county-gray.png" />
+    <Content Include="Images\county.png" />
+    <Content Include="Images\cpt.png" />
+    <Content Include="Images\created-claims.png" />
+    <Content Include="Images\credentials.png" />
+    <Content Include="Images\currency.png" />
+    <Content Include="Images\dataerror.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\delete1.png" />
+    <Content Include="Images\dg.png" />
+    <Content Include="Images\doc-done.png" />
+    <Content Include="Images\doctor-dark.png" />
+    <Content Include="Images\doctor.png" />
+    <Content Include="Images\documents.png" />
+    <Content Include="Images\done.png" />
+    <Content Include="Images\down.png" />
+    <Content Include="Images\download-white.png" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\dx-white.png" />
+    <Content Include="Images\dx.png" />
+    <Content Include="Images\dx_cpt.png" />
+    <Content Include="Images\edi-files.png" />
+    <Content Include="Images\edi-icon.png" />
+    <Content Include="Images\edi-m.png" />
+    <Content Include="Images\edi-receive.png" />
+    <Content Include="Images\edi-settings.png" />
+    <Content Include="Images\edi.png" />
+    <Content Include="Images\edit-dark.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\editdata-white.png" />
+    <Content Include="Images\editdata.png" />
+    <Content Include="Images\entity-identifier.png" />
+    <Content Include="Images\entity-type-q.png" />
+    <Content Include="Images\entity-white.png" />
+    <Content Include="Images\entity.png" />
+    <Content Include="Images\eob-era.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\excel-export-grey.png" />
+    <Content Include="Images\excel-export.png" />
+    <Content Include="Images\excel.png" />
+    <Content Include="Images\excel_EI.png" />
+    <Content Include="Images\expand.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\fullreport.png" />
+    <Content Include="Images\Hedis.png" />
+    <Content Include="Images\history.png" />
+    <Content Include="Images\hold.png" />
+    <Content Include="Images\hospital.png" />
+    <Content Include="Images\hospitalization.png" />
+    <Content Include="Images\icon-hold.png" />
+    <Content Include="Images\icons-userdetails.png" />
+    <Content Include="Images\id.png" />
+    <Content Include="Images\img-agent-home.png" />
+    <Content Include="Images\img-banner-login.jpg" />
+    <Content Include="Images\img-clinic-home.png" />
+    <Content Include="Images\img-dr-note.png" />
+    <Content Include="Images\img-dropdown.png" />
+    <Content Include="Images\img-patient.png" />
+    <Content Include="Images\img-superbill.png" />
+    <Content Include="Images\img-zoom.png" />
+    <Content Include="Images\img_drnote.png" />
+    <Content Include="Images\img_sbill.png" />
+    <Content Include="Images\import.png" />
+    <Content Include="Images\Info.png" />
+    <Content Include="Images\instype.png" />
+    <Content Include="Images\insurance-white.png" />
+    <Content Include="Images\insurance.png" />
+    <Content Include="Images\ins_blocked.png" />
+    <Content Include="Images\interchange.png" />
+    <Content Include="Images\Ipa.png" />
+    <Content Include="Images\isa02.png" />
+    <Content Include="Images\isa03.png" />
+    <Content Include="Images\key.png" />
+    <Content Include="Images\list.png" />
+    <Content Include="Images\Loading.gif" />
+    <Content Include="Images\loading.swf" />
+    <Content Include="Images\loading1.gif" />
+    <Content Include="Images\loading2.gif" />
+    <Content Include="Images\loading4.gif" />
+    <Content Include="Images\loading5.gif" />
+    <Content Include="Images\loading_ac.gif" />
+    <Content Include="Images\lock-small.png" />
+    <Content Include="Images\lock.png" />
+    <Content Include="Images\login-icon.png" />
+    <Content Include="Images\login.png" />
+    <Content Include="Images\logout.png" />
+    <Content Include="Images\Mail.png" />
+    <Content Include="Images\mailbox.png" />
+    <Content Include="Images\man-white.png" />
+    <Content Include="Images\manager.png" />
+    <Content Include="Images\menu-collapse.png" />
+    <Content Include="Images\menu-expand.png" />
+    <Content Include="Images\mlr.png" />
+    <Content Include="Images\mobile.png" />
+    <Content Include="Images\mvc.png" />
+    <Content Include="Images\new.png" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\NoDoctorNote.pdf" />
+    <Content Include="Images\NoFile.png" />
+    <Content Include="Images\NoPhoto.png" />
+    <Content Include="Images\norec.png" />
+    <Content Include="Images\NoSuperbill.pdf" />
+    <Content Include="Images\notepad.png" />
+    <Content Include="Images\notifications.png" />
+    <Content Include="Images\nursing-home.png" />
+    <Content Include="Images\patient-count-white.png" />
+    <Content Include="Images\patient-count.png" />
+    <Content Include="Images\patient-grey-big.png" />
+    <Content Include="Images\patientdoc.png" />
+    <Content Include="Images\pat_discharged.png" />
+    <Content Include="Images\payor.png" />
+    <Content Include="Images\pdf-export.png" />
+    <Content Include="Images\pdf_icon.png" />
+    <Content Include="Images\performance.png" />
+    <Content Include="Images\pos.png" />
+    <Content Include="Images\ppt.png" />
+    <Content Include="Images\prev.png" />
+    <Content Include="Images\print-pin.png" />
+    <Content Include="Images\print-sign.png" />
+    <Content Include="Images\printer.png" />
+    <Content Include="Images\procedure-white.png" />
+    <Content Include="Images\procedure.png" />
+    <Content Include="Images\proceed.png" />
+    <Content Include="Images\provider.png" />
+    <Content Include="Images\prov_info.png" />
+    <Content Include="Images\pwd.png" />
+    <Content Include="Images\quality-analyse-gray.png" />
+    <Content Include="Images\quality-analyse.png" />
+    <Content Include="Images\ready-to-send.png" />
+    <Content Include="Images\reassign.png" />
+    <Content Include="Images\reclose.png" />
+    <Content Include="Images\reclose1.png" />
+    <Content Include="Images\reimport.png" />
+    <Content Include="Images\reimported.png" />
+    <Content Include="Images\rejected.png" />
+    <Content Include="Images\relationship.png" />
+    <Content Include="Images\reopen.png" />
+    <Content Include="Images\report-grey-big.png" />
+    <Content Include="Images\report-grey.png" />
+    <Content Include="Images\report-white.png" />
+    <Content Include="Images\reports.png" />
+    <Content Include="Images\reports1.png" />
+    <Content Include="Images\resp.png" />
+    <Content Include="Images\rpt_icon.png" />
+    <Content Include="Images\rtf_icon.png" />
+    <Content Include="Images\save-dark.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\search_1.png" />
+    <Content Include="Images\security-info.png" />
+    <Content Include="Images\select.png" />
+    <Content Include="Images\sent.png" />
+    <Content Include="Images\shadowline.png" />
+    <Content Include="Images\sideMenuIcons.png" />
+    <Content Include="Images\sitelogo-d.png" />
+    <Content Include="Images\sitelogo-t.png" />
+    <Content Include="Images\sitelogo.png" />
+    <Content Include="Images\sort.png" />
+    <Content Include="Images\speciality-white.png" />
+    <Content Include="Images\speciality.png" />
+    <Content Include="Images\sprite.png" />
+    <Content Include="Images\star.png" />
+    <Content Include="Images\state-white.png" />
+    <Content Include="Images\state.png" />
+    <Content Include="Images\success.png" />
+    <Content Include="Images\summary.png" />
+    <Content Include="Images\surgeon-grey-big.png" />
+    <Content Include="Images\surgeon-white.png" />
+    <Content Include="Images\Surgeon.png" />
+    <Content Include="Images\sync-prog.gif" />
+    <Content Include="Images\sync-prog.png" />
+    <Content Include="Images\sync.png" />
+    <Content Include="Images\team-members-white.png" />
+    <Content Include="Images\team-members.png" />
+    <Content Include="Images\thermometer.png" />
+    <Content Include="Images\tick.png" />
+    <Content Include="Images\tiff_icon.png" />
+    <Content Include="Images\top.png" />
+    <Content Include="Images\transaction.png" />
+    <Content Include="Images\transparent.png" />
+    <Content Include="Images\transparent1.png" />
+    <Content Include="Images\transpurpose.png" />
+    <Content Include="Images\transtype.png" />
+    <Content Include="Images\uc-d.png" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Images\ui-icons_454545_256x240.png" />
+    <Content Include="Images\ui-icons_888888_256x240.png" />
+    <Content Include="Images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Images\unassigned-claims-nit.png" />
+    <Content Include="Images\unassigned-claims.png" />
+    <Content Include="Images\unblock.png" />
+    <Content Include="Images\usage-interchange.png" />
+    <Content Include="Images\usage.png" />
+    <Content Include="Images\user-grey.png" />
+    <Content Include="Images\user-info-big.png" />
+    <Content Include="Images\user-info.png" />
+    <Content Include="Images\user-role-white.png" />
+    <Content Include="Images\user-role.png" />
+    <Content Include="Images\user-split-ups.png" />
+    <Content Include="Images\user-white.png" />
+    <Content Include="Images\view.png" />
+    <Content Include="Images\visit.png" />
+    <Content Include="Images\warning-red.png" />
+    <Content Include="Images\warning.png" />
+    <Content Include="Images\webadmin.png" />
+    <Content Include="Images\webculture.png" />
+    <Content Include="Images\wheelchair-grey.png" />
+    <Content Include="Images\wheelchair-white.png" />
+    <Content Include="Images\word.png" />
+    <Content Include="Images\zip_rar.png" />
+    <Content Include="JavaScripts\AgentRpt_R\BillingAgentRpt.js" />
+    <Content Include="JavaScripts\AgentRpt_R\EARpt.js" />
+    <Content Include="JavaScripts\AgentRpt_R\QARpt.js" />
+    <Content Include="JavaScripts\AgentRpt_R\Search.js" />
+    <Content Include="JavaScripts\AssgnClaimsE_UR\Save.js" />
+    <Content Include="JavaScripts\AssgnClaimsE_UR\Search.js" />
+    <Content Include="JavaScripts\AssgnClaimsNITB_UR\Save.js" />
+    <Content Include="JavaScripts\AssgnClaimsNITB_UR\Search.js" />
+    <Content Include="JavaScripts\AssgnClaimsNITE_UR\Save.js" />
+    <Content Include="JavaScripts\AssgnClaimsNITE_UR\Search.js" />
+    <Content Include="JavaScripts\AssgnClaimsNITQ_UR\Save.js" />
+    <Content Include="JavaScripts\AssgnClaimsNITQ_UR\Search.js" />
+    <Content Include="JavaScripts\AssgnClaimsQ_UR\Save.js" />
+    <Content Include="JavaScripts\AssgnClaimsQ_UR\Search.js" />
+    <Content Include="JavaScripts\AssgnClaims_UR\Save.js" />
+    <Content Include="JavaScripts\AssgnClaims_UR\Search.js" />
+    <Content Include="JavaScripts\AuthQualifierM_CURD\Save.js" />
+    <Content Include="JavaScripts\AuthQualifierM_CURD\Search.js" />
+    <Content Include="JavaScripts\CaseAgentM_UR\Search.js" />
+    <Content Include="JavaScripts\CaseComplex_UR\Search.js" />
+    <Content Include="JavaScripts\CaseReclose_UR\Search.js" />
+    <Content Include="JavaScripts\CaseReopen_UR\Search.js" />
+    <Content Include="JavaScripts\Case_R\Save.js" />
+    <Content Include="JavaScripts\Case_R\Search.js" />
+    <Content Include="JavaScripts\ChangePwd_U\Save.js" />
+    <Content Include="JavaScripts\CityBlock_UR\Search.js" />
+    <Content Include="JavaScripts\CityM_CUR\Save.js" />
+    <Content Include="JavaScripts\CityM_CUR\Search.js" />
+    <Content Include="JavaScripts\ClaimMediaM_CURD\Save.js" />
+    <Content Include="JavaScripts\ClaimMediaM_CURD\Search.js" />
+    <Content Include="JavaScripts\ClaimStatusM_R\Search.js" />
+    <Content Include="JavaScripts\ClinicA_CURD\Save.js" />
+    <Content Include="JavaScripts\ClinicA_CURD\Search.js" />
+    <Content Include="JavaScripts\ClinicSetUpM_R\Save.js" />
+    <Content Include="JavaScripts\ClinicSetUpM_R\Search.js" />
+    <Content Include="JavaScripts\ClinicViewM_R\Save.js" />
+    <Content Include="JavaScripts\ClinicViewM_R\Search.js" />
+    <Content Include="JavaScripts\ClinicView_R\Search.js" />
+    <Content Include="JavaScripts\CommunicationNumberQualifier_CURD\Save.js" />
+    <Content Include="JavaScripts\CommunicationNumberQualifier_CURD\Search.js" />
+    <Content Include="JavaScripts\CountryM_CUR\Save.js" />
+    <Content Include="JavaScripts\CountryM_CUR\Search.js" />
+    <Content Include="JavaScripts\Country_UR\Search.js" />
+    <Content Include="JavaScripts\CountyM_CUR\Save.js" />
+    <Content Include="JavaScripts\CountyM_CUR\Search.js" />
+    <Content Include="JavaScripts\County_UR\Search.js" />
+    <Content Include="JavaScripts\CPTM_CURD\Save.js" />
+    <Content Include="JavaScripts\CPTM_CURD\Search.js" />
+    <Content Include="JavaScripts\CreatedClaimsB_R\Save.js" />
+    <Content Include="JavaScripts\CreatedClaimsB_R\Search.js" />
+    <Content Include="JavaScripts\CreatedClaimsE_R\Save.js" />
+    <Content Include="JavaScripts\CreatedClaimsE_R\Search.js" />
+    <Content Include="JavaScripts\CreatedClaimsQ_R\Save.js" />
+    <Content Include="JavaScripts\CreatedClaimsQ_R\Search.js" />
+    <Content Include="JavaScripts\Credentials_R\Save.js" />
+    <Content Include="JavaScripts\Credentials_R\Search.js" />
+    <Content Include="JavaScripts\CurrencyCode_CURD\Save.js" />
+    <Content Include="JavaScripts\CurrencyCode_CURD\Search.js" />
+    <Content Include="JavaScripts\DashBoard_R\Display.js" />
+    <Content Include="JavaScripts\DashBoard_R\Notification.js" />
+    <Content Include="JavaScripts\DashBoard_R\NotificationClinic.js" />
+    <Content Include="JavaScripts\DashBoard_R\Save.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdf.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdfAgentClinic.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdfClinicsWithMultiManager.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdfClinicsWithoutManager.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdfManagerWithoutAgent.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdfNotification.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdfUsersWithoutClinic.js" />
+    <Content Include="JavaScripts\DashBoard_R\SavePdfUsersWithoutRole.js" />
+    <Content Include="JavaScripts\DashBoard_R\Search.js" />
+    <Content Include="JavaScripts\DiagnosisGroup_CURD\Save.js" />
+    <Content Include="JavaScripts\DiagnosisGroup_CURD\Search.js" />
+    <Content Include="JavaScripts\DocCategory_R\Save.js" />
+    <Content Include="JavaScripts\DocCategory_R\Search.js" />
+    <Content Include="JavaScripts\Document_R\Save.js" />
+    <Content Include="JavaScripts\Document_R\Search.js" />
+    <Content Include="JavaScripts\DxM_CURD\Save.js" />
+    <Content Include="JavaScripts\DxM_CURD\Search.js" />
+    <Content Include="JavaScripts\EDICreateSuccess_R\Search.js" />
+    <Content Include="JavaScripts\EDICreate_CR\Search.js" />
+    <Content Include="JavaScripts\EDIHistory_R\EDIView.js" />
+    <Content Include="JavaScripts\EDIHistory_R\Save.js" />
+    <Content Include="JavaScripts\EDIHistory_R\Search.js" />
+    <Content Include="JavaScripts\EDIM_CURD\Save.js" />
+    <Content Include="JavaScripts\EDIM_CURD\Search.js" />
+    <Content Include="JavaScripts\EDIRcverM_CURD\Save.js" />
+    <Content Include="JavaScripts\EDIRcverM_CURD\Search.js" />
+    <Content Include="JavaScripts\EDIRcvrView_R\Search.js" />
+    <Content Include="JavaScripts\EDIRespond_UR\Save.js" />
+    <Content Include="JavaScripts\EDIRespond_UR\Search.js" />
+    <Content Include="JavaScripts\EnterChartNo_R\Search.js" />
+    <Content Include="JavaScripts\EntityIdentifierCode_CURD\Save.js" />
+    <Content Include="JavaScripts\EntityIdentifierCode_CURD\Search.js" />
+    <Content Include="JavaScripts\EntityTypeBlock_UR\Search.js" />
+    <Content Include="JavaScripts\EntityTypeM_CURD\Save.js" />
+    <Content Include="JavaScripts\EntityTypeM_CURD\Search.js" />
+    <Content Include="JavaScripts\ExcelImpExp_R\Search.js" />
+    <Content Include="JavaScripts\FacilityDoneM_CURD\Save.js" />
+    <Content Include="JavaScripts\FacilityDoneM_CURD\Search.js" />
+    <Content Include="JavaScripts\FacilityTypeM_CURD\Save.js" />
+    <Content Include="JavaScripts\FacilityTypeM_CURD\Search.js" />
+    <Content Include="JavaScripts\GenConfig_U\Search.js" />
+    <Content Include="JavaScripts\Home\Search.js" />
+    <Content Include="JavaScripts\Hospitalization_CURD\Save.js" />
+    <Content Include="JavaScripts\Hospitalization_CURD\Search.js" />
+    <Content Include="JavaScripts\IllIndicatorM_CURD\Save.js" />
+    <Content Include="JavaScripts\IllIndicatorM_CURD\Search.js" />
+    <Content Include="JavaScripts\InsuranceBlock_UR\Search.js" />
+    <Content Include="JavaScripts\InsuranceM_CURD\Save.js" />
+    <Content Include="JavaScripts\InsuranceM_CURD\Search.js" />
+    <Content Include="JavaScripts\InsuranceType_CURD\Save.js" />
+    <Content Include="JavaScripts\InsuranceType_CURD\Search.js" />
+    <Content Include="JavaScripts\InterchangeIDQualifier_CURD\Save.js" />
+    <Content Include="JavaScripts\InterchangeIDQualifier_CURD\Search.js" />
+    <Content Include="JavaScripts\IPAM_R\Search.js" />
+    <Content Include="JavaScripts\IPAM_R\SearchView.js" />
+    <Content Include="JavaScripts\IPA_UR\Save.js" />
+    <Content Include="JavaScripts\IPA_UR\Search.js" />
+    <Content Include="JavaScripts\LogInAttempt_R\Search.js" />
+    <Content Include="JavaScripts\MenuAddress_R\Search.js" />
+    <Content Include="JavaScripts\MenuAddrM_R\Search.js" />
+    <Content Include="JavaScripts\MenuA_R\Search.js" />
+    <Content Include="JavaScripts\MenuBillInfoA_R\Search.js" />
+    <Content Include="JavaScripts\MenuBillingInfo_R\Search.js" />
+    <Content Include="JavaScripts\MenuB_R\Search.js" />
+    <Content Include="JavaScripts\MenuClaimE_R\Search.js" />
+    <Content Include="JavaScripts\MenuClaimQ_R\Search.js" />
+    <Content Include="JavaScripts\MenuClaim_R\Search.js" />
+    <Content Include="JavaScripts\MenuConfig_R\Search.js" />
+    <Content Include="JavaScripts\MenuDx_R\Search.js" />
+    <Content Include="JavaScripts\MenuEDIE_R\Search.js" />
+    <Content Include="JavaScripts\MenuEDI_R\Search.js" />
+    <Content Include="JavaScripts\MenuInsurance_R\Search.js" />
+    <Content Include="JavaScripts\MenuM_R\Search.js" />
+    <Content Include="JavaScripts\MenuTransaction_R\Search.js" />
+    <Content Include="JavaScripts\MenuUserA_R\Search.js" />
+    <Content Include="JavaScripts\MenuUserM_R\Search.js" />
+    <Content Include="JavaScripts\ModifierM_CURD\Save.js" />
+    <Content Include="JavaScripts\ModifierM_CURD\Search.js" />
+    <Content Include="JavaScripts\MvcControllers_R\Search.js" />
+    <Content Include="JavaScripts\PatDemography_CURD\Save.js" />
+    <Content Include="JavaScripts\PatDemography_CURD\Search.js" />
+    <Content Include="JavaScripts\PatDemography_URD\Save.js" />
+    <Content Include="JavaScripts\PatDemography_URD\Search.js" />
+    <Content Include="JavaScripts\PatDocument_CURD\Save.js" />
+    <Content Include="JavaScripts\PatDocument_CURD\Search.js" />
+    <Content Include="JavaScripts\PatHospitalization_CURD\Save.js" />
+    <Content Include="JavaScripts\PatHospitalization_CURD\Search.js" />
+    <Content Include="JavaScripts\PatientDemography_CR\Save.js" />
+    <Content Include="JavaScripts\PatientDemography_CR\Search.js" />
+    <Content Include="JavaScripts\PatVisit_CURD\Display.js" />
+    <Content Include="JavaScripts\PatVisit_CURD\Save.js" />
+    <Content Include="JavaScripts\PatVisit_CURD\Search.js" />
+    <Content Include="JavaScripts\PatVisit_CURD\UnBlock.js" />
+    <Content Include="JavaScripts\PayerResSeq_CURD\Save.js" />
+    <Content Include="JavaScripts\PayerResSeq_CURD\Search.js" />
+    <Content Include="JavaScripts\PreLogIn\ContactUs.js" />
+    <Content Include="JavaScripts\PreLogIn\Error404.js" />
+    <Content Include="JavaScripts\PreLogIn\ErrorUnExp.js" />
+    <Content Include="JavaScripts\PreLogIn\FAQ.js" />
+    <Content Include="JavaScripts\PreLogIn\ForgotPassword.js" />
+    <Content Include="JavaScripts\PreLogIn\LogIn.js" />
+    <Content Include="JavaScripts\PrintPin_CURD\Save.js" />
+    <Content Include="JavaScripts\PrintPin_CURD\Search.js" />
+    <Content Include="JavaScripts\PrintSign_CURD\Save.js" />
+    <Content Include="JavaScripts\PrintSign_CURD\Search.js" />
+    <Content Include="JavaScripts\ProviderBlock_UR\Search.js" />
+    <Content Include="JavaScripts\ProviderM_CURD\Save.js" />
+    <Content Include="JavaScripts\ProviderM_CURD\Search.js" />
+    <Content Include="JavaScripts\PwdComplexity_U\Search.js" />
+    <Content Include="JavaScripts\RelationshipM_CURD\Save.js" />
+    <Content Include="JavaScripts\RelationshipM_CURD\Search.js" />
+    <Content Include="JavaScripts\Reports_R\Search.js" />
+    <Content Include="JavaScripts\RoleA_UR\Save.js" />
+    <Content Include="JavaScripts\RoleA_UR\Search.js" />
+    <Content Include="JavaScripts\RoleM_R\Search.js" />
+    <Content Include="JavaScripts\RoleSelection\Search.js" />
+    <Content Include="JavaScripts\RoleSelection_R\Search.js" />
+    <Content Include="JavaScripts\RptAgentWise_R\AgentWise.js" />
+    <Content Include="JavaScripts\RptAgentWise_R\DateWise.js" />
+    <Content Include="JavaScripts\RptAgent_R\AgentNameList.js" />
+    <Content Include="JavaScripts\RptAgent_R\Search.js" />
+    <Content Include="JavaScripts\RptClinicWise_R\DateWise.js" />
+    <Content Include="JavaScripts\RptClinicWise_R\PatientNameList.js" />
+    <Content Include="JavaScripts\RptClinicWise_R\ProviderNameList.js" />
+    <Content Include="JavaScripts\RptClinicWise_R\Search.js" />
+    <Content Include="JavaScripts\RptClinic_R\DateWiseAll.js" />
+    <Content Include="JavaScripts\RptClinic_R\Search.js" />
+    <Content Include="JavaScripts\RptClinic_R\SearchAll.js" />
+    <Content Include="JavaScripts\RptDashboard_R\Search.js" />
+    <Content Include="JavaScripts\RptPatientWise_R\DateWise.js" />
+    <Content Include="JavaScripts\RptPatientWise_R\HedisRpt.js" />
+    <Content Include="JavaScripts\RptPatientWise_R\MraRpt.js" />
+    <Content Include="JavaScripts\RptPatientWise_R\PatientDash.js" />
+    <Content Include="JavaScripts\RptPatientWise_R\Search.js" />
+    <Content Include="JavaScripts\RptProviderwise_R\DateWise.js" />
+    <Content Include="JavaScripts\RptProviderwise_R\Search.js" />
+    <Content Include="JavaScripts\RptSumFCAgentWise_R\Search.js" />
+    <Content Include="JavaScripts\RptSumFCAgent_R\CompReport.js" />
+    <Content Include="JavaScripts\RptSumFCAgent_R\FullReport.js" />
+    <Content Include="JavaScripts\RptSumFCAgent_R\Search.js" />
+    <Content Include="JavaScripts\RptSumFCClinicWise_R\Search.js" />
+    <Content Include="JavaScripts\RptSumFCClinic_R\Search.js" />
+    <Content Include="JavaScripts\RptSumFCPatientWise_R\Search.js" />
+    <Content Include="JavaScripts\RptSumFCProviderWise_R\Search.js" />
+    <Content Include="JavaScripts\SecuredFolder\Base.js" />
+    <Content Include="JavaScripts\SecuredFolder\Clock.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FlashDetection.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FusionCharts.HC.Charts.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FusionCharts.HC.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FusionCharts.HC.Maps.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FusionCharts.HC.PowerCharts.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FusionCharts.HC.Widgets.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FusionCharts.js" />
+    <Content Include="JavaScripts\SecuredFolder\FusionChart\FusionChartsRendering.js" />
+    <Content Include="JavaScripts\SecuredFolder\jquery-1.9.1.js" />
+    <Content Include="JavaScripts\SecuredFolder\jquery-ui-1.10.0.js" />
+    <Content Include="JavaScripts\SecuredFolder\jquery-ui-i18n-1.10.0.js" />
+    <Content Include="JavaScripts\SecuredFolder\Sha1.js" />
+    <Content Include="JavaScripts\SecuredFolder\utf8.js" />
+    <Content Include="JavaScripts\SecurityQuali_CURD\Save.js" />
+    <Content Include="JavaScripts\SecurityQuali_CURD\Search.js" />
+    <Content Include="JavaScripts\SpecialtyBlock_UR\Search.js" />
+    <Content Include="JavaScripts\SpecialtyM_CURD\Save.js" />
+    <Content Include="JavaScripts\SpecialtyM_CURD\Search.js" />
+    <Content Include="JavaScripts\StateM_CUR\Save.js" />
+    <Content Include="JavaScripts\StateM_CUR\Search.js" />
+    <Content Include="JavaScripts\State_UR\Search.js" />
+    <Content Include="JavaScripts\SummaryAgentView_R\Save.js" />
+    <Content Include="JavaScripts\SummaryAgent_R\Display.js" />
+    <Content Include="JavaScripts\SummaryAgent_R\Save.js" />
+    <Content Include="JavaScripts\SummaryAgent_R\SavePdf.js" />
+    <Content Include="JavaScripts\SummaryAgent_R\Search.js" />
+    <Content Include="JavaScripts\SummaryClinicView_R\Save.js" />
+    <Content Include="JavaScripts\SummaryClinic_R\Display.js" />
+    <Content Include="JavaScripts\SummaryClinic_R\Save.js" />
+    <Content Include="JavaScripts\SummaryClinic_R\SavePdf.js" />
+    <Content Include="JavaScripts\SummaryClinic_R\Search.js" />
+    <Content Include="JavaScripts\SummaryDashboardView_R\Save.js" />
+    <Content Include="JavaScripts\TeamMembers_R\Search.js" />
+    <Content Include="JavaScripts\TransPurpsCodeM_CURD\Save.js" />
+    <Content Include="JavaScripts\TransPurpsCodeM_CURD\Search.js" />
+    <Content Include="JavaScripts\TransTypeCodeM_CURD\Save.js" />
+    <Content Include="JavaScripts\TransTypeCodeM_CURD\Search.js" />
+    <Content Include="JavaScripts\UnassgnClaimsE_UR\Save.js" />
+    <Content Include="JavaScripts\UnassgnClaimsE_UR\Search.js" />
+    <Content Include="JavaScripts\UnassgnClaimsNITB_UR\Save.js" />
+    <Content Include="JavaScripts\UnassgnClaimsNITB_UR\Search.js" />
+    <Content Include="JavaScripts\UnassgnClaimsNITE_UR\Save.js" />
+    <Content Include="JavaScripts\UnassgnClaimsNITE_UR\Search.js" />
+    <Content Include="JavaScripts\UnassgnClaimsNITQ_UR\Save.js" />
+    <Content Include="JavaScripts\UnassgnClaimsNITQ_UR\Search.js" />
+    <Content Include="JavaScripts\UnassgnClaimsQ_UR\Save.js" />
+    <Content Include="JavaScripts\UnassgnClaimsQ_UR\Search.js" />
+    <Content Include="JavaScripts\UnassgnClaims_UR\Save.js" />
+    <Content Include="JavaScripts\UnassgnClaims_UR\Search.js" />
+    <Content Include="JavaScripts\UsageIndicatorM_CURD\Save.js" />
+    <Content Include="JavaScripts\UsageIndicatorM_CURD\Search.js" />
+    <Content Include="JavaScripts\UserA_CURD\Save.js" />
+    <Content Include="JavaScripts\UserA_CURD\Search.js" />
+    <Content Include="JavaScripts\UserClinicA_UR\Search.js" />
+    <Content Include="JavaScripts\UserClinicM_UR\Search.js" />
+    <Content Include="JavaScripts\UserControls\AgentCompFCReport.js" />
+    <Content Include="JavaScripts\UserControls\AgentFCReport.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimDx.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimDxView.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimEDISettings.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimFacilityDone.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimHistory.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimInsurance.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimIPA.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimMenu.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimNotes.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimNotesQ.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimNotesView.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimPatDocuments.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimPatient.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimPractice.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimPrevVisit.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimPrimaryDx.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimPrimaryDxView.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimProcedure.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimProcedureView.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimProvider.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimStatus.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimVisit.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimVisitDocument.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimVisitDocumentView.js" />
+    <Content Include="JavaScripts\UserControls\AsgnClaimVisitView.js" />
+    <Content Include="JavaScripts\UserControls\Clinic.js" />
+    <Content Include="JavaScripts\UserControls\ClinicFCReport.js" />
+    <Content Include="JavaScripts\UserControls\ClinicSub.js" />
+    <Content Include="JavaScripts\UserControls\HospitalizationSave.js" />
+    <Content Include="JavaScripts\UserControls\HospitalizationSearch.js" />
+    <Content Include="JavaScripts\UserControls\PatDocumentSave.js" />
+    <Content Include="JavaScripts\UserControls\PatDocumentSearch.js" />
+    <Content Include="JavaScripts\UserControls\PatientDemography.js" />
+    <Content Include="JavaScripts\UserControls\PatientDemographySub.js" />
+    <Content Include="JavaScripts\UserControls\PatientVisitSub.js" />
+    <Content Include="JavaScripts\UserControls\to delete.js" />
+    <Content Include="JavaScripts\UserControls\VisitSearch.js" />
+    <Content Include="JavaScripts\UserManager_CURD\Save.js" />
+    <Content Include="JavaScripts\UserManager_CURD\Search.js" />
+    <Content Include="JavaScripts\UserM_CURD\Save.js" />
+    <Content Include="JavaScripts\UserM_CURD\Search.js" />
+    <Content Include="JavaScripts\UserRoleA_UR\Search.js" />
+    <Content Include="JavaScripts\UserRoleM_UR\Search.js" />
+    <Content Include="JavaScripts\Visit_CR\Display.js" />
+    <Content Include="JavaScripts\Visit_CR\Save.js" />
+    <Content Include="JavaScripts\Visit_CR\Search.js" />
+    <Content Include="JavaScripts\Visit_CR\UnBlock.js" />
+    <Content Include="JavaScripts\WebCulture_UR\Search.js" />
+    <Content Include="Stylesheets\jquery-ui-1.9.1.css" />
+    <Content Include="Stylesheets\login.css" />
+    <Content Include="Stylesheets\main.css" />
+    <Content Include="Stylesheets\pre.css" />
+    <Content Include="Templates\ExcelExportSvc.htm" />
+    <Content Include="Templates\ForgotPassword.htm" />
+    <Content Include="Templates\HttpError.htm" />
+    <Content Include="Templates\QryStrError.htm" />
+    <Content Include="Templates\SyncSummary.htm" />
+    <Content Include="Views\AgentRpt_R\BillingAgentRpt.cshtml" />
+    <Content Include="Views\AgentRpt_R\EARpt.cshtml" />
+    <Content Include="Views\AgentRpt_R\QARpt.cshtml" />
+    <Content Include="Views\AgentRpt_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\AssgnClaimsE_UR\Save.cshtml" />
+    <Content Include="Views\AssgnClaimsE_UR\Search.cshtml" />
+    <Content Include="Views\AssgnClaimsNITB_UR\Save.cshtml" />
+    <Content Include="Views\AssgnClaimsNITB_UR\Search.cshtml" />
+    <Content Include="Views\AssgnClaimsNITE_UR\Save.cshtml" />
+    <Content Include="Views\AssgnClaimsNITE_UR\Search.cshtml" />
+    <Content Include="Views\AssgnClaimsNITQ_UR\Save.cshtml" />
+    <Content Include="Views\AssgnClaimsNITQ_UR\Search.cshtml" />
+    <Content Include="Views\AssgnClaimsQ_UR\Save.cshtml" />
+    <Content Include="Views\AssgnClaimsQ_UR\Search.cshtml" />
+    <Content Include="Views\AssgnClaims_UR\Save.cshtml" />
+    <Content Include="Views\AssgnClaims_UR\Search.cshtml" />
+    <Content Include="Views\AuthQualifierM_CURD\Save.cshtml" />
+    <Content Include="Views\AuthQualifierM_CURD\Search.cshtml" />
+    <Content Include="Views\CaseAgentM_UR\Search.cshtml" />
+    <Content Include="Views\CaseComplex_UR\Search.cshtml" />
+    <Content Include="Views\CaseReclose_UR\Search.cshtml" />
+    <Content Include="Views\CaseReopen_UR\Search.cshtml" />
+    <Content Include="Views\Case_R\Save.cshtml" />
+    <Content Include="Views\Case_R\Search.cshtml" />
+    <Content Include="Views\ChangePwd_U\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CityBlock_UR\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CityM_CUR\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CityM_CUR\Search.cshtml" />
+    <Content Include="Views\ClaimMediaM_CURD\Save.cshtml" />
+    <Content Include="Views\ClaimMediaM_CURD\Search.cshtml" />
+    <Content Include="Views\ClaimStatusM_R\Search.cshtml" />
+    <Content Include="Views\ClinicA_CURD\Save.cshtml" />
+    <Content Include="Views\ClinicA_CURD\Search.cshtml" />
+    <Content Include="Views\ClinicSetUpM_R\Save.cshtml" />
+    <Content Include="Views\ClinicSetUpM_R\Search.cshtml" />
+    <Content Include="Views\ClinicViewM_R\Save.cshtml" />
+    <Content Include="Views\ClinicViewM_R\Search.cshtml" />
+    <Content Include="Views\ClinicView_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CommunicationNumberQualifier_CURD\Save.cshtml" />
+    <Content Include="Views\CommunicationNumberQualifier_CURD\Search.cshtml" />
+    <Content Include="Views\CountryM_CUR\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CountryM_CUR\Search.cshtml" />
+    <Content Include="Views\Country_UR\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CountyM_CUR\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CountyM_CUR\Search.cshtml" />
+    <Content Include="Views\County_UR\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\CPTM_CURD\Save.cshtml" />
+    <Content Include="Views\CPTM_CURD\Search.cshtml" />
+    <Content Include="Views\CreatedClaimsB_R\Save.cshtml" />
+    <Content Include="Views\CreatedClaimsB_R\Search.cshtml" />
+    <Content Include="Views\CreatedClaimsE_R\Save.cshtml" />
+    <Content Include="Views\CreatedClaimsE_R\Search.cshtml" />
+    <Content Include="Views\CreatedClaimsQ_R\Save.cshtml" />
+    <Content Include="Views\CreatedClaimsQ_R\Search.cshtml" />
+    <Content Include="Views\Credentials_R\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Credentials_R\Search.cshtml" />
+    <Content Include="Views\CurrencyCode_CURD\Save.cshtml" />
+    <Content Include="Views\CurrencyCode_CURD\Search.cshtml" />
+    <Content Include="Views\DashBoard_R\Display.cshtml" />
+    <Content Include="Views\DashBoard_R\Notification.cshtml" />
+    <Content Include="Views\DashBoard_R\NotificationClinic.cshtml" />
+    <Content Include="Views\DashBoard_R\Save.cshtml" />
+    <Content Include="Views\DashBoard_R\SavePdf.cshtml" />
+    <Content Include="Views\DashBoard_R\SavePdfAgentClinic.cshtml" />
+    <Content Include="Views\DashBoard_R\SavePdfClinicsWithoutManager.cshtml" />
+    <Content Include="Views\DashBoard_R\SavePdfManagerWithoutAgent.cshtml" />
+    <Content Include="Views\DashBoard_R\SavePdfNotification.cshtml" />
+    <Content Include="Views\DashBoard_R\SavePdfUsersWithoutClinic.cshtml" />
+    <Content Include="Views\DashBoard_R\SavePdfUsersWithoutRole.cshtml" />
+    <Content Include="Views\DashBoard_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\DiagnosisGroup_CURD\Save.cshtml" />
+    <Content Include="Views\DiagnosisGroup_CURD\Search.cshtml" />
+    <Content Include="Views\DocCategory_R\Save.cshtml" />
+    <Content Include="Views\DocCategory_R\Search.cshtml" />
+    <Content Include="Views\Document_R\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Document_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\DxM_CURD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\DxM_CURD\Search.cshtml" />
+    <Content Include="Views\EDICreateSuccess_R\Search.cshtml" />
+    <Content Include="Views\EDICreate_CR\Search.cshtml" />
+    <Content Include="Views\EDIHistory_R\EDIView.cshtml" />
+    <Content Include="Views\EDIHistory_R\Save.cshtml" />
+    <Content Include="Views\EDIHistory_R\Search.cshtml" />
+    <Content Include="Views\EDIM_CURD\Save.cshtml" />
+    <Content Include="Views\EDIM_CURD\Search.cshtml" />
+    <Content Include="Views\EDIRcverM_CURD\Save.cshtml" />
+    <Content Include="Views\EDIRcverM_CURD\Search.cshtml" />
+    <Content Include="Views\EDIRcvrView_R\Search.cshtml" />
+    <Content Include="Views\EDIRespond_UR\Save.cshtml" />
+    <Content Include="Views\EDIRespond_UR\Search.cshtml" />
+    <Content Include="Views\EnterChartNo_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\EntityIdentifierCode_CURD\Save.cshtml" />
+    <Content Include="Views\EntityIdentifierCode_CURD\Search.cshtml" />
+    <Content Include="Views\EntityTypeBlock_UR\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\EntityTypeM_CURD\Save.cshtml" />
+    <Content Include="Views\EntityTypeM_CURD\Search.cshtml" />
+    <Content Include="Views\ExcelImpExp_R\Search.cshtml" />
+    <Content Include="Views\FacilityDoneM_CURD\Save.cshtml" />
+    <Content Include="Views\FacilityDoneM_CURD\Search.cshtml" />
+    <Content Include="Views\FacilityTypeM_CURD\Save.cshtml" />
+    <Content Include="Views\FacilityTypeM_CURD\Search.cshtml" />
+    <Content Include="Views\GenConfig_U\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Hospitalization_CURD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Hospitalization_CURD\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\IllIndicatorM_CURD\Save.cshtml" />
+    <Content Include="Views\IllIndicatorM_CURD\Search.cshtml" />
+    <Content Include="Views\InsuranceBlock_UR\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\InsuranceM_CURD\Save.cshtml" />
+    <Content Include="Views\InsuranceM_CURD\Search.cshtml" />
+    <Content Include="Views\InsuranceType_CURD\Save.cshtml" />
+    <Content Include="Views\InsuranceType_CURD\Search.cshtml" />
+    <Content Include="Views\InterchangeIDQualifier_CURD\Save.cshtml" />
+    <Content Include="Views\InterchangeIDQualifier_CURD\Search.cshtml" />
+    <Content Include="Views\IPAM_R\Search.cshtml" />
+    <Content Include="Views\IPAM_R\SearchView.cshtml" />
+    <Content Include="Views\IPA_UR\Save.cshtml" />
+    <Content Include="Views\IPA_UR\Search.cshtml" />
+    <Content Include="Views\LogInAttempt_R\Search.cshtml" />
+    <Content Include="Views\MenuAddress_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\MenuAddrM_R\Search.cshtml" />
+    <Content Include="Views\MenuA_R\Search.cshtml" />
+    <Content Include="Views\MenuBillInfoA_R\Search.cshtml" />
+    <Content Include="Views\MenuBillingInfo_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\MenuB_R\Search.cshtml" />
+    <Content Include="Views\MenuClaimE_R\Search.cshtml" />
+    <Content Include="Views\MenuClaimQ_R\Search.cshtml" />
+    <Content Include="Views\MenuClaim_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\MenuConfig_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\MenuDx_R\Search.cshtml" />
+    <Content Include="Views\MenuEDIE_R\Search.cshtml" />
+    <Content Include="Views\MenuEDI_R\Search.cshtml" />
+    <Content Include="Views\MenuInsurance_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\MenuM_R\Search.cshtml" />
+    <Content Include="Views\MenuTransaction_R\Search.cshtml" />
+    <Content Include="Views\MenuUserA_R\Search.cshtml" />
+    <Content Include="Views\MenuUserM_R\Search.cshtml" />
+    <Content Include="Views\ModifierM_CURD\Save.cshtml" />
+    <Content Include="Views\ModifierM_CURD\Search.cshtml" />
+    <Content Include="Views\MvcControllers_R\Search.cshtml" />
+    <Content Include="Views\PatDemography_CURD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatDemography_CURD\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatDemography_URD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatDemography_URD\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatDocument_CURD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatDocument_CURD\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatHospitalization_CURD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatHospitalization_CURD\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatientDemography_CR\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatientDemography_CR\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatVisit_CURD\Display.cshtml" />
+    <Content Include="Views\PatVisit_CURD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatVisit_CURD\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatVisit_CURD\UnBlock.cshtml" />
+    <Content Include="Views\PayerResSeq_CURD\Save.cshtml" />
+    <Content Include="Views\PayerResSeq_CURD\Search.cshtml" />
+    <Content Include="Views\PreLogIn\ContactUs.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PreLogIn\Error404.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PreLogIn\ErrorUnExp.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PreLogIn\FAQ.cshtml" />
+    <Content Include="Views\PreLogIn\ForgotPassword.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PreLogIn\LogIn.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PrintPin_CURD\Save.cshtml" />
+    <Content Include="Views\PrintPin_CURD\Search.cshtml" />
+    <Content Include="Views\PrintSign_CURD\Save.cshtml" />
+    <Content Include="Views\PrintSign_CURD\Search.cshtml" />
+    <Content Include="Views\ProviderBlock_UR\Search.cshtml" />
+    <Content Include="Views\ProviderM_CURD\Save.cshtml" />
+    <Content Include="Views\ProviderM_CURD\Search.cshtml" />
+    <Content Include="Views\PwdComplexity_U\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\RelationshipM_CURD\Save.cshtml" />
+    <Content Include="Views\RelationshipM_CURD\Search.cshtml" />
+    <Content Include="Views\Reports_R\Search.cshtml" />
+    <Content Include="Views\RoleA_UR\Search.cshtml" />
+    <Content Include="Views\RoleM_R\Search.cshtml" />
+    <Content Include="Views\RoleSelection_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\RptAgentWise_R\AgentWise.cshtml" />
+    <Content Include="Views\RptAgentWise_R\DateWise.cshtml" />
+    <Content Include="Views\RptAgent_R\AgentNameList.cshtml" />
+    <Content Include="Views\RptAgent_R\Search.cshtml" />
+    <Content Include="Views\RptClinicWise_R\DateWise.cshtml" />
+    <Content Include="Views\RptClinicWise_R\PatientNameList.cshtml" />
+    <Content Include="Views\RptClinicWise_R\ProviderNameList.cshtml" />
+    <Content Include="Views\RptClinicWise_R\Search.cshtml" />
+    <Content Include="Views\RptClinic_R\DateWiseAll.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\RptClinic_R\Search.cshtml" />
+    <Content Include="Views\RptClinic_R\SearchAll.cshtml" />
+    <Content Include="Views\RptDashboard_R\Search.cshtml" />
+    <Content Include="Views\RptPatientWise_R\DateWise.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\RptPatientWise_R\HedisRpt.cshtml" />
+    <Content Include="Views\RptPatientWise_R\MraRpt.cshtml" />
+    <Content Include="Views\RptPatientWise_R\PatientDash.cshtml" />
+    <Content Include="Views\RptPatientWise_R\Search.cshtml" />
+    <Content Include="Views\RptProviderWise_R\DateWise.cshtml" />
+    <Content Include="Views\RptProviderWise_R\Search.cshtml" />
+    <Content Include="Views\RptSumFCAgentWise_R\Search.cshtml" />
+    <Content Include="Views\RptSumFCAgent_R\CompReport.cshtml" />
+    <Content Include="Views\RptSumFCAgent_R\FullReport.cshtml" />
+    <Content Include="Views\RptSumFCAgent_R\Search.cshtml" />
+    <Content Include="Views\RptSumFCClinicWise_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\RptSumFCClinic_R\Search.cshtml" />
+    <Content Include="Views\RptSumFCPatientWise_R\Search.cshtml" />
+    <Content Include="Views\RptSumFCProviderWise_R\Search.cshtml" />
+    <Content Include="Views\SecurityQuali_CURD\Save.cshtml" />
+    <Content Include="Views\SecurityQuali_CURD\Search.cshtml" />
+    <Content Include="Views\Shared\MasterPages\Base.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\MasterPages\Home.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\MasterPages\Pre.cshtml" />
+    <Content Include="Views\Shared\UserControls\AgentCompFCReport.cshtml" />
+    <Content Include="Views\Shared\UserControls\AgentFCReport.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimDx.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\AsgnClaimDxView.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimEDISettings.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimFacilityDone.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimInsurance.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimIPA.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\AsgnClaimMenu.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\AsgnClaimNotes.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimNotesE.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimNotesQ.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimNotesView.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimPatDocuments.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimPatient.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\AsgnClaimPractice.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimPrevVisit.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimPrimaryDx.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimPrimaryDxView.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimProcedure.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimProcedureView.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimProvider.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimStatus.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimVisit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\AsgnClaimVisitDocument.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimVisitDocumentView.cshtml" />
+    <Content Include="Views\Shared\UserControls\AsgnClaimVisitView.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\Clinic.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\ClinicFCReport.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\ClinicSub.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\Clock.cshtml" />
+    <Content Include="Views\Shared\UserControls\HospitalizationSave.cshtml" />
+    <Content Include="Views\Shared\UserControls\HospitalizationSearch.cshtml" />
+    <Content Include="Views\Shared\UserControls\MainMenu.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\NoRec.cshtml" />
+    <Content Include="Views\Shared\UserControls\PageFooter.cshtml" />
+    <Content Include="Views\Shared\UserControls\PageFooterFAQ.cshtml" />
+    <Content Include="Views\Shared\UserControls\PageFooterPre.cshtml" />
+    <Content Include="Views\Shared\UserControls\PageHeaderSub.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\PatDocument.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\PatDocumentSearch.cshtml" />
+    <Content Include="Views\Shared\UserControls\PatientDemography.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\PatientDemographySub.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\PatientVisitSub.cshtml" />
+    <Content Include="Views\Shared\UserControls\SearchResult.cshtml" />
+    <Content Include="Views\Shared\UserControls\UserClinic.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\UserControls\UserRole.cshtml" />
+    <Content Include="Views\Shared\UserControls\VisitSearch.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\SpecialtyBlock_UR\Search.cshtml" />
+    <Content Include="Views\SpecialtyM_CURD\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\SpecialtyM_CURD\Search.cshtml" />
+    <Content Include="Views\StateM_CUR\Save.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\StateM_CUR\Search.cshtml" />
+    <Content Include="Views\State_UR\Search.cshtml" />
+    <Content Include="Views\SummaryAgentView_R\Save.cshtml" />
+    <Content Include="Views\SummaryAgent_R\Display.cshtml" />
+    <Content Include="Views\SummaryAgent_R\Save.cshtml" />
+    <Content Include="Views\SummaryAgent_R\SavePdf.cshtml" />
+    <Content Include="Views\SummaryAgent_R\Search.cshtml" />
+    <Content Include="Views\SummaryClinicView_R\Save.cshtml" />
+    <Content Include="Views\SummaryClinic_R\Display.cshtml" />
+    <Content Include="Views\SummaryClinic_R\Save.cshtml" />
+    <Content Include="Views\SummaryClinic_R\SavePdf.cshtml" />
+    <Content Include="Views\SummaryClinic_R\Search.cshtml" />
+    <Content Include="Views\SummaryDashboardView_R\Save.cshtml" />
+    <Content Include="Views\TeamMembers_R\Search.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\TransPurpsCodeM_CURD\Save.cshtml" />
+    <Content Include="Views\TransPurpsCodeM_CURD\Search.cshtml" />
+    <Content Include="Views\TransTypeCodeM_CURD\Save.cshtml" />
+    <Content Include="Views\TransTypeCodeM_CURD\Search.cshtml" />
+    <Content Include="Views\UnassgnClaimsE_UR\Save.cshtml" />
+    <Content Include="Views\UnassgnClaimsE_UR\Search.cshtml" />
+    <Content Include="Views\UnassgnClaimsNITB_UR\Save.cshtml" />
+    <Content Include="Views\UnassgnClaimsNITB_UR\Search.cshtml" />
+    <Content Include="Views\UnassgnClaimsNITE_UR\Save.cshtml" />
+    <Content Include="Views\UnassgnClaimsNITE_UR\Search.cshtml" />
+    <Content Include="Views\UnassgnClaimsNITQ_UR\Save.cshtml" />
+    <Content Include="Views\UnassgnClaimsNITQ_UR\Search.cshtml" />
+    <Content Include="Views\UnassgnClaimsQ_UR\Save.cshtml" />
+    <Content Include="Views\UnassgnClaimsQ_UR\Search.cshtml" />
+    <Content Include="Views\UnassgnClaims_UR\Save.cshtml" />
+    <Content Include="Views\UnassgnClaims_UR\Search.cshtml" />
+    <Content Include="Views\UsageIndicatorM_CURD\Save.cshtml" />
+    <Content Include="Views\UsageIndicatorM_CURD\Search.cshtml" />
+    <Content Include="Views\UserA_CURD\Save.cshtml" />
+    <Content Include="Views\UserA_CURD\Search.cshtml" />
+    <Content Include="Views\UserClinicA_UR\Search.cshtml" />
+    <Content Include="Views\UserClinicM_UR\Search.cshtml" />
+    <Content Include="Views\UserManager_CURD\Save.cshtml" />
+    <Content Include="Views\UserManager_CURD\Search.cshtml" />
+    <Content Include="Views\UserM_CURD\Save.cshtml" />
+    <Content Include="Views\UserM_CURD\Search.cshtml" />
+    <Content Include="Views\UserRoleA_UR\Search.cshtml" />
+    <Content Include="Views\UserRoleM_UR\Search.cshtml" />
+    <Content Include="Views\Visit_CR\Display.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Visit_CR\Save.cshtml" />
+    <Content Include="Views\Visit_CR\Search.cshtml" />
+    <Content Include="Views\Visit_CR\UnBlock.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\WebCulture_UR\Search.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClaimatePrimeControllers\ClaimatePrimeControllers.csproj">
+      <Project>{462c5e76-db1b-432d-94ec-91dec7888ec3}</Project>
+      <Name>ClaimatePrimeControllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClaimatePrimeModels\ClaimatePrimeModels.csproj">
+      <Project>{6a38a74e-9973-473c-a70a-b62e47d9a5e8}</Project>
+      <Name>ClaimatePrimeModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecuredFolder\ClaimatePrimeConstants\ClaimatePrimeConstants.csproj">
+      <Project>{e9339f50-c822-42c5-9e15-4f0f2c5fae0c}</Project>
+      <Name>ClaimatePrimeConstants</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DashBoard_R\SavePdfClinicsWithMultiManager.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8115</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

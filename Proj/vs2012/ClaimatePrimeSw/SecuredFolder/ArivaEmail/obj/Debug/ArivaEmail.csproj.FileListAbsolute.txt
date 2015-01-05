@@ -1,0 +1,10 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\bin\Debug\ArivaEmail.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\bin\Debug\ArivaEmail.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Debug\ArivaEmail.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Debug\ArivaEmail.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Debug\ArivaEmail.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\bin\Debug\ArivaEmail.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\bin\Debug\ArivaEmail.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Debug\ArivaEmail.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Debug\ArivaEmail.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaEmail\obj\Debug\ArivaEmail.pdb

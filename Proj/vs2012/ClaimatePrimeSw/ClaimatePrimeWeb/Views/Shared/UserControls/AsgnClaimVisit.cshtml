@@ -1,0 +1,141 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+@model ClaimatePrimeModels.Models.PatientVisitSaveModel
+
+@Html.TextBoxFor(m => m.AntiForgTokn
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                    }))
+
+<div id="divVisit" class="dv-full-claim-mgmnt">
+    <div>
+        <a href="#" id="aVisitE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Visit');" class="aExpand">@Resources.ClaimatePrimeWebResx.Visit</a>
+        <a href="#" id="aVisitC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Visit');" class="aCollapse">@Resources.ClaimatePrimeWebResx.Visit</a>
+    </div>
+    <div id="divVisitC" style="display: none;" title="" class="dv-bdr">
+        <table class="table-entry" title="@Resources.ClaimatePrimeWebResx.Visit">
+            <tr>
+                <td style="width: 20%">
+                    @Resources.ClaimatePrimeWebResx.DOS
+                    @Html.TextBoxFor(m => m.PatientVisitResult.DOS
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }                                        
+                                    }))
+                </td>
+
+                <td style="width: 30%" id="tdPatVisitDOS"></td>
+
+                <td style="width: 20%">@Resources.ClaimatePrimeWebResx.Hospitalized
+                </td>
+                <td id="tdIsHosp" style="width: 30%;">
+                    @Html.Raw((Model.PatientVisitResult.PatientHospitalizationID.HasValue) ? Resources.ClaimatePrimeWebResx.YES : Resources.ClaimatePrimeWebResx.NO)
+
+                </td>
+            </tr>
+            <tr id="trHospName"  @Html.Raw((Model.PatientVisitResult.PatientHospitalizationID.HasValue) ? "" : "style=display:none;")>
+                <td>
+                    @Resources.ClaimatePrimeWebResx.HospitalName
+                    @Html.TextBoxFor(m => m.PatientVisitResult.PatientHospitalizationID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }                                        
+                                    }))
+                </td>
+                <td id="tdHospName"></td>
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.IllnessIndicator <span class="star">*</span>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.PatientVisitResult_IllnessIndicator)
+                    @Html.TextBoxFor(m => m.PatientVisitResult.IllnessIndicatorID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") }  
+                                    }))
+
+                </td>
+                <td>@Resources.ClaimatePrimeWebResx.CaseNo</td>
+                <td id="tdCaseNo"></td>
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.IllnessIndicatordate <span class="star">*</span>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.PatientVisitResult.IllnessIndicatorDate
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("class", "txt_cal txt-to-date") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                        
+                                    }))
+                </td>
+
+
+                <td>@Resources.ClaimatePrimeWebResx.FacilityType <span class="star">*</span>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.PatientVisitResult_FacilityType)
+                    @Html.TextBoxFor(m => m.PatientVisitResult.FacilityTypeID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") }  
+                                    }))
+                    <input type="text" id="txtOwnClinic" value="@Convert.ToByte(FacilityType.OFFICE)" style="display:none;" />
+                </td>
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.FacilityDone <span class="star">*</span>
+                </td>
+                <td colspan="3">
+                    <div id="divOwnClinic">
+                        @ArivaSession.Sessions().SelClinicDispName
+                    </div>
+                    <div id="divNonOwnClinic" style="display: none;">
+                        @Html.TextBoxFor(m => m.PatientVisitResult_FacilityDone)
+                        @Html.TextBoxFor(m => m.PatientVisitResult.FacilityDoneID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") }  
+                                    }))
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.CaseDescription <span class="star">*</span>
+                </td>
+                <td colspan="3">
+                    @Html.TextAreaFor(m => m.PatientVisitResult.PatientVisitDesc)
+                </td>
+            </tr>
+
+        </table>
+        @Html.TextBoxFor(m => m.PatientVisitResult.PatientVisitComplexity
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") }  
+                                    }))
+
+        @Html.TextBoxFor(m => m.PatientVisitResult.TargetBAUserID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") }  
+                                    }))
+
+        @Html.TextBoxFor(m => m.PatientVisitResult.TargetQAUserID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") }  
+                                    }))
+
+        @Html.TextBoxFor(m => m.PatientVisitResult.TargetEAUserID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("style", "display:none;") }  
+                                    }))
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+
+@model ClaimatePrimeModels.Models.TeamMembersSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li>
+            @if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(ClaimatePrimeConstants.Role.BA_ROLE_ID))
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuB"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a>
+            }
+            else if (ArivaSession.Sessions().SelRoleID == Convert.ToByte(ClaimatePrimeConstants.Role.QA_ROLE_ID))
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaimQ"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a>
+            }
+            else
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("MenuClaimE"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a>
+            }
+        </li>
+        <li>@Resources.ClaimatePrimeWebResx.TeamMember</li>
+    </ul>
+</div>
+
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <table class="table-grid-view">
+        <tr>
+            <td style="width: 25%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.Role</td>
+            <td style="width: 25%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.Name</td>
+            <td style="width: 50%" class="td-gridhead">@Resources.ClaimatePrimeWebResx.Email</td>
+        </tr>
+        @{
+            foreach (usp_GetTeamMembers_User_Result item in Model.TeamMembers)
+            {
+            <tr>
+                <td>
+                    @item.RoleName
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+            </tr>
+            }
+        }
+    </table>
+</div>

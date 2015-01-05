@@ -1,0 +1,51 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Description:This Stored Procedure is used to INSERT the errorLog details into the table after rollback.
+ 
+CREATE PROCEDURE [Audit].[usp_Update_ErrorLog]
+	@ErrorLogID BIGINT
+	, @ErrorNumber INT
+	, @ErrorMessage NVARCHAR(4000)
+	, @ErrorSeverity INT
+	, @ErrorState INT
+	, @ErrorLine INT
+	, @ErrorProcedure NVARCHAR(512)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	IF NOT EXISTS(SELECT [Audit].[ErrorLog].[ErrorLogID] FROM [Audit].[ErrorLog] WITH (NOLOCK) WHERE [Audit].[ErrorLog].[ErrorLogID] = @ErrorLogID)
+	BEGIN
+		SET IDENTITY_INSERT [Audit].[ErrorLog] ON;
+		-- http://msdn.microsoft.com/en-us/library/ms179296.aspx
+		INSERT INTO 
+			[Audit].[ErrorLog]
+			(
+				[ErrorLogID]
+				, [ErrorNumber]
+				, [ErrorMessage]
+				, [ErrorSeverity]
+				, [ErrorState]
+				, [ErrorLine]
+				, [ErrorProcedure]
+				, [CreatedOn]
+			)
+			VALUES
+			(
+				@ErrorLogID
+				, @ErrorNumber
+				, @ErrorMessage
+				, @ErrorSeverity
+				, @ErrorState
+				, @ErrorLine
+				, @ErrorProcedure
+				, GETDATE()
+			);
+		SET IDENTITY_INSERT [Audit].[ErrorLog] OFF;
+	END
+END
+GO

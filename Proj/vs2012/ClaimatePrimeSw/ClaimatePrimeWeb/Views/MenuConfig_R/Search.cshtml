@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuA"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Configuration </li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ExcelImpExp"))" onclick="javascript:return false;" rel="menu_tile_ucm" class="menu-excel">@Resources.ClaimatePrimeWebResx.ExcelImpExp</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("GenConfig"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-alert-config">@Resources.ClaimatePrimeWebResx.GenConfig</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PwdComplexity"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-password">@Resources.ClaimatePrimeWebResx.PwdComplexity</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MvcControllers"))" rel="menu_tile_ucm" onclick="javascript:return false;" class="menu-mvc">@Resources.ClaimatePrimeWebResx.MVC</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("WebCulture"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-webculture">@Resources.ClaimatePrimeWebResx.WebCulture</a></li>
+    </ul>
+</div>
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

@@ -1,0 +1,607 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@Resources.ClaimatePrimeWebResx.Header</title>
+    <link rel="icon" href="@Url.RouteUrl(StaticClass.RouteValues("PreLogIn", "FavIco"))" type="image/x-icon" />
+    <link rel="icon" type="image/png" href="@Url.RouteUrl(StaticClass.RouteValues("PreLogIn", "FavPng"))" />
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <div id="divErrMsg" style="display: none;" class="div_transparent">
+        <div class="div_error_outer">
+            <div id="divErrMsgInner" class="div_error_inner">
+                Your error message will display here.
+            </div>
+        </div>
+        <div class="dv_close">
+            <a href="#" id="aErrClose" class="close-button" onclick="javascript:return hideSuccErrMsgDiv('divErrMsg');">@Resources.ClaimatePrimeWebResx.Close</a>
+        </div>
+    </div>
+    <div id="divSuccMsg" style="display: none;" class="div_transparent">
+        <div id="divSuccMsgInner" class="div_success_outer">
+            Your success message will display here.
+        </div>
+        <div class="dv_close">
+            <a href="#" id="aSuccClose" class="close-button" onclick="javascript:return hideSuccErrMsgDiv('divSuccMsg');">@Resources.ClaimatePrimeWebResx.Close</a>
+        </div>
+    </div>
+</body>
+</html>
+@{
+    string ctrlrName = Request.RequestContext.RouteData.Values["controller"].ToString();
+    string actnName = Request.RequestContext.RouteData.Values["action"].ToString();
+    string usrCultName = ClaimatePrimeControllers.SecuredFolder.SessionClasses.ArivaSession.Sessions().UserCulture;
+}
+<script type="text/javascript" defer="defer">
+    var _AppDomainPath = '@Url.Content("~/")';
+    var _AlertMsgID = "";
+    var _CtrlrName = '@ctrlrName';
+    var _DefaultDateCulture = '@usrCultName';
+    var _DefaultDateSeparator = '@StaticClass.GetDateSep()';
+    var _DefaultDate = '@StaticClass.GetDateStr().ToLower()';
+    var _SearchRecordPerPage = '@StaticClass.ConfigurationGeneral.mSearchRecordPerPageID';
+    //
+    var _SessTimeOutMax = '@(StaticClass.ConfigurationGeneral.mSessionOutFromPageLockInMinID * 60)';
+    var _SessTimeOutUsed = '@LockUnLockSaveModel.GetSessTimeOutUsed(StaticClass.ConfigurationGeneral.mSessionOutFromPageLockInMinID, ArivaSession.Sessions().LogInLogOutID)';
+    var _SessTimeOutIdleMax = '@(StaticClass.ConfigurationGeneral.mPageLockIdleTimeInMinID * 60)';
+    var _SessTimeOutIdleUsed = 0;
+    var _RegBlurFns = [];
+
+    //
+    if ((_DefaultDateCulture == "en") ||
+        (_DefaultDateCulture == "en-US")) {
+        _DefaultDateCulture = "";
+    }
+</script>
+@{
+    // Base Java Scripts Begin
+    if (System.IO.File.Exists(string.Concat(StaticClass.AppRootPath, "/App_JsResources/ClaimatePrimeWebJs.", usrCultName, ".js")))
+    {
+    <script src="@Url.Content(string.Concat("~/App_JsResources/ClaimatePrimeWebJs.", usrCultName, ".js"))" type="text/javascript" defer="defer"></script>
+    }
+    else
+    {
+    <script src="@Url.Content("~/App_JsResources/ClaimatePrimeWebJs.js")" type="text/javascript" defer="defer"></script>
+    }
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/jquery-1.9.1.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/jquery-ui-1.10.0.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/jquery-ui-i18n-1.10.0.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/Sha1.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/utf8.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/base.js")" type="text/javascript" defer="defer"></script>
+    if (string.Compare(ctrlrName, "PreLogIn", true) != 0)
+    {
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/Clock.js")" type="text/javascript" defer="defer"></script>
+    }
+    <script src="@Url.Content(string.Concat("~/JavaScripts/", ctrlrName, "/", actnName, ".js"))" type="text/javascript" defer="defer"></script>
+    // Base Java Scripts End
+
+    //
+
+    // Supporting / Including Java Scripts Begin
+    if (Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("RptSumFC"))
+    {
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/FusionChart/FlashDetection.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/FusionChart/FusionChartsRendering.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/SecuredFolder/FusionChart/FusionCharts.js")" type="text/javascript" defer="defer"></script>
+        if ((Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("RptSumFCClinic")) || (Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("RptSumFCPatient")) || (Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("RptSumFCProvider")))
+        {
+    <script src="@Url.Content("~/JavaScripts/UserControls/ClinicFCReport.js")" type="text/javascript" defer="defer"></script>
+        }
+        else if (Request.RequestContext.RouteData.Values["controller"].ToString().StartsWith("RptSumFCAgent"))
+        {
+            if (Request.RequestContext.RouteData.Values["action"].ToString().StartsWith("CompReport"))
+            {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AgentCompFCReport.js")" type="text/javascript" defer="defer"></script>
+            }
+            else
+            {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AgentFCReport.js")" type="text/javascript" defer="defer"></script>
+            }
+        }
+        else
+        {
+        }
+    }
+    else if ((string.Compare(ctrlrName, "AssgnClaims_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisit.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDx.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDx.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedure.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotes.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "AssgnClaimsNITB_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisit.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDx.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDx.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedure.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotes.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "AssgnClaimsE_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesQ.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "AssgnClaimsNITE_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesQ.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "AssgnClaimsQ_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesQ.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "AssgnClaimsNITQ_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesQ.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "CreatedClaimsB_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "CreatedClaimsE_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "CreatedClaimsQ_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "PatVisit_CURD", true) == 0) && (string.Compare(actnName, "Display", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+
+    }
+    else if ((string.Compare(ctrlrName, "Visit_CR", true) == 0) && (string.Compare(actnName, "Search", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/VisitSearch.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "PatVisit_CURD", true) == 0) && (string.Compare(actnName, "Search", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/VisitSearch.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "Document_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/PatDocumentSave.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "PatDocument_CURD", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/PatDocumentSave.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "ClinicA_CURD", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/Clinic.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/ClinicSub.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "ClinicSetUpM", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/Clinic.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/ClinicSub.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "ClinicViewM_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/Clinic.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/ClinicSub.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "ClinicSetUpM_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/Clinic.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/ClinicSub.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "Hospitalization_CURD", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/HospitalizationSave.js")" type="text/javascript" defer="defer"></script>
+    
+    }
+    else if ((string.Compare(ctrlrName, "Hospitalization_CURD", true) == 0) && (string.Compare(actnName, "Search", true) == 0))
+    {
+    
+    <script src="@Url.Content("~/JavaScripts/UserControls/HospitalizationSearch.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "PatDemography_URD", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/PatientDemography.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/PatientDemographySub.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "PatientDemography_CR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/PatientDemography.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/PatientDemographySub.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "PatHospitalization_CURD", true) == 0) && (string.Compare(actnName, "Search", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/HospitalizationSearch.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "ClinicViewM_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/Clinic.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "EDIHistory_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "Visit_CR", true) == 0) && (string.Compare(actnName, "Display", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+
+    }
+    else if ((string.Compare(ctrlrName, "DashBoard_R", true) == 0) && (string.Compare(actnName, "Display", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+
+    }
+    else if ((string.Compare(ctrlrName, "Case_R", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+
+    }
+    else if ((string.Compare(ctrlrName, "SummaryClinic_R", true) == 0) && (string.Compare(actnName, "Display", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+
+    }
+    else if ((string.Compare(ctrlrName, "SummaryAgent_R", true) == 0) && (string.Compare(actnName, "Display", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "UnassgnClaims_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "UnassgnClaimsE_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "UnassgnClaimsNITB_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "UnassgnClaimsNITE_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "UnassgnClaimsNITQ_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else if ((string.Compare(ctrlrName, "UnassgnClaimsQ_UR", true) == 0) && (string.Compare(actnName, "Save", true) == 0))
+    {
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimMenu.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimVisitView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrimaryDxView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProcedureView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatient.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimInsurance.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimProvider.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimIPA.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimEDISettings.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimNotesView.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimStatus.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPractice.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimFacilityDone.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPatDocuments.js")" type="text/javascript" defer="defer"></script>
+    <script src="@Url.Content("~/JavaScripts/UserControls/AsgnClaimPrevVisit.js")" type="text/javascript" defer="defer"></script>
+    }
+    else
+    {
+    }
+    // Supporting / Including Java Scripts End 
+}

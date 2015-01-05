@@ -1,0 +1,21 @@
+﻿@{
+   
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuM"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Insurance</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("InsuranceM"))" onclick="javascript:showDivPageLoading();"  rel="menu_tile" class="menu-insurance-mgr">@Resources.ClaimatePrimeWebResx.Insurance</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("InsuranceType"))" onclick="javascript:showDivPageLoading();"  rel="menu_tile"class="menu-instype-mgr">@Resources.ClaimatePrimeWebResx.InsuranceType</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RelationshipM"))" onclick="javascript:showDivPageLoading();"  rel="menu_tile" class="menu-relationship-mgr">@Resources.ClaimatePrimeWebResx.Relationship</a></li>
+    </ul>
+</div>
+

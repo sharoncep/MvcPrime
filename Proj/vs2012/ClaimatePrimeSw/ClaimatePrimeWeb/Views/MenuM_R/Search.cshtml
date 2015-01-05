@@ -1,0 +1,25 @@
+﻿@{
+   
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RoleSelection"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Managing</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("MenuAddrM"))"  rel="menu_tile" class="menu-address-mgr" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Address</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuBillingInfo"))" rel="menu_tile" class="menu-billing-mgr" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.BillingInfo</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuDx"))" rel="menu_tile" class="menu-dx-cpt" onclick="javascript:showDivPageLoading();">Dx / CPT</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDI"))" rel="menu_tile" class="menu-edi-mgr">@Resources.ClaimatePrimeWebResx.EDI</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuInsurance"))" rel="menu_tile" class="menu-insurance-mgr">@Resources.ClaimatePrimeWebResx.Insurance</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuUserM"))" rel="menu_tile" class="menu-user-mgr" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UserInfo</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuTransaction"))" onclick="javascript:showDivPageLoading();" rel="menu_tile" class="menu-tranascation-mgr">@Resources.ClaimatePrimeWebResx.Transaction</a></li>
+    </ul>
+</div>

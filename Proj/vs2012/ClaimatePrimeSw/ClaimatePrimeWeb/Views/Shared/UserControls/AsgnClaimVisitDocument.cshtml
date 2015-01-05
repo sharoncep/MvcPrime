@@ -1,0 +1,57 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+<div id="divVisitdoc" class="dv-full-Visitdoc-mgmnt">
+
+    <div>
+        <a href="#" id="aVisitdocE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Visitdoc');" class="aExpand">@Resources.ClaimatePrimeWebResx.VisitDocument</a>
+        <a href="#" id="aVisitdocC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Visitdoc');" class="aCollapse">@Resources.ClaimatePrimeWebResx.VisitDocument</a>
+    </div>
+    <div id="divVisitdocC" style="display: none;" title="" class="dv-bdr">
+        <table class="table-entry">
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.DocNote
+                </td>
+                <td>
+                    <span class="label_hint">
+                        @Resources.ClaimatePrimeWebResx.UploadSize.Replace("[X]", Convert.ToString(StaticClass.ConfigurationGeneral.mUploadMaxSizeInMBID))
+                    </span>
+                    <div class="FileUpload">
+                        <input type="file" id="filUploadDocNote" name="filUploadDocNote" class="BrowserHidden" accept="@StaticClass.CsResources("VisitDocAccept")" onchange="javascript:fileBrowseChange(this);" />
+                        <div id="BrowserHiddenDocNote" class="BrowserVisible">
+                            <input type="text" id="txtfilUploadDocNote" class="FileField" style="width: 180px" readonly="true" onclick="javascript: fileBrowseClick(this);" />
+                        </div>
+                    </div>
+                </td>
+                <td class="td-image">
+                    <ul class="ul_imgEnlarge">
+                        <li class="imgPhoto">
+                            <img id="imgDrNote" src="@Url.RouteUrl(StaticClass.RouteValues("Home", "NoFile"))" alt="" style="width: 60px; height: 60px;" onclick="return printFile('@Url.RouteUrl(StaticClass.RouteValues("Home", "NoFile"))');" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>@Resources.ClaimatePrimeWebResx.SuperBill
+                </td>
+                <td>
+                    <span class="label_hint">
+                        @Resources.ClaimatePrimeWebResx.UploadSize.Replace("[X]", Convert.ToString(StaticClass.ConfigurationGeneral.mUploadMaxSizeInMBID))
+                    </span>
+                    <div class="FileUpload">
+                        <input type="file" id="filUploadSuperBill" name="filUploadSuperBill" class="BrowserHidden" accept="@StaticClass.CsResources("VisitDocAccept")" onchange="javascript:fileBrowseChange(this);" />
+                        <div id="BrowserHiddenSuperBill" class="BrowserVisible">
+                            <input type="text" id="txtfilUploadSuperBill" class="FileField" style="width: 180px" readonly="true" onclick="javascript: fileBrowseClick(this);" />
+                        </div>
+                    </div>
+                </td>
+                <td class="td-image">
+                    <ul class="ul_imgEnlarge">
+                        <li class="imgPhoto">
+                            <img id="imgSupBill" src="@Url.RouteUrl(StaticClass.RouteValues("Home", "NoFile"))" alt="" style="width: 60px; height: 60px;" onclick="return printFile('@Url.RouteUrl(StaticClass.RouteValues("Home", "NoFile"))');" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

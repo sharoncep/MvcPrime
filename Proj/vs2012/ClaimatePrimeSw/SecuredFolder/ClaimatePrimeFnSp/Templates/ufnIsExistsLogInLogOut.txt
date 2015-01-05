@@ -1,0 +1,18 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- 
+
+CREATE FUNCTION [Audit].[ufn_IsExists_LogInLogOut]
+(
+)
+RETURNS int
+AS
+BEGIN
+	RETURN 1;
+END
+
+GO

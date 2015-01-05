@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Claimate Prime</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="../Images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../Images/favicon.png" type="image/png" />
+    <link href="../Stylesheets/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="dv-top-bar">
+        <div>
+            <a href="#" class="aLock" onclick="javascript:return lockPg();" title="Lock Screen">&nbsp;</a>
+            <ul class="ul-nav" onmouseover="javascript:$('#divUserDetails').slideDown();">
+                <li>Logged in as, </li>
+                <li style="margin: 8px"><em>Web Administrator</em></li>
+                <li><span class="d-arrow"></span></li>
+            </ul>
+            <div id="divUserDetails" class="dv_userdetails">
+                <ul class="userdetails">
+                    <li><span class="s-user-role"><a href="Role_Selection.html">Administrator</a></span></li>
+                    <li><span class="s-email">softtest@in.arivameddata.com</span></li>
+                    <li><span class="s-phone">(944)643-2544</span></li>
+                    <li><a href="#" class="change-pwd">Change Password</a></li>
+                    <li><a href="../index.html" class="logout">LogOut</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="dv-clock-wrap">
+            <div class="dv-clock">
+                <label id="liHour">
+                </label>
+                <label>
+                    :</label>
+                <label id="liMinute">
+                </label>
+                <label>
+                    :</label>
+                <label id="liSecond">
+                </label>
+            </div>
+            <div class="dv-date">
+                <label id="liDayName">
+                </label>
+                <label>
+                    -</label>
+                <label id="liDay">
+                </label>
+                <label id="liMonthName">
+                </label>
+                <label id="liYear">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="dv-main_wrapper" onmouseover="javascript:$('#divUserDetails').slideUp();">
+        <a href="Dashboard.html" style="display: inline-block">
+            <div class="dv-sitelogo">
+            </div>
+        </a>
+        <div class="dv-page-header">
+            <ul class="ul-header">
+                <li>Dashboard</li>
+            </ul>
+        </div>
+        <div class="dv-shadowline">
+        </div>
+        <div class="dv-block">
+            <div>
+                As on <span id="spnDashboard"></span>
+            </div>
+            <div class="dv-left">
+                <div class="dv-block-wrap">
+                    <div class="dv-subhead-dash">
+                        Summary
+                    </div>
+                    <div class="dv-table-wrap-dash">
+                        <table class="table-dash">
+                            <tr class="tr-head">
+                                <td width="24%" align="left">Claims
+                                </td>
+                                <td width="12%">Today<span></span>
+                                </td>
+                                <td width="14%">1-7<span> Days</span>
+                                </td>
+                                <td width="16%">8-30<span> Days</span>
+                                </td>
+                                <td width="18%">31-90<span> Days</span>
+                                </td>
+                                <td width="16%">91+<span> Days</span>
+                                </td>
+                            </tr>
+                            <tr class="tr-row1">
+                                <td class="td-claims">Visits
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('11');">10 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('12');">75 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('13');">215 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('14');">700 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('15');">9000 </a>
+                                </td>
+                            </tr>
+                            <tr class="tr-row1">
+                                <td class="td-claims">Created
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('21');">25 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('22');">100 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('23');">220 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('24');">1290 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('25');">8365 </a>
+                                </td>
+                            </tr>
+                            <tr class="tr-row2">
+                                <td class="td-claims">Hold
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('31');">5 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('32');">25 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('33');">40 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('34');">70 </a>
+                                </td>
+                                <td>0
+                                </td>
+                            </tr>
+                            <tr class="tr-row1">
+                                <td class="td-claims">Ready to Send
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('41');">150 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('42');">250 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('43');">410 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('44');">1250 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('45);">7800 </a>
+                                </td>
+                            </tr>
+                            <tr class="tr-row2">
+                                <td class="td-claims">Sent
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('51');">210 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('52');">600 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('53');">3000 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('54');">1050 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('55');">5000 </a>
+                                </td>
+                            </tr>
+                            <tr class="tr-row1">
+                                <td class="td-claims">Accepted
+                                </td>
+                                <td>0
+                                </td>
+                                <td>0
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('63');">2500 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('64');">1000 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('65');">4900 </a>
+                                </td>
+                            </tr>
+                            <tr class="tr-row2">
+                                <td class="td-claims">Rejected
+                                </td>
+                                <td>0
+                                </td>
+                                <td>0
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('73');">500 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('74');">50</a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('75');">100</a>
+                                </td>
+                            </tr>
+                            <tr class="tr-row1">
+                                <td class="td-claims">Re-Submitted
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('81');">200</a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('82');">250 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('83');">160 </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick="javascript:return showDashPop('84');">40</a>
+                                </td>
+                                <td>0
+                                </td>
+                            </tr>
+                        </table>
+                        <ul class="ul-list-dark">
+                            <li>Total -<a href="#" onclick="javascript:return showDashPop('91');"> 10000</a></li>
+                            <li>Expected Completion - <a href="#" onclick="javascript:return showDashPop('92');">9655</a></li>
+                            <li>Actual Completed - <a href="#" onclick="javascript:return showDashPop('93');">7500</a></li>
+                            <li>In Progress - <a href="#" onclick="javascript:return showDashPop('94');">2500</a></li>
+                            <li>Not in Track - <a href="#" onclick="javascript:return showDashPop('95');" rel="highlight">2155</a></li>
+                        </ul>
+                        <div class="dv-clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dv-right">
+                <ul class="ul-tiles-dash">
+                    <li>
+                        <a href="AgentWise_Splitup.html" class="a-user-split-ups" rel="menu_tile">Summary Split Up - Agent Wise</a>
+                    </li>
+                    <li>
+                        <a href="ClinicWise_Splitups.html" class="a-clinic-split-ups" rel="menu_tile">Summary Split Up - Clinic Wise</a>
+                    </li>
+                    <li>
+                        <a href="http://claimatereports.arivameddata.com/live/" target="_blank" class="a-reports" rel="menu_tile">Reports</a>
+                    </li>
+                    <li>
+                        <a href="Role_Selection.html" class="a-claim-process" rel="menu_tile">Claims</a>
+                    </li>
+                    <!--<li>
+                        <a href="#" class="a-login-attempts" rel="menu_tile" onclick="javascript:return false;">Login Attempts</a>
+                    </li>-->
+                    <li>
+                        <div class="dv-notifications">
+                            Notifications
+                    <ul class="ul-list-white">
+                        <li><span>Users Without Clinic -</span><a href="#" onclick="javascript:return showDashPopUser('1');">5</a></li>
+                        <li style="clear: both"></li>
+                        <li><span>Managers Without Clinic -</span><a href="#" onclick="javascript:return showDashPopUser('2');">2</a></li>
+                        <li style="clear: both"></li>
+                        <li><span>Users Without Role -</span><a href="#" onclick="javascript:return showDashPopUser('3');">1</a></li>
+                    </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="dv-footer">
+        <ul class="ul-browser">
+            <li>Supported Browsers</li>
+            <li class="mozilla" title="Mozilla Firefox 19+"></li>
+            <li class="safari" title="Safari 5+"></li>
+            <li class="chrome" title="Google Chrome 23+"></li>
+            <li class="iexplorer" title="IE 10+"></li>
+            <li class="opera" title="Opera 12+"></li>
+        </ul>
+        <ul class="ul-flink">            
+            <li><a href="#" target="_blank" onclick="javascript:return false;">Login Attempts</a></li>
+            <li class="seperator">|</li>
+            <li><a href="#" target="_blank" onclick="javascript:return false;">FAQ</a></li>
+            <li class="seperator">|</li>
+            <li><a href="https://www.arivameddata.com/claimate-capitated/LoginPage.aspx" target="_blank">Claimate</a></li>
+            <li>&nbsp;</li>
+            <li>&copy; Claimate 2008- 2013</li>
+        </ul>
+    </div>
+    <div id="divLockMsg" class="div-blanket-white">
+        <div class="dv-sitelogo-lock">
+        </div>
+        <div id="divLockMsgInner" class="div_lock_outer">
+            <div>
+                <ul class="ul-lock">
+                    <li>Hello, Web Administrator! You should unlock the screen within '<span id="spnUnlock"></span>'
+                        second(s) to stay active.</li>
+                    <li>
+                        <input id="txtPassword" type="password" class="textbox-login" placeholder="Password"
+                            onkeypress="javascript:return keyPressEnterKeyPwd(event, 'subLogIn');" onblur="javascript:blurTrim(this);" />
+                        <input type="submit" id="subLogIn" class="btn-log" value="Login" onclick="javascript: return unLockPg();" />
+                        <div id="divCapsLockOn" class="caps-lock-on">
+                            Caps Lock On for the last typed character
+                        </div>
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="divDashPop" class="div_transparent">
+        <div id="divDashPopHdr">
+        </div>
+        <div class="dv_close_confirm">
+            <a href="#" onclick="javascript:return hideDashPop();" class="close-button">Close</a>
+        </div>
+        <div class="dv-pop-confirm">
+            <ul class="ul-menu">
+                <li><a href="#" onclick="javascript:return hideDashPop();" rel="menu_tile" class="menu-export-excel">Export to Excel</a></li>
+                <li><a href="#" onclick="javascript:return hideDashPop();" rel="menu_tile" class="menu-export-pdf">Export to PDF</a></li>
+                <li><a href="SummaryView.html" rel="menu_tile" class="menu-view-browser">View in Web
+                    Browser</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="divDashPopUser" class="div_transparent">
+        <div id="divDashPopUserHdr">
+        </div>
+        <div class="dv_close_confirm">
+            <a href="#" onclick="javascript:return hideDashPopUser();" class="close-button">Close</a>
+        </div>
+        <div class="dv-pop-confirm">
+            <div>
+                <ul class="ul-menu">
+                    <li><a href="#" onclick="javascript:return hideDashPopUser();" rel="menu_tile" class="menu-export-excel">Export to Excel</a></li>
+                    <li><a href="#" onclick="javascript:return hideDashPopUser();" rel="menu_tile" class="menu-export-pdf">Export to PDF</a></li>
+                    <li><a href="SummaryView_user.html" rel="menu_tile" class="menu-view-browser">View in
+                        Web Browser</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../JavaScripts/jquery-1.9.0.js" type="text/javascript" defer="defer"></script>
+<script src="../JavaScripts/Base.js" type="text/javascript" defer="defer"></script>
+<script src="../JavaScripts/Clock.js" type="text/javascript" defer="defer"></script>
+<script src="../JavaScripts/Lock.js" type="text/javascript" defer="defer"></script>
+<script src="../JavaScripts/WebAdmin/Dashboard.js" type="text/javascript" defer="defer"></script>

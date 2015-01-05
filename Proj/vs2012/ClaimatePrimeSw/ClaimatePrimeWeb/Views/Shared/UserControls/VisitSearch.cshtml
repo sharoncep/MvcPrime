@@ -1,0 +1,24 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+
+@model ClaimatePrimeModels.Models.PatientVisitSearchModel
+
+<div style="display: none;">
+    @Html.TextBoxFor(m => m.StartBy)
+    @Html.TextBoxFor(m => m.CurrNumber)
+    @Html.TextBoxFor(m => m.OrderByField)
+    @Html.TextBoxFor(m => m.OrderByDirection)
+    @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+    <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+    <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+</div>
+@*For hospitatlization only*@
+@Html.TextBoxFor(m => m.PatientID,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))

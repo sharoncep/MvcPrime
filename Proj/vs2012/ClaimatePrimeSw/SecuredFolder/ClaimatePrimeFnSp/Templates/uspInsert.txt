@@ -1,0 +1,63 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- Inserts the record into the table without repeatation
+
+CREATE PROCEDURE [[xTABLE_SCHEMAx]].[usp_Insert_[xTABLE_NAMEx]]
+	[xINPUT_PARAMSx]
+	, @CurrentModificationBy BIGINT
+	, @[xTABLE_NAMEx]ID BIGINT OUTPUT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	BEGIN TRY
+		DECLARE @CurrentModificationOn DATETIME;
+		SELECT @CurrentModificationOn = GETDATE();
+		
+		SELECT @[xTABLE_NAMEx]ID = [[xTABLE_SCHEMAx]].[ufn_IsExists_[xTABLE_NAMEx]] ([xFN_ARGSx], 0);
+		
+		IF @[xTABLE_NAMEx]ID = 0
+		BEGIN
+			INSERT INTO [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]]
+			(
+				[xINSERT_FIELDSx]
+				, [CreatedBy]
+				, [CreatedOn]
+				, [LastModifiedBy]
+				, [LastModifiedOn]
+				, [IsActive]
+			)
+			VALUES
+			(
+				[xINSERT_VARSx]
+				, @CurrentModificationBy
+				, @CurrentModificationOn
+				, @CurrentModificationBy
+				, @CurrentModificationOn
+				, 1
+			);
+			
+			SELECT @[xTABLE_NAMEx]ID = MAX([[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID]) FROM [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]];
+		END
+		ELSE
+		BEGIN			
+			SELECT @[xTABLE_NAMEx]ID = -1;
+		END		
+	END TRY
+	BEGIN CATCH
+		-- ERROR CATCHING - STARTS
+		BEGIN TRY
+			EXEC [Audit].[usp_Insert_ErrorLog];
+			SELECT @[xTABLE_NAMEx]ID = (MAX([Audit].[ErrorLog].[ErrorLogID]) * -1) FROM [Audit].[ErrorLog];
+		END TRY
+		BEGIN CATCH
+			RAISERROR('Error in [Audit].[usp_Insert_ErrorLog]', -1, -1);
+		END CATCH
+		-- ERROR CATCHING - ENDS
+	END CATCH	
+END
+GO

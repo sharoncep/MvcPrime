@@ -1,0 +1,61 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.DashBoardModel
+
+<div>
+    <table border="0" cellpadding="4" border-color="#ff0000">
+        <tr bgcolor="#270a38" color="#ffffff">
+            <td width="35%">@Resources.ClaimatePrimeWebResx.Email               
+            </td>
+            <td width="25%">@Resources.ClaimatePrimeWebResx.LastName
+            </td>
+            <td width="15%">@Resources.ClaimatePrimeWebResx.FirstName
+            </td>
+            <td width="10%">@Resources.ClaimatePrimeWebResx.MiddleName
+            </td>
+        </tr>
+
+        @{
+            bool isOdd = false;
+
+            foreach (usp_GetDashboardVisitPdf_PatientVisit_Result item in Model.DashboardPdfVisit)
+            {
+                isOdd = !isOdd;
+
+                if (isOdd)
+                {
+            <tr>
+                <td>@item.SL_NO</td>
+                <td>@item.ClinicName</td>
+                <td>@item.Name
+                </td>
+                <td>@item.ChartNumber
+                </td>
+                <td>@StaticClass.GetDateStr(item.DOS)
+                </td>
+                <td>@item.PatientVisitID
+                </td>
+            </tr>
+                }
+                else
+                {
+                    
+            <tr bgcolor="#e6e6e6">
+                <td>@item.SL_NO</td>
+                <td>@item.ClinicName</td>
+                <td>@item.Name
+                </td>
+                <td>@item.ChartNumber
+                </td>
+                <td>@StaticClass.GetDateStr(item.DOS)
+                </td>
+                <td>@item.PatientVisitID
+                </td>
+            </tr>
+                }
+            }           
+            
+        }
+    </table>
+</div>

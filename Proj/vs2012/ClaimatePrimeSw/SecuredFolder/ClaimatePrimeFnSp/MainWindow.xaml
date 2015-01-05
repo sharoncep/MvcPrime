@@ -1,0 +1,9 @@
+﻿<Window x:Class="ClaimatePrimeFnSp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Claimate Prime Basic (Common) Scalar Function and Stored Procedure Creation" Name="FnSpWin" Height="150" Width="385" WindowStyle="SingleBorderWindow" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" MaxHeight="Infinity" MaxWidth="Infinity" Loaded="Window_Loaded" MinHeight="0" Top="0" SizeChanged="FnSpWin_SizeChanged" Icon="file:///D:/working%20folder/ClaimatePrime/Proj/vs2012/ClaimatePrimeSw/SecuredFolder/ClaimatePrimeFnSp/Resources/favicon.ico">
+    <Grid Background="#FFC0E0FF">
+        <TreeView Height="35" HorizontalAlignment="Left" Margin="0,0,0,0" Name="tvTables" VerticalAlignment="Top" Width="129" FontSize="14" FontFamily="Verdana" FontWeight="ExtraBold" Background="#FFC0E0FF" />
+        <ProgressBar Height="46" HorizontalAlignment="Left" Margin="34,62,0,0" Name="pgBar1" VerticalAlignment="Top" Width="217" Minimum="1" Maximum="100" Background="White" BorderBrush="Chartreuse" />
+    </Grid>
+</Window>

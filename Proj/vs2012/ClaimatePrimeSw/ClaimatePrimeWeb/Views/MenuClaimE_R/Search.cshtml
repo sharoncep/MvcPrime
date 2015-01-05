@@ -1,0 +1,62 @@
+﻿@{
+    
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@model ClaimatePrimeModels.Models.MenuClaimSearchModel
+
+<div>
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicView", "Search", 1, 0))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>Claim Process</li>
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub")
+    <div class="dv-block">
+
+        <ul class="ul-menu">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaimsNITE"))" rel="menu_tile" class="menu-unassigned-claims-nit" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UnasgnClaimsNIT (@Model.UnassigneClaimNITCount.Value / @Model.UnassigneClaimCount.Value)</a></li>
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UnassgnClaimsE"))" rel="menu_tile" class="menu-unassigned-claims" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.UnasgnClaims (@Model.UnassigneClaimCount.Value)</a></li>
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CreatedClaimsE"))" rel="menu_tile" class="menu-created-claims" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.ClaimCreated (@Model.CreatedClaimCount.Value) </a></li>
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsNITE"))"  rel="menu_tile" class="menu-assigned-claims-nit" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AsgnClaimsNIT (@Model.AssignedClaimNITCount.Value / @Model.AssignedClaimCount.Value)</a></li>
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AssgnClaimsE"))" rel="menu_tile" class="menu-assigned-claims" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AsgnClaims (@Model.AssignedClaimCount.Value)</a></li>
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDIE"))" rel="menu_tile" class="menu-edi-files-ea" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.EDIFiles</a></li>
+            <li><a class="menu-team-members-ba" href="@Url.RouteUrl(StaticClass.RouteValues("TeamMembers"))" rel="menu_tile" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.TeamMember</a>
+        </ul>
+
+
+    </div>
+</div>
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveSucc" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>
+

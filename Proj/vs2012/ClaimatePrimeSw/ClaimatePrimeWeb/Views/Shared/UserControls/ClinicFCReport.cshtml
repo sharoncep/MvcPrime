@@ -1,0 +1,103 @@
+﻿@*http://www.fusioncharts.com/goodies/fusioncharts-free/chart-gallery/*@
+
+<div class="dv-block-search-chart">
+    <div class="dv-dropdown">
+        <select id="ddlPeriod" class="ddl" onchange="javascript:return fusionChartDdl();">
+            <option value="YEARLY">@Resources.ClaimatePrimeWebResx.Yearly</option>
+            <option value="MONTHLY">@Resources.ClaimatePrimeWebResx.Monthly</option>
+            <option value="DAILY">@Resources.ClaimatePrimeWebResx.Daily</option>
+        </select>
+    </div>
+    <div id="divYear" class="dv-dropdown">
+        <select id="ddlYear" class="ddl" onchange="javascript:return fusionChartDdl();">
+        </select>
+    </div>
+    <div id="divMon" class="dv-dropdown">
+        <select id="ddlMon" class="ddl" onchange="javascript:return fusionChartDdl();">
+            <option value="01">@Resources.ClaimatePrimeWebResx.January</option>
+            <option value="02">@Resources.ClaimatePrimeWebResx.February</option>
+            <option value="03">@Resources.ClaimatePrimeWebResx.March</option>
+            <option value="04">@Resources.ClaimatePrimeWebResx.April</option>
+            <option value="05">@Resources.ClaimatePrimeWebResx.May</option>
+            <option value="06">@Resources.ClaimatePrimeWebResx.June</option>
+            <option value="07">@Resources.ClaimatePrimeWebResx.July</option>
+            <option value="08">@Resources.ClaimatePrimeWebResx.August</option>
+            <option value="09">@Resources.ClaimatePrimeWebResx.September</option>
+            <option value="10">@Resources.ClaimatePrimeWebResx.October</option>
+            <option value="11">@Resources.ClaimatePrimeWebResx.November</option>
+            <option value="12">@Resources.ClaimatePrimeWebResx.December</option>
+        </select>
+    </div>
+    @*Chart Legends*@
+    <div id="divChartLeg">
+        <div class="dv-legend">
+            <a href="#" id="aLgndE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandDiv('Lgnd');" class="aListExpand"></a>
+            <a href="#" id="aLgndC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapseDiv('Lgnd');" class="aListCollapse"></a>
+        </div>
+        <div id="divLgndC" style="" title="">
+            <ul class="ul-legend">
+                <li>)</li>
+                <li id="liDone" class="vBold">0</li>
+                <li>(</li>
+                <li>
+                    @Resources.ClaimatePrimeWebResx.Done
+                </li>
+                <li><span class="lg-accepted"></span></li>
+
+
+                <li>)</li>
+                <li id="liSent" class="vBold">0</li>
+                <li>(</li>
+                <li>
+                    @Resources.ClaimatePrimeWebResx.Sent
+                </li>
+                <li><span class="lg-sent"></span></li>
+
+
+                <li>)</li>
+                <li id="liReadyToSend" class="vBold">0</li>
+                <li>(</li>
+                <li>
+                    @Resources.ClaimatePrimeWebResx.ReadyToSend
+                </li>
+                <li><span class="lg-ready"></span></li>
+
+                <li>)</li>
+                <li id="liInProg" class="vBold">0</li>
+                <li>(</li>
+                <li>
+                    @Resources.ClaimatePrimeWebResx.InProgress
+                </li>
+                <li><span class="lg-hold"></span></li>
+
+                <li>)</li>
+                <li id="liVisit" class="vBold">0</li>
+                <li>(</li>
+                <li>
+                    @Resources.ClaimatePrimeWebResx.Visit
+                </li>
+                <li><span class="lg-visit"></span></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="dv-shadowline-chart">
+</div>
+@*Chart*@
+<div style="overflow: hidden; width: 1000px; height: 450px;">
+    <div id="divChart" class="dv-block" style="position: relative;">
+    </div>
+</div>
+@*Chart Paging*@
+<div id="divChartPg" class="dv-block">
+    <a id="aChartPgN" href="#" onclick="javascript:return fusionChartPg('N');" class="next">@Resources.ClaimatePrimeWebResx.Next</a>
+    <span id="spnChartPgN" class="next-disabled">@Resources.ClaimatePrimeWebResx.Next</span>
+    <a id="aChartPgP" href="#" onclick="javascript:return fusionChartPg('P');" class="previous">@Resources.ClaimatePrimeWebResx.Previous</a>
+    <span id="spnChartPgP" class="previous-disabled">@Resources.ClaimatePrimeWebResx.Previous</span>
+</div>
+@*Chart Supports (Hidden)*@
+<div style="display: none;">
+    <input type="text" id="hdnFusChrtWid" value="0" />
+    <input type="text" id="hdnFusChrtTyp" value="0" />
+</div>

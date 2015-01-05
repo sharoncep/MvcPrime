@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeConstants;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@model ClaimatePrimeModels.Models.UserReportSearchModel
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise", "PatientDash"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.PatientWiseReport</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-wrap-import">
+    <ul class="ul-fleft">
+        <li>
+            @Resources.ClaimatePrimeWebResx.ImportedOn
+            <span>@StaticClass.GetDateTimeStr(Model.UserReportResults[0].ExcelImportedOn)</span>
+        </li>
+    </ul>
+    <div style="clear: both">
+    </div>
+</div>
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li>
+            @{
+                string reImportStyle = "display:none;";
+                string reImportingStyle = "display:none;";
+
+                if (Model.UserReportResults[0].CurrImportEndOn.HasValue)
+                {
+                    reImportStyle = string.Empty;
+                    reImportingStyle = "display:none;";
+                }
+                else
+                {
+                    if ((DateAndTime.GetDateDiff(DateIntervals.DAY, Model.UserReportResults[0].CurrImportStartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 1) && (DateAndTime.GetDateDiff(DateIntervals.HOUR, Model.UserReportResults[0].CurrImportStartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 5) && (DateAndTime.GetDateDiff(DateIntervals.MINUTE, Model.UserReportResults[0].CurrImportStartOn, DateTime.Now.AddSeconds(StaticClass.SvrTimeSecDiff)) < 300))
+                    {
+                        reImportStyle = "display:none;";
+                        reImportingStyle = string.Empty;
+                    }
+                    else
+                    {
+                        reImportStyle = string.Empty;
+                        reImportingStyle = "display:none;";
+                    }
+                }
+                    
+                <a href="#" id="aReImport" class="reimport" rel="menu_tile" style="@reImportStyle" onclick="javascript:return reImport();" title="@Resources.ClaimatePrimeWebResx.ClickHere">
+                    <div class="dv-lastreimport">
+                        @Resources.ClaimatePrimeWebResx.ReImport
+                    </div>
+                </a>
+                
+                <div id="divReImport" class="reimport-prog" style="@reImportingStyle" title ="@Model.UserReportResults[0].UserReportID">
+                    @Resources.ClaimatePrimeWebResx.ReImport
+                    <div id="divReImportMsg" class="dv-lastReImport">
+                        @Resources.ClaimatePrimeWebResx.ReImportStartOn.Replace("[X]", StaticClass.GetDateTimeStr(Model.UserReportResults[0].CurrImportStartOn))
+                    </div>
+                </div>
+            }
+
+        </li>
+        <li><a href="#" title="ClickHere" class="excel" rel="menu_tile" onclick="javascript:return downloadExcelPatient('@Model.UserReportResults[0].UserReportID');">@Resources.ClaimatePrimeWebResx.Export</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCPatientWise"))" class="summary-report" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.SummaryReport</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise", "DateWise"))" class="date-wise-reports" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.DateWiseReport</a></li>
+        @*<li><a href="@Url.Content("~/ClinicAllSumRpt/")" title="ClickHere" rel="menu_tile" class="summary-report" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.SummaryReport</a></li>*@
+    </ul>
+</div>

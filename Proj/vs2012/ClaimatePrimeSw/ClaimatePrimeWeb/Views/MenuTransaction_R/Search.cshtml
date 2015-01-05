@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuM", "Search"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Transaction</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AuthQualifierM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-authorization-mgr">@Resources.ClaimatePrimeWebResx.AuthorizationQualifier</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("SecurityQuali", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-security-mgr">@Resources.ClaimatePrimeWebResx.SecurityQualifier</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("TransPurpsCodeM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-purposecode-mgr">@Resources.ClaimatePrimeWebResx.TransactionPurposeCode</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("TransTypeCodeM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-typecode-mgr">@Resources.ClaimatePrimeWebResx.TransactionTypeCode</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClaimMediaM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-claim-media-mgr">@Resources.ClaimatePrimeWebResx.ClaimMedia</a></li>
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("CommunicationNumberQualifier", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-communication-mgr">@Resources.ClaimatePrimeWebResx.CommunicationNumberQualifier</a></li>
+        <li><a  href="@Url.RouteUrl(StaticClass.RouteValues("CurrencyCode", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-currency-code-mgr">@Resources.ClaimatePrimeWebResx.CurrencyCode</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EntityIdentifierCode", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-entity-Code-mgr">@Resources.ClaimatePrimeWebResx.EntityIdentifierCode</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EntityTypeM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-entity-type-qual-mgr">@Resources.ClaimatePrimeWebResx.EntityTypeQualifier</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("InterchangeIDQualifier", "Search"))" rel="menu_tile" class="menu-interchange-id-mgr">@Resources.ClaimatePrimeWebResx.InterchangeIdQualifier</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("UsageIndicatorM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-interchange-usage-indicator-mgr">@Resources.ClaimatePrimeWebResx.UsageIndicator</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PayerResSeq", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-payer-responsibility-mgr">@Resources.ClaimatePrimeWebResx.PayerResponsibilitySequenceNumberCode</a></li>
+    </ul>
+</div>

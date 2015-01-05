@@ -1,0 +1,19 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Description:The ufn_GetMonthFirstDate Function is used to Get the First Date of the month which we give as INPUT.
+
+CREATE FUNCTION [[xTABLE_SCHEMAx]].[ufn_GetMonthFirstDate] 
+(
+	@DT		DATETIME
+)
+RETURNS DATETIME
+AS
+BEGIN
+	SELECT @DT = CAST(CONVERT(NVARCHAR(10), @DT, 101) AS DATETIME);
+	RETURN (SELECT DATEADD(dd,-(DAY(DATEADD(mm,1,@DT))-1), DATEADD(mm,0,@DT)));
+END
+GO

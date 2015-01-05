@@ -1,0 +1,4 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\bin\Release\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\bin\Release\ClaimatePrimeConstants.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Release\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ClaimatePrimeConstants\obj\Release\ClaimatePrimeConstants.pdb

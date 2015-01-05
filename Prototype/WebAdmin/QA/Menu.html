@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Claimate Prime</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="../../Images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../../Images/favicon.png" type="image/png" />
+    <link href="../../Stylesheets/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="dv-top-bar">
+        <div>
+            <ul class="ul-nav" onmouseover="javascript:$('#divUserDetails').slideDown();">
+                <li>Logged in as, </li>
+                <li style="margin: 8px"><em>Web Administrator</em></li>
+                <li><span class="d-arrow"></span></li>
+            </ul>
+            <div id="divUserDetails" class="dv_userdetails">
+                <ul class="userdetails">
+                    <li><span class="s-user-role"><a href="../Role_Selection.html">Quality Analyzis Agent</a></span></li>
+                    <li><span class="s-email">softtest@in.arivameddata.com</span></li>
+                    <li><span class="s-phone">(944)643-2544</span></li>
+                    <li><a href="#" class="change-pwd">Change Password</a></li>
+                    <li><a href="../../index.html" class="logout">LogOut</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dv-clock-wrap">
+            <div class="dv-clock">
+                <label id="liHour">
+                </label>
+                <label>
+                    :</label>
+                <label id="liMinute">
+                </label>
+                <label>
+                    :</label>
+                <label id="liSecond">
+                </label>
+            </div>
+            <div class="dv-date">
+                <label id="liDayName">
+                </label>
+                <label>
+                    -</label>
+                <label id="liDay">
+                </label>
+                <label id="liMonthName">
+                </label>
+                <label id="liYear">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="dv-main_wrapper" onmouseover="javascript:$('#divUserDetails').slideUp();">
+        <a href="../Dashboard.html" style="display: inline-block">
+            <div class="dv-sitelogo">
+            </div>
+        </a>
+         <div id="divMainMenu">
+        </div>
+        <div class="dv-page-header">
+            <ul class="ul-header">
+                <li><a href="Clinic_Selection.html" title="Back" class="back-button"></a></li>
+                <li>Coding &amp; Billing</li>
+            </ul>
+            <ul class="ul-sub-header">
+                <li class="li-clinic"><a href="Clinic_Selection.html" class="aClinic"></a> Carraway Methodist Medical Center</li>
+            </ul>
+        </div>
+        <div class="dv-shadowline">
+        </div>
+        <div class="dv-block">
+                <ul class="ul-menu">
+                    <li><a href="General_Queue_NIT.html" rel="menu_tile" class="menu-unassigned-claims-nit-ba">Unassigned Claims [Not In Track] (5 
+                        / 50)</a></li>
+                    <li><a href="General_Queue.html" rel="menu_tile" class="menu-unassigned-claims-ba">Unassigned Claims (50)</a></li>
+                    <li><a href="My_Claims.html" rel="menu_tile" class="menu-created-claims-ba">Created Claims (900)</a></li>
+                    <li><a href="My_Queue_NIT.html" rel="menu_tile" class="menu-assigned-claims-nit-ba">Assigned Claims [Not In Track] (3 
+                        / 30)</a></li>
+                    <li><a href="My_Queue.html" rel="menu_tile" class="menu-assigned-claims-ba">Assigned Claims (30)</a></li>
+                    <li><a href="Team_Members.html" rel="menu_tile" class="menu-team-members-ba">Team Members (7)</a></li>
+                </ul>
+           </div>
+    </div>
+    <div class="dv-footer">
+        <ul class="ul-browser">
+            <li>Supported Browsers</li>
+            <li class="mozilla" title="Mozilla Firefox 19+"></li>
+            <li class="safari" title="Safari 5+"></li>
+            <li class="chrome" title="Google Chrome 23+"></li>
+            <li class="iexplorer" title="IE 10+"></li>
+            <li class="opera" title="Opera 12+"></li>
+        </ul>
+        <ul class="ul-flink">
+        <li><a href="#" target="_blank" onclick="javascript:return false;">
+                FAQ</a></li>
+            <li class="seperator">|</li>
+            <li><a href="https://www.arivameddata.com/claimate-capitated/LoginPage.aspx" target="_blank">
+                Claimate</a></li>
+            <li class="seperator">|</li>
+            <li><a href="http://claimatereports.arivameddata.com/LIVE/" target="_blank">Claimate
+                Reports</a></li>
+            <li>&nbsp;</li>
+            <li>&copy; Claimate 2008- 2013</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="../../JavaScripts/jquery-1.9.0.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/Base.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/Clock.js" type="text/javascript" defer="defer"></script>
+<script src="../../JavaScripts/WebAdmin/QA/QAMenu.js" type="text/javascript" defer="defer"></script>

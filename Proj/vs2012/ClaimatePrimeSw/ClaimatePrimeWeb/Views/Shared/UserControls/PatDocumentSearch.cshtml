@@ -1,0 +1,55 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+
+@model ClaimatePrimeModels.Models.PatientDocumentSearchModel
+
+<div style="display: none;">
+    @Html.TextBoxFor(m => m.StartBy)
+    @Html.TextBoxFor(m => m.CurrNumber)
+    @Html.TextBoxFor(m => m.OrderByField)
+    @Html.TextBoxFor(m => m.OrderByDirection)
+    @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+    <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+    <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+
+
+
+    @Html.TextBoxFor(m => m.PatientID,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+
+
+    @Html.TextBoxFor(m => m.SearchName,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }       
+                                    }))
+</div>
+
+<div class="dv-block">
+    <div>
+        <a href="#" class="aButton-search" onclick="javascript:$('#divSearch').slideToggle(); return false;">@Resources.ClaimatePrimeWebResx.Search</a>
+    </div>
+    <div id="divSearch" class="dv-block-search">
+        <ul class="ul-search-criteria">
+            <li><span>@Resources.ClaimatePrimeWebResx.NameChart</span> @Html.TextBoxFor(m => m.SearchName,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("rel", "txtsearch") }    
+                                    }))</li>
+            <li><a href="#" onclick="javascript:return setSearch('', '', '');" class="aSearch1" title="@Resources.ClaimatePrimeWebResx.Search"></a></li>
+        </ul>
+    </div>
+
+</div>
+

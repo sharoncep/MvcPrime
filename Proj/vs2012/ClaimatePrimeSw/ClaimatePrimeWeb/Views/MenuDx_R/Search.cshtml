@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuM", "Search"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.DxCPT</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DxM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-dx-mgr">@Resources.ClaimatePrimeWebResx.Diagnosis</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("CPTM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();"  class="menu-cpt-mgr">@Resources.ClaimatePrimeWebResx.Procedure</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ModifierM", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-pos-modifier-mgr">@Resources.ClaimatePrimeWebResx.Modifier </a></li> 
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DiagnosisGroup", "Search"))" rel="menu_tile" onclick="javascript:showDivPageLoading();" class="menu-dg-mgr">@Resources.ClaimatePrimeWebResx.dg </a></li> 
+    </ul>
+</div>

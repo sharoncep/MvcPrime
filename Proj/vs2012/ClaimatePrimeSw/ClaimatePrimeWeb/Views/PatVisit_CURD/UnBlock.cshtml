@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatVisit"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Visit </li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+</div>

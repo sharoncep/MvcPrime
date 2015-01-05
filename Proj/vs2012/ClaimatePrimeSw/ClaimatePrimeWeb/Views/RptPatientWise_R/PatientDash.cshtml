@@ -1,0 +1,257 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@model ClaimatePrimeModels.Models.UserReportSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptClinicWise", "PatientNameList")) title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading('');"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.PatientDash</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <div class="dv-mlr-wrap">
+        <table class="table-h">
+            <tr class="tr-head">
+                <td colspan="3">2008
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>HCC
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Fund PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>Exp PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Net PMPM
+                </td>
+                <td class="td-green">0000.00
+                </td>
+                <td class="td-green">0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>MLR %
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="dv-mlr-wrap">
+        <table class="table-h">
+            <tr class="tr-head">
+                <td colspan="3">2009
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>HCC
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Fund PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>Exp PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Net PMPM
+                </td>
+                <td class="td-green">0000.00
+                </td>
+                <td class="td-green">0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>MLR %
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="dv-mlr-wrap">
+        <table class="table-h">
+            <tr class="tr-head">
+                <td colspan="3">2010
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>HCC
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Fund PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>Exp PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Net PMPM
+                </td>
+                <td class="td-red">-100.00
+                </td>
+                <td class="td-red">-100.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>MLR %
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="dv-mlr-wrap">
+        <table class="table-h">
+            <tr class="tr-head">
+                <td colspan="3">2011
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>HCC
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Fund PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>Exp PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Net PMPM
+                </td>
+                <td class="td-green">0000.00
+                </td>
+                <td class="td-green">0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>MLR %
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="dv-mlr-wrap">
+        <table class="table-h">
+            <tr class="tr-head">
+                <td colspan="3">2012
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>HCC
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Fund PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row1">
+                <td>Exp PMPM
+                </td>
+                <td>0000.00
+                </td>
+                <td>0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>Net PMPM
+                </td>
+                <td class="td-green">0000.00
+                </td>
+                <td class="td-green">0000.00
+                </td>
+            </tr>
+            <tr class="tr-row2">
+                <td>MLR %
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="dv-shadowline">
+</div>
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise", "HedisRpt"))" class="menu-hedis" rel="menu_tile">@Resources.ClaimatePrimeWebResx.Hedis</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise", "MraRpt"))" class="menu-mra" rel="menu_tile">@Resources.ClaimatePrimeWebResx.MRA</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise"))" class="patient-wise-reports" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.PatientWiseReport</a></li>
+    </ul>
+</div>

@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.Ansi8375010SearchModel
+
+<div>
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("EDIRcvrView", "Search", 1, 0))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.Create837 - <span>@Model.EDIReceiverNameCode.EDIReceiverName</span></li>
+        </ul>
+    </div>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+
+    @using (Html.ArivaForm("EDICreate"))
+    {
+        
+        <div style="display: none;">
+            @Html.TextBoxFor(m => m.StartBy)
+            @Html.TextBoxFor(m => m.CurrNumber)
+            @Html.TextBoxFor(m => m.OrderByField)
+            @Html.TextBoxFor(m => m.OrderByDirection)
+            @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+            <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+            <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+        </div>
+        <div class="dv-note">
+            @Resources.ClaimatePrimeWebResx.Note :
+            <ul>
+                <li>@Resources.ClaimatePrimeWebResx.CreateEDINote </li>
+            </ul>
+        </div>
+        if (Model.PatientVisit.Count < 1)
+        {    
+        @Html.Partial("UserControls/NoRec")
+        }
+        else
+        {
+        <table class="table-grid-view">
+            <tr>
+                @if (string.Compare(Model.OrderByDirection, "D", true) == 0)
+                {
+                    
+                    <td style="width: 30%" class="td-gridhead">
+                        @Resources.ClaimatePrimeWebResx.Name
+                    </td>
+                    
+                    <td style="width: 20%" class="td-gridhead">
+                        @Resources.ClaimatePrimeWebResx.ChartNo
+                    </td>
+                
+                    <td style="width: 20%" class="td-gridhead">
+                        @Resources.ClaimatePrimeWebResx.DOS
+                    </td>
+                    
+                    <td width="15%" class="td-gridhead">
+                        @Resources.ClaimatePrimeWebResx.CaseNo
+                    </td>
+                }
+
+
+            </tr>
+
+            @for (int i = 0; i < Model.PatientVisit.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(m => Model.PatientVisit[i].PatientVisitID,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+
+                        @string.Concat(Model.PatientVisit[i].PATIENT_LAST_NAME, " ", Model.PatientVisit[i].PATIENT_FIRST_NAME, " ", Model.PatientVisit[i].PATIENT_MIDDLE_NAME)
+                    </td>
+                    <td>
+                        @Model.PatientVisit[i].ChartNumber
+                    </td>
+                    <td>
+                        @StaticClass.GetDateStr(Model.PatientVisit[i].DOS)
+                    </td>
+                    <td>
+                        @Model.PatientVisit[i].PatientVisitID
+                    </td>
+                </tr>
+            }
+
+            @Html.TextBoxFor(m => m.EDIReceiverID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }                                        
+                                    }))
+        </table>
+        <div class="dv-submit-controls">
+            <ul>
+                <li>
+                    <input type="submit" name="btnSave" id="btnSave" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" onclick="javascript: showDivPageLoading();"></li>
+                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDIE"))" class="aButton-cancel" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Cancel</a></li>
+            </ul>
+        </div>
+        
+        }
+    }
+
+</div>
+
+
+
+
+

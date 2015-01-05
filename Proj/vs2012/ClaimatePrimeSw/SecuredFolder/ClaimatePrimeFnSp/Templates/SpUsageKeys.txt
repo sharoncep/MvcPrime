@@ -1,0 +1,4 @@
+﻿IsExists
+Insert
+Update
+GetByPkId

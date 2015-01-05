@@ -1,0 +1,137 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+@model ClaimatePrimeModels.Models.UserReportSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptPatientWise","PatientDash"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading('');">
+        </a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Hedis</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <table class="table-h">
+        <tr class="tr-head">
+            <td class="td-head-description">
+                Hedis
+            </td>
+            <td class="td-head-status">
+                Status
+            </td>
+            <td class="td-head-star">
+                Star
+            </td>
+        </tr>
+        <tr class="tr-row1">
+            <td class="td-description">
+                C01-BREAST CANCER SCREENING
+            </td>
+            <td class="td-red">
+                OPEN
+            </td>
+            <td class="td-star" rowspan="12">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr-row2">
+            <td class="td-description">
+                C02-COLORECTAL CANCER SCREENING
+            </td>
+            <td class="td-green">
+                MET
+            </td>
+        </tr>
+        <tr class="tr-row1">
+            <td class="td-description">
+                C03-CARDIOVASCULAR CARE - CHOLESTROL SCREENING
+            </td>
+            <td class="td-red">
+                OPEN
+            </td>
+        </tr>
+        <tr class="tr-row2">
+            <td class="td-description">
+                C04-DIABETES CARE- CHOLESTEROL SCREENING
+            </td>
+            <td class="td-red">
+                OPEN
+            </td>
+        </tr>
+        <tr class="tr-row1">
+            <td class="td-description">
+                C05-GLAUCOMA TESTING
+            </td>
+            <td class="td-red">
+                OPEN
+            </td>
+        </tr>
+        <tr class="tr-row2">
+            <td class="td-description">
+                C11-ADULT ACCESS TO PRIMARY CARE DOCTOR VISITS
+            </td>
+            <td class="td-status-na">
+                N/A
+            </td>
+        </tr>
+        <tr class="tr-row1">
+            <td class="td-description">
+                C16-OSTEOPOROSIS MANAGEMENT IN WOMEN WHO HAD A FRACTURE
+            </td>
+            <td class="td-status-na">
+                N/A
+            </td>
+        </tr>
+        <tr class="tr-row2">
+            <td class="td-description">
+                C17-DIABETES CARE- EYE EXAM
+            </td>
+            <td class="td-green">
+                MET
+            </td>
+        </tr>
+        <tr class="tr-row1">
+            <td class="td-description">
+                C18-DIABETES CARE- KIDNEY DISEASE MONITORING
+            </td>
+            <td class="td-red">
+                OPEN
+            </td>
+        </tr>
+        <tr class="tr-row2">
+            <td class="td-description">
+                C19-DIABETES CARE- BLOOD SUGAR (INVERSE)
+            </td>
+            <td class="td-red">
+                OPEN
+            </td>
+        </tr>
+        <tr class="tr-row1">
+            <td class="td-description">
+                C20-DIABETES CARE- CHOLESTEROL CONTROLLED
+            </td>
+            <td class="td-green">
+                MET
+            </td>
+        </tr>
+        <tr class="tr-row2">
+            <td class="td-description">
+                C22-RHEUMATOID ARTHRITIS MANAGEMENT
+            </td>
+            <td class="td-green">
+                MET
+            </td>
+        </tr>
+    </table>
+</div>

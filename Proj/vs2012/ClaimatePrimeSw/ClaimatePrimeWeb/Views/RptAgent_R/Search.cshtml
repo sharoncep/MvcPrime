@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptDashboard"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.AgentReport</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    <ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptAgent", "AgentNameList"))"rel="menu_tile" class="agent-reports"  onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.AgentWiseRpt</a></li>
+      <li><a href="@Url.RouteUrl(StaticClass.RouteValues("RptSumFCAgent"))" class="summary-report" rel="menu_tile" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.SummaryReport</a></li>
+    </ul>
+    @*<ul class="ul-menu">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicAllRpt"))" rel="menu_tile_ucw" class="all-reports" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.AllClinicRpt</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicRpt"))" rel="menu_tile_ucw" class="clinic-wise-reports" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.ClinicWiseRpt</a></li>
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("AgentRpt"))"rel="menu_tile_ucw" class="agent-reports" onclick="javascript:showDivPageLoading('');">@Resources.ClaimatePrimeWebResx.AgentWiseRpt</a></li>
+    </ul>*@
+</div>

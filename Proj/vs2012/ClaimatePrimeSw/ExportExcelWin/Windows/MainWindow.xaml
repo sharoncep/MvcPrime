@@ -1,0 +1,9 @@
+﻿<base:BaseWpf x:Class="ExportExcelWin.Windows.MainWindow" x:Name="cphmoMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:base="clr-namespace:ExportExcelWin.SecuredFolder.BaseWpfs"
+        Style="{StaticResource FormStyle}" WindowStartupLocation="CenterScreen">
+    <Border Style="{StaticResource BorderStyle}">
+        <Label Name="lblPageHeader" Content="{Binding Title, ElementName=cphmoMainWindow}" ToolTip="{Binding Title, ElementName=cphmoMainWindow}" Style="{StaticResource LabelStyle}" Foreground="#62327d" />
+    </Border>
+</base:BaseWpf>

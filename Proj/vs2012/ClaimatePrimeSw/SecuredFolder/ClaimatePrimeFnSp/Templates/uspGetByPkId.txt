@@ -1,0 +1,29 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- Select the particular record
+
+CREATE PROCEDURE [[xTABLE_SCHEMAx]].[usp_GetByPkId_[xTABLE_NAMEx]] 
+	@[xTABLE_NAMEx]ID	[xPK_DATA_TYPEx]
+	, @IsActive	BIT = NULL
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT
+		[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].*
+	FROM
+		[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]]
+	WHERE
+		[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[[xTABLE_NAMEx]ID] = @[xTABLE_NAMEx]ID
+	AND
+		[[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[IsActive] = CASE WHEN @IsActive IS NULL THEN [[xTABLE_SCHEMAx]].[[xTABLE_NAMEx]].[IsActive] ELSE @IsActive END;
+
+	-- EXEC [[xTABLE_SCHEMAx]].[usp_GetByPkId_[xTABLE_NAMEx]] 1, NULL
+	-- EXEC [[xTABLE_SCHEMAx]].[usp_GetByPkId_[xTABLE_NAMEx]] 1, 1
+	-- EXEC [[xTABLE_SCHEMAx]].[usp_GetByPkId_[xTABLE_NAMEx]] 1, 0
+END
+GO

@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeModels.Models;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeEFWork.EFContexts;
+@model ClaimatePrimeModels.Models.EDIReceiverDisplayModel
+
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDIE"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Create837</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+
+<div class="dv-block">
+    <ul class="ul-menu">
+        @{
+            bool isOdd = false;
+            foreach (usp_GetNameCode_EDIReceiver_Result item in Model.EDIReceiverResult)
+            {
+                isOdd = isOdd ? false : true;
+            <li>
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("EDICreate", "Search", Convert.ToUInt32(item.EDIReceiverID), 0))" rel="menu_tile" class="@string.Concat("clinic", isOdd ? "1" : "2")" onclick="javascript:showDivPageLoading();">@item.NAME_CODE (@item.ClaimCount)</a>
+            </li>
+            }
+               
+        }
+    </ul>
+</div>

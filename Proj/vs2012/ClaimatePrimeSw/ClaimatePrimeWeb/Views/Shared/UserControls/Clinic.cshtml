@@ -1,0 +1,93 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+@model ClaimatePrimeModels.Models.ClinicSaveModel
+
+<div class="dv-block">
+    <table class="table-entry">
+        @Html.Partial("UserControls/ClinicSub")
+        <tr>
+            <td>@Resources.ClaimatePrimeWebResx.SelectLogo
+            </td>
+            <td>
+                <span class="label_hint">
+                    @Resources.ClaimatePrimeWebResx.UploadSize.Replace("[X]", Convert.ToString(StaticClass.ConfigurationGeneral.mUploadMaxSizeInMBID))
+                </span>
+                <div class="FileUpload">
+                    <input type="file" id="filUpload" name="filUpload" class="BrowserHidden" accept="@StaticClass.CsResources("PhotoAccept")" onchange="javascript:fileBrowseChange(this);" />
+                    <div id="BrowserHidden" class="BrowserVisible">
+                        <input type="text" id="txtfilUpload" class="FileField" style="width: 180px" readonly="true" onclick="javascript: fileBrowseClick(this);" />
+                    </div>
+                </div>
+            </td>
+            <td class="td-image">
+                <ul class="ul_imgEnlarge">
+                    <li class="imgPhoto">
+
+                        @if (ArivaSession.Sessions().SelRoleID != 1)
+                        {
+
+                            <img src="@Url.RouteUrl(StaticClass.RouteValues("ClinicViewM", "ShowPhoto"))" alt="" style="width: 60px; height: 60px;" onclick="javascript:return enlargePhoto(this);" title="@Resources.ClaimatePrimeWebResx.EnlargeClick" />
+                        }
+                         else
+                        {
+
+                            <img src="@Url.RouteUrl(StaticClass.RouteValues("ClinicA", "ShowPhoto"))" alt="" style="width: 60px; height: 60px;" onclick="javascript:return enlargePhoto(this);" title="@Resources.ClaimatePrimeWebResx.EnlargeClick" />
+                        }
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr @Html.Raw((ArivaSession.Sessions().IsNewRec) ? "style=display:none;" : "")>
+            <td >@Resources.ClaimatePrimeWebResx.Active
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.ClinicResult.IsActive)
+            </td>
+            <td>@Resources.ClaimatePrimeWebResx.Comments
+            </td>
+            <td colspan="3">
+                @Html.TextAreaFor(m => m.ClinicResult.Comment)
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="dv-submit-controls">
+    <ul>
+        <li>
+            <input type="submit" name="btnSave" id="btnSave" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" onclick="javascript: return validateSave();"></li>
+        <li>
+            @if (ArivaSession.Sessions().SelClinicID != 0)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicSetUpM"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>
+            }
+            else if (ArivaSession.Sessions().SelRoleID == 1)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicA"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>   
+            }
+            else if (ArivaSession.Sessions().SelRoleID == 2)
+            {
+                <a href="@Url.RouteUrl(StaticClass.RouteValues("ClinicViewM"))" class="aButton-cancel">@Resources.ClaimatePrimeWebResx.Cancel</a>     
+            }
+
+        </li>
+    </ul>
+</div>
+<div id="divEnlargePhoto" class="div_transparent">
+    <div class="dvImage">
+        @if (ArivaSession.Sessions().SelRoleID == 2)
+        {
+            <img id="imgEnlargePhoto" src="@Url.RouteUrl(StaticClass.RouteValues("ClinicViewM", "ShowPhoto"))" alt="#" style="cursor:pointer" onclick="return printImage();" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+        }
+        else
+        {
+             <img id="imgEnlargePhoto" src="@Url.RouteUrl(StaticClass.RouteValues("ClinicA", "ShowPhoto"))" alt="#" style="cursor:pointer" onclick="return printImage();" title="@Resources.ClaimatePrimeWebResx.PrintClick" />
+        }
+
+    </div>
+    <div class="dvControls_pop">
+        <a href="#" onclick="javascript:return resizePhoto();" class="close-button">@Resources.ClaimatePrimeWebResx.Close</a>
+    </div>
+</div>

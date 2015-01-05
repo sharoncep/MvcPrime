@@ -1,0 +1,40 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--Description:The Function ufn_StringSplit is used to split the Characters from the given string as OUTPUT.
+
+CREATE FUNCTION [[xTABLE_SCHEMAx]].[ufn_StringSplit]
+(
+	@SplitStr	NVARCHAR(MAX),
+	@SplitChar	NVARCHAR(5)
+) 
+RETURNS 
+@RtnValue TABLE 
+(
+	Data NVARCHAR(MAX)
+) 
+AS 
+BEGIN 
+	DECLARE @Count INT;
+	SELECT @Count = 1;
+
+	WHILE (CHARINDEX(@SplitChar,@SplitStr)>0)
+	BEGIN
+		INSERT INTO @RtnValue (Data)
+		SELECT Data = LTRIM(RTRIM(SUBSTRING(@SplitStr,1,CHARINDEX(@SplitChar,@SplitStr)-1)));
+
+		SELECT @SplitStr = SUBSTRING(@SplitStr,CHARINDEX(@SplitChar,@SplitStr)+1,LEN(@SplitStr));
+		SELECT @Count = @Count + 1
+	END
+
+	INSERT INTO @RtnValue (Data)
+	SELECT Data = LTRIM(RTRIM(@SplitStr));
+
+	RETURN;
+	
+	-- SELECT [[xTABLE_SCHEMAx]].[ufn_StringSplit] ('S, R, S, E, N, T, H, I, L', ',')
+END
+GO

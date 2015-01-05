@@ -1,0 +1,10 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\bin\Debug\ArivaCryptorEngine.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\bin\Debug\ArivaCryptorEngine.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Debug\ArivaCryptorEngine.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Debug\ArivaCryptorEngine.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Debug\ArivaCryptorEngine.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\bin\Debug\ArivaCryptorEngine.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\bin\Debug\ArivaCryptorEngine.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Debug\ArivaCryptorEngine.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Debug\ArivaCryptorEngine.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Debug\ArivaCryptorEngine.pdb

@@ -1,0 +1,4 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\bin\Release\ArivaCryptorEngine.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\bin\Release\ArivaCryptorEngine.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Release\ArivaCryptorEngine.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\SecuredFolder\ArivaCryptorEngine\obj\Release\ArivaCryptorEngine.pdb

@@ -1,0 +1,35 @@
+﻿/****** Object:  StoredProcedure [Audit].[usp_Insert_SyncStatus]    Script Date: 07/26/2013 18:22:50 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Audit].[usp_Insert_SyncStatus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [Audit].[usp_Insert_SyncStatus]
+GO
+
+/****** Object:  StoredProcedure [Audit].[usp_Insert_SyncStatus]    Script Date: 07/26/2013 18:22:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [Audit].[usp_Insert_SyncStatus] 
+	@UserID INT = NULL
+AS
+BEGIN
+	SET NOCOUNT ON;
+		
+	INSERT INTO 
+		[Audit].[SyncStatus] 
+		(
+			[StartOn]
+			, [UserID]
+		) 
+	VALUES 
+	(
+		GETDATE()
+		, @UserID
+	);
+			
+	-- EXEC [Audit].[usp_Insert_SyncStatus] 
+END
+
+GO

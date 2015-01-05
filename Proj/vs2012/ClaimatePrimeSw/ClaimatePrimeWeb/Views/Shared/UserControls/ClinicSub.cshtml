@@ -1,0 +1,490 @@
+﻿@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+@model ClaimatePrimeModels.Models.ClinicSaveModel
+
+@Html.TextBoxFor(m => m.AntiForgTokn
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                    }))
+<tr>
+    <td colspan="4" class="td-heading">
+        <div class="dv-subheading-entry"></div>
+    </td>
+</tr>
+<tr>
+    <td style="width: 20%">
+        @Resources.ClaimatePrimeWebResx.IPA <span class="star">*</span>
+    </td>
+    <td style="width: 30%">
+        @Html.TextBoxFor(m => m.ClinicResult_IPA)
+        @Html.TextBoxFor(m => m.ClinicResult.IPAID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+    </td>
+    <td style="width: 20%">@Resources.ClaimatePrimeWebResx.Code <span class="star">*</span></td>
+    <td style="width: 30%">
+        @Html.TextBoxFor(m => m.ClinicResult.ClinicCode
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "5") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.Name<span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.ClinicName
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "40") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.NPI
+        <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.NPI
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "10") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.TaxID
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.TaxID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "9") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+    <td style="width: 20%">
+        @Resources.ClaimatePrimeWebResx.EntityTypeQualifier <span class="star">*</span>
+    </td>
+    <td style="width: 30%">
+        @Html.TextBoxFor(m => m.ClinicResult_EntityTypeQualifier)
+        @Html.TextBoxFor(m => m.ClinicResult.EntityTypeQualifierID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.Specialty <span class="star">*</span>
+    </td>
+    <td style="width: 30%">
+        @Html.TextBoxFor(m => m.ClinicResult_Specialty)
+        @Html.TextBoxFor(m => m.ClinicResult.SpecialtyID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+    </td>
+</tr>
+
+<tr>
+    <td colspan="4" class="td-heading">
+        <div class="dv-subheading-entry">@Resources.ClaimatePrimeWebResx.OfficeAddress</div>
+    </td>
+</tr>
+
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.Street <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.StreetName
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.SuiteNo
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.Suite
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.City <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult_City)
+        @Html.TextBoxFor(m => m.ClinicResult.CityID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.State <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult_State)
+        @Html.TextBoxFor(m => m.ClinicResult.StateID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.Country  <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult_Country)
+        @Html.TextBoxFor(m => m.ClinicResult.CountryID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.County
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult_County)
+        @Html.TextBoxFor(m => m.ClinicResult.CountyID
+                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.PhoneNumber <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.PhoneNumber
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") },
+                                        { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_PHONE) } 
+                                        , { new KeyValueModel<string, string>("maxlength", "13") }
+                                        , { new KeyValueModel<string, string>("onkeyup", "javascript:return keyUpUIntNumericLen(this, '10')") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript: blurValidatePhone(this);") }                                       
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.SecondaryPhoneNumber
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.SecondaryPhoneNumber
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") },
+                                        { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_PHONE) } 
+                                        , { new KeyValueModel<string, string>("maxlength", "13") }
+                                        , { new KeyValueModel<string, string>("onkeyup", "javascript:return keyUpUIntNumericLen(this, '10')") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript:return blurValidatePhone(this);") }                                       
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.Email <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.Email
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_EMAIL) } 
+                                       ,  { new KeyValueModel<string, string>("maxlength", "256") }
+                                       , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript:return blurValidateEmail(this);") }                                       
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.SecondaryEmail
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.SecondaryEmail
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_EMAIL) } 
+                                       ,  { new KeyValueModel<string, string>("maxlength", "256") }
+                                       , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript:return blurValidateEmail(this);") }                                       
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td colspan="4" class="td-heading">
+        <div class="dv-subheading-entry">
+            @Resources.ClaimatePrimeWebResx.ContactPersonDetails
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.LastName <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.ContactPersonLastName
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.FirstName <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.ContactPersonFirstName
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.MiddleName
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.ContactPersonMiddleName
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+
+</tr>
+<td>@Resources.ClaimatePrimeWebResx.PhoneNumber <span class="star">*</span>
+</td>
+<td>
+    @Html.TextBoxFor(m => m.ClinicResult.ContactPersonPhoneNumber
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }
+                                       , { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_PHONE) } 
+                                        , { new KeyValueModel<string, string>("maxlength", "13") }
+                                        , { new KeyValueModel<string, string>("onkeyup", "javascript:return keyUpUIntNumericLen(this, '10')") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript: blurValidatePhone(this);") }                                       
+                                    }))
+</td>
+<td>@Resources.ClaimatePrimeWebResx.Extension
+</td>
+<td>
+    @Html.TextBoxFor(m => m.ClinicResult.ContactPersonPhoneNumberExtn
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+</td>
+</tr>
+    <tr>
+        <td>@Resources.ClaimatePrimeWebResx.SecondaryPhoneNumber
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.ClinicResult.ContactPersonSecondaryPhoneNumber
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                         { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") },
+                                        { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_PHONE) } 
+                                        , { new KeyValueModel<string, string>("maxlength", "13") }
+                                        , { new KeyValueModel<string, string>("onkeyup", "javascript:return keyUpUIntNumericLen(this, '10')") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript: blurValidatePhone(this);") }                                       
+                                    }))
+        </td>
+        <td>@Resources.ClaimatePrimeWebResx.Extension
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.ClinicResult.ContactPersonSecondaryPhoneNumberExtn
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+        </td>
+    </tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.Email <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.ContactPersonEmail
+                                  , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_EMAIL) } 
+                                       ,  { new KeyValueModel<string, string>("maxlength", "256") }
+                                       , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript:return blurValidateEmail(this);") }                                       
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.SecondaryEmail
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.ContactPersonSecondaryEmail
+                                 , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @Resources.ClaimatePrimeWebResx.DEFAULT_EMAIL) } 
+                                       ,  { new KeyValueModel<string, string>("maxlength", "256") }
+                                       , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }
+                                        , { new KeyValueModel<string, string>("onblur", "javascript:return blurValidateEmail(this);") }                                       
+                                    }))
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.Fax
+    </td>
+    <td colspan="3">
+        @Html.TextBoxFor(m => m.ClinicResult.ContactPersonFax
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "500") }
+                                        , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }                                       
+                                    }))
+    </td>
+</tr>
+
+
+
+<tr>
+    <td colspan="4" class="td-heading">
+        <div class="dv-subheading-entry">@Resources.ClaimatePrimeWebResx.BillingInfo</div>
+    </td>
+</tr>
+
+
+@if (Model.ManagerCount == 0)
+{
+    if(Model.GetRoleID(ArivaSession.Sessions().UserID)==1)
+    {
+    <tr>
+        
+        <td style="width: 20%">
+            @Resources.ClaimatePrimeWebResx.Manager <span class="star">*</span>
+        </td>
+        <td style="width: 30%">
+            @Html.TextBoxFor(m => m.UserResult_User)
+            @Html.TextBoxFor(m => m.UserResult.UserID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+        </td>
+    </tr>
+}
+else
+{
+    <tr>
+       
+        <td style="width: 20%">
+            @Resources.ClaimatePrimeWebResx.Manager <span class="star">*</span>
+        </td>
+        <td style="width: 30%">
+           @ArivaSession.Sessions().UserDispName
+           
+            @Html.TextBoxFor(m => m.UserResult.UserID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                     
+                                    }))
+        </td>
+    </tr>    
+    }
+}
+else
+{
+    <tr>
+        <td colspan="4" class="td-controls1">
+            @Resources.ClaimatePrimeWebResx.MoreManager
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" class="td-controls1">
+            
+            <ol>
+                @for (int i = 0; i <Model.UserClinicResult.Count; i++)
+                {
+                    int a;
+                    a = i + 1;
+                    <li>@a) @Model.UserClinicResult[i].NAME_CODE</li>
+                }
+            </ol>
+                
+        </td>
+    </tr>
+    <tr>
+        <td style="display: none">
+
+            @Html.TextBoxFor(m => m.UserResult.UserID
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                      
+                                    }))
+        </td>
+    </tr>
+}
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.PatientDemoPull
+    </td>
+    <td>
+        @Html.CheckBoxFor(m => m.ClinicResult.IsPatientDemographicsPull)
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.PatVisitDocMand
+    </td>
+    <td>
+        @Html.CheckBoxFor(m => m.ClinicResult.IsPatVisitDocManadatory)
+    </td>
+</tr>
+<tr>
+    <td>@Resources.ClaimatePrimeWebResx.PatVisitComplexity <span class="star">*</span>
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.PatientVisitComplexity, StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }    
+                                    ,{ new KeyValueModel<string, string>("placeholder", "0") } 
+                                    ,{ new KeyValueModel<string, string>("onkeyup", "keyUpUIntNumericLen(this, 2)") } 
+                                   ,{ new KeyValueModel<string, string>("onblur", "blurValidateUIntNumberLen(this, 2)") }                                       
+                                    }))
+    </td>
+    <td>@Resources.ClaimatePrimeWebResx.ICDFormat
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.ClinicResult.ICDFormat,
+        StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }    
+                                  ,  { new KeyValueModel<string, string>("placeholder", "0") } 
+                                    ,{ new KeyValueModel<string, string>("onkeyup", "keyUpUIntNumericLen(this, 2)") } 
+                                   ,{ new KeyValueModel<string, string>("onblur", "blurValidateUIntNumberLen(this, 2)") }                                       
+                                    }))
+
+    </td>
+
+</tr>
+
+
+
+<tr>
+    <td colspan="4" class="td-heading">
+        <div class="dv-subheading-entry">@Resources.ClaimatePrimeWebResx.ClinicLogo</div>
+    </td>
+</tr>

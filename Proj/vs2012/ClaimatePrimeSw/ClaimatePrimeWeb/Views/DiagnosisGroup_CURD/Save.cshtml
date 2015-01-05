@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeConstants;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.DiagnosisGroupSaveModel
+
+@using (Html.ArivaForm("DiagnosisGroup", "Save"))
+{
+    @Html.TextBoxFor(m => m.AntiForgTokn
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") } 
+                                    }))
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DiagnosisGroup"))"  title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.dg </li>
+            @if (ArivaSession.Sessions().IsNewRec)
+            {
+                <li>-<span>@Resources.ClaimatePrimeWebResx.New</span></li>
+            }
+            else
+            {
+                <li>-<span>@Resources.ClaimatePrimeWebResx.Edit</span></li>
+            }
+        </ul>
+    </div>
+    @Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+        <table class="table-entry">
+            <tr>
+                <td colspan="4" class="td-heading">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="width: 20%">Code <span class="star">*</span></td>
+                <td style="width: 30%">
+                @Html.TextBoxFor(m => m.DiagnosisGroup.DiagnosisGroupCode,
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "9") }
+                                          , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }    
+                                    }))
+
+                <td style="width: 20%">Description <span class="star">*</span></td>
+                <td style="width: 30%">
+                    @Html.TextBoxFor(m => m.DiagnosisGroup.DiagnosisGroupDescription,  
+                    StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "150") }
+                                         , { new KeyValueModel<string, string>("onfocus", "javascript:return registerBlurFn();") }, { new KeyValueModel<string, string>("onblur", "javascript:return blurTrim(this);") }    
+                                    }))</td>
+            </tr>
+            <tr>
+
+
+                <td>Amount <span class="star">*</span> </td>
+                <td>
+                    @Html.TextBoxFor(m => m.DiagnosisGroup.Amount , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                    { new KeyValueModel<string, string>("placeholder", "0") } 
+                                    ,{ new KeyValueModel<string, string>("onkeyup", "keyUpUIntNumericLen(this, 16)") } 
+                                   ,{ new KeyValueModel<string, string>("onblur", "blurValidateUIntNumberLen(this, 16)") }                                       
+                                    }))
+               </td>
+            </tr>
+          
+
+            <tr @Html.Raw((ArivaSession.Sessions().IsNewRec) ? "style=display:none;" : "")>
+                <td>@Resources.ClaimatePrimeWebResx.Active
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m.DiagnosisGroup.IsActive)
+                </td>
+            </tr>
+            <tr @Html.Raw((ArivaSession.Sessions().IsNewRec) ? "style=display:none;" : "")>
+                <td>Comments
+                </td>
+                <td colspan="3">
+                    @Html.TextAreaFor(m => m.DiagnosisGroup.Comment,
+                StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("maxlength", "4000") }    
+                                    }))
+                </td>
+            </tr>
+        </table>
+        <div class="dv-submit-controls">
+            <ul>
+                <li>
+                   <input type="submit" name="btnSave" id="btnSave" value="@Resources.ClaimatePrimeWebResx.Save" class="button-save" onclick="javascript: return validateSave();">
+                </li>
+                <li><a href="@Url.RouteUrl(StaticClass.RouteValues("DiagnosisGroup"))" class="aButton-cancel" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.Cancel</a></li>
+            </ul>
+        </div>
+    </div>
+}
+<div style="display: none;">
+    @*Error Or Success Message Displaying*@
+    @if ((ViewBag.ErrMsg > 0) || (ViewBag.SuccMsg > 0))
+    {
+        if (ViewBag.ErrMsg > 0)
+        {
+            if (ViewBag.ErrMsg == 1)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.SaveError.Replace("[X]", Model.ErrorMsg)" />
+            }
+           else if (ViewBag.ErrMsg == 2)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.DupErr" />
+            }
+            else if (ViewBag.ErrMsg == 3)
+            {
+        <input type="text" name="txtErrMsg"  value="@Resources.ClaimatePrimeWebResx.ChkErr" />
+            }
+        }
+        else
+        {
+            if (ViewBag.SuccMsg == 1)
+            {
+        <input type="text" name="txtErrMsg" value="sai" />
+            }
+            else
+            {
+        <input type="text" name="txtSuccMsg"  value="@Resources.ClaimatePrimeWebResx.SaveErrorSucc" />
+            }
+        }
+    }
+</div>

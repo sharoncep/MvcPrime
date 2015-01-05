@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Pre.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@model ClaimatePrimeModels.Models.ContactUsModel
+<link href="@Url.Content("~/Stylesheets/login.css")" rel="stylesheet" type="text/css" />
+<div class="main_wrapper">
+    <div class="dv-left">
+        <div class="dv-wrap-inner">
+        </div>
+    </div>
+    <div class="dv-right">
+        <a href="@Url.RouteUrl(StaticClass.RouteValues("Home"))" title="@StaticClass.SiteVersion">
+            <div class="@StaticClass.SiteLogo">
+            </div>
+        </a>
+        <div>
+
+            <ul class="ul-contact">
+                <li><span>@Resources.ClaimatePrimeWebResx.ContactUs</span></li>
+                <li>
+                    @String.Concat(Model.WebAdmin.LastName, " ", Model.WebAdmin.FirstName, " ", Model.WebAdmin.MiddleName)
+                </li>
+                <li>
+                    @Model.WebAdmin.Email
+                </li>
+                <li>
+                   @Model.WebAdmin.PhoneNumber
+                </li>
+                <li style="border-bottom: dotted 1px #666;"></li>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+@Html.Partial("UserControls/PageFooterPre")
+
+

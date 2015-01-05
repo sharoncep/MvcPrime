@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{193952D2-DD89-419B-95CA-4BB59EF498A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ANSI5010</RootNamespace>
+    <AssemblyName>ANSI5010</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ANSI5010Main.cs" />
+    <Compile Include="CptService.cs" />
+    <Compile Include="GSDetail.cs" />
+    <Compile Include="SecuredFolder\StaticClasses\Static5010.cs" />
+    <Compile Include="SubClasses\BHT.cs" />
+    <Compile Include="SubClasses\GE.cs" />
+    <Compile Include="SubClasses\GS.cs" />
+    <Compile Include="SubClasses\IEA.cs" />
+    <Compile Include="SubClasses\ISA.cs" />
+    <Compile Include="SubClasses\Loop1000A\NM1L1000A.cs" />
+    <Compile Include="SubClasses\Loop1000A\PERL1000A.cs" />
+    <Compile Include="SubClasses\Loop1000B\NM1L1000B.cs" />
+    <Compile Include="SubClasses\Loop2000A\CURL2000A.cs" />
+    <Compile Include="SubClasses\Loop2000A\HLL2000A.cs" />
+    <Compile Include="SubClasses\Loop2000A\PRVL2000A.cs" />
+    <Compile Include="SubClasses\Loop2000B\HLL2000B.cs" />
+    <Compile Include="SubClasses\Loop2000B\PATL2000B.cs" />
+    <Compile Include="SubClasses\Loop2000B\SBRL2000B.cs" />
+    <Compile Include="SubClasses\Loop2000C\HLL2000C.cs" />
+    <Compile Include="SubClasses\Loop2000C\PATL2000C.cs" />
+    <Compile Include="SubClasses\Loop2010AA\N3L2010AA.cs" />
+    <Compile Include="SubClasses\Loop2010AA\N4L2010AA.cs" />
+    <Compile Include="SubClasses\Loop2010AA\NM1L2010AA.cs" />
+    <Compile Include="SubClasses\Loop2010AA\PERL2010AA.cs" />
+    <Compile Include="SubClasses\Loop2010AA\REFL2010AA.cs" />
+    <Compile Include="SubClasses\Loop2010AA\REFL2010AA1.cs" />
+    <Compile Include="SubClasses\Loop2010AB\N3L2010AB.cs" />
+    <Compile Include="SubClasses\Loop2010AB\N4L2010AB.cs" />
+    <Compile Include="SubClasses\Loop2010AB\NM1L2010AB.cs" />
+    <Compile Include="SubClasses\Loop2010BA\DMGL2010BA.cs" />
+    <Compile Include="SubClasses\Loop2010BA\N3L2010BA.cs" />
+    <Compile Include="SubClasses\Loop2010BA\N4L2010BA.cs" />
+    <Compile Include="SubClasses\Loop2010BA\NM1L2010BA.cs" />
+    <Compile Include="SubClasses\Loop2010BA\REFL2010BA.cs" />
+    <Compile Include="SubClasses\Loop2010BA\REFL2010BA1.cs" />
+    <Compile Include="SubClasses\Loop2010BB\N3L2010BB.cs" />
+    <Compile Include="SubClasses\Loop2010BB\N4L2010BB.cs" />
+    <Compile Include="SubClasses\Loop2010BB\NM1L2010BB.cs" />
+    <Compile Include="SubClasses\Loop2010BB\REFL2010BB.cs" />
+    <Compile Include="SubClasses\Loop2010CA\DMGL2010CA.cs" />
+    <Compile Include="SubClasses\Loop2010CA\N3L2010CA.cs" />
+    <Compile Include="SubClasses\Loop2010CA\N4L2010CA.cs" />
+    <Compile Include="SubClasses\Loop2010CA\NM1L2010CA.cs" />
+    <Compile Include="SubClasses\Loop2010CA\PERL2010CA.cs" />
+    <Compile Include="SubClasses\Loop2010CA\REFL2010CA.cs" />
+    <Compile Include="SubClasses\Loop2010CA\REFL2010CA1.cs" />
+    <Compile Include="SubClasses\Loop2300\CLML2300.cs" />
+    <Compile Include="SubClasses\Loop2300\DTP1L2300.cs" />
+    <Compile Include="SubClasses\Loop2300\DTP2L2300.cs" />
+    <Compile Include="SubClasses\Loop2300\DTP3L2300.cs" />
+    <Compile Include="SubClasses\Loop2300\HIL2300.cs" />
+    <Compile Include="SubClasses\Loop2310A\NM1L2310A.cs" />
+    <Compile Include="SubClasses\Loop2310A\REFL2310A.cs" />
+    <Compile Include="SubClasses\Loop2310B\NM1L2310B.cs" />
+    <Compile Include="SubClasses\Loop2310B\PRVL2310B.cs" />
+    <Compile Include="SubClasses\Loop2310B\REFL2310B.cs" />
+    <Compile Include="SubClasses\Loop2310C\N3L2310C.cs" />
+    <Compile Include="SubClasses\Loop2310C\N4L2310C.cs" />
+    <Compile Include="SubClasses\Loop2310C\NM1L2310C.cs" />
+    <Compile Include="SubClasses\Loop2310D\NM1L2310D.cs" />
+    <Compile Include="SubClasses\Loop2310D\REFL2310D.cs" />
+    <Compile Include="SubClasses\Loop2400\DTPL2400.cs" />
+    <Compile Include="SubClasses\Loop2400\DTPL2400CPT.cs" />
+    <Compile Include="SubClasses\Loop2400\LXL2400.cs" />
+    <Compile Include="SubClasses\Loop2400\REFL2400.cs" />
+    <Compile Include="SubClasses\Loop2400\SV1L2400.cs" />
+    <Compile Include="SubClasses\SE.cs" />
+    <Compile Include="SubClasses\ST.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecuredFolder\BaseClasses\Base5010.cs" />
+    <Compile Include="SecuredFolder\Extensions\ANSIX12Attribute.cs" />
+    <Compile Include="SubPatDetail.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

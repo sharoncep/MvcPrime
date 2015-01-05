@@ -1,0 +1,59 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- Inserts the record into the table without repeatation
+
+CREATE PROCEDURE [Audit].[usp_Insert_LogInTrial]
+	  @TrialUsername NVARCHAR(128)
+	, @IsSuccess BIT
+	, @ClientHostIPAddress NVARCHAR(128)
+	, @ClientHostName NVARCHAR (128)
+	, @IsUserLogin BIT
+	, @LogInTrialID BIGINT OUTPUT
+AS
+BEGIN
+
+	DECLARE @CurrentModificationOn DATETIME;
+	SELECT @CurrentModificationOn = GETDATE();
+	
+	SET NOCOUNT ON;
+	BEGIN TRY
+		INSERT INTO [Audit].[LogInTrial] 
+		(
+			[TrialUserName]
+			, [IsSuccess]
+			, [TrialOn]
+			, [ClientHostIPAddress]
+			, [ClientHostName]
+			, [IsUserLogin]
+		)
+		VALUES 
+		(
+			@TrialUsername
+			, @IsSuccess
+			, @CurrentModificationOn
+			, @ClientHostIPAddress
+			, @ClientHostName
+			, @IsUserLogin
+		);
+		
+		SELECT @LogInTrialID = MAX([Audit].[LogInTrial].[LogInTrialID]) FROM [Audit].[LogInTrial];
+   END TRY
+   BEGIN CATCH
+		-- ERROR CATCHING - STARTS
+		BEGIN TRY
+			EXEC [Audit].[usp_Insert_ErrorLog];
+			SELECT @LogInTrialID = (MAX([Audit].[ErrorLog].[ErrorLogID]) * -1) FROM [Audit].[ErrorLog];
+		END TRY
+		BEGIN CATCH
+			RAISERROR('Error in [Audit].[usp_Insert_ErrorLog]', -1, -1);
+		END CATCH
+		-- ERROR CATCHING - ENDS
+	END CATCH	
+END
+
+GO

@@ -1,0 +1,38 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeModels.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeModels.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ANSI5010.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaCryptorEngine.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaEmail.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeEFWork.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\EntityFramework.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\OfficeOpenXml.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ANSI5010.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeEFWork.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaCryptorEngine.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaEmail.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeConstants.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\OfficeOpenXml.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\EntityFramework.xml
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\obj\Debug\ClaimatePrimeModels.csprojResolveAssemblyReference.cache
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\obj\Debug\ClaimatePrimeModels.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\obj\Debug\ClaimatePrimeModels.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeModels.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeModels.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ANSI5010.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaCryptorEngine.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaEmail.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeConstants.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeEFWork.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\EntityFramework.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\OfficeOpenXml.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ANSI5010.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeEFWork.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaCryptorEngine.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ArivaEmail.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\ClaimatePrimeConstants.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\OfficeOpenXml.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\bin\Debug\EntityFramework.xml
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\obj\Debug\ClaimatePrimeModels.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\obj\Debug\ClaimatePrimeModels.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeModels\obj\Debug\ClaimatePrimeModels.pdb

@@ -1,0 +1,97 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+@using ClaimatePrimeModels.SecuredFolder.Commons;
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+
+@model ClaimatePrimeModels.Models.PatientHospitalizationSearchModel
+
+<div class="dv-page-header1">
+    <ul class="ul-header">
+        <li><a href="@Url.RouteUrl(StaticClass.RouteValues("PatDemography"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+        <li>@Resources.ClaimatePrimeWebResx.Hospitalization</li>
+    </ul>
+</div>
+@Html.Partial("UserControls/PageHeaderSub")
+<div class="dv-block">
+    @using (Html.ArivaForm("Hospitalization"))
+    {
+        <div style="display: none;">
+            @Html.TextBoxFor(m => m.StartBy)
+            @Html.TextBoxFor(m => m.CurrNumber)
+            @Html.TextBoxFor(m => m.OrderByField)
+            @Html.TextBoxFor(m => m.OrderByDirection)
+            @Html.CheckBox("chkHasRec", Model.HasRec,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("id", "chkHasRec") }    
+                                    }))
+            <input type="text" name="CurrPageNumber" id="CurrPageNumber" value="0" />
+            <input type="submit" name="btnSearch" id="btnSearch" value="btnSearch" onclick="javascript: return canSubmit();" />
+        </div>
+        
+        //
+        @Html.TextBoxFor(m => m.PatientID,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("style", "display:none;") }    
+                                    }))
+
+        <div class="dv-block">
+            <div>
+                <a href="#" class="aButton-search" onclick="javascript:$('#divSearch').slideToggle(); return false;">@Resources.ClaimatePrimeWebResx.Search</a>
+            </div>
+            <div id="divSearch" class="dv-block-search">
+                <ul class="ul-search-criteria">
+                    <li><span>@Resources.ClaimatePrimeWebResx.NameChart</span> @Html.TextBoxFor(m => m.SearchName,
+                       StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("rel", "txtsearch") }    
+                                    }))
+                    </li>
+                    <li><span>@Resources.ClaimatePrimeWebResx.AdmittedOn</span>
+                        @Html.TextBoxFor(m => m.DateFrom
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                        { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-from-date") } 
+                                       , { new KeyValueModel<string, string>("rel", "txtsearch") }
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                      
+                                    }))
+                        <a href="#" class="aDelete" onclick="javascript:return clearDatePicker('DateFrom');"></a>
+                    </li>
+                    <li><span>@Resources.ClaimatePrimeWebResx.Dischargedon</span>
+                        @Html.TextBoxFor(m => m.DateTo
+                                , StaticClass.HtmlAttributes(
+                                    new List<KeyValueModel<string, string>> { 
+                                       { new KeyValueModel<string, string>("placeholder", @StaticClass.GetDateStr().ToLower()) } 
+                                       , { new KeyValueModel<string, string>("class", "txt_cal txt-to-date") }
+                                       , { new KeyValueModel<string, string>("rel", "txtsearch") } 
+                                      , { new KeyValueModel<string, string>("readonly", "true") }                                        
+                                    }))
+                        <a href="#" class="aDelete" onclick="javascript:return clearDatePickerFromTo('DateTo', 'DateFrom', 'DateTo');"></a>
+                    </li>
+                    <li><a href="#" onclick="javascript:return setSearch('', '', '');" class="aSearch1" title="@Resources.ClaimatePrimeWebResx.Search"></a></li>
+                </ul>
+            </div>
+
+            <div class="dv-shadowline1"></div>
+
+        </div>
+    }
+</div>
+
+<div class="dv-block1">
+    @Html.Partial("UserControls/HospitalizationSearch")
+    <div class="dv-add-new">
+        @if (Model.PatientResult.IsActive)
+        {
+            <a href="@Url.RouteUrl(StaticClass.RouteValues("PatHospitalization", "Save"))" class="aAdd-td" rel="control_tile" onclick="javascript:showDivPageLoading();">@Resources.ClaimatePrimeWebResx.AddNew</a>
+        }
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ClaimatePrime>
+  <data>
+    <name>InvalidLogIn</name>
+    <value>Invalid LogIn</value>
+  </data>
+  <data>
+    <name>PhotoAccept</name>
+    <value>image/gif,image/png,image/bmp,image/jpg</value>
+  </data>
+  <data>
+    <name>PatDocAccept</name>
+    <value>image/gif,image/png,image/bmp,image/jpg,image/jpeg,application/pdf</value>
+  </data>
+  <data>
+    <name>VisitDocAccept</name>
+    <value>application/pdf</value>
+  </data>
+  <data>
+    <name>VisitNewCmts</name>
+    <value>New visit created</value>
+  </data>
+  <data>
+    <name>LAST_NAME</name>
+    <value>LAST_NAME</value>
+  </data>
+  <data>
+    <name>FIRST_NAME</name>
+    <value>FIRST_NAME</value>
+  </data>
+  <data>
+    <name>MIDDLE_NAME</name>
+    <value>MIDDLE_NAME</value>
+  </data>
+  <data>
+    <name>UsersWithoutRole</name>
+    <value>USERS_WITHOUT_ROLE</value>
+  </data>
+  <data>
+    <name>UsersWithoutClinic</name>
+    <value>USERS_WITHOUT_CLINIC</value>
+  </data>
+  <data>
+    <name>ManagerWithoutAgent</name>
+    <value>MANAGER_WITHOUT_AGENT</value>
+  </data>
+  <data>
+    <name>ClinicsWithoutManager</name>
+    <value>CLINICS_WITHOUT_MANAGER</value>
+  </data>
+  <data>
+    <name>ClinicsWithMultiManager</name>
+    <value>CLINICS_WITH_MANY_MANAGERS</value>
+  </data>
+  <data>
+    <name>AssignedClinics</name>
+    <value>ASSIGNED_CLINICS</value>
+  </data>
+  <data>
+    <name>RptExlSubjDash</name>
+    <value>CLAIM STATUS REPORT - DASHBOARD - [X]</value>
+  </data>
+  <data>
+    <name>RptExlSubjAgentWise</name>
+    <value>CLAIM STATUS REPORT - AGENT WISE - [X]</value>
+  </data>
+  <data>
+    <name>RptExlSubjClinicWise</name>
+    <value>CLAIM STATUS REPORT - CLINIC WISE - [X]</value>
+  </data>
+</ClaimatePrime>

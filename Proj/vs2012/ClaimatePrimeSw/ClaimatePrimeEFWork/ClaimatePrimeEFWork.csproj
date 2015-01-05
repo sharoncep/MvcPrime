@@ -1,0 +1,1300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3505E24A-553F-4C46-8AF3-77FB8BD9A507}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClaimatePrimeEFWork</RootNamespace>
+    <AssemblyName>ClaimatePrimeEFWork</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EFContexts\AdoNetEntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdoNetEntityDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\AdoNetEntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\AdoNetEntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdoNetEntityDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\ufn_StringSplit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAgentWiseSummaryNIT_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAgentWiseSummary_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAgentWiseVisitPdf_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAgentWiseVisit_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAgent_Role_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAlertByID_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAll_MvcInit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAll_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAll_WebCulture_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAnsi837Clinic_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAnsi837EDIReceiver_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAnsi837FacilityDone_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAnsi837Hosp_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAnsi837Visit_ClaimDiagnosisCPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAnsi837Visit_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutocompleteClinicNew_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutocompleteNew_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoCompleteVisit_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_AuthorizationInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_City_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_ClaimMedia_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_CommunicationNumberQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Country_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_County_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_CPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Credential_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_CurrencyCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_DiagnosisGroup_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Diagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_DocumentCategory_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_EDIReceiver_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_EntityIdentifierCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_EntityTypeQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_FacilityDone_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_FacilityType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_IllnessIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_InsuranceType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Insurance_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_InterchangeIDQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_InterchangeUsageIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_IPA_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Modifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_PayerResponsibilitySequenceNumberCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_PrintPin_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_PrintSign_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Relationship_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_SecurityInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_Specialty_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_State_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_TransactionSetPurposeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutoComplete_TransactionTypeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetAutocomplete_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBlockedCpt_ClaimDiagnosisCPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZCaseReopen_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZCase_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZClinic_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZClinic_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZDashboardAgent_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZDashVisits_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZEDI_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZRpt_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_City_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_ClaimMedia_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Country_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_County_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_CPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_DiagnosisGroup_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Diagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_EntityTypeQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_FacilityDone_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_IllnessIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Insurance_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_InterchangeUsageIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Modifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_PatientDocument_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_PatientHospitalization_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_Specialty_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_State_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByAZ_WebCulture_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByClaimDxCPT_ClaimDiagnosisCPTModifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByClinicID_IPA_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByClinicID_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByEDIReceiverID_EDIReceiver_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByEDI_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByEmail_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByHospitalizationId_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByID_ClaimProcessEDIFile_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByID_FacilityDone_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetById_IPA_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByID_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByInsuranceTypeID_InsuranceType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByManagerID_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByManagerID_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPage_PageRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatientID_EDIReceiver_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatientID_Insurance_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatientID_PatientDocument_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatientID_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatientVisitID_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatientVisit_ClaimDiagnosisCPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatientVisit_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPatVisitDx_ClaimDiagnosisCPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkIdCountyName_County_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkIdInsuranceName_Insurance_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkIdRelationshipName_Relationship_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkIdStateName_State_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_AuthorizationInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_City_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ClaimDiagnosisCPTModifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ClaimDiagnosisCPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ClaimMedia_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ClaimProcessEDIFile_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ClaimStatus_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_CommunicationNumberQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Country_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_County_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_CPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Credential_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_CurrencyCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_DiagnosisGroup_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Diagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_DocumentCategory_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_EDIFile_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_EDIReceiver_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_EntityIdentifierCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_EntityTypeQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ErrorLog_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ExcelImportExport_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_FacilityDone_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_FacilityType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_General_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_IllnessIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_InsuranceType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Insurance_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_InterchangeIDQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_InterchangeUsageIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_IPA_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Modifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_PageRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Page_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Password_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_PatientDocument_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_PatientHospitalization_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_PayerResponsibilitySequenceNumberCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_PrintPin_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_PrintSign_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Relationship_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_ReportType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Role_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_SecurityInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_Specialty_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_State_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_TransactionSetPurposeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_TransactionTypeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPkId_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPrintPinID_PrintPin_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByPrintSignID_PrintSign_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByRelationshipName_Relationship_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearchAd_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearchCaseReopen_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearchCase_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearchClinic_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearchRpt_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_AuthorizationInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_City_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_ClaimMedia_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_ClaimStatus_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_CommunicationNumberQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Country_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_County_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_CPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Credential_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_CurrencyCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_DiagnosisGroup_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Diagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_DocumentCategory_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_EDIFile_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_EDIReceiver_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_EntityIdentifierCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_EntityTypeQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_FacilityDone_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_FacilityType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_IllnessIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_InsuranceType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Insurance_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_InterchangeIDQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_InterchangeUsageIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_IPA_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Modifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_PatientDocument_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_PatientHospitalization_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_PayerResponsibilitySequenceNumberCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_PrintPin_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_PrintSign_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Relationship_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Role_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_SecurityInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_Specialty_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_State_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_TransactionSetPurposeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_TransactionTypeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetBySearch_WebCulture_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByUserID_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByUserID_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByUserID_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByUserID_UserPassword_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByUserID_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetByUserName_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetClaimAgent_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetClinicWiseSummaryNIT_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetClinicWiseSummary_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetClinicWiseVisitpDF_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetClinicWiseVisit_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetCommentByID_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetCount835_EDIFile_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetCount837_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetCountEDIHistory_EDIFile_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetCount_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetCount_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDashboardAgent_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDashboardSummaryNIT_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDashboardSummary_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDashboardVisitPdf_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDashboardVisit_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDiagnosis_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDocumentCategoryByID_DocumentCategory_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetDOSByID_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetExcel_UserReport_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetFacilityDoneNameByID_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetHospitalization_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetHospital_PatientHospitalization_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetICDFormat_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_AuthorizationInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_City_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_ClaimMedia_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_CommunicationNumberQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Country_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_County_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_CPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Credential_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_CurrencyCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_DiagnosisGroup_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutocomplete_DocumentCategory_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_EDIReceiver_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_EntityIdentifierCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_EntityTypeQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_FacilityDone_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_FacilityType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_IllnessIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_InsuranceType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Insurance_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_InterchangeIDQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_InterchangeUsageIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_IPA_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Modifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_PayerResponsibilitySequenceNumberCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_PrintPin_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_PrintSign_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_SecurityInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_Specialty_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_State_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_TransactionSetPurposeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_TransactionTypeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIDAutoComplete_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIsDischarged_PatientHospitalization_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetIsPatVisitDoc_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetLastStatus_SyncStatus_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetLastSuccStatus_SyncStatus_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetManagerClinic_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetManager_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetMaxClaimNumber_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetMaxDiagnosis_ClaimMedia_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_AuthorizationInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_City_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameById_Country_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_EntityTypeQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_FacilityDone_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_FacilityType_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_IllnessIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_InterchangeUsageIndicator_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_IPA_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_Provider_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_SecurityInformationQualifier_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_Specialty_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_TransactionSetPurposeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_TransactionTypeCode_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByID_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameByPatientVisitID_Patient_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameBySync_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNameCode_EDIReceiver_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNext_Identity_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationAgentClinicPdf_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationAgentClinic_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationAgentPdf_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationAgent_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationClinicPdf_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationClinic_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationCountAgentClinic_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationCountAgent_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationCountClinic_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationCountManager_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationCountMultiManager_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationCountRole_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationManagerPdf_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationManager_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationMultiManagerPdf_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationMultiManager_UserClinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationRolePdf_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetNotificationRole_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetPasswordAge_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetPassword_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetPatientVisitComplexity_Clinic_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetPkId_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetPrevVisit_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetPrimeDxByID_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetPrimeDxProc_ClaimDiagnosisCPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetRecent_LockUnLock_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetRecent_LogInLogOut_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetRecent_LogInTrial_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetRecent_UserClinicSelect_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetRecent_UserRoleSelect_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportAgentDate_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportAgent_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportAgent_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportAZAgent_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportClinicDate_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportClinic_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportCpt_ClaimDiagnosis_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportDashboardAgent_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportDashboardClinic_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportDashboard_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportDate_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportDx_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportModifier_ClaimDiagnosisCPT_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportPatientDate_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportPatient_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportProviderDate_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportProvider_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumAgentComp_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumAgentWise_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumAgent_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumClinic_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumMnClinic_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumMnPatient_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumMnProvider_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumMn_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumPatient_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumProvider_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumYrClinic_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumYrPatient_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumYrProvider_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSumYr_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReportSum_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetReport_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetRoles_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetRole_UserRole_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetSearch_UserReport_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetSentFile_EDIFile_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetSenthilSR_ClaimProcess_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetStatus_Screen_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetTeamMembers_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetTime_Server_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetTrialBalance_LogInTrial_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetUnAssigned_PatientVisit_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFContexts\usp_GetWebAdmin_User_Result.cs">
+      <DependentUpon>AdoNetEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecuredFolder\AdoNetEntityDataModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EFContexts\AdoNetEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdoNetEntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="EFContexts\AdoNetEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdoNetEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AdoNetEntityDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EFContexts\AdoNetEntityDataModel.edmx.diagram">
+      <DependentUpon>AdoNetEntityDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="EFContexts\AdoNetEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdoNetEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AdoNetEntityDataModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SecuredFolder\ClaimatePrimeConstants\ClaimatePrimeConstants.csproj">
+      <Project>{e9339f50-c822-42c5-9e15-4f0f2c5fae0c}</Project>
+      <Name>ClaimatePrimeConstants</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

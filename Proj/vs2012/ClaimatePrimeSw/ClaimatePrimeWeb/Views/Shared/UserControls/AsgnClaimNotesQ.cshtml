@@ -1,0 +1,20 @@
+﻿@model ClaimatePrimeModels.Models.AssignedClaimQASaveModel
+<div id="divNotes" class="dv-full-claim-mgmnt">
+    <div>
+        <a href="#" id="aNotesE" title="@Resources.ClaimatePrimeWebResx.Expand" onclick="javascript:return expandPnlDiv('Notes');" class="aExpand">@Resources.ClaimatePrimeWebResx.Notes</a>
+        <a href="#" id="aNotesC" title="@Resources.ClaimatePrimeWebResx.Collapse" style="display:none;" onclick="javascript:return collapsePnlDiv('Notes');" class="aCollapse">@Resources.ClaimatePrimeWebResx.Notes</a>
+    </div>
+    <div id="divNotesC" style="display: none;" title="" class="dv-bdr">
+        <div id="divNotesList"></div>
+        <table class="table-entry">
+            <tr>
+                <td style="width: 20%">
+                    @Resources.ClaimatePrimeWebResx.Notes <span class="star">*</span>
+                </td>
+                <td style="width: 80%">
+                    @Html.TextAreaFor(m => m.Notes)
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

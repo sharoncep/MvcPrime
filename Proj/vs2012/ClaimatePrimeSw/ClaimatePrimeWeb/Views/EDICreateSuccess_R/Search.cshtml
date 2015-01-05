@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/MasterPages/Home.cshtml";
+}
+
+@using ClaimatePrimeControllers.SecuredFolder.StaticClasses;
+@using ClaimatePrimeControllers.SecuredFolder.Extensions;
+@using ClaimatePrimeControllers.SecuredFolder.SessionClasses;
+@using ClaimatePrimeModels.SecuredFolder.Extensions;
+@using ClaimatePrimeEFWork.EFContexts;
+
+@model ClaimatePrimeModels.Models.EDICreateSuccessModel
+
+
+
+    <div class="dv-page-header1">
+        <ul class="ul-header">
+            <li><a href="@Url.RouteUrl(StaticClass.RouteValues("MenuEDIE"))" title="@Resources.ClaimatePrimeWebResx.Back" class="back-button" onclick="javascript:showDivPageLoading();"></a></li>
+            <li>@Resources.ClaimatePrimeWebResx.Create837</li>
+        </ul>
+    </div>
+    <div class="dv-block">
+    <table class="table-grid-ansci">
+        <tr>
+            <td style="width: 50%;" class="td-gridhead">
+                @Resources.ClaimatePrimeWebResx.RefFile | 
+                <a href="#" onclick="javascript:return printFile('@Url.RouteUrl(StaticClass.RouteValues("EDICreateSuccess", "SuccessRef"))');" class="aDownload2" title="@Resources.ClaimatePrimeWebResx.RefFile">@Resources.ClaimatePrimeWebResx.Download</a>
+            </td>
+            <td style="width: 50%;" class="td-gridhead">
+                @Resources.ClaimatePrimeWebResx.X12File | 
+                <a href="#" onclick="javascript:return printFile('@Url.RouteUrl(StaticClass.RouteValues("EDICreateSuccess", "SuccessX12"))');" class="aDownload2" title="@Resources.ClaimatePrimeWebResx.X12File">@Resources.ClaimatePrimeWebResx.Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    @foreach (string item in Model.Refs)
+                    {
+                        <li>@item</li>
+                    }
+                </ul>
+            </td>
+            <td>
+                @Model.X12
+            </td>
+        </tr>
+    </table>
+</div>

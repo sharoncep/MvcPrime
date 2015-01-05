@@ -1,0 +1,20 @@
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeEFWork.dll.config
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeEFWork.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeEFWork.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeConstants.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\EntityFramework.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeConstants.pdb
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\EntityFramework.xml
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Debug\ClaimatePrimeEFWork.csprojResolveAssemblyReference.cache
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Debug\ClaimatePrimeEFWork.dll
+D:\working folder\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Debug\ClaimatePrimeEFWork.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeEFWork.dll.config
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeEFWork.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeEFWork.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeConstants.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\EntityFramework.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\ClaimatePrimeConstants.pdb
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\bin\Debug\EntityFramework.xml
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Debug\ClaimatePrimeEFWork.csprojResolveAssemblyReference.cache
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Debug\ClaimatePrimeEFWork.dll
+D:\Sharon\Demos\ClaimatePrime\Proj\vs2012\ClaimatePrimeSw\ClaimatePrimeEFWork\obj\Debug\ClaimatePrimeEFWork.pdb
